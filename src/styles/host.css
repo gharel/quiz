@@ -1,0 +1,44 @@
+.stage-title { color: var(--text-strong); font-weight: 700; overflow-wrap: anywhere; }
+@media (max-width: 720px) { .hide-mobile { display: none; } }
+
+/* Salon d'attente : bandeau sombre façon « hero » du design system */
+.lobby { display: flex; flex-direction: column; gap: var(--space-5); }
+.lobby-hero {
+  display: flex; align-items: center; justify-content: space-between; gap: var(--space-6); flex-wrap: wrap;
+  background: var(--color-dark-3); color: #fff; border-radius: var(--radius-2xl); padding: var(--space-8) var(--space-10);
+}
+:root[data-theme='dark'] .lobby-hero { background: #0f0f0f; border: 1px solid var(--border); }
+.lobby-join { display: flex; flex-direction: column; gap: var(--space-2); min-width: 0; flex: 1 1 320px; }
+.lobby-step { color: rgba(255, 255, 255, 0.78); font-size: var(--text-lg); }
+.lobby-step strong { color: #fff; overflow-wrap: anywhere; }
+.lobby-pin-label { margin-top: var(--space-3); font-size: var(--text-xs); font-weight: 700; letter-spacing: var(--tracking-wider); text-transform: uppercase; color: var(--color-primary-light); }
+.lobby-pin { font-size: clamp(3rem, 10vw, 6rem); font-weight: 800; line-height: 1; letter-spacing: 0.04em; font-variant-numeric: tabular-nums; color: #fff; }
+.lobby-title { color: rgba(255, 255, 255, 0.72); font-weight: 600; }
+.lobby-qr { display: flex; flex-direction: column; align-items: center; gap: var(--space-2); color: rgba(255, 255, 255, 0.78); font-size: var(--text-sm); font-weight: 600; }
+.lobby-main { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: var(--space-5); align-items: start; }
+.lobby-players .section-title, .podium-wrap .page-title { display: inline-flex; align-items: center; gap: var(--space-3); }
+.lobby-players .section-title svg { width: 24px; height: 24px; color: var(--brand-text); }
+.lobby-options { display: flex; flex-direction: column; gap: var(--space-2); }
+.lobby-options .section-title { margin-bottom: var(--space-2); }
+.lobby-options .btn { align-self: flex-start; }
+.lobby-relay { display: flex; align-items: center; gap: var(--space-2); margin-top: var(--space-3); }
+.lobby-relay-help { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-1); }
+.dot-status { width: 10px; height: 10px; border-radius: 50%; background: var(--warning); flex-shrink: 0; }
+.dot-online { background: var(--success); }
+.dot-error, .dot-offline { background: var(--error); }
+.player-chips { list-style: none; display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.player-chip {
+  display: inline-flex; align-items: center; gap: var(--space-1); padding: 6px 6px 6px 16px; border-radius: var(--radius-full);
+  background: var(--bg-muted); font-weight: 700; color: var(--text-strong); max-width: 100%;
+}
+.player-chip button { width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; color: var(--text-muted); flex-shrink: 0; }
+.player-chip button:hover { background: var(--error-bg); color: var(--error-text); }
+.player-chip svg { width: 16px; height: 16px; }
+.notice { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-3); padding: var(--space-4) var(--space-5); border-radius: var(--radius-lg); font-weight: 600; }
+.notice-error { background: var(--error-bg); color: var(--error-text); }
+@media (max-width: 900px) { .lobby-main { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 640px) {
+  .lobby-hero { padding: var(--space-6) var(--space-5); border-radius: var(--radius-xl); justify-content: center; text-align: center; }
+  .lobby-join { align-items: center; }
+  .lobby-players .section-head .btn { width: 100%; }
+}

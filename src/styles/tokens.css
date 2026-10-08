@@ -1,0 +1,123 @@
+/* Skazy Formation — jetons issus du design system Claude Design
+   (tokens/colors.css, typography.css, spacing.css) + thème sombre dérivé. */
+:root {
+  --color-primary: #50967c;
+  --color-primary-dark: #3d7a62;
+  --color-primary-light: #6db898;
+  --color-primary-subtle: #e8f5f0;
+  --color-dark: #4a4a4a;
+  --color-dark-2: #2e2e2e;
+  --color-dark-3: #1a1a1a;
+
+  --cat-violet: #a07bd4;
+  --cat-yellow: #eacb60;
+  --cat-blue: #5699c5;
+  --cat-teal: #5daba0;
+  --cat-orange: #e3764c;
+  --cat-pink: #e78da5;
+  --cat-green: #50967c;
+
+  --font-web: 'Georama', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.125rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 1.875rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --tracking-wide: 0.04em;
+  --tracking-wider: 0.08em;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.14), 0 8px 16px rgba(0, 0, 0, 0.08);
+
+  --container: 1280px;
+  --header-height: 72px;
+  --t-fast: 150ms ease;
+  --t-normal: 250ms ease;
+
+  /* Couleurs de réponse : teintes foncées des couleurs de catégories (texte blanc AA) */
+  --answer-a: #bc5530;
+  --answer-b: #3a7aad;
+  --answer-c: #7b55b5;
+  --answer-d: #3d7a62;
+  --success: #3a9e68;
+  --error: #d64242;
+  --warning: #e6a817;
+}
+
+:root,
+:root[data-theme='light'] {
+  color-scheme: light;
+  --bg-page: #ffffff;
+  --bg-subtle: #f8f9fa;
+  --bg-muted: #f1f3f5;
+  --surface: #ffffff;
+  --surface-raised: #ffffff;
+  --border: #e9ecef;
+  --border-strong: #ced4da;
+  --text: #4a4a4a;
+  --text-strong: #2e2e2e;
+  --text-secondary: #6c757d;
+  --text-muted: #6c757d;
+  --brand-text: #3d7a62;
+  --action: #3d7a62;
+  --action-hover: #33684f;
+  --action-text: #ffffff;
+  --focus: #50967c;
+  --success-text: #2b7a50;
+  --error-text: #b83232;
+  --success-bg: #e7f5ec;
+  --error-bg: #fbeaea;
+  --overlay: rgba(26, 26, 26, 0.55);
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg-page: #1a1a1a;
+  --bg-subtle: #151515;
+  --bg-muted: #262626;
+  --surface: #232323;
+  --surface-raised: #2b2b2b;
+  --border: #363636;
+  --border-strong: #4a4a4a;
+  --text: #e9ecef;
+  --text-strong: #ffffff;
+  --text-secondary: #b8bfc6;
+  --text-muted: #9aa3ab;
+  --brand-text: #6db898;
+  --action: #3d7a62;
+  --action-hover: #468a70;
+  --action-text: #ffffff;
+  --focus: #6db898;
+  --success-text: #6fd19b;
+  --error-text: #f08a8a;
+  --success-bg: rgba(58, 158, 104, 0.16);
+  --error-bg: rgba(214, 66, 66, 0.16);
+  --overlay: rgba(0, 0, 0, 0.7);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5), 0 4px 8px rgba(0, 0, 0, 0.3);
+}

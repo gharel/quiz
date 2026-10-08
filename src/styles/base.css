@@ -1,0 +1,46 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: var(--font-web);
+  font-size: var(--text-base);
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--bg-page);
+  -webkit-font-smoothing: antialiased;
+  text-wrap: pretty;
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+img, svg { display: block; max-width: 100%; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; background: none; border: 0; }
+a { color: var(--brand-text); text-decoration: none; }
+a:hover { text-decoration: underline; }
+h1, h2, h3, h4 { color: var(--text-strong); line-height: 1.2; overflow-wrap: break-word; }
+p, li, span, label { overflow-wrap: break-word; }
+
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 6px; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+.container { width: 100%; max-width: var(--container); margin: 0 auto; padding: 0 var(--space-6); }
+@media (max-width: 640px) { .container { padding: 0 var(--space-4); } }
+
+.page { padding-top: var(--space-8); padding-bottom: var(--space-16); }
+.page-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: var(--space-4) var(--space-6); margin-bottom: var(--space-6); }
+.page-title { font-size: clamp(1.75rem, 4vw, var(--text-3xl)); font-weight: 800; letter-spacing: -0.01em; }
+.page-sub { color: var(--text-secondary); margin-top: var(--space-2); max-width: 60ch; }
+.row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); }
+.stack { display: flex; flex-direction: column; gap: var(--space-4); }
+.muted { color: var(--text-secondary); }
+.small { font-size: var(--text-sm); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
