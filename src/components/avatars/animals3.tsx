@@ -35,7 +35,7 @@ export const girafe = () => (
   <>
     <path d="M38 30 V16 M62 30 V16" stroke="#c99a1d" strokeWidth="4" strokeLinecap="round" />
     <circle cx="38" cy="14" r="4.5" fill="#8a5a33" /><circle cx="62" cy="14" r="4.5" fill="#8a5a33" />
-    <Pair><ellipse cx="22" cy="38" rx="10" ry="5" transform="rotate(-20 22 38)" fill="#eacb60" /></Pair>
+    <Pair><ellipse cx="25" cy="40" rx="10" ry="5" transform="rotate(-20 25 40)" fill="#eacb60" /></Pair>
     <ellipse cx="50" cy="54" rx="24" ry="28" fill="#eacb60" />
     <circle cx="36" cy="38" r="4" fill="#c98a2b" /><circle cx="63" cy="36" r="3" fill="#c98a2b" /><circle cx="30" cy="54" r="3.5" fill="#c98a2b" /><circle cx="70" cy="56" r="4" fill="#c98a2b" />
     <ellipse cx="50" cy="71" rx="16" ry="11" fill="#f3d7b4" />
@@ -58,7 +58,7 @@ export const zebre = () => (
 
 export const raton = () => (
   <>
-    <Pair><path d="M24 40 L26 18 L42 32Z" fill="#868e96" /><path d="M28 34 L29 24 L36 30Z" fill="#f1f3f5" /></Pair>
+    <Pair><path d="M25 47 L26 18 L47 37Z" fill="#868e96" /><path d="M29 38 L29.5 25 L39 33Z" fill="#f1f3f5" /></Pair>
     <ellipse cx="50" cy="58" rx="29" ry="25" fill="#868e96" />
     <path d="M20 54 Q34 44 46 52 Q50 56 54 52 Q66 44 80 54 Q70 64 56 60 Q50 58 44 60 Q30 64 20 54Z" fill={INK} />
     <ellipse cx="50" cy="70" rx="14" ry="9" fill="#f1f3f5" />
