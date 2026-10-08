@@ -48,7 +48,7 @@ export const singe = () => (
 
 export const cochon = () => (
   <>
-    <Pair><path d="M26 40 L24 22 L40 32Z" fill="#f4a7b9" /></Pair>
+    <Pair><path d="M27 47 L24 22 L45 37Z" fill="#f4a7b9" /></Pair>
     <ellipse cx="50" cy="58" rx="28" ry="25" fill="#f8c6d2" />
     <ellipse cx="50" cy="66" rx="12" ry="9" fill="#f4a7b9" />
     <ellipse cx="46" cy="66" rx="2" ry="3" fill="#c4556e" /><ellipse cx="54" cy="66" rx="2" ry="3" fill="#c4556e" />
@@ -59,7 +59,7 @@ export const cochon = () => (
 
 export const vache = () => (
   <>
-    <path d="M30 32 Q24 20 30 14 M70 32 Q76 20 70 14" stroke="#eacb60" strokeWidth="5" strokeLinecap="round" fill="none" />
+    <path d="M32 42 Q22 26 30 14 M68 42 Q78 26 70 14" stroke="#eacb60" strokeWidth="5" strokeLinecap="round" fill="none" />
     <Pair><ellipse cx="20" cy="44" rx="11" ry="6" transform="rotate(-15 20 44)" fill="#fff" stroke="#dee2e6" strokeWidth="1.5" /></Pair>
     <ellipse cx="50" cy="54" rx="26" ry="26" fill="#fff" stroke="#dee2e6" strokeWidth="1.5" />
     <path d="M30 40 Q36 30 46 36 Q44 48 32 48Z" fill={INK} />
@@ -82,7 +82,7 @@ export const grenouille = () => (
 
 export const hibou = () => (
   <>
-    <Pair><path d="M24 36 L22 16 L38 28Z" fill="#8a6a4f" /></Pair>
+    <Pair><path d="M26 45 L22 16 L43 35Z" fill="#8a6a4f" /></Pair>
     <ellipse cx="50" cy="56" rx="29" ry="28" fill="#8a6a4f" />
     <ellipse cx="50" cy="66" rx="18" ry="16" fill="#d9c2a5" />
     <Pair><circle cx="38" cy="48" r="11" fill="#fff" /><circle cx="38" cy="48" r="11" fill="none" stroke="#eacb60" strokeWidth="3" /></Pair>

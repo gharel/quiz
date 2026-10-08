@@ -2,7 +2,7 @@ import { Cheeks, Eyes, INK, Nose, Pair, Smile } from './parts';
 
 export const licorne = () => (
   <>
-    <Pair><path d="M30 34 L26 14 L42 28Z" fill="#fff" stroke="#e3d8f3" strokeWidth="2" strokeLinejoin="round" /><path d="M31 29 L29 19 L37 26Z" fill="#f6c3d2" /></Pair>
+    <Pair><path d="M30 46 L26 14 L47 33Z" fill="#fff" stroke="#e3d8f3" strokeWidth="2" strokeLinejoin="round" /><path d="M31 38 L28.5 21 L40 31Z" fill="#f6c3d2" /></Pair>
     <path d="M50 4 L57 32 H43Z" fill="#eacb60" />
     <path d="M45.5 24 L54 21 M44.5 28 L55.5 25 M47 18 L53 16" stroke="#c99a1d" strokeWidth="1.6" strokeLinecap="round" />
     <ellipse cx="50" cy="58" rx="28" ry="27" fill="#fff" stroke="#e3d8f3" strokeWidth="2" />
@@ -59,7 +59,7 @@ export const lion = () => (
 
 export const tigre = () => (
   <>
-    <Pair><circle cx="28" cy="34" r="9" fill="#f08a3e" /><circle cx="28" cy="34" r="4.5" fill="#fff" /></Pair>
+    <Pair><circle cx="30" cy="37" r="9" fill="#f08a3e" /><circle cx="30" cy="37" r="4.5" fill="#fff" /></Pair>
     <ellipse cx="50" cy="58" rx="28" ry="26" fill="#f08a3e" />
     <path d="M44 33 L50 41 L56 33 M38 36 L43 42 M62 36 L57 42 M22 52 L31 54 M23 60 L31 59 M78 52 L69 54 M77 60 L69 59" stroke={INK} strokeWidth="3" strokeLinecap="round" fill="none" />
     <ellipse cx="40" cy="70" rx="11" ry="9" fill="#fff" /><ellipse cx="60" cy="70" rx="11" ry="9" fill="#fff" />
@@ -71,7 +71,7 @@ export const tigre = () => (
 
 export const panda = () => (
   <>
-    <Pair><circle cx="28" cy="34" r="10" fill={INK} /></Pair>
+    <Pair><circle cx="30" cy="37" r="10" fill={INK} /></Pair>
     <ellipse cx="50" cy="58" rx="28" ry="26" fill="#fff" stroke="#e9ecef" strokeWidth="2" />
     <ellipse cx="38" cy="54" rx="8" ry="10" transform="rotate(25 38 54)" fill={INK} />
     <ellipse cx="62" cy="54" rx="8" ry="10" transform="rotate(-25 62 54)" fill={INK} />
