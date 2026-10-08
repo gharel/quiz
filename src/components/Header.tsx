@@ -22,11 +22,16 @@ export function BrandLogo({ height = 36 }: { height?: number }) {
   );
 }
 
+/** Signature commune aux outils Skazy Formation : logo, filet, pastille (le favicon), nom de l'outil. */
 export function Logo() {
   return (
     <a href={href.join()} className="logo" aria-label="Skazy Formation — Quiz, accueil">
       <BrandLogo />
-      <span className="logo-app">Quiz</span>
+      <span className="logo-sep" aria-hidden="true" />
+      <span className="logo-app">
+        <img src={`${import.meta.env.BASE_URL}favicon.svg`} width={28} height={28} alt="" />
+        <span className="logo-app-name">Quiz</span>
+      </span>
     </a>
   );
 }

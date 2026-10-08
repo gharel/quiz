@@ -1,4 +1,4 @@
-# Quiz — Skazy Formation
+# Quiz · Skazy Formation
 
 Application de quiz interactifs pour tester les connaissances des apprenants, inspirée du mode « quiz classique » de Kahoot, aux couleurs du design system **Skazy Formation**.
 
@@ -42,6 +42,8 @@ npm run build    # build de production dans dist/
 Pile : React, TypeScript, Vite, Web Audio API (sons synthétisés, sans fichier audio), MQTT.js, Lucide. Le déploiement sur GitHub Pages est automatique à chaque push sur `main` (`.github/workflows/deploy.yml`).
 
 Les quiz d’exemple sont dans `src/data/quizzes/`. Les jetons de couleurs, typographie (Georama), rayons et ombres proviennent du design system Skazy Formation (`src/styles/tokens.css`).
+
+Chaque outil Skazy Formation a sa couleur de l’arc-en-ciel, dans cet ordre : Quiz rouge, Mini-jeux orange, Vigie jaune, Atelier d’exercices IA vert, Comprendre l'IA bleu, Prompthèque violet. Le favicon (`public/favicon.svg`, pictogramme blanc sur un dégradé rouge) sert aussi de pastille dans le bandeau : logo Skazy Formation, filet, pastille, nom de l’outil (`Logo` dans `src/components/Header.tsx`). Titre d’onglet : « Page · Quiz · Skazy Formation » (accueil : « Quiz · Skazy Formation »), fixé pour chaque vue dans `src/App.tsx`.
 
 ## Droits
 
