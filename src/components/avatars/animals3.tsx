@@ -58,7 +58,7 @@ export const zebre = () => (
 
 export const raton = () => (
   <>
-    <Pair><path d="M25 47 L26 18 L47 37Z" fill="#868e96" /><path d="M29 38 L29.5 25 L39 33Z" fill="#f1f3f5" /></Pair>
+    <Pair><path d="M25 47 L26 18 L47 37Z" fill="#868e96" /><path d="M28.7 38.9 L29.1 25.4 L37.7 33.2Z" fill="#f1f3f5" /></Pair>
     <ellipse cx="50" cy="58" rx="29" ry="25" fill="#868e96" />
     <path d="M20 54 Q34 44 46 52 Q50 56 54 52 Q66 44 80 54 Q70 64 56 60 Q50 58 44 60 Q30 64 20 54Z" fill={INK} />
     <ellipse cx="50" cy="70" rx="14" ry="9" fill="#f1f3f5" />
@@ -70,7 +70,7 @@ export const raton = () => (
 
 export const loup = () => (
   <>
-    <Pair><path d="M24 42 L24 12 L44 30Z" fill="#6c7883" /><path d="M28 36 L28 22 L38 30Z" fill="#dee2e6" /></Pair>
+    <Pair><path d="M24 42 L24 12 L44 30Z" fill="#6c7883" /><path d="M27.4 33.4 L27.4 19.6 L37.8 29Z" fill="#dee2e6" /></Pair>
     <path d="M22 46 Q22 30 50 30 Q78 30 78 46 Q74 72 50 82 Q26 72 22 46Z" fill="#6c7883" />
     <path d="M36 58 Q50 54 64 58 Q60 78 50 82 Q40 78 36 58Z" fill="#dee2e6" />
     <Eyes y={50} dx={12} color="#1a1a1a" />
