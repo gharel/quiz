@@ -2,16 +2,16 @@ import { Cheeks, Eyes, INK, Nose, Pair, Smile } from './parts';
 
 export const licorne = () => (
   <>
-    <Pair><path d="M30 46 L26 14 L47 33Z" fill="#fff" stroke="#e3d8f3" strokeWidth="2" strokeLinejoin="round" /><path d="M31 38 L28.5 21 L40 31Z" fill="#f6c3d2" /></Pair>
+    <Pair><ellipse cx="32" cy="25" rx="7.5" ry="14" transform="rotate(-18 32 25)" fill="#fff" stroke="#e3d8f3" strokeWidth="2" /><ellipse cx="32" cy="24" rx="3.6" ry="8.5" transform="rotate(-18 32 24)" fill="#f6c3d2" /></Pair>
     <path d="M50 4 L57 32 H43Z" fill="#eacb60" />
     <path d="M45.5 24 L54 21 M44.5 28 L55.5 25 M47 18 L53 16" stroke="#c99a1d" strokeWidth="1.6" strokeLinecap="round" />
     <ellipse cx="50" cy="58" rx="28" ry="27" fill="#fff" stroke="#e3d8f3" strokeWidth="2" />
+    <Cheeks y={63} dx={21} />
     <circle cx="26" cy="36" r="8" fill="#e78da5" /><circle cx="21" cy="48" r="7" fill="#a07bd4" /><circle cx="22" cy="60" r="6" fill="#5daba0" />
     <circle cx="34" cy="31" r="7" fill="#a07bd4" /><circle cx="42" cy="30" r="5" fill="#5daba0" />
     <ellipse cx="50" cy="72" rx="15" ry="10" fill="#fce8ee" />
     <circle cx="45" cy="72" r="1.8" fill="#c4556e" /><circle cx="55" cy="72" r="1.8" fill="#c4556e" />
     <Eyes y={54} dx={11} />
-    <Cheeks y={63} dx={21} />
   </>
 );
 
@@ -85,7 +85,7 @@ export const panda = () => (
 
 export const renard = () => (
   <>
-    <Pair><path d="M24 44 L22 14 L44 32Z" fill="#e8743b" /><path d="M24 22 L22 14 L30 20Z" fill={INK} /><path d="M27 36 L26 22 L37 31Z" fill="#fbe9e0" /></Pair>
+    <Pair><path d="M24 44 L22 14 L44 32Z" fill="#e8743b" /><path d="M24 22 L22 14 L30 20Z" fill={INK} /><path d="M26.7 33.1 L26 23 L35.5 29.4Z" fill="#fbe9e0" /></Pair>
     <path d="M22 44 Q22 30 50 30 Q78 30 78 44 L66 76 Q50 86 34 76Z" fill="#e8743b" />
     <path d="M22 44 Q34 62 50 66 Q66 62 78 44 L66 76 Q50 86 34 76Z" fill="#fff" />
     <Eyes y={52} dx={12} />
@@ -95,7 +95,7 @@ export const renard = () => (
 
 export const chat = () => (
   <>
-    <Pair><path d="M24 46 L26 16 L46 32Z" fill="#8e9aa6" /><path d="M29 38 L30 24 L40 32Z" fill="#f6c3d2" /></Pair>
+    <Pair><path d="M24 46 L26 16 L46 32Z" fill="#8e9aa6" /><path d="M27.8 39.5 L29 22.7 L40.2 31.7Z" fill="#f6c3d2" /></Pair>
     <ellipse cx="50" cy="58" rx="28" ry="25" fill="#8e9aa6" />
     <path d="M45 36 L47 42 M50 34 V41 M55 36 L53 42" stroke="#6c7883" strokeWidth="2.4" strokeLinecap="round" />
     <Eyes y={55} dx={11} />
