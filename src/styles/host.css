@@ -42,3 +42,4 @@
   .lobby-join { align-items: center; }
   .lobby-players .section-head .btn { width: 100%; }
 }
+:root[data-theme='dark'] .player-chip { background: #353535; }
