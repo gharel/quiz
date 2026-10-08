@@ -27,4 +27,9 @@ export default quiz('webmarketing-reseaux-sociaux', 'webmarketing', 'Webmarketin
     'Publier deux fois le même contenu',
     'Valider une campagne en deux étapes',
   ]),
+  qcm('Que signifie l’acronyme KPI ?', ['Key Promotion Index', '*Key Performance Indicator', 'Known Profit Increase', 'Keyword Position Index']),
+  vf('Le référencement naturel (SEO) produit des effets immédiats dès la mise en ligne.', false, {
+    explanation: 'Le SEO est un travail de fond : ses effets se mesurent sur plusieurs semaines ou plusieurs mois.',
+  }),
+  saisie('Comment appelle-t-on le texte cliquable d’un lien hypertexte ?', ['ancre', 'texte d’ancre', 'l’ancre', 'anchor']),
 ]);

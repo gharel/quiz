@@ -14,6 +14,8 @@ import './styles/editor.css';
 import './styles/results.css';
 import './styles/host.css';
 import './styles/host2.css';
+import './styles/avatars.css';
+import './styles/select.css';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

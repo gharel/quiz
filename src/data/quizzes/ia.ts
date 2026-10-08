@@ -25,4 +25,10 @@ export default quiz('ia-generative-quotidien', 'ia', 'L’IA générative au quo
   ]),
   qcm('Quel outil est développé par Anthropic ?', ['Gemini', 'Copilot', '*Claude', 'Mistral'], {}),
   vf('Une IA générative peut produire des contenus différents à partir du même prompt.', true),
+  qcm('Que signifie le « G » de GPT ?', ['Global', '*Generative', 'Graphic', 'Guided'], {
+    explanation: 'GPT : Generative Pre-trained Transformer.',
+  }),
+  saisie('Comment appelle-t-on le texte que l’on soumet à une IA générative pour obtenir une réponse ?', [
+    'prompt', 'un prompt', 'invite', 'requête',
+  ]),
 ]);

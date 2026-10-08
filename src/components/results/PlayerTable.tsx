@@ -4,6 +4,7 @@ import { answerText } from '../../lib/quizMeta';
 import { ranking } from '../../lib/stats';
 import type { Session } from '../../lib/types';
 import { formatNumber, formatSeconds, percent } from '../../lib/util';
+import { Avatar } from '../avatars/Avatar';
 
 export function PlayerTable({ session: s }: { session: Session }) {
   const [open, setOpen] = useState<string | null>(null);
@@ -16,7 +17,7 @@ export function PlayerTable({ session: s }: { session: Session }) {
           <li key={p.id} className="panel player-row">
             <button type="button" className="player-head" aria-expanded={isOpen} onClick={() => setOpen(isOpen ? null : p.id)}>
               <span className={`rank rank-${p.rank}`}>{p.rank}</span>
-              <span className="player-name">{p.name}</span>
+              <span className="player-name">{p.avatar && <Avatar id={p.avatar} size={32} />}{p.name}</span>
               <span className="player-score">{formatNumber(p.score)} pts</span>
               <span className="player-rate">{p.correct}/{n} · {percent(p.correct, n)} %</span>
               <ChevronDown className="player-chevron" aria-hidden="true" />

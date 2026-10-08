@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import type { AnswerValue } from '../lib/types';
 import { uid } from '../lib/util';
+import { randomAvatar } from '../components/avatars/Avatar';
 import { topics, type PublicState } from '../live/protocol';
 import { brokerFromPin, openLink, type Link } from '../live/transport';
 
@@ -24,6 +25,8 @@ export function usePlayer(pin: string) {
   const [status, setStatus] = useState<PlayerStatus>('connecting');
   const [state, setState] = useState<PublicState | null>(null);
   const [name, setName] = useState('');
+  const [avatar, setAvatarState] = useState(() => randomAvatar());
+  const avatarRef = useRef(avatar);
   const [answers, setAnswers] = useState<Record<number, AnswerValue>>({});
   const [deadline, setDeadline] = useState<number | null>(null);
   const link = useRef<Link | null>(null);
@@ -70,7 +73,7 @@ export function usePlayer(pin: string) {
   // Renvoie l'inscription tant que l'animateur ne l'a pas prise en compte
   useEffect(() => {
     if (!nameRef.current || joined || kicked || !link.current || status !== 'online') return;
-    const send = () => link.current?.publish(topics(pin).inbox, { t: 'join', pid, name: nameRef.current });
+    const send = () => link.current?.publish(topics(pin).inbox, { t: 'join', pid, name: nameRef.current, avatar: avatarRef.current });
     send();
     const id = window.setInterval(send, 2500);
     return () => window.clearInterval(id);
@@ -80,6 +83,13 @@ export function usePlayer(pin: string) {
     nameRef.current = n.trim().slice(0, 20);
     setName(nameRef.current);
   }, []);
+
+  /** Change d'animal (avant ou après l'inscription). */
+  const setAvatar = useCallback((a: string) => {
+    avatarRef.current = a;
+    setAvatarState(a);
+    if (nameRef.current && link.current) link.current.publish(topics(pin).inbox, { t: 'join', pid, name: nameRef.current, avatar: a });
+  }, [pin, pid]);
 
   const answer = useCallback((value: AnswerValue) => {
     if (!state || state.phase !== 'question' || answers[state.qi] !== undefined) return;
@@ -92,5 +102,5 @@ export function usePlayer(pin: string) {
     link.current?.publish(topics(pin).inbox, { t: 'leave', pid });
   }, [pin, pid]);
 
-  return { pid, status, state, name, joined, kicked, answers, deadline, join, answer, leave };
+  return { pid, status, state, name, avatar, joined, kicked, answers, deadline, join, setAvatar, answer, leave };
 }

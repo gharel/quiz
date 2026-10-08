@@ -1,12 +1,15 @@
 .session-list { list-style: none; display: flex; flex-direction: column; gap: var(--space-3); }
-.session-row {
-  position: relative; display: grid; grid-template-columns: minmax(0, 1fr) auto auto; align-items: center; gap: var(--space-4);
-  padding: var(--space-4) var(--space-5) var(--space-4) calc(var(--space-5) + 6px); background: var(--surface);
-  border: 1px solid var(--border); border-radius: var(--radius-xl); color: inherit; text-decoration: none !important; overflow: hidden;
-  transition: transform var(--t-fast), box-shadow var(--t-fast);
+.session-item {
+  position: relative; display: flex; align-items: center; background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-xl); overflow: hidden; transition: transform var(--t-fast), box-shadow var(--t-fast);
 }
-:root[data-theme='light'] .session-row { box-shadow: var(--shadow-sm); border-color: transparent; }
-.session-row:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+:root[data-theme='light'] .session-item { box-shadow: var(--shadow-sm); border-color: transparent; }
+.session-item:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.session-row {
+  flex: 1; min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr) auto auto; align-items: center; gap: var(--space-4);
+  padding: var(--space-4) var(--space-2) var(--space-4) calc(var(--space-5) + 6px); color: inherit; text-decoration: none !important;
+}
+.session-export { margin-right: var(--space-3); color: var(--brand-text); flex-shrink: 0; }
 .session-bar { position: absolute; left: 0; top: 0; bottom: 0; width: 6px; background: var(--cat); }
 .session-main { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-2); min-width: 0; }
 .session-title { font-size: var(--text-md); color: var(--text-strong); line-height: 1.35; }
@@ -18,7 +21,8 @@
 .session-rate span { font-size: var(--text-xs); color: var(--text-muted); }
 .session-chevron { width: 20px; height: 20px; color: var(--text-muted); }
 @media (max-width: 560px) {
-  .session-row { grid-template-columns: minmax(0, 1fr) auto; padding-right: var(--space-4); }
+  .session-row { grid-template-columns: minmax(0, 1fr) auto; padding-right: var(--space-1); }
+  .session-export { margin-right: var(--space-2); }
   .session-chevron { display: none; }
 }
 

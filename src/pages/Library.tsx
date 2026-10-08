@@ -2,6 +2,7 @@ import { Plus, Search, SearchX, Upload } from 'lucide-react';
 import { useMemo, useRef, useState } from 'react';
 import { CategoryFilter } from '../components/CategoryFilter';
 import { QuizCard } from '../components/QuizCard';
+import { Select } from '../components/Select';
 import { toast } from '../components/Toast';
 import { href, navigate } from '../lib/router';
 import { allQuizzes, getCategory, useStore } from '../lib/store';
@@ -73,14 +74,18 @@ export function Library() {
           <span className="sr-only">Rechercher un quiz</span>
           <input className="input" type="search" placeholder="Rechercher un quiz…" value={query} onChange={(e) => setQuery(e.target.value)} />
         </label>
-        <label className="toolbar-sort">
-          <span className="sr-only">Trier</span>
-          <select className="select" value={sort} onChange={(e) => setSort(e.target.value as Sort)}>
-            <option value="recent">Plus récents</option>
-            <option value="title">Titre (A à Z)</option>
-            <option value="questions">Nombre de questions</option>
-          </select>
-        </label>
+        <div className="toolbar-sort">
+          <Select<Sort>
+            label="Trier les quiz"
+            value={sort}
+            onChange={setSort}
+            options={[
+              { value: 'recent', label: 'Plus récents' },
+              { value: 'title', label: 'Titre (A à Z)' },
+              { value: 'questions', label: 'Nombre de questions' },
+            ]}
+          />
+        </div>
       </div>
 
       <CategoryFilter categories={categories} total={quizzes.length} value={cat} onChange={setCat} />

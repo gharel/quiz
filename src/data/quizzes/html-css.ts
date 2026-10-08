@@ -22,4 +22,10 @@ export default quiz('html-css-fondamentaux', 'dev', 'HTML & CSS : les fondamenta
   saisie('Quelle balise contient le titre affiché dans l’onglet du navigateur ?', ['title', '<title>'], {
     explanation: 'La balise <title>, placée dans le <head>.',
   }),
+  qcm('Quelle unité CSS est relative à la taille de police de l’élément racine ?', ['em', '*rem', 'px', 'vh'], {
+    explanation: 'rem = root em : relatif à la taille de police de l’élément <html>.',
+  }),
+  vf('La balise <br> nécessite une balise fermante </br>.', false, {
+    explanation: '<br> est un élément vide : il n’a pas de balise fermante.',
+  }),
 ]);

@@ -4,7 +4,7 @@ import { sfx } from '../audio/sfx';
 import { unlockAudio } from '../audio/engine';
 import { saveSession } from '../lib/store';
 import type { Quiz } from '../lib/types';
-import { topics, type PlayerMessage } from '../live/protocol';
+import { topics, type PlayerMessage, type PublicState } from '../live/protocol';
 import { BROKERS, makePin, openLink, type Link } from '../live/transport';
 import { HostEngine, type HostOptions } from './hostEngine';
 
@@ -41,7 +41,13 @@ export function useHost(quiz: Quiz, opts: HostOptions) {
       const i = (from + k) % BROKERS.length;
       try {
         const l = await openLink(i, (s) => setStatus(s === 'online' ? 'online' : s === 'offline' ? 'offline' : 'connecting'));
-        const p = makePin(i);
+        let p = makePin(i);
+        for (let tries = 0; tries < 6; tries++) {
+          const prev = (await l.probe(topics(p).state, 900)) as PublicState | null;
+          const busy = prev && prev.phase !== 'closed' && Date.now() - (prev.ts ?? 0) < 6 * 3600 * 1000;
+          if (!busy) break;
+          p = makePin(i);
+        }
         pinRef.current = p;
         link.current = l;
         l.subscribe(topics(p).inbox, (_t, data) => {

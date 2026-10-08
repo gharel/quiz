@@ -55,7 +55,7 @@ function HostGame({ quiz }: { quiz: Quiz }) {
     return () => window.removeEventListener('keydown', onKey);
   }, [e, h]);
 
-  const info = e.phase === 'lobby' ? <span className="stage-title">{quiz.title}</span> : <span>Code {h.pin.slice(0, 3)} {h.pin.slice(3)} · {e.players.size} joueurs</span>;
+  const info = e.phase === 'lobby' ? <span className="stage-title">{quiz.title}</span> : <span>Code {h.pin} · {e.players.size} joueurs</span>;
   const leave = () => navigate(href.quiz(quiz.id));
 
   return (

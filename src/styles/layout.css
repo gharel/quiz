@@ -40,13 +40,23 @@
   }
   .nav-tab svg { width: 22px; height: 22px; }
   .nav-tab[aria-current='page'] { color: var(--brand-text); }
-  .app-main { padding-bottom: calc(64px + env(safe-area-inset-bottom)); }
-  .app-main.no-nav { padding-bottom: 0; }
+  .app:not(.app-immersive) { padding-bottom: calc(60px + env(safe-area-inset-bottom)); }
 }
 
 @media (max-width: 360px) {
   .logo-app { display: none; }
 }
 
-.app-footer { border-top: 1px solid var(--border); padding: var(--space-6) 0; color: var(--text-muted); font-size: var(--text-sm); }
-.app-footer .container { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-2) var(--space-6); }
+.app { min-height: 100dvh; display: flex; flex-direction: column; }
+.app-main { flex: 1; }
+.app-footer { border-top: 1px solid var(--border); background: var(--bg-subtle); padding: var(--space-6) 0; color: var(--text-muted); font-size: var(--text-sm); }
+.footer-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-3) var(--space-6); }
+.footer-legal { display: flex; flex-direction: column; gap: var(--space-1); max-width: 72ch; }
+.footer-legal p:first-child { font-weight: 600; color: var(--text-secondary); }
+.app-footer .btn { color: var(--text-secondary); }
+
+/* Logo SVG officiel : bascule claire / sombre */
+.brand-logo { display: block; height: auto; max-width: none; }
+.brand-logo-dark, :root[data-theme='dark'] .brand-logo-light { display: none; }
+:root[data-theme='dark'] .brand-logo-dark { display: block; }
+@media (max-width: 720px) { .logo .brand-logo { width: 97px; } }

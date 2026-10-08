@@ -15,6 +15,8 @@ export interface Link {
   publish: (topic: string, data: unknown, retain?: boolean) => void;
   subscribe: (topic: string, onMessage: (topic: string, data: unknown) => void) => void;
   clearRetained: (topic: string) => void;
+  /** Écoute brièvement un sujet et renvoie le dernier message conservé (ou null). */
+  probe: (topic: string, ms: number) => Promise<unknown>;
   close: () => void;
 }
 
@@ -72,13 +74,24 @@ export async function openLink(index: number, onStatus: (s: LinkStatus) => void,
       client.subscribe(topic, { qos: 1 });
     },
     clearRetained: (topic) => client.publish(topic, '', { qos: 1, retain: true }),
+    probe: (topic, ms) =>
+      new Promise((resolve) => {
+        let got: unknown = null;
+        handlers.set(topic, (_t, d) => (got = d));
+        client.subscribe(topic, { qos: 0 });
+        setTimeout(() => {
+          client.unsubscribe(topic);
+          handlers.delete(topic);
+          resolve(got);
+        }, ms);
+      }),
     close: () => client.end(false),
   };
 }
 
-/** Le code de partie : 6 chiffres, le premier indique le relais (1 à 4). */
+/** Le code de partie : 4 chiffres, le premier indique le relais (1 à 4). */
 export function makePin(brokerIndex: number): string {
-  const rest = String(Math.floor(Math.random() * 100000)).padStart(5, '0');
+  const rest = String(Math.floor(Math.random() * 1000)).padStart(3, '0');
   return `${brokerIndex + 1}${rest}`;
 }
 
@@ -86,4 +99,4 @@ export function brokerFromPin(pin: string): number {
   return Number(pin[0]) - 1;
 }
 
-export const isValidPin = (pin: string) => /^[1-4]\d{5}$/.test(pin);
+export const isValidPin = (pin: string) => /^[1-4]\d{3}$/.test(pin);

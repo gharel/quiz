@@ -36,4 +36,13 @@ export default quiz('cybersecurite-essentiels', 'web', 'Les essentiels de la cyb
     '*cheval-lagon-tapioca-orange',
     'P@ssw0rd',
   ], { explanation: 'Une phrase de passe longue et imprévisible résiste mieux qu’un mot court « complexe ».' }),
+  vf('Le Wi-Fi public d’un café est aussi sûr que votre réseau personnel.', false, {
+    explanation: 'Sur un réseau public, évitez les opérations sensibles ou utilisez un VPN.',
+  }),
+  qcm('Que signifie l’authentification à deux facteurs ?', [
+    'Utiliser deux mots de passe différents',
+    '*Combiner deux preuves d’identité de nature différente',
+    'Se connecter depuis deux appareils',
+    'Changer de mot de passe deux fois par an',
+  ], { explanation: 'Par exemple un mot de passe (ce que vous savez) et un code reçu sur votre téléphone (ce que vous possédez).' }),
 ]);
