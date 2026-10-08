@@ -33,7 +33,7 @@ export const elephant = () => (
 
 export const girafe = () => (
   <>
-    <path d="M38 30 V16 M62 30 V16" stroke="#c99a1d" strokeWidth="4" strokeLinecap="round" />
+    <path d="M38 36 V16 M62 36 V16" stroke="#c99a1d" strokeWidth="4" strokeLinecap="round" />
     <circle cx="38" cy="14" r="4.5" fill="#8a5a33" /><circle cx="62" cy="14" r="4.5" fill="#8a5a33" />
     <Pair><ellipse cx="25" cy="40" rx="10" ry="5" transform="rotate(-20 25 40)" fill="#eacb60" /></Pair>
     <ellipse cx="50" cy="54" rx="24" ry="28" fill="#eacb60" />
@@ -46,7 +46,7 @@ export const girafe = () => (
 
 export const zebre = () => (
   <>
-    <path d="M38 30 Q42 8 50 6 Q58 8 62 30Z" fill={INK} />
+    <path d="M37 37 Q41 8 50 6 Q59 8 63 37Z" fill={INK} />
     <Pair><ellipse cx="28" cy="30" rx="6" ry="13" transform="rotate(-20 28 30)" fill="#fff" stroke={INK} strokeWidth="2" /></Pair>
     <ellipse cx="50" cy="56" rx="23" ry="29" fill="#fff" stroke={INK} strokeWidth="2" />
     <path d="M30 42 Q38 44 40 38 M70 42 Q62 44 60 38 M28 54 Q35 56 38 51 M72 54 Q65 56 62 51 M46 32 Q50 40 54 32" stroke={INK} strokeWidth="3.2" fill="none" strokeLinecap="round" />
@@ -58,7 +58,7 @@ export const zebre = () => (
 
 export const raton = () => (
   <>
-    <Pair><path d="M25 47 L26 18 L47 37Z" fill="#868e96" /><path d="M28.7 38.9 L29.1 25.4 L37.7 33.2Z" fill="#f1f3f5" /></Pair>
+    <Pair><path d="M27 48 L26 18 L47.5 38Z" fill="#868e96" /><path d="M30 37.2 L29.7 26.1 L37.2 33.1Z" fill="#f1f3f5" /></Pair>
     <ellipse cx="50" cy="58" rx="29" ry="25" fill="#868e96" />
     <path d="M20 54 Q34 44 46 52 Q50 56 54 52 Q66 44 80 54 Q70 64 56 60 Q50 58 44 60 Q30 64 20 54Z" fill={INK} />
     <ellipse cx="50" cy="70" rx="14" ry="9" fill="#f1f3f5" />
@@ -70,7 +70,7 @@ export const raton = () => (
 
 export const loup = () => (
   <>
-    <Pair><path d="M24 42 L24 12 L44 30Z" fill="#6c7883" /><path d="M27.4 33.4 L27.4 19.6 L37.8 29Z" fill="#dee2e6" /></Pair>
+    <Pair><path d="M25 44 L24 12 L44.5 33Z" fill="#6c7883" /><path d="M28 32.5 L27.7 20.6 L36 29.2Z" fill="#dee2e6" /></Pair>
     <path d="M22 46 Q22 30 50 30 Q78 30 78 46 Q74 72 50 82 Q26 72 22 46Z" fill="#6c7883" />
     <path d="M36 58 Q50 54 64 58 Q60 78 50 82 Q40 78 36 58Z" fill="#dee2e6" />
     <Eyes y={50} dx={12} color="#1a1a1a" />
