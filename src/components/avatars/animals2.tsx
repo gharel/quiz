@@ -3,10 +3,10 @@ import { Cheeks, Eyes, INK, Nose, Pair, Smile } from './parts';
 export const chien = () => (
   <>
     <ellipse cx="50" cy="56" rx="26" ry="27" fill="#d9a066" />
-    <Pair><ellipse cx="25" cy="50" rx="9" ry="19" transform="rotate(18 25 50)" fill="#8a5a33" /></Pair>
-    <ellipse cx="60" cy="48" rx="9" ry="8" fill="#f3d7b4" />
+    <Pair><ellipse cx="21" cy="50" rx="9" ry="19" transform="rotate(22 21 50)" fill="#8a5a33" /></Pair>
+    <ellipse cx="58.5" cy="47.5" rx="7.5" ry="7" fill="#f3d7b4" />
     <ellipse cx="50" cy="70" rx="14" ry="10" fill="#f3d7b4" />
-    <Eyes y={52} dx={11} />
+    <Eyes y={52} dx={10} />
     <Nose y={63} w={10} />
     <path d="M50 70 V73 M44 74 Q50 79 56 74" stroke={INK} strokeWidth="2" fill="none" strokeLinecap="round" />
     <path d="M48 76 Q50 84 53 76Z" fill="#e78da5" />
