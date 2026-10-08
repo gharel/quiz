@@ -18,7 +18,8 @@ export function parseHash(hash: string): Route {
   const parts = path.split('/').filter(Boolean).map(decodeURIComponent);
   const params = new URLSearchParams(query);
   const [a, b, c] = parts;
-  if (!a || a === 'bibliotheque') return { name: 'library' };
+  if (!a) return { name: 'join' };
+  if (a === 'bibliotheque') return { name: 'library' };
   if (a === 'quiz' && b && c === 'modifier') return { name: 'edit', id: b };
   if (a === 'quiz' && b) return { name: 'quiz', id: b };
   if (a === 'creer') return { name: 'edit' };
@@ -45,12 +46,12 @@ export function useRoute(): Route {
 }
 
 export const href = {
-  library: () => '#/',
+  library: () => '#/bibliotheque',
   quiz: (id: string) => `#/quiz/${encodeURIComponent(id)}`,
   edit: (id?: string) => (id ? `#/quiz/${encodeURIComponent(id)}/modifier` : '#/creer'),
   host: (id: string) => `#/direct/${encodeURIComponent(id)}`,
   solo: (id: string) => `#/solo/${encodeURIComponent(id)}`,
-  join: (code?: string) => (code ? `#/rejoindre/${code}` : '#/rejoindre'),
+  join: (code?: string) => (code ? `#/rejoindre/${code}` : '#/'),
   results: () => '#/resultats',
   result: (id: string) => `#/resultats/${encodeURIComponent(id)}`,
 };

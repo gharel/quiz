@@ -50,8 +50,8 @@
 .solo-name { width: 100%; max-width: 400px; text-align: left; }
 .stage-bar-sep { width: 1px; height: 20px; background: var(--border-strong); flex-shrink: 0; }
 @media (max-width: 640px) {
-  .stage-bar .logo-word, .stage-bar-sep { display: none; }
-  .stage-bar-info:not(:has(> :nth-child(3))) .logo-word { display: inline; }
+  .stage-bar .stage-logo, .stage-bar-sep { display: none; }
+  .stage-bar-info:not(:has(> :nth-child(3))) .stage-logo { display: block; }
 }
 
 /* Bilan */
@@ -92,3 +92,5 @@
 .player-qtext { font-size: clamp(1.125rem, 4.5vw, 1.5rem); font-weight: 800; color: var(--text-strong); line-height: 1.3; text-align: center; }
 .player-offline { margin: var(--space-3) var(--space-4) 0; }
 @media (max-width: 480px) { .join-card { padding: var(--space-6) var(--space-4); box-shadow: none; } }
+.gate { margin-top: var(--space-4); }
+.join-home { display: flex; align-items: center; justify-content: center; min-height: calc(100dvh - var(--header-height) - 220px); }

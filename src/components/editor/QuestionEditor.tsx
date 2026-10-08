@@ -4,6 +4,7 @@ import { convertQuestion } from '../../lib/editorModel';
 import { imageFileToDataUrl } from '../../lib/image';
 import { TIME_OPTIONS, TYPE_INFO } from '../../lib/quizMeta';
 import type { Question, QuestionType } from '../../lib/types';
+import { Select } from '../Select';
 import { toast } from '../Toast';
 import { AnswersEditor } from './AnswersEditor';
 
@@ -46,26 +47,33 @@ export function QuestionEditor({ q, index, count, error, showError, onChange, on
       </div>
 
       <div className="ed-grid">
-        <label className="field">
-          <span className="field-label">Type de question</span>
-          <select className="select" value={q.type} onChange={(e) => onChange(convertQuestion(q, e.target.value as QuestionType))}>
-            {(Object.keys(TYPE_INFO) as QuestionType[]).map((t) => <option key={t} value={t}>{TYPE_INFO[t].label} — {TYPE_INFO[t].hint.toLowerCase()}</option>)}
-          </select>
-        </label>
-        <label className="field">
-          <span className="field-label">Temps pour répondre</span>
-          <select className="select" value={q.time} onChange={(e) => set({ time: Number(e.target.value) })}>
-            {TIME_OPTIONS.map((t) => <option key={t} value={t}>{t < 60 ? `${t} secondes` : `${t / 60} min`}</option>)}
-          </select>
-        </label>
-        <label className="field">
-          <span className="field-label">Points</span>
-          <select className="select" value={q.points} onChange={(e) => set({ points: Number(e.target.value) as Question['points'] })}>
-            <option value={1}>Standard</option>
-            <option value={2}>Points doublés</option>
-            <option value={0}>Sans points</option>
-          </select>
-        </label>
+        <div className="field">
+          <span className="field-label" id={`${q.id}-type`}>Type de question</span>
+          <Select<QuestionType>
+            labelledBy={`${q.id}-type`}
+            value={q.type}
+            onChange={(t) => onChange(convertQuestion(q, t))}
+            options={(Object.keys(TYPE_INFO) as QuestionType[]).map((t) => ({ value: t, label: TYPE_INFO[t].label, hint: TYPE_INFO[t].hint }))}
+          />
+        </div>
+        <div className="field">
+          <span className="field-label" id={`${q.id}-time`}>Temps pour répondre</span>
+          <Select<number>
+            labelledBy={`${q.id}-time`}
+            value={q.time}
+            onChange={(time) => set({ time })}
+            options={TIME_OPTIONS.map((t) => ({ value: t, label: t < 60 ? `${t} secondes` : `${t / 60} min` }))}
+          />
+        </div>
+        <div className="field">
+          <span className="field-label" id={`${q.id}-pts`}>Points</span>
+          <Select<number>
+            labelledBy={`${q.id}-pts`}
+            value={q.points}
+            onChange={(p) => set({ points: p as Question['points'] })}
+            options={[{ value: 1, label: 'Standard' }, { value: 2, label: 'Points doublés' }, { value: 0, label: 'Sans points' }]}
+          />
+        </div>
       </div>
 
       <label className="field">

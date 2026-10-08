@@ -3,11 +3,13 @@ import { correctAnswerText } from '../lib/quizMeta';
 import { basePoints, isCorrect, shuffledIndexes, streakBonus } from '../lib/scoring';
 import type { AnswerRecord, AnswerValue, Question, Quiz, Session } from '../lib/types';
 import { uid } from '../lib/util';
+import { isAvatar } from '../components/avatars/Avatar';
 import type { LivePhase, PlayerMessage, PlayerOutcome, PublicState } from '../live/protocol';
 
 export interface HostPlayer {
   id: string;
   name: string;
+  avatar: string;
   score: number;
   streak: number;
   left: boolean;
@@ -63,18 +65,21 @@ export class HostEngine {
   }
 
   /** Traite un message joueur. Renvoie un évènement utile à l'interface. */
-  receive(msg: PlayerMessage, now = Date.now()): 'joined' | 'answered' | 'left' | null {
+  receive(msg: PlayerMessage, now = Date.now()): 'joined' | 'updated' | 'answered' | 'left' | null {
     if (!msg || typeof msg !== 'object' || typeof msg.pid !== 'string') return null;
     if (this.kicked.has(msg.pid)) return null;
     if (msg.t === 'join') {
+      const avatar = isAvatar(msg.avatar) ? msg.avatar : 'licorne';
       const existing = this.players.get(msg.pid);
       if (existing) {
+        const changed = existing.left || existing.avatar !== avatar;
         existing.left = false;
-        return null;
+        existing.avatar = avatar;
+        return changed ? 'updated' : null;
       }
       if (this.phase === 'podium' || this.phase === 'closed') return null;
       const name = this.uniqueName(String(msg.name || 'Joueur').trim().slice(0, 20) || 'Joueur');
-      this.players.set(msg.pid, { id: msg.pid, name, score: 0, streak: 0, left: false, answers: [] });
+      this.players.set(msg.pid, { id: msg.pid, name, avatar, score: 0, streak: 0, left: false, answers: [] });
       return 'joined';
     }
     const p = this.players.get(msg.pid);
@@ -165,9 +170,9 @@ export class HostEngine {
   /** État public à diffuser aux joueurs. */
   snapshot(now = Date.now()): PublicState {
     this.seq++;
-    const roster: Record<string, string> = {};
-    this.players.forEach((p) => (roster[p.id] = p.name));
-    const s: PublicState = { v: 1, gid: this.gid, seq: this.seq, phase: this.phase, title: this.quiz.title, qi: this.qi, qn: this.questions.length, roster };
+    const roster: PublicState['roster'] = {};
+    this.players.forEach((p) => (roster[p.id] = { name: p.name, avatar: p.avatar }));
+    const s: PublicState = { v: 1, gid: this.gid, seq: this.seq, ts: now, phase: this.phase, title: this.quiz.title, qi: this.qi, qn: this.questions.length, roster };
     if (this.phase === 'intro' || this.phase === 'question' || this.phase === 'reveal') s.q = this.play[this.qi];
     if (this.phase === 'question') {
       s.endsIn = Math.max(0, this.deadline - now);
@@ -178,7 +183,7 @@ export class HostEngine {
       s.explanation = this.question.explanation;
     }
     if (['reveal', 'scoreboard', 'podium'].includes(this.phase)) s.results = this.outcomes;
-    if (this.phase === 'scoreboard' || this.phase === 'podium') s.top = this.ranking().slice(0, 5).map((p) => ({ id: p.id, name: p.name, score: p.score }));
+    if (this.phase === 'scoreboard' || this.phase === 'podium') s.top = this.ranking().slice(0, 5).map((p) => ({ id: p.id, name: p.name, avatar: p.avatar, score: p.score }));
     if (this.kicked.size) s.kicked = [...this.kicked];
     return s;
   }
@@ -192,7 +197,7 @@ export class HostEngine {
       quiz: { ...this.quiz, questions: this.questions.slice(0, this.phase === 'podium' ? undefined : this.qi + 1) },
       startedAt: this.startedAt || now,
       endedAt: now,
-      players: [...this.players.values()].map((p) => ({ id: p.id, name: p.name, score: p.score, answers: p.answers })),
+      players: [...this.players.values()].map((p) => ({ id: p.id, name: p.name, avatar: p.avatar, score: p.score, answers: p.answers })),
     };
   }
 }

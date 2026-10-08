@@ -4,6 +4,7 @@ import { sfx } from '../../audio/sfx';
 import type { HostEngine } from '../../game/hostEngine';
 import { href } from '../../lib/router';
 import { formatNumber } from '../../lib/util';
+import { Avatar } from '../avatars/Avatar';
 
 export function Scoreboard({ engine, onNext }: { engine: HostEngine; onNext: () => void }) {
   const top = engine.ranking().slice(0, 5);
@@ -16,6 +17,7 @@ export function Scoreboard({ engine, onNext }: { engine: HostEngine; onNext: () 
           return (
             <li key={p.id} className="score-row" style={{ animationDelay: `${i * 80}ms` }}>
               <span className={`rank rank-${i + 1}`}>{i + 1}</span>
+              <Avatar id={p.avatar} size={44} />
               <span className="score-name">{p.name}</span>
               {o?.streak >= 2 && <span className="score-streak">Série de {o.streak}</span>}
               <span className="score-pts">{formatNumber(p.score)}</span>
@@ -59,6 +61,7 @@ export function Podium({ engine, sessionHref }: { engine: HostEngine; sessionHre
         {order.map((i) =>
           top[i] ? (
             <div key={top[i].id} className={`podium-step step-${i + 1}${visible(i) ? ' on' : ''}`}>
+              <span className={`podium-avatar${visible(i) ? ' on' : ''}`}><Avatar id={top[i].avatar} size={i === 0 ? 96 : 72} /></span>
               <span className="podium-name">{visible(i) ? top[i].name : '…'}</span>
               <span className="podium-score">{visible(i) ? `${formatNumber(top[i].score)} pts` : ''}</span>
               <span className="podium-block"><span>{i + 1}</span></span>

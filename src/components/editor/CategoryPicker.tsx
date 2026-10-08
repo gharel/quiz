@@ -1,6 +1,7 @@
 import { Check, Plus } from 'lucide-react';
 import { useState } from 'react';
 import { CATEGORY_STYLES } from '../../data/categories';
+import { Select } from '../Select';
 import { addCategory, allCategories, useStore } from '../../lib/store';
 import type { CategoryColor } from '../../lib/types';
 
@@ -20,11 +21,11 @@ export function CategoryPicker({ value, onChange }: { value: string; onChange: (
 
   return (
     <div className="field">
-      <label className="field-label" htmlFor="quiz-category">Catégorie</label>
+      <span className="field-label" id="quiz-category-label">Catégorie</span>
       <div className="ed-cat-row">
-        <select id="quiz-category" className="select" value={value} onChange={(e) => onChange(e.target.value)}>
-          {cats.map((c) => <option key={c.id} value={c.id}>{c.label}</option>)}
-        </select>
+        <div className="ed-cat-select">
+          <Select<string> labelledBy="quiz-category-label" value={value} onChange={onChange} options={cats.map((c) => ({ value: c.id, label: c.label }))} />
+        </div>
         {!creating && (
           <button type="button" className="btn btn-ghost" onClick={() => setCreating(true)}><Plus aria-hidden="true" />Nouvelle catégorie</button>
         )}

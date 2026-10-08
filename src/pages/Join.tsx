@@ -1,7 +1,7 @@
-import { ArrowRight, LogIn } from 'lucide-react';
+import { ArrowRight, LogIn, Shuffle } from 'lucide-react';
+import { Avatar, avatarLabel } from '../components/avatars/Avatar';
 import { useState } from 'react';
 import { PlayerGame } from '../components/player/PlayerGame';
-import { StageBar } from '../components/game/StageBar';
 import { getPrefs, setPrefs } from '../lib/prefs';
 import { href, navigate } from '../lib/router';
 import { isValidPin } from '../live/transport';
@@ -13,22 +13,20 @@ export default function Join({ code }: { code?: string }) {
 }
 
 function CodeForm({ initial }: { initial: string }) {
-  const [value, setValue] = useState(initial.replace(/\D/g, '').slice(0, 6));
-  const [error, setError] = useState(initial && !isValidPin(initial) ? 'Ce code n’est pas valide : il comporte 6 chiffres.' : '');
+  const [value, setValue] = useState(initial.replace(/\D/g, '').slice(0, 4));
+  const [error, setError] = useState(initial && !isValidPin(initial) ? 'Ce code n’est pas valide : il comporte 4 chiffres.' : '');
 
   const submit = () => {
     const v = value.replace(/\D/g, '');
     if (!isValidPin(v)) {
-      setError('Ce code n’est pas valide : il comporte 6 chiffres, affichés sur l’écran de l’animateur.');
+      setError('Saisissez les 4 chiffres affichés sur l’écran de l’animateur.');
       return;
     }
     navigate(href.join(v));
   };
 
   return (
-    <div className="stage">
-      <StageBar sound={false} onQuit={() => navigate(href.library())} quitLabel="Retour à l’accueil" />
-      <div className="stage-body">
+    <div className="page container join-home">
         <form className="join-card appear" onSubmit={(e) => { e.preventDefault(); submit(); }} noValidate>
           <span className="join-icon"><LogIn aria-hidden="true" /></span>
           <h1 className="q-text">Rejoindre une partie</h1>
@@ -39,10 +37,10 @@ function CodeForm({ initial }: { initial: string }) {
               className="input input-xl join-pin"
               inputMode="numeric"
               autoComplete="one-time-code"
-              maxLength={7}
-              placeholder="000 000"
-              value={value.length > 3 ? `${value.slice(0, 3)} ${value.slice(3)}` : value}
-              onChange={(e) => { setValue(e.target.value.replace(/\D/g, '').slice(0, 6)); setError(''); }}
+              maxLength={4}
+              placeholder="0000"
+              value={value}
+              onChange={(e) => { setValue(e.target.value.replace(/\D/g, '').slice(0, 4)); setError(''); }}
               aria-invalid={!!error}
               aria-describedby={error ? 'pin-error' : undefined}
               autoFocus
@@ -51,12 +49,11 @@ function CodeForm({ initial }: { initial: string }) {
           </label>
           <button type="submit" className="btn btn-primary btn-lg btn-block">Valider<ArrowRight aria-hidden="true" /></button>
         </form>
-      </div>
     </div>
   );
 }
 
-export function NameForm({ pinLabel, onJoin }: { pinLabel: string; onJoin: (name: string) => void }) {
+export function NameForm({ pinLabel, onJoin, avatar, onPickAvatar }: { pinLabel: string; onJoin: (name: string) => void; avatar: string; onPickAvatar: () => void }) {
   const [name, setName] = useState(() => getPrefs().playerName);
   return (
     <form
@@ -69,8 +66,12 @@ export function NameForm({ pinLabel, onJoin }: { pinLabel: string; onJoin: (name
       }}
     >
       <p className="join-code">Partie {pinLabel}</p>
-      <h1 className="q-text">Votre pseudo</h1>
-      <p className="muted">Il s’affichera sur l’écran de la salle et dans le classement.</p>
+      <div className="avatar-pick">
+        <Avatar id={avatar} size={112} title={avatarLabel(avatar)} />
+        <button type="button" className="btn btn-ghost btn-sm" onClick={onPickAvatar}><Shuffle aria-hidden="true" />Changer d’animal</button>
+      </div>
+      <h1 className="q-text q-text-sm">Votre pseudo</h1>
+      <p className="muted">Votre animal et votre pseudo s’afficheront sur l’écran de la salle et dans le classement.</p>
       <label className="field join-field">
         <span className="field-label">Pseudo</span>
         <input className="input input-xl" maxLength={20} value={name} onChange={(e) => setName(e.target.value)} autoComplete="nickname" placeholder="Ex. : Marie" autoFocus />

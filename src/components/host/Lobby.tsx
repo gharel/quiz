@@ -5,6 +5,7 @@ import type { HostStatus } from '../../game/useHost';
 import { BROKERS } from '../../live/transport';
 import { plural } from '../../lib/util';
 import { QrCode } from '../QrCode';
+import { Avatar, avatarLabel } from '../avatars/Avatar';
 
 interface Props {
   title: string;
@@ -22,9 +23,9 @@ interface Props {
 }
 
 export function Lobby(p: Props) {
-  const joinShort = `${location.host}${location.pathname.replace(/\/$/, '')}/rejoindre`;
+  const joinShort = `${location.host}${location.pathname.replace(/\/$/, '')}`;
   const joinFull = `${appUrl()}${href.join(p.pin)}`;
-  const pinLabel = p.pin ? `${p.pin.slice(0, 3)} ${p.pin.slice(3)}` : '— — —';
+  const pinLabel = p.pin || '— — — —';
 
   return (
     <div className="lobby">
@@ -64,6 +65,7 @@ export function Lobby(p: Props) {
             <ul className="player-chips">
               {p.players.map((pl) => (
                 <li key={pl.id} className="player-chip appear">
+                  <Avatar id={pl.avatar} size={36} title={avatarLabel(pl.avatar)} />
                   <span>{pl.name}</span>
                   <button type="button" onClick={() => p.onKick(pl.id)} aria-label={`Exclure ${pl.name}`} title="Exclure"><X /></button>
                 </li>

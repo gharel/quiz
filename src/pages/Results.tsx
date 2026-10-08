@@ -1,12 +1,13 @@
-import { BarChart3, ChevronRight, Radio, Search, User, Users } from 'lucide-react';
+import { BarChart3, ChevronRight, Download, Radio, Search, User, Users } from 'lucide-react';
 import { useMemo, useState } from 'react';
 import { CategoryBadge, catVars } from '../components/CategoryBadge';
 import { CategoryFilter } from '../components/CategoryFilter';
 import { href } from '../lib/router';
 import { normalize } from '../lib/scoring';
-import { sessionStats } from '../lib/stats';
+import { sessionCsv, sessionsCsv, sessionStats } from '../lib/stats';
+import type { Session } from '../lib/types';
 import { getCategory, useStore } from '../lib/store';
-import { formatDateTime, plural } from '../lib/util';
+import { downloadFile, formatDateTime, plural, slugify } from '../lib/util';
 
 type Mode = '' | 'live' | 'solo';
 
@@ -32,6 +33,11 @@ export default function Results() {
     );
   }, [state, cat, mode, query]);
 
+  const exportAll = () =>
+    downloadFile(`resultats-quiz-${new Date().toISOString().slice(0, 10)}.csv`, sessionsCsv(list, (id) => getCategory(id, state).label), 'text/csv;charset=utf-8');
+  const exportOne = (s: Session) =>
+    downloadFile(`resultats-${slugify(s.quiz.title)}-${new Date(s.startedAt).toISOString().slice(0, 10)}.csv`, sessionCsv(s), 'text/csv;charset=utf-8');
+
   return (
     <div className="page container">
       <div className="page-head">
@@ -39,6 +45,11 @@ export default function Results() {
           <h1 className="page-title">Résultats</h1>
           <p className="page-sub">Retrouvez chaque partie jouée sur cet appareil : classement, réussite par question et réponses de chaque participant.</p>
         </div>
+        {list.length > 0 && (
+          <button type="button" className="btn btn-secondary" onClick={exportAll}>
+            <Download aria-hidden="true" />Exporter {list.length > 1 ? `les ${list.length} parties` : 'la partie'} (CSV)
+          </button>
+        )}
       </div>
 
       {state.sessions.length === 0 ? (
@@ -56,14 +67,11 @@ export default function Results() {
               <span className="sr-only">Rechercher un quiz</span>
               <input className="input" type="search" placeholder="Rechercher un quiz…" value={query} onChange={(e) => setQuery(e.target.value)} />
             </label>
-            <label className="toolbar-sort">
-              <span className="sr-only">Mode de jeu</span>
-              <select className="select" value={mode} onChange={(e) => setMode(e.target.value as Mode)}>
-                <option value="">Tous les modes</option>
-                <option value="live">En direct</option>
-                <option value="solo">En solo</option>
-              </select>
-            </label>
+            <div className="segmented" role="group" aria-label="Mode de jeu">
+              {([['', 'Tous'], ['live', 'En direct'], ['solo', 'En solo']] as [Mode, string][]).map(([v, l]) => (
+                <button key={v} type="button" aria-pressed={mode === v} onClick={() => setMode(v)}>{l}</button>
+              ))}
+            </div>
           </div>
           <CategoryFilter categories={categories} total={state.sessions.length} value={cat} onChange={setCat} />
           <p className="result-count muted small" aria-live="polite">{plural(list.length, 'partie', 'parties')}</p>
@@ -72,8 +80,8 @@ export default function Results() {
               const c = getCategory(s.quiz.category, state);
               const st = sessionStats(s);
               return (
-                <li key={s.id}>
-                  <a className="session-row cat" style={catVars(c.color)} href={href.result(s.id)}>
+                <li key={s.id} className="session-item cat" style={catVars(c.color)}>
+                  <a className="session-row" href={href.result(s.id)}>
                     <span className="session-bar" aria-hidden="true" />
                     <span className="session-main">
                       <CategoryBadge category={c} size="sm" />
@@ -90,6 +98,9 @@ export default function Results() {
                     </span>
                     <ChevronRight className="session-chevron" aria-hidden="true" />
                   </a>
+                  <button type="button" className="btn btn-icon session-export" onClick={() => exportOne(s)} title="Exporter cette partie (CSV)" aria-label={`Exporter les résultats de « ${s.quiz.title} » (CSV)`}>
+                    <Download />
+                  </button>
                 </li>
               );
             })}

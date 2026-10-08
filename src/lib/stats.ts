@@ -52,3 +52,17 @@ export function sessionCsv(s: Session): string {
   const key = ['', 'Bonne réponse', '', '', ''].concat(s.quiz.questions.map((q) => correctAnswerText(q)));
   return '﻿' + [head, ...rows, [], key].map((r) => r.map(csvCell).join(';')).join('\r\n');
 }
+
+/** Synthèse de plusieurs parties : une ligne par participant (CSV Excel). */
+export function sessionsCsv(sessions: Session[], categoryLabel: (id: string) => string): string {
+  const head = ['Date', 'Quiz', 'Catégorie', 'Mode', 'Rang', 'Participant', 'Score', 'Bonnes réponses', 'Questions', 'Réussite (%)'];
+  const rows: (string | number)[][] = [];
+  for (const s of sessions) {
+    const date = new Date(s.startedAt).toLocaleString('fr-FR');
+    for (const p of ranking(s)) {
+      const n = s.quiz.questions.length;
+      rows.push([date, s.quiz.title, categoryLabel(s.quiz.category), s.mode === 'live' ? 'En direct' : 'En solo', p.rank, p.name, p.score, p.correct, n, percent(p.correct, n)]);
+    }
+  }
+  return '\uFEFF' + [head, ...rows].map((r) => r.map(csvCell).join(';')).join('\r\n');
+}

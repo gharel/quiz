@@ -50,6 +50,7 @@ export interface AnswerRecord {
 export interface PlayerResult {
   id: string;
   name: string;
+  avatar?: string;
   score: number;
   answers: AnswerRecord[];
 }

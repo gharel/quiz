@@ -22,4 +22,7 @@ export default quiz('tableur-excel-sheets', 'bureautique', 'Excel & Google Sheet
   qcm('Quelles fonctions renvoient un nombre ?', ['*NB', '*NBVAL', 'CONCAT', '*NB.SI'], {
     explanation: 'NB, NBVAL et NB.SI comptent des cellules ; CONCAT assemble du texte.',
   }),
+  vf('Une formule recopiée vers le bas adapte automatiquement ses références relatives.', true),
+  qcm('Quelle fonction renvoie une valeur différente selon qu’une condition est vraie ou fausse ?', ['*SI', 'ET', 'NB.SI', 'MAX']),
+  qcm('Quel raccourci clavier annule la dernière action ?', ['Ctrl + Y', '*Ctrl + Z', 'Ctrl + X', 'Ctrl + A']),
 ]);

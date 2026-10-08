@@ -21,4 +21,9 @@ export default quiz('scrum-agilite', 'gestion', 'Scrum et agilité',
   qcm('Que présente-t-on lors de la Sprint Review ?', [
     'Le budget du projet', '*L’incrément réalisé', 'Les congés de l’équipe', 'Le planning annuel',
   ]),
+  vf('Le Scrum Master est le chef hiérarchique de l’équipe.', false, {
+    explanation: 'Le Scrum Master est un leader au service de l’équipe : il facilite et lève les obstacles, il ne distribue pas le travail.',
+  }),
+  qcm('Quel événement sert à l’équipe à améliorer sa façon de travailler ?', ['Sprint Review', '*Sprint Retrospective', 'Daily Scrum', 'Sprint Planning']),
+  saisie('Comment appelle-t-on le résultat utilisable produit au cours d’un sprint ?', ['incrément', 'un incrément', 'l’incrément', 'increment']),
 ]);

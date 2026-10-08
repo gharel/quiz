@@ -1,6 +1,6 @@
 import { X } from 'lucide-react';
 import type { ReactNode } from 'react';
-import { ThemeToggle } from '../Header';
+import { BrandLogo, ThemeToggle } from '../Header';
 import { SoundToggle } from './SoundToggle';
 
 interface Props {
@@ -15,9 +15,7 @@ export function StageBar({ info, onQuit, quitLabel = 'Quitter', sound = true, ex
   return (
     <header className="stage-bar">
       <div className="stage-bar-info">
-        <span className="logo-word" aria-label="Skazy Formation">
-          skazy <span className="logo-accent">formation</span>
-        </span>
+        <span className="stage-logo"><BrandLogo height={30} /></span>
         {info && <span className="stage-bar-sep" aria-hidden="true" />}
         {info}
       </div>

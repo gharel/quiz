@@ -1,5 +1,7 @@
-import { Check, Hourglass, LogOut, Trophy, WifiOff } from 'lucide-react';
-import { useEffect, useRef } from 'react';
+import { Hourglass, LogOut, Shuffle, Trophy, WifiOff } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+import { AvatarPicker } from '../avatars/AvatarPicker';
+import { Avatar, avatarLabel } from '../avatars/Avatar';
 import { sfx } from '../../audio/sfx';
 import { usePlayer } from '../../game/usePlayer';
 import { href, navigate } from '../../lib/router';
@@ -25,9 +27,11 @@ function Center({ icon, title, text, children }: { icon?: React.ReactNode; title
 export function PlayerGame({ pin }: { pin: string }) {
   const p = usePlayer(pin);
   const s = p.state;
-  const pinLabel = `${pin.slice(0, 3)} ${pin.slice(3)}`;
+  const pinLabel = pin;
   const me = s?.results?.[p.pid];
-  const myName = s?.roster[p.pid] ?? p.name;
+  const myName = s?.roster[p.pid]?.name ?? p.name;
+  const myAvatar = s?.roster[p.pid]?.avatar ?? p.avatar;
+  const [picking, setPicking] = useState(false);
   const msLeft = useCountdown(s?.phase === 'question' ? p.deadline : null);
   const lastSound = useRef('');
 
@@ -57,9 +61,17 @@ export function PlayerGame({ pin }: { pin: string }) {
       ? <Center title="Cette partie est terminée" />
       : p.name
         ? <Center icon={<span className="spinner" />} title="Inscription en cours…" />
-        : <NameForm pinLabel={pinLabel} onJoin={p.join} />;
+        : <NameForm pinLabel={pinLabel} onJoin={p.join} avatar={p.avatar} onPickAvatar={() => setPicking(true)} />;
   } else if (s.phase === 'lobby') {
-    body = <Center icon={<Check />} title="Vous êtes dans la partie !" text="Votre pseudo s’affiche à l’écran. La partie va bientôt commencer…"><p className="player-name-tag">{myName}</p></Center>;
+    body = (
+      <Center title="Vous êtes dans la partie !" text="Retrouvez votre animal sur l’écran de la salle. La partie va bientôt commencer…">
+        <div className="avatar-pick">
+          <Avatar id={myAvatar} size={128} title={avatarLabel(myAvatar)} />
+          <p className="player-name-tag">{myName}</p>
+          <button type="button" className="btn btn-ghost btn-sm" onClick={() => setPicking(true)}><Shuffle aria-hidden="true" />Changer d’animal</button>
+        </div>
+      </Center>
+    );
   } else if (s.phase === 'intro' && s.q) {
     body = (
       <Center title={`Question ${s.qi + 1} sur ${s.qn}`}>
@@ -96,12 +108,13 @@ export function PlayerGame({ pin }: { pin: string }) {
     );
   }
 
-  const info = p.joined && s ? <span>{myName}{me ? ` · ${formatNumber(me.score)} pts` : ''}</span> : <span>Partie {pinLabel}</span>;
+  const info = p.joined && s ? <span className="me-tag"><Avatar id={myAvatar} size={30} />{myName}{me ? ` · ${formatNumber(me.score)} pts` : ''}</span> : <span>Partie {pinLabel}</span>;
   return (
     <div className="stage stage-player">
       <StageBar info={info} extra={p.joined ? <button type="button" className="btn btn-icon" onClick={quit} title="Quitter la partie" aria-label="Quitter la partie"><LogOut /></button> : undefined} onQuit={p.joined ? undefined : () => navigate(href.join())} quitLabel="Changer de code" />
       {p.status === 'offline' && <p className="notice notice-error player-offline" role="status">Connexion perdue : reconnexion en cours…</p>}
       <div className="stage-body">{body}</div>
+      {picking && <AvatarPicker value={myAvatar} onChange={p.setAvatar} onClose={() => setPicking(false)} />}
     </div>
   );
 }
