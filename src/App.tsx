@@ -1,5 +1,5 @@
 import { Lock } from 'lucide-react';
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import { AccessGate } from './components/AccessGate';
 import { Header } from './components/Header';
 import { Toasts } from './components/Toast';
@@ -20,6 +20,25 @@ const ResultDetail = lazy(() => import('./pages/ResultDetail'));
 
 /** Pages réservées au formateur (mot de passe). */
 const PROTECTED: Route['name'][] = ['library', 'quiz', 'edit', 'host', 'results', 'result'];
+
+const APP_TITLE = 'Quiz · Skazy Formation';
+
+/** Titre d'onglet « Page · Quiz · Skazy Formation » ; l'accueil (saisie du code) garde le titre seul. */
+function pageTitle(route: Route) {
+  const page = ({
+    library: 'Bibliothèque',
+    quiz: 'Détail du quiz',
+    edit: route.name === 'edit' && route.id ? 'Modifier le quiz' : 'Créer un quiz',
+    host: 'Partie en direct',
+    solo: 'Partie en solo',
+    shared: 'Quiz partagé',
+    join: route.name === 'join' && route.code ? 'Rejoindre' : '',
+    results: 'Résultats',
+    result: 'Résultats de la partie',
+    notfound: 'Page introuvable',
+  } satisfies Record<Route['name'], string>)[route.name];
+  return page ? `${page} · ${APP_TITLE}` : APP_TITLE;
+}
 
 function isImmersive(route: Route) {
   return ['host', 'solo', 'shared'].includes(route.name) || (route.name === 'join' && !!route.code && isValidPin(route.code));
@@ -49,6 +68,8 @@ export function App() {
   const unlocked = useUnlocked();
   const gated = PROTECTED.includes(route.name) && !unlocked;
   const immersive = !gated && isImmersive(route);
+  const title = pageTitle(route);
+  useEffect(() => { document.title = title; }, [title]);
 
   let page;
   if (gated) page = <AccessGate />;
