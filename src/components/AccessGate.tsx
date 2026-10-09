@@ -1,6 +1,6 @@
 import { ArrowRight, Lock } from 'lucide-react';
-import { useRef, useState } from 'react';
-import { unlock } from '../lib/access';
+import { useEffect, useRef, useState } from 'react';
+import { blockedUntil, blockMessage, currentFailures, MAX_DELAY, unlock } from '../lib/access';
 import { href } from '../lib/router';
 
 /** Écran de mot de passe affiché à la place des pages réservées au formateur. */
@@ -8,20 +8,35 @@ export function AccessGate() {
   const [value, setValue] = useState('');
   const [error, setError] = useState('');
   const [busy, setBusy] = useState(false);
+  // Heure de référence du blocage, relue après chaque essai et à la fin du blocage
+  const [now, setNow] = useState(() => Date.now());
   const input = useRef<HTMLInputElement>(null);
+
+  const failures = currentFailures();
+  const blocked = blockMessage(failures, now);
+  const end = blockedUntil(failures);
+  const message = error || blocked;
+
+  // Rouvre la saisie à la fin du blocage (par étapes au-delà de la limite de setTimeout)
+  useEffect(() => {
+    if (end <= now || end === Infinity) return;
+    const timer = setTimeout(() => setNow(Date.now()), Math.min(end - now, MAX_DELAY));
+    return () => clearTimeout(timer);
+  }, [end, now]);
+
+  useEffect(() => {
+    if (!blocked) input.current?.focus();
+  }, [blocked]);
 
   async function submit() {
     setBusy(true);
     setError('');
     try {
-      if (!(await unlock(value))) {
-        setError('Mot de passe incorrect.');
-        setValue('');
-        input.current?.focus();
-      }
+      if (!(await unlock(value))) setValue('');
     } catch {
       setError('Vérification impossible ici : ouvrez le site en https:// (ou sur localhost).');
     }
+    setNow(Date.now());
     setBusy(false);
   }
 
@@ -40,13 +55,14 @@ export function AccessGate() {
             autoComplete="current-password"
             value={value}
             onChange={(e) => setValue(e.target.value)}
-            aria-invalid={!!error}
-            aria-describedby={error ? 'gate-error' : undefined}
+            disabled={!!blocked}
+            aria-invalid={!!message}
+            aria-describedby={message ? 'gate-error' : undefined}
             autoFocus
           />
-          {error && <span id="gate-error" className="field-error" role="alert">{error}</span>}
+          {message && <span id="gate-error" className="field-error" role="alert">{message}</span>}
         </label>
-        <button type="submit" className="btn btn-primary btn-lg btn-block" disabled={busy || !value}>
+        <button type="submit" className="btn btn-primary btn-lg btn-block" disabled={busy || !value || !!blocked}>
           {busy ? 'Vérification…' : 'Entrer'}
           {!busy && <ArrowRight aria-hidden="true" />}
         </button>
