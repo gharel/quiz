@@ -24,7 +24,7 @@ Les échanges en direct passent par un relais MQTT public et gratuit (EMQX, Hive
 
 ## Mot de passe
 
-Seule une empreinte PBKDF2 (SHA-256, 600 000 itérations) est publiée dans `src/lib/access.ts`. Pour changer de mot de passe : `npm run mot-de-passe`, puis recopier `SEL` et `EMPREINTE` dans ce fichier. L’accès reste ouvert sur le navigateur jusqu’au clic sur « Verrouiller l’accès sur cet appareil » (pied de page). Il s’agit d’une protection dissuasive : le site reste statique et public.
+Seule une empreinte PBKDF2 (SHA-256, 600 000 itérations) est publiée dans `src/lib/access.ts`. Pour changer de mot de passe : `npm run mot-de-passe`, puis recopier `SEL` et `EMPREINTE` dans ce fichier. L’accès reste ouvert sur le navigateur jusqu’au clic sur « Verrouiller l’accès sur cet appareil » (pied de page). Chaque mot de passe incorrect bloque la saisie sur ce navigateur, de plus en plus longtemps : 5 minutes, 1 heure, 24 heures, 1 semaine, 1 mois, puis définitivement (le bon mot de passe remet le compte à zéro). Il s’agit d’une protection dissuasive : le site reste statique et public.
 
 ## Données
 
