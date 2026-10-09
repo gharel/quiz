@@ -35,7 +35,7 @@ Tout est enregistré dans le navigateur de l’appareil utilisé (aucun serveur,
 ```bash
 npm install
 npm run dev      # serveur de développement
-npm test         # tests unitaires (scores, moteur de partie)
+npm test         # tests unitaires (scores, moteur de partie, accès, bandeau)
 npm run build    # build de production dans dist/
 ```
 
@@ -43,7 +43,7 @@ Pile : React, TypeScript, Vite, Web Audio API (sons synthétisés, sans fichier 
 
 Les quiz d’exemple sont dans `src/data/quizzes/`. Les jetons de couleurs, typographie (Georama), rayons et ombres proviennent du design system Skazy Formation (`src/styles/tokens.css`).
 
-Chaque outil Skazy Formation a sa couleur de l’arc-en-ciel, dans cet ordre : Quiz rouge, Mini-jeux orange, Vigie jaune, Atelier d’exercices IA vert, Comprendre l'IA bleu, Prompthèque violet. Le favicon (`public/favicon.svg`, pictogramme blanc sur un dégradé rouge) sert aussi de pastille dans le bandeau : logo Skazy Formation, filet, pastille, nom de l’outil (`Logo` dans `src/components/Header.tsx`). Titre d’onglet : « Page · Quiz · Skazy Formation » (accueil : « Quiz · Skazy Formation »), fixé pour chaque vue dans `src/App.tsx`.
+Chaque outil Skazy Formation a sa couleur de l’arc-en-ciel, dans cet ordre : Quiz rouge, Mini-jeux orange, Vigie jaune, Atelier d’exercices IA vert, Comprendre l'IA bleu, Prompthèque violet. Le favicon (`public/favicon.svg`, pictogramme blanc sur un dégradé rouge) sert aussi de pastille dans le bandeau commun aux outils (`src/components/Header.tsx`), de gauche à droite : la pastille et le nom « Quiz », en un seul lien vers l’accueil (`Logo`, `aria-current="page"` sur l’accueil) ; la navigation (Rejoindre, Bibliothèque, Résultats), en barre d’onglets en bas sur téléphone ; puis, à droite, le thème, le lien « Les outils » vers https://gharel.github.io/home/ dans le même onglet (la roue `public/img/les-outils.svg`, copiée de la page d’accueil des outils ; icône seule sur téléphone, le texte restant dans le nom accessible), un filet, et en dernier le logo Skazy Formation, lien vers https://formation.skazy.nc dans un nouvel onglet (« Site de Skazy Formation (nouvel onglet) »). Les écrans projetés (partie en direct, solo, partage, manette du joueur) gardent leur barre `StageBar`. Les pages longues (bibliothèque, détail d’un quiz, éditeur, résultats) ont un bouton rond « Remonter en haut » (`src/components/BackToTop.tsx`), visible après 1,2 écran de défilement, au-dessus de la barre d’onglets et de la barre d’enregistrement. Titre d’onglet : « Page · Quiz · Skazy Formation » (accueil : « Quiz · Skazy Formation »), fixé pour chaque vue dans `src/App.tsx`.
 
 ## Droits
 
