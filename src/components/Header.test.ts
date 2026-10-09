@@ -37,6 +37,9 @@ describe('bandeau', () => {
     const controls = headerControls(html);
     const [toggle, tools, brand] = controls.slice(-3);
     expect(toggle).toMatch(/^<button[^>]*aria-label="Thème/);
+    // Thème du système : même texte pour le nom accessible et l'infobulle.
+    expect(toggle).toContain('aria-label="Thème : celui du système. Changer de thème"');
+    expect(toggle).toContain('title="Thème : celui du système. Changer de thème"');
     expect(tools).toContain('href="https://gharel.github.io/home/"');
     expect(tools).not.toContain('target=');
     expect(tools).toContain('title="Tous les outils Skazy Formation"');

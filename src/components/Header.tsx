@@ -1,15 +1,13 @@
-import { BarChart3, LibraryBig, LogIn, Monitor, Moon, Sun } from 'lucide-react';
+import { BarChart3, Contrast, LibraryBig, LogIn, Moon, Sun } from 'lucide-react';
 import { href, type Route } from '../lib/router';
-import { setPrefs, usePrefs, type ThemePref } from '../lib/prefs';
+import { setPrefs, usePrefs } from '../lib/prefs';
+import { NEXT_THEME, themeLabel } from '../lib/theme';
 
 const NAV = [
   { key: 'join', label: 'Rejoindre', to: href.join(), icon: LogIn, match: ['join'] },
   { key: 'library', label: 'Bibliothèque', to: href.library(), icon: LibraryBig, match: ['library', 'quiz', 'edit'] },
   { key: 'results', label: 'Résultats', to: href.results(), icon: BarChart3, match: ['results', 'result'] },
 ];
-
-const NEXT_THEME: Record<ThemePref, ThemePref> = { auto: 'light', light: 'dark', dark: 'auto' };
-const THEME_LABEL: Record<ThemePref, string> = { auto: 'Thème : automatique', light: 'Thème : clair', dark: 'Thème : sombre' };
 
 /** Logo officiel Skazy Formation (SVG), version claire ou sombre selon le thème. */
 export function BrandLogo({ height = 36 }: { height?: number }) {
@@ -56,11 +54,16 @@ export function BrandLink() {
   );
 }
 
+/**
+ * Bouton de thème commun aux outils : système, clair, sombre, puis de nouveau système.
+ * L'icône montre le thème en cours : demi-cercle (celui du système), soleil (clair), lune (sombre).
+ */
 export function ThemeToggle() {
   const { theme } = usePrefs();
-  const Icon = theme === 'auto' ? Monitor : theme === 'light' ? Sun : Moon;
+  const Icon = theme === 'auto' ? Contrast : theme === 'light' ? Sun : Moon;
+  const label = themeLabel(theme);
   return (
-    <button type="button" className="btn btn-icon" onClick={() => setPrefs({ theme: NEXT_THEME[theme] })} title={THEME_LABEL[theme]} aria-label={THEME_LABEL[theme]}>
+    <button type="button" className="btn btn-icon" onClick={() => setPrefs({ theme: NEXT_THEME[theme] })} title={label} aria-label={label}>
       <Icon />
     </button>
   );
