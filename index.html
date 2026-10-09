@@ -9,13 +9,18 @@
     <!-- Clair et sombre : sans cette déclaration, les navigateurs mobiles qui assombrissent les sites
          (Chrome, Brave, Samsung Internet) assombrissent aussi le thème clair. -->
     <meta name="color-scheme" content="light dark" />
+    <!-- La page a son propre thème sombre : sans cette balise, le mode nuit de Brave (Dark Reader)
+         la repeint, même en thème clair. -->
+    <meta name="darkreader-lock" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Georama:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <script>
+      // Thème commun aux outils Skazy Formation : 'light', 'dark' ou clé absente (celui du système).
       try {
-        var t = localStorage.getItem('skq.theme');
+        var t = null;
+        try { t = JSON.parse(localStorage.getItem('skazy-outils:theme')); } catch (e) {}
         var dark = t === 'dark' || (t !== 'light' && matchMedia('(prefers-color-scheme: dark)').matches);
         document.documentElement.dataset.theme = dark ? 'dark' : 'light';
         if (t === 'light') document.documentElement.style.colorScheme = 'only light';
