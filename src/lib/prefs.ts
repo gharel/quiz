@@ -27,6 +27,8 @@ const media = window.matchMedia('(prefers-color-scheme: dark)');
 function applyTheme() {
   const dark = prefs.theme === 'dark' || (prefs.theme === 'auto' && media.matches);
   document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+  // Thème clair choisi : « only » interdit au navigateur mobile de l'assombrir de lui-même
+  document.documentElement.style.colorScheme = prefs.theme === 'light' ? 'only light' : '';
   document.querySelector('meta[name="theme-color"]')?.setAttribute('content', dark ? '#1a1a1a' : '#50967c');
 }
 media.addEventListener('change', applyTheme);

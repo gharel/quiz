@@ -6,6 +6,9 @@
     <title>Quiz · Skazy Formation</title>
     <meta name="description" content="Testez vos connaissances avec les quiz Skazy Formation : en direct avec un code, ou en solo." />
     <meta name="theme-color" content="#50967c" />
+    <!-- Clair et sombre : sans cette déclaration, les navigateurs mobiles qui assombrissent les sites
+         (Chrome, Brave, Samsung Internet) assombrissent aussi le thème clair. -->
+    <meta name="color-scheme" content="light dark" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,6 +18,7 @@
         var t = localStorage.getItem('skq.theme');
         var dark = t === 'dark' || (t !== 'light' && matchMedia('(prefers-color-scheme: dark)').matches);
         document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+        if (t === 'light') document.documentElement.style.colorScheme = 'only light';
       } catch (e) {}
     </script>
   </head>
