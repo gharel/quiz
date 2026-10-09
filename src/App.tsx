@@ -1,6 +1,7 @@
 import { Lock } from 'lucide-react';
 import { lazy, Suspense, useEffect } from 'react';
 import { AccessGate } from './components/AccessGate';
+import { BackToTop, hasBackToTop } from './components/BackToTop';
 import { Header } from './components/Header';
 import { Toasts } from './components/Toast';
 import { lock, useUnlocked } from './lib/access';
@@ -93,6 +94,7 @@ export function App() {
         <Suspense fallback={<div className="page container muted">Chargement…</div>}>{page}</Suspense>
       </main>
       {!immersive && <Footer unlocked={unlocked} />}
+      {!gated && hasBackToTop(route) && <BackToTop aboveSavebar={route.name === 'edit'} />}
       <Toasts />
     </div>
   );
