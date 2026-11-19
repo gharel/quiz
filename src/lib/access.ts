@@ -3,7 +3,7 @@ import { load, save } from './util';
 
 /**
  * Accès formateur (bibliothèque, animation, résultats) protégé par un mot de passe simple.
- * Seule l'empreinte PBKDF2 est publiée (même mot de passe que jeu-formation) : c'est une
+ * Seule l'empreinte PBKDF2 est publiée (même mot de passe que jeux) : c'est une
  * barrière dissuasive, le site restant statique et public. Pour changer de mot de passe :
  * `npm run mot-de-passe`, puis remplacer SEL et EMPREINTE.
  *

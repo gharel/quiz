@@ -11,7 +11,7 @@ Application de quiz interactifs pour tester les connaissances des apprenants, in
 - **Mode en direct** : vous projetez le quiz, les apprenants rejoignent depuis leur téléphone avec un code à 4 chiffres ou un QR code, et reçoivent un animal (24 au choix, modifiable). Chrono, répartition des réponses, classement, podium, musique et effets sonores.
 - **Mode solo** : chaque apprenant s’entraîne à son rythme, avec correction et explication après chaque question, puis un bilan détaillé.
 - **Résultats** : chaque partie est enregistrée (classement, réussite par question, questions difficiles, réponses de chaque participant), filtrable par catégorie et par mode, exportable en CSV pour Excel depuis la liste ou le détail.
-- **Accès formateur protégé** : l’accueil sert aux apprenants (Rejoindre) ; la bibliothèque, l’animation et les résultats demandent le mot de passe de l’animateur (le même que jeu-formation).
+- **Accès formateur protégé** : l’accueil sert aux apprenants (Rejoindre) ; la bibliothèque, l’animation et les résultats demandent le mot de passe de l’animateur (le même que jeux).
 - **Responsive** (mobile, tablette, bureau) et **thème sombre** : trois modes (celui du système, clair, sombre), choix commun à tous les outils Skazy Formation (clé `skazy-outils:theme` du navigateur).
 - **Mode nuit des navigateurs** : la balise `<meta name="darkreader-lock" />` de `index.html` empêche le mode nuit de Brave (Dark Reader) de repeindre la page, même en thème clair. À conserver.
 
