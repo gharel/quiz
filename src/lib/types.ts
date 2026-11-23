@@ -25,6 +25,7 @@ export interface Quiz {
   createdAt: number;
   updatedAt: number;
   builtin?: boolean;
+  source?: 'import'; // quiz importé (bibliothèque historique)
 }
 
 export interface Category {

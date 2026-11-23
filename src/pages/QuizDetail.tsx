@@ -54,7 +54,7 @@ export function QuizDetail({ id }: { id: string }) {
         <div className="detail-hero-body">
           <div className="row">
             <CategoryBadge category={cat} />
-            {quiz.builtin && <span className="tag-example">Exemple</span>}
+            {quiz.builtin && <span className="tag-example">{quiz.source === 'import' ? 'Importé' : 'Exemple'}</span>}
           </div>
           <h1>{quiz.title}</h1>
           {quiz.description && <p className="muted">{quiz.description}</p>}

@@ -1,4 +1,4 @@
-import { Plus, Search, SearchX, Upload } from 'lucide-react';
+import { Download, ListChecks, Plus, Search, SearchX, Upload, X } from 'lucide-react';
 import { useMemo, useRef, useState } from 'react';
 import { CategoryFilter } from '../components/CategoryFilter';
 import { QuizCard } from '../components/QuizCard';
@@ -6,20 +6,26 @@ import { Select } from '../components/Select';
 import { toast } from '../components/Toast';
 import { href, navigate } from '../lib/router';
 import { allQuizzes, getCategory, useStore } from '../lib/store';
-import { importQuizFile } from '../lib/transfer';
+import { exportQuizzes, importQuizFile } from '../lib/transfer';
 import { normalize } from '../lib/scoring';
+import type { Quiz } from '../lib/types';
 import { plural } from '../lib/util';
 
 type Sort = 'recent' | 'title' | 'questions';
+type Origin = 'all' | 'mine' | 'import' | 'example';
+
+const originOf = (q: Quiz): Origin => (q.source === 'import' ? 'import' : q.builtin ? 'example' : 'mine');
 
 export function Library() {
   const state = useStore();
   const [cat, setCat] = useState('');
   const [query, setQuery] = useState('');
   const [sort, setSort] = useState<Sort>('recent');
+  const [origin, setOrigin] = useState<Origin>('all');
+  const [selected, setSelected] = useState<Set<string> | null>(null); // null : pas en mode sélection
   const fileRef = useRef<HTMLInputElement>(null);
 
-  const quizzes = useMemo(() => allQuizzes(state), [state]);
+  const quizzes = useMemo(() => allQuizzes(state).filter((q) => origin === 'all' || originOf(q) === origin), [state, origin]);
 
   const categories = useMemo(() => {
     const counts = new Map<string, number>();
@@ -39,12 +45,44 @@ export function Library() {
     );
   }, [quizzes, cat, query, sort, state]);
 
+  const allVisibleSelected = !!selected && visible.length > 0 && visible.every((q) => selected.has(q.id));
+
+  function toggle(id: string) {
+    setSelected((s) => {
+      const next = new Set(s);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+  }
+
+  function toggleAll() {
+    setSelected((s) => {
+      const next = new Set(s);
+      visible.forEach((q) => (allVisibleSelected ? next.delete(q.id) : next.add(q.id)));
+      return next;
+    });
+  }
+
+  function onExport() {
+    const list = allQuizzes(state).filter((q) => selected?.has(q.id));
+    if (list.length === 0) return;
+    exportQuizzes(list);
+    toast(`${plural(list.length, 'quiz exporté', 'quiz exportés')}.`);
+    setSelected(null);
+  }
+
   async function onImport(file?: File) {
     if (!file) return;
     try {
-      const quiz = await importQuizFile(file);
-      toast(`« ${quiz.title} » a été ajouté à votre bibliothèque.`);
-      navigate(href.quiz(quiz.id));
+      const added = await importQuizFile(file);
+      if (added.length === 1) {
+        toast(`« ${added[0].title} » a été ajouté à votre bibliothèque.`);
+        navigate(href.quiz(added[0].id));
+      } else {
+        toast(`${plural(added.length, 'quiz ajouté', 'quiz ajoutés')} à votre bibliothèque.`);
+        setOrigin('mine');
+      }
     } catch (e) {
       toast((e as Error).message, 'error');
     }
@@ -58,6 +96,9 @@ export function Library() {
           <p className="page-sub">Choisissez un quiz, lancez-le en direct avec vos apprenants ou entraînez-vous en solo.</p>
         </div>
         <div className="row">
+          <button type="button" className="btn btn-secondary" onClick={() => setSelected(selected ? null : new Set())} aria-pressed={!!selected}>
+            <ListChecks aria-hidden="true" />{selected ? 'Terminer la sélection' : 'Sélectionner'}
+          </button>
           <button type="button" className="btn btn-secondary" onClick={() => fileRef.current?.click()}>
             <Upload aria-hidden="true" />Importer
           </button>
@@ -74,6 +115,19 @@ export function Library() {
           <span className="sr-only">Rechercher un quiz</span>
           <input className="input" type="search" placeholder="Rechercher un quiz…" value={query} onChange={(e) => setQuery(e.target.value)} />
         </label>
+        <div className="toolbar-sort">
+          <Select<Origin>
+            label="Origine des quiz"
+            value={origin}
+            onChange={(v) => { setOrigin(v); setCat(''); }}
+            options={[
+              { value: 'all', label: 'Toutes les origines' },
+              { value: 'mine', label: 'Mes quiz' },
+              { value: 'import', label: 'Importés' },
+              { value: 'example', label: 'Exemples' },
+            ]}
+          />
+        </div>
         <div className="toolbar-sort">
           <Select<Sort>
             label="Trier les quiz"
@@ -94,14 +148,31 @@ export function Library() {
 
       {visible.length > 0 ? (
         <div className="grid-cards">
-          {visible.map((q) => <QuizCard key={q.id} quiz={q} state={state} />)}
+          {visible.map((q) => (
+            <QuizCard key={q.id} quiz={q} state={state} selected={!!selected?.has(q.id)} onSelect={selected ? () => toggle(q.id) : undefined} />
+          ))}
         </div>
       ) : (
         <div className="empty">
           <div className="empty-icon"><SearchX aria-hidden="true" /></div>
           <h2>Aucun quiz ne correspond</h2>
           <p>Modifiez votre recherche ou choisissez une autre catégorie.</p>
-          <button type="button" className="btn btn-secondary" onClick={() => { setQuery(''); setCat(''); }}>Réinitialiser les filtres</button>
+          <button type="button" className="btn btn-secondary" onClick={() => { setQuery(''); setCat(''); setOrigin('all'); }}>Réinitialiser les filtres</button>
+        </div>
+      )}
+
+      {selected && (
+        <div className="select-bar" role="region" aria-label="Sélection de quiz">
+          <strong aria-live="polite">{plural(selected.size, 'quiz sélectionné', 'quiz sélectionnés')}</strong>
+          <button type="button" className="btn btn-ghost btn-sm" onClick={toggleAll} disabled={visible.length === 0}>
+            {allVisibleSelected ? 'Tout désélectionner' : `Tout sélectionner (${visible.length})`}
+          </button>
+          <span className="select-bar-actions">
+            <button type="button" className="btn btn-ghost btn-sm" onClick={() => setSelected(null)}><X aria-hidden="true" />Annuler</button>
+            <button type="button" className="btn btn-primary btn-sm" onClick={onExport} disabled={selected.size === 0}>
+              <Download aria-hidden="true" />Exporter
+            </button>
+          </span>
         </div>
       )}
     </div>

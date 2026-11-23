@@ -25,20 +25,40 @@ export function sanitizeQuiz(raw: unknown): Quiz {
   };
 }
 
-export async function importQuizFile(file: File): Promise<Quiz> {
+/** Importe un export d'un quiz ({ quiz }) ou de plusieurs ({ quizzes: [...] }). */
+export async function importQuizFile(file: File): Promise<Quiz[]> {
   let data: unknown;
   try {
     data = JSON.parse(await file.text());
   } catch {
     throw new Error('Impossible de lire ce fichier : il doit s’agir d’un export JSON de quiz.');
   }
-  return saveQuiz(sanitizeQuiz(data));
+  const list = (data as { quizzes?: unknown })?.quizzes;
+  if (!Array.isArray(list)) return [saveQuiz(sanitizeQuiz(data))];
+  const valid = list.flatMap((raw) => {
+    try {
+      return [sanitizeQuiz(raw)];
+    } catch {
+      return [];
+    }
+  });
+  if (valid.length === 0) throw new Error('Ce fichier ne contient aucun quiz valide.');
+  return valid.map(saveQuiz);
 }
 
+const withoutBuiltin = ({ builtin: _b, ...data }: Quiz) => data;
+
 export function exportQuiz(quiz: Quiz) {
-  const { builtin: _b, ...data } = quiz;
-  void _b;
-  downloadFile(`${slugify(quiz.title)}.json`, JSON.stringify({ format: 'skazy-quiz', version: 1, quiz: data }, null, 2), 'application/json');
+  downloadFile(`${slugify(quiz.title)}.json`, JSON.stringify({ format: 'skazy-quiz', version: 1, quiz: withoutBuiltin(quiz) }, null, 2), 'application/json');
+}
+
+/** Exporte une sélection de quiz dans un seul fichier, réimportable dans la bibliothèque. */
+export function exportQuizzes(quizzes: Quiz[]) {
+  if (quizzes.length === 1) return exportQuiz(quizzes[0]);
+  const d = new Date();
+  const day = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  const name = `quiz-skazy-${quizzes.length}-quiz-${day}.json`;
+  downloadFile(name, JSON.stringify({ format: 'skazy-quiz', version: 1, quizzes: quizzes.map(withoutBuiltin) }, null, 2), 'application/json');
 }
 
 /* ---------- Lien de partage (quiz compressé dans l'URL) ---------- */

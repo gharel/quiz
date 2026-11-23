@@ -6,7 +6,7 @@ Application de quiz interactifs pour tester les connaissances des apprenants, au
 
 ## Fonctionnalités
 
-- **Bibliothèque** : quiz d’exemple et quiz personnels, recherche, tri et **filtre par catégorie** (domaines de formation Skazy). Création, modification, duplication, import/export JSON et partage par lien.
+- **Bibliothèque** : quiz d’exemple, quiz importés et quiz personnels, recherche, tri, **filtre par catégorie** (domaines de formation Skazy) et par origine. Création, modification, duplication, import/export JSON et partage par lien. **Sélectionner** permet de cocher plusieurs quiz et de les **exporter** dans un seul fichier JSON, réimportable avec **Importer**.
 - **Six types de questions** : QCM, choix multiples, vrai ou faux, réponse libre (casse, accents et ponctuation ignorés), curseur avec marge d’erreur, remise en ordre. Image et explication facultatives, temps et points (standard, doublés, sans points) réglables par question.
 - **Mode en direct** : vous projetez le quiz, les apprenants rejoignent depuis leur téléphone avec un code à 4 chiffres ou un QR code, et reçoivent un animal (24 au choix, modifiable). Chrono, répartition des réponses, classement, podium, musique et effets sonores.
 - **Mode solo** : chaque apprenant s’entraîne à son rythme, avec correction et explication après chaque question, puis un bilan détaillé.
@@ -30,6 +30,8 @@ Seule une empreinte PBKDF2 (SHA-256, 600 000 itérations) est publiée dans `src
 ## Données
 
 Tout est enregistré dans le navigateur de l’appareil utilisé (aucun serveur, aucun compte). Pensez à **exporter** vos quiz (JSON) pour les sauvegarder ou les transférer sur un autre poste, et vos résultats (CSV).
+
+Les quiz importés (`src/data/quizzes/importes.ts`) proviennent de la bibliothèque historique du formateur. Les questions vrai/faux et QCM sont reprises.
 
 ## Développement
 
