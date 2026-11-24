@@ -10,6 +10,57 @@ export function normalize(s: string): string {
     .trim();
 }
 
+/**
+ * Distance d'édition entre deux textes : insertion, suppression, remplacement
+ * ou inversion de deux caractères voisins comptent chacun pour une faute.
+ */
+export function editDistance(a: string, b: string): number {
+  const d = Array.from({ length: a.length + 1 }, (_, i) => [i, ...Array<number>(b.length).fill(0)]);
+  for (let j = 1; j <= b.length; j++) d[0][j] = j;
+  for (let i = 1; i <= a.length; i++) {
+    for (let j = 1; j <= b.length; j++) {
+      const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+      d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + cost);
+      if (i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) d[i][j] = Math.min(d[i][j], d[i - 2][j - 2] + 1);
+    }
+  }
+  return d[a.length][b.length];
+}
+
+/** Fautes tolérées sur un mot attendu : aucune sur un nombre, un mot de 3 lettres ou un sigle (SaaS, RGAA). */
+function typosAllowed(word: string): number {
+  if (/\d/.test(word) || word.length <= 3) return 0;
+  const upper = word.replace(/[^A-Z]/g, '').length;
+  if (word.length <= 5 && upper * 2 >= word.length) return 0;
+  return word.length < 8 ? 1 : 2;
+}
+
+/**
+ * Réponse libre : casse, accents et ponctuation ignorés, et une faute de frappe ou d'orthographe
+ * tolérée par mot (deux pour un mot de 8 lettres et plus, deux au total), pour ne pas pénaliser
+ * l'orthographe. Les nombres, sigles et mots courts restent exacts (« git stash » n'est pas
+ * « git status », Ctrl + G n'est pas Ctrl + F).
+ */
+export function matchesText(answer: string, expected: string): boolean {
+  const v = normalize(answer);
+  const e = normalize(expected);
+  if (!v || !e) return false;
+  if (v === e) return true;
+  const got = v.split(' ');
+  const want = e.split(' ');
+  // Une espace en trop ou en moins (« packagejson ») : seulement si rien d'autre ne change
+  if (got.length !== want.length) return v.replace(/ /g, '') === e.replace(/ /g, '');
+  const raw = expected.normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^A-Za-z0-9]+/g, ' ').trim().split(' ');
+  let total = 0;
+  for (let i = 0; i < want.length; i++) {
+    if (got[i] === want[i]) continue;
+    const d = editDistance(got[i], want[i]);
+    if (d > typosAllowed(raw[i] ?? want[i])) return false;
+    total += d;
+  }
+  return total <= 2;
+}
+
 /** Précision 0..1 d'une réponse (1 = parfaite). */
 export function accuracy(q: Question, value: AnswerValue): number {
   if (value === null || value === undefined) return 0;
@@ -26,8 +77,7 @@ export function accuracy(q: Question, value: AnswerValue): number {
       return value === q.truth ? 1 : 0;
     case 'text': {
       if (typeof value !== 'string') return 0;
-      const v = normalize(value);
-      return v !== '' && (q.accepted ?? []).some((a) => normalize(a) === v) ? 1 : 0;
+      return (q.accepted ?? []).some((a) => matchesText(value, a)) ? 1 : 0;
     }
     case 'slider': {
       const s = q.slider;

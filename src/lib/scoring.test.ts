@@ -33,6 +33,30 @@ describe('accuracy', () => {
     expect(accuracy(t, 'noumea')).toBe(1);
     expect(accuracy(t, '')).toBe(0);
   });
+  it('text tolère une faute de frappe, deux pour une réponse longue', () => {
+    const t = q({ type: 'text', accepted: ['Nouméa', 'package.json'] });
+    expect(accuracy(t, 'Nouma')).toBe(1); // lettre oubliée
+    expect(accuracy(t, 'Nuoméa')).toBe(1); // lettres inversées
+    expect(accuracy(t, 'Noumia')).toBe(1); // faute d'orthographe
+    expect(accuracy(t, 'Nomia')).toBe(0); // deux fautes sur un mot court
+    expect(accuracy(t, 'pakage.jsno')).toBe(1); // deux fautes sur une réponse longue
+    expect(accuracy(t, 'pakag.jsno')).toBe(0);
+    expect(accuracy(t, 'Paris')).toBe(0);
+  });
+  it('text reste exact sur les nombres, sigles et mots courts', () => {
+    const ok = (accepted: string, answer: string) => accuracy(q({ type: 'text', accepted: [accepted] }), answer);
+    expect(ok('PSD', 'PDF')).toBe(0);
+    expect(ok('PSD', 'psd')).toBe(1);
+    expect(ok('2009', '2008')).toBe(0);
+    expect(ok('HTML5', 'HTML 5')).toBe(1); // espace en plus seulement
+    expect(ok('HTML5', 'HTML4')).toBe(0);
+    expect(ok('SaaS', 'PaaS')).toBe(0);
+    expect(ok('Ctrl + F', 'Ctrl + G')).toBe(0);
+    expect(ok('Ctrl + F', 'Crtl + F')).toBe(1);
+    expect(ok('git status', 'git stash')).toBe(0);
+    expect(ok('Google Agenda', 'Gogle Agenda')).toBe(1);
+    expect(ok('package.json', 'packagejson')).toBe(1);
+  });
   it('slider avec tolérance', () => {
     const s = q({ type: 'slider', slider: { min: 0, max: 100, step: 1, answer: 50, tolerance: 10 } });
     expect(accuracy(s, 50)).toBe(1);

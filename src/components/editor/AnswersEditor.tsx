@@ -92,7 +92,7 @@ export function AnswersEditor(props: Props) {
     return (
       <>
         <ListInputs values={q.accepted ?? ['']} onChange={(accepted) => set({ accepted })} label="Réponses acceptées" placeholder={(i) => (i === 0 ? 'Réponse attendue' : 'Autre formulation acceptée')} min={1} max={5} />
-        <p className="field-hint">Les majuscules, les accents et la ponctuation ne sont pas pris en compte.</p>
+        <p className="field-hint">Majuscules, accents et ponctuation ignorés ; une faute de frappe est tolérée par mot (deux pour un mot de 8 lettres et plus), sauf sur les nombres, les sigles et les mots de 3 lettres au plus.</p>
       </>
     );
   }
