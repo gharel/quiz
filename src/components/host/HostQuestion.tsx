@@ -1,4 +1,4 @@
-import { Keyboard, ListOrdered, SkipForward, SlidersHorizontal } from 'lucide-react';
+import { Keyboard, ListOrdered, Pause, Play, SkipForward, SlidersHorizontal, TimerOff } from 'lucide-react';
 import { sfx } from '../../audio/sfx';
 import type { Question } from '../../lib/types';
 import type { PlayQuestion } from '../../lib/play';
@@ -19,7 +19,13 @@ interface Props {
   answered: number;
   total: number;
   players: { id: string; name: string; avatar: string; answered: boolean }[];
-  onSkip: () => void;
+  /** Temps restant figé (ms) quand le chrono est en pause, sinon null. */
+  pausedLeft: number | null;
+  /** La question précédente a été passée. */
+  previousSkipped: boolean;
+  onStopTimer: () => void;
+  onTogglePause: () => void;
+  onSkipQuestion: () => void;
 }
 
 /** Ce qui s'affiche au tableau pendant la réponse (non interactif). */
@@ -70,9 +76,16 @@ function AnswerBoard({ q, question }: { q: PlayQuestion; question: Question }) {
 }
 
 export function HostQuestion(p: Props) {
-  const msLeft = useCountdown(p.phase === 'question' ? p.deadline : null, (s) => {
+  const paused = p.pausedLeft !== null;
+  const running = useCountdown(p.phase === 'question' && !paused ? p.deadline : null, (s) => {
     if (s <= 5 && s > 0) sfx.tick(s === 1);
   });
+  const msLeft = paused ? p.pausedLeft! : running;
+  const skipButton = (
+    <button type="button" className="btn btn-ghost" onClick={p.onSkipQuestion} title="La question ne comptera pour personne">
+      <SkipForward aria-hidden="true" />Passer la question
+    </button>
+  );
 
   return (
     <div className="host-q">
@@ -82,14 +95,19 @@ export function HostQuestion(p: Props) {
       </div>
       {p.phase === 'intro' ? (
         <div className="host-intro">
+          {p.previousSkipped && <p className="skip-note" role="status">Question précédente passée : elle ne compte pas.</p>}
           <div className="fx-pop"><QuestionCard q={{ ...p.q, image: p.question.image }} /></div>
           <div className="progress intro-bar intro-fill" aria-hidden="true"><span key={p.introEndsAt} /></div>
           <p className="muted intro-hint">Lisez bien la question, les réponses arrivent…</p>
+          <div className="stage-actions">{skipButton}</div>
         </div>
       ) : (
         <>
-          <div className="host-q-main">
-            <TimerRing msLeft={msLeft} total={p.question.time * 1000} size={96} />
+          <div className={`host-q-main${paused ? ' is-paused' : ''}`}>
+            <div className="timer-wrap">
+              <TimerRing msLeft={msLeft} total={p.question.time * 1000} size={96} />
+              {paused && <span className="pause-badge" role="status">En pause</span>}
+            </div>
             <QuestionCard q={{ ...p.q, image: p.question.image }} />
             <div className="answer-count" aria-live="polite">
               <strong key={p.answered} className={p.answered ? 'bump' : undefined}>{p.answered}</strong>
@@ -108,7 +126,13 @@ export function HostQuestion(p: Props) {
             </ul>
           )}
           <div className="stage-actions">
-            <button type="button" className="btn btn-ghost" onClick={p.onSkip}><SkipForward aria-hidden="true" />Arrêter le chrono</button>
+            <button type="button" className={`btn ${paused ? 'btn-primary' : 'btn-secondary'}`} onClick={p.onTogglePause} aria-keyshortcuts="P">
+              {paused ? <><Play aria-hidden="true" />Reprendre</> : <><Pause aria-hidden="true" />Pause</>}
+            </button>
+            {skipButton}
+            <button type="button" className="btn btn-ghost" onClick={p.onStopTimer} title="Corriger tout de suite : les réponses reçues comptent">
+              <TimerOff aria-hidden="true" />Arrêter le chrono
+            </button>
           </div>
         </>
       )}

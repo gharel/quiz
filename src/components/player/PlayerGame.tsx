@@ -33,7 +33,9 @@ export function PlayerGame({ pin }: { pin: string }) {
   const myName = s?.roster[p.pid]?.name ?? p.name;
   const myAvatar = s?.roster[p.pid]?.avatar ?? p.avatar;
   const [picking, setPicking] = useState(false);
-  const msLeft = useCountdown(s?.phase === 'question' ? p.deadline : null);
+  const paused = s?.phase === 'question' && !!s.paused;
+  const running = useCountdown(s?.phase === 'question' ? p.deadline : null);
+  const msLeft = paused ? (s?.endsIn ?? 0) : running;
   const lastSound = useRef('');
 
   // Petit son discret à la correction (si le son est activé sur l'appareil)
@@ -76,6 +78,7 @@ export function PlayerGame({ pin }: { pin: string }) {
   } else if (s.phase === 'intro' && s.q) {
     body = (
       <Center title={`Question ${s.qi + 1} sur ${s.qn}`}>
+        {s.skipped?.includes(s.qi - 1) && <p className="skip-note" role="status">Question précédente passée : elle ne compte pas.</p>}
         <QuestionType q={s.q} />
         <p className="player-qtext fx-in">{s.q.text}</p>
         <div className="progress intro-bar intro-fill" aria-hidden="true"><span /></div>
@@ -90,10 +93,13 @@ export function PlayerGame({ pin }: { pin: string }) {
       <div className="player-q">
         <div className="q-head">
           <QuestionType q={s.q} />
-          <TimerRing msLeft={msLeft} total={s.q.time * 1000} size={60} />
+          <div className="timer-wrap">
+            <TimerRing msLeft={msLeft} total={s.q.time * 1000} size={60} />
+            {paused && <span className="pause-badge" role="status">En pause</span>}
+          </div>
         </div>
         <p className="player-qtext">{s.q.text}</p>
-        <AnswerPad key={`${s.gid}-${s.qi}`} q={s.q} onSubmit={(v) => { sfx.lock(); p.answer(v); }} disabled={msLeft <= 0} />
+        <AnswerPad key={`${s.gid}-${s.qi}`} q={s.q} onSubmit={(v) => { sfx.lock(); p.answer(v); }} disabled={paused || msLeft <= 0} />
       </div>
     );
   } else if (s.phase === 'reveal') {

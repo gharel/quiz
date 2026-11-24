@@ -45,6 +45,52 @@ describe('HostEngine', () => {
     expect(e.receive({ t: 'answer', pid: 'p3', qi: 0, value: 1, ms: 0 }, 45000)).toBeNull();
   });
 
+  it('met le chrono en pause sans pénaliser les joueurs', () => {
+    const e = new HostEngine(z, { shuffleQuestions: false, shuffleAnswers: false });
+    e.receive({ t: 'join', pid: 'p1', name: 'A' });
+    e.startIntro(0, 0);
+    e.startQuestion(1000); // 40 s : échéance à 41 000
+    e.pause(11000);
+    const snap = e.snapshot(15000);
+    expect(snap.paused).toBe(true);
+    expect(snap.endsIn).toBe(30000);
+    e.resume(21000);
+    expect(e.deadline).toBe(51000);
+    // Le joueur a mis 10 s à répondre, mais son appareil compte aussi les 10 s de pause
+    e.receive({ t: 'answer', pid: 'p1', qi: 0, value: 1, ms: 20000 }, 21000);
+    expect(e.players.get('p1')!.answers[0].ms).toBe(10000);
+    e.reveal();
+    expect(e.players.get('p1')!.score).toBe(875);
+  });
+
+  it('passe une question sans la compter', () => {
+    const e = new HostEngine(z, { shuffleQuestions: false, shuffleAnswers: false });
+    e.receive({ t: 'join', pid: 'p1', name: 'A' });
+    e.startIntro(0, 0);
+    e.startQuestion(1000);
+    e.receive({ t: 'answer', pid: 'p1', qi: 0, value: 1, ms: 0 }, 1000);
+    e.skipQuestion(2000);
+    expect(e.phase).toBe('intro');
+    expect(e.qi).toBe(1);
+    expect(e.players.get('p1')!.answers).toHaveLength(0);
+    expect(e.snapshot().skipped).toEqual([0]);
+    e.startQuestion(7000);
+    e.receive({ t: 'answer', pid: 'p1', qi: 1, value: true, ms: 0 }, 7000);
+    e.reveal();
+    expect(e.players.get('p1')!.score).toBe(1000);
+    e.phase = 'podium';
+    const s = e.toSession();
+    expect(s.quiz.questions.map((q) => q.text)).toEqual(['Q2']);
+    expect(s.players[0].answers.map((a) => a.q)).toEqual([0]);
+  });
+
+  it('termine la partie quand la dernière question est passée', () => {
+    const e = new HostEngine(z, { shuffleQuestions: false, shuffleAnswers: false });
+    e.startIntro(1, 0);
+    e.skipQuestion(100);
+    expect(e.phase).toBe('podium');
+  });
+
   it('mélange les réponses sans perdre la bonne', () => {
     const e = new HostEngine(z, { shuffleQuestions: true, shuffleAnswers: true });
     const q = e.questions.find((x) => x.type === 'single')!;

@@ -96,13 +96,13 @@ export function useHost(quiz: Quiz, opts: HostOptions) {
         playMusic('question');
         publish(true);
         render();
-      } else if (e.phase === 'question' && (now >= e.deadline || e.allAnswered())) {
+      } else if (e.phase === 'question' && !e.paused && (now >= e.deadline || e.allAnswered())) {
         const timeUp = now >= e.deadline;
         e.reveal();
         stopMusic(0.15);
         if (timeUp) sfx.gong();
         else sfx.allAnswered();
-        saveSession(e.toSession());
+        saveResults(e);
         publish(true);
         render();
       }
@@ -124,7 +124,7 @@ export function useHost(quiz: Quiz, opts: HostOptions) {
     if (e.phase === 'reveal' && !e.isLast) e.phase = 'scoreboard';
     else if (e.phase === 'reveal' && e.isLast) {
       e.phase = 'podium';
-      saveSession(e.toSession());
+      saveResults(e);
     } else if (e.phase === 'scoreboard') {
       sfx.whoosh();
       e.startIntro(e.qi + 1);
@@ -133,9 +133,39 @@ export function useHost(quiz: Quiz, opts: HostOptions) {
     render();
   }, [publish]);
 
-  const skip = useCallback(() => {
-    if (engine.current.phase === 'question') engine.current.deadline = Date.now();
+  /** Arrête le chrono : correction immédiate, les réponses reçues comptent. */
+  const stopTimer = useCallback(() => {
+    const e = engine.current;
+    if (e.phase !== 'question') return;
+    e.resume();
+    e.deadline = Date.now();
   }, []);
+
+  /** Met en pause ou relance le chrono. */
+  const togglePause = useCallback(() => {
+    const e = engine.current;
+    if (e.phase !== 'question') return;
+    if (e.paused) {
+      e.resume();
+      playMusic('question');
+    } else {
+      e.pause();
+      stopMusic(0.2);
+    }
+    publish(true);
+    render();
+  }, [publish]);
+
+  /** Passe la question : elle ne compte pour personne. */
+  const skipQuestion = useCallback(() => {
+    const e = engine.current;
+    if (e.phase !== 'intro' && e.phase !== 'question') return;
+    stopMusic(0.2);
+    sfx.whoosh();
+    if (e.skipQuestion()) saveResults(e);
+    publish(true);
+    render();
+  }, [publish]);
 
   const kick = useCallback((pid: string) => {
     engine.current.kick(pid);
@@ -148,5 +178,11 @@ export function useHost(quiz: Quiz, opts: HostOptions) {
     if (engine.current.phase === 'lobby') playMusic('lobby');
   }, []);
 
-  return { engine: engine.current, status, pin, broker, start, next, skip, kick, lobbyMusic, changeRelay: () => void connect(broker + 1), retry: () => void connect(0) };
+  return { engine: engine.current, status, pin, broker, start, next, stopTimer, togglePause, skipQuestion, kick, lobbyMusic, changeRelay: () => void connect(broker + 1), retry: () => void connect(0) };
+}
+
+/** Enregistre les résultats, sauf si toutes les questions jouées ont été passées. */
+function saveResults(e: HostEngine) {
+  const s = e.toSession();
+  if (s.quiz.questions.length) saveSession(s);
 }

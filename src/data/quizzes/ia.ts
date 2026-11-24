@@ -23,7 +23,6 @@ export default quiz('ia-generative-quotidien', 'ia', 'IA générative',
   ordre('Classez ces étapes de l’histoire de l’IA dans l’ordre chronologique.', [
     'Le test de Turing (1950)', 'Deep Blue bat Kasparov aux échecs (1997)', 'AlphaGo bat un champion de go (2016)', 'Lancement de ChatGPT (2022)',
   ]),
-  qcm('Quel outil est développé par Anthropic ?', ['Gemini', 'Copilot', '*Claude', 'Mistral'], {}),
   vf('Une IA générative peut produire des contenus différents à partir du même prompt.', true),
   qcm('Que signifie le « G » de GPT ?', ['Global', '*Generative', 'Graphic', 'Guided'], {
     explanation: 'GPT : Generative Pre-trained Transformer.',

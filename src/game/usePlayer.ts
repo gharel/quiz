@@ -53,7 +53,8 @@ export function usePlayer(pin: string) {
           setStatus((s) => (s === 'notfound' ? 'online' : s));
           if (st.phase === 'question') {
             if (!qSeen.current || qSeen.current.qi !== st.qi) qSeen.current = { qi: st.qi, at: Date.now() };
-            setDeadline(Date.now() + (st.endsIn ?? 0));
+            // En pause, le temps restant est figé : pas d'échéance qui s'écoule
+            setDeadline(st.paused ? null : Date.now() + (st.endsIn ?? 0));
           } else setDeadline(null);
           setState(st);
         });
@@ -92,7 +93,7 @@ export function usePlayer(pin: string) {
   }, [pin, pid]);
 
   const answer = useCallback((value: AnswerValue) => {
-    if (!state || state.phase !== 'question' || answers[state.qi] !== undefined) return;
+    if (!state || state.phase !== 'question' || state.paused || answers[state.qi] !== undefined) return;
     const ms = qSeen.current?.qi === state.qi ? Date.now() - qSeen.current.at : 0;
     setAnswers((a) => ({ ...a, [state.qi]: value }));
     link.current?.publish(topics(pin).inbox, { t: 'answer', pid, qi: state.qi, value, ms });

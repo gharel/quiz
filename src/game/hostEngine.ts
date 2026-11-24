@@ -39,6 +39,13 @@ export class HostEngine {
   qStart = 0;
   introEndsAt = 0;
   startedAt = 0;
+  /** Chrono en pause : temps restant figé (ms), null sinon. */
+  pausedLeft: number | null = null;
+  pausedAt = 0;
+  /** Durée cumulée des pauses sur la question en cours (ms). */
+  pausedTotal = 0;
+  /** Questions passées par l'animateur : ni points, ni bonnes ou mauvaises réponses. */
+  skipped = new Set<number>();
   readonly sessionId = uid();
 
   constructor(public quiz: Quiz, opts: HostOptions) {
@@ -92,8 +99,9 @@ export class HostEngine {
       if (this.phase !== 'question' || msg.qi !== this.qi || now > this.deadline + GRACE_MS) return null;
       if (p.answers.some((a) => a.q === this.qi)) return null;
       const limit = this.question.time * 1000;
-      const elapsed = now - this.qStart;
-      const ms = Math.round(Math.min(Math.max(Number(msg.ms) || 0, 0), limit, elapsed + 1000));
+      const elapsed = now - this.qStart - this.pausedTotal - (this.pausedLeft !== null ? now - this.pausedAt : 0);
+      // Le joueur mesure son temps depuis l'affichage de la question : on retire les pauses écoulées
+      const ms = Math.round(Math.min(Math.max((Number(msg.ms) || 0) - this.pausedTotal, 0), limit, Math.max(elapsed, 0) + 1000));
       p.answers.push({ q: this.qi, value: msg.value ?? null, ms, correct: false, points: 0 });
       return 'answered';
     }
@@ -133,6 +141,49 @@ export class HostEngine {
     this.phase = 'question';
     this.qStart = now;
     this.deadline = now + this.question.time * 1000;
+    this.pausedLeft = null;
+    this.pausedTotal = 0;
+  }
+
+  get paused() {
+    return this.pausedLeft !== null;
+  }
+
+  /** Met le chrono en pause : le temps restant est figé jusqu'à la reprise. */
+  pause(now = Date.now()) {
+    if (this.phase !== 'question' || this.paused) return;
+    this.pausedLeft = Math.max(0, this.deadline - now);
+    this.pausedAt = now;
+  }
+
+  resume(now = Date.now()) {
+    if (this.phase !== 'question' || this.pausedLeft === null) return;
+    this.deadline = now + this.pausedLeft;
+    this.pausedTotal += now - this.pausedAt;
+    this.pausedLeft = null;
+  }
+
+  /** Temps restant sur la question en cours (figé pendant une pause). */
+  msLeft(now = Date.now()) {
+    return this.pausedLeft ?? Math.max(0, this.deadline - now);
+  }
+
+  /**
+   * Passe la question en cours (introduction ou réponses) : les réponses reçues sont oubliées,
+   * personne ne gagne ni ne perd de points et la question n'apparaît pas dans les résultats.
+   * Enchaîne sur la question suivante, ou sur le podium après la dernière (renvoie alors true).
+   */
+  skipQuestion(now = Date.now()): boolean {
+    if (this.phase !== 'intro' && this.phase !== 'question') return false;
+    this.skipped.add(this.qi);
+    for (const p of this.players.values()) p.answers = p.answers.filter((a) => a.q !== this.qi);
+    this.pausedLeft = null;
+    if (this.isLast) {
+      this.phase = 'podium';
+      return true;
+    }
+    this.startIntro(this.qi + 1, now);
+    return false;
   }
 
   /** Corrige la question courante et met à jour scores, séries et rangs (avec le rang précédent pour l'animation). */
@@ -176,9 +227,11 @@ export class HostEngine {
     const s: PublicState = { v: 1, gid: this.gid, seq: this.seq, ts: now, phase: this.phase, title: this.quiz.title, qi: this.qi, qn: this.questions.length, roster };
     if (this.phase === 'intro' || this.phase === 'question' || this.phase === 'reveal') s.q = this.play[this.qi];
     if (this.phase === 'question') {
-      s.endsIn = Math.max(0, this.deadline - now);
+      s.endsIn = this.msLeft(now);
       s.answered = this.answeredIds();
+      if (this.paused) s.paused = true;
     }
+    if (this.skipped.size) s.skipped = [...this.skipped];
     if (this.phase === 'reveal') {
       s.correct = correctAnswerText(this.question);
       s.explanation = this.question.explanation;
@@ -191,14 +244,20 @@ export class HostEngine {
 
   /** Résultats enregistrés localement (onglet Résultats). */
   toSession(now = Date.now()): Session {
+    // Questions jouées, sans les questions passées (les index des réponses sont renumérotés)
+    const played = this.questions.map((_, i) => i).slice(0, this.phase === 'podium' ? undefined : this.qi + 1).filter((i) => !this.skipped.has(i));
+    const index = new Map(played.map((i, k) => [i, k]));
     return {
       id: this.sessionId,
       mode: 'live',
       quizId: this.quiz.id,
-      quiz: { ...this.quiz, questions: this.questions.slice(0, this.phase === 'podium' ? undefined : this.qi + 1) },
+      quiz: { ...this.quiz, questions: played.map((i) => this.questions[i]) },
       startedAt: this.startedAt || now,
       endedAt: now,
-      players: [...this.players.values()].map((p) => ({ id: p.id, name: p.name, avatar: p.avatar, score: p.score, answers: p.answers })),
+      players: [...this.players.values()].map((p) => ({
+        id: p.id, name: p.name, avatar: p.avatar, score: p.score,
+        answers: p.answers.filter((a) => index.has(a.q)).map((a) => ({ ...a, q: index.get(a.q)! })),
+      })),
     };
   }
 }

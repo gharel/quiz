@@ -26,6 +26,8 @@ export interface PublicState {
   qn: number; // nombre de questions
   q?: PlayQuestion; // sans la bonne réponse, sans image
   endsIn?: number; // ms restantes au moment de l'envoi (phase question)
+  paused?: boolean; // chrono en pause : endsIn est figé
+  skipped?: number[]; // index des questions passées par l'animateur (non comptées)
   roster: Record<string, { name: string; avatar: string }>; // id → pseudo et animal
   answered?: string[]; // ids ayant répondu (phase question)
   correct?: string; // bonne réponse lisible (phase reveal)

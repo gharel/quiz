@@ -1,5 +1,5 @@
 import { Maximize, Minimize } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { HostQuestion } from '../components/host/HostQuestion';
 import { HostReveal } from '../components/host/HostReveal';
 import { Lobby } from '../components/host/Lobby';
@@ -40,15 +40,33 @@ function HostGame({ quiz }: { quiz: Quiz }) {
   const h = useHost(quiz, options);
   const e = h.engine;
   const [quitting, setQuitting] = useState(false);
+  const [skipping, setSkipping] = useState(false);
+  const pausedForSkip = useRef(false);
 
   useEffect(() => e.configure(options), [e, options]);
 
-  // Espace ou Entrée : passer à l'écran suivant
+  // Le chrono s'arrête le temps de confirmer, puis repart si l'animateur annule
+  const askSkip = () => {
+    pausedForSkip.current = e.phase === 'question' && !e.paused;
+    if (pausedForSkip.current) h.togglePause();
+    setSkipping(true);
+  };
+  const closeSkip = () => {
+    setSkipping(false);
+    if (pausedForSkip.current && e.phase === 'question' && e.paused) h.togglePause();
+    pausedForSkip.current = false;
+  };
+
+  // Espace ou Entrée : passer à l'écran suivant ; P : pause ou reprise du chrono
   useEffect(() => {
     const onKey = (ev: KeyboardEvent) => {
-      if ((ev.key === ' ' || ev.key === 'Enter') && (e.phase === 'reveal' || e.phase === 'scoreboard') && !(ev.target as HTMLElement).closest('button, input, select, textarea')) {
+      if ((ev.target as HTMLElement).closest('button, input, select, textarea, [role="dialog"]')) return;
+      if ((ev.key === ' ' || ev.key === 'Enter') && (e.phase === 'reveal' || e.phase === 'scoreboard')) {
         ev.preventDefault();
         h.next();
+      } else if ((ev.key === 'p' || ev.key === 'P') && e.phase === 'question' && !ev.ctrlKey && !ev.metaKey && !ev.altKey) {
+        ev.preventDefault();
+        h.togglePause();
       }
     };
     window.addEventListener('keydown', onKey);
@@ -90,7 +108,11 @@ function HostGame({ quiz }: { quiz: Quiz }) {
             answered={e.answeredIds().length}
             total={e.active.length}
             players={e.active.map((pl) => ({ id: pl.id, name: pl.name, avatar: pl.avatar, answered: pl.answers.some((a) => a.q === e.qi) }))}
-            onSkip={h.skip}
+            pausedLeft={e.pausedLeft}
+            previousSkipped={e.skipped.has(e.qi - 1)}
+            onStopTimer={h.stopTimer}
+            onTogglePause={h.togglePause}
+            onSkipQuestion={askSkip}
           />
         )}
         {e.phase === 'reveal' && <HostReveal engine={e} onNext={h.next} />}
@@ -106,6 +128,15 @@ function HostGame({ quiz }: { quiz: Quiz }) {
           danger
           onConfirm={leave}
           onClose={() => setQuitting(false)}
+        />
+      )}
+      {skipping && (
+        <Confirm
+          title="Passer cette question ?"
+          message="Les réponses déjà données sont ignorées : personne ne gagne ni ne perd de points, et la question n’apparaîtra pas dans les résultats."
+          confirmLabel="Passer la question"
+          onConfirm={() => { pausedForSkip.current = false; h.skipQuestion(); }}
+          onClose={closeSkip}
         />
       )}
     </div>
