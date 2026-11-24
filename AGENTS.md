@@ -23,7 +23,14 @@ Avant chaque commit : `npm test` et `npm run build`. Un push sur `main` déploie
 - Titre « Sujet » ou « Sujet : angle », sans durée, client ni niveau (le niveau est porté par les pastilles). Description d’une phrase.
 - 10 questions par quiz (12 pour Microsoft 365), en mélangeant les types : QCM, vrai/faux, choix multiples, réponse libre, curseur, remise en ordre.
 - Durées : vrai/faux 20 s, QCM 40 s (50 s si la question est longue), choix multiples 50 s, réponse libre et curseur 30 s, remise en ordre 40 s (45 s si longue).
-- Aucune question répétée d’un quiz à l’autre. `importes.test.ts` vérifie titres, descriptions, niveaux, durées, cohérence des réponses et doublons.
+- **QCM qui ne se devinent pas** : la bonne réponse ne doit se repérer ni à sa longueur ni à son évidence.
+  - Réponses de longueur et de forme proches (à 30 % près) : la bonne n’est pas la plus longue, la plus détaillée ou la plus nuancée. Si elle a besoin d’une précision, la mettre dans l’explication.
+  - Mauvaises réponses plausibles : vraies confusions de débutant, notions voisines du même outil, même registre. Jamais de réponse absurde, humoristique ou hors sujet.
+  - Pas d’indice involontaire : la bonne réponse ne reprend pas les mots de la question, elle n’est pas la seule à s’accorder avec elle, et les mots absolus (toujours, jamais, uniquement) ne sont pas réservés aux mauvaises réponses.
+  - Chaque mauvaise réponse reste sans ambiguïté fausse : pas de seconde bonne réponse défendable.
+  - `importes.test.ts` refuse une bonne réponse plus longue de 25 % (et de 10 caractères) que la plus longue des autres, et exige qu’elle soit la plus longue dans 30 % des QCM au plus.
+- **Réponse libre** : lister les variantes acceptées (sigle, nom complet, avec ou sans article). `matchesText()` (`src/lib/scoring.ts`) ignore casse, accents et ponctuation et tolère une faute de frappe par mot (deux pour un mot de 8 lettres et plus, deux au total) pour ne pas frustrer sur l’orthographe ; les nombres, les sigles (SaaS, RGAA) et les mots de 3 lettres au plus restent exacts, si bien que « git stash » n’est pas pris pour « git status ». Ne pas poser une réponse libre dont une faute de frappe donnerait une autre réponse plausible.
+- Aucune question répétée d’un quiz à l’autre. `importes.test.ts` vérifie titres, descriptions, niveaux, durées, cohérence des réponses, longueur des réponses de QCM et doublons.
 
 ## Fichiers
 

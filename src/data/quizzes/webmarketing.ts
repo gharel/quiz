@@ -4,10 +4,10 @@ export default quiz('webmarketing-reseaux-sociaux', 'webmarketing', 'Webmarketin
   'Référencement naturel et payant, taux de clics, AIDA, test A/B, KPI : le vocabulaire et les calculs clés du webmarketing.', [
   qcm('Que mesure le taux de clics (CTR) ?', [
     'Le nombre d’abonnés gagnés',
-    '*Le rapport entre les clics et les impressions',
-    'Le temps passé sur une page',
-    'Le coût d’une campagne',
-  ]),
+    'Le rapport entre les ventes et les visites',
+    '*Le rapport entre clics et impressions',
+    'Le rapport entre le budget et les clics',
+  ], { explanation: 'Le CTR (click-through rate) se calcule en divisant le nombre de clics par le nombre d’impressions.' }),
   saisie('Quel sigle désigne l’optimisation pour les moteurs de recherche ?', ['SEO'], {
     explanation: 'SEO : Search Engine Optimization (référencement naturel).',
   }),
@@ -19,14 +19,17 @@ export default quiz('webmarketing-reseaux-sociaux', 'webmarketing', 'Webmarketin
     'Attention', 'Intérêt', 'Désir', 'Action',
   ]),
   qcm('Quels indicateurs mesurent l’engagement sur une publication ?', [
-    '*Les commentaires', '*Les partages', 'Le nombre de salariés', '*Les mentions J’aime',
+    '*Les commentaires',
+    '*Les partages',
+    'Le coût par clic',
+    '*Les mentions J’aime',
   ]),
   qcm('Qu’est-ce qu’un test A/B ?', [
-    '*Comparer deux versions pour garder la plus performante',
     'Tester un site sur deux navigateurs',
+    '*Comparer deux versions d’un contenu',
     'Publier deux fois le même contenu',
     'Valider une campagne en deux étapes',
-  ]),
+  ], { explanation: 'Un test A/B compare deux versions auprès de publics comparables, puis on garde celle qui obtient les meilleurs résultats.' }),
   qcm('Que signifie l’acronyme KPI ?', ['Key Promotion Index', '*Key Performance Indicator', 'Known Profit Increase', 'Keyword Position Index']),
   vf('Le référencement naturel (SEO) produit des effets immédiats dès la mise en ligne.', false, {
     explanation: 'Le SEO est un travail de fond : ses effets se mesurent sur plusieurs semaines ou plusieurs mois.',

@@ -20,7 +20,12 @@ export default quiz('nocode-automatisation', 'nocode', 'NoCode : automatiser san
   ]),
   vf('Une plateforme NoCode permet de créer des applications sans écrire de code.', true),
   qcm('Dans Notion, quel élément organise des pages en tableau, en kanban ou en calendrier ?', ['Un widget', '*Une base de données', 'Un bloc de code', 'Un classeur']),
-  qcm('Que signifie le sigle API ?', ['Application Personnelle Intégrée', '*Application Programming Interface', 'Automatic Process Integration', 'Advanced Programming Input']),
+  qcm('Que signifie le sigle API ?', [
+    'Application Process Integration',
+    'Automated Programming Interface',
+    '*Application Programming Interface',
+    'Advanced Protocol Interface',
+  ]),
   curseur('Un scénario s’exécute toutes les 15 minutes. Combien de fois s’exécute-t-il en une heure ?', {
     min: 0, max: 10, step: 1, answer: 4, tolerance: 0,
   }),

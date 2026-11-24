@@ -91,4 +91,31 @@ describe('bibliothèque', () => {
       }
     }
   });
+
+  it('ne trahit pas la bonne réponse d’un QCM par sa longueur', () => {
+    const avg = (a: number[]) => a.reduce((s, x) => s + x, 0) / a.length;
+    let singles = 0;
+    let longest = 0;
+    const tells: string[] = [];
+    for (const z of BUILTIN_QUIZZES) {
+      for (const q of z.questions) {
+        if ((q.type !== 'single' && q.type !== 'multiple') || !q.answers || !q.correct) continue;
+        const len = q.answers.map((a) => a.length);
+        const good = q.correct.map((i) => len[i]);
+        const bad = len.filter((_, i) => !q.correct!.includes(i));
+        const maxBad = Math.max(...bad);
+        // Une seule bonne réponse : pas plus de 25 % (et 10 caractères) au-delà de la plus longue des autres
+        if (q.type === 'single' && good[0] > maxBad * 1.25 && good[0] - maxBad > 10) tells.push(`${z.id} : ${q.text}`);
+        // Plusieurs bonnes réponses : pas toutes plus longues que les mauvaises
+        if (q.type === 'multiple' && (Math.min(...good) > maxBad || avg(good) > avg(bad) * 1.5 + 5)) tells.push(`${z.id} : ${q.text}`);
+        if (q.type === 'single') {
+          singles++;
+          if (len.every((l, i) => i === q.correct![0] || l < good[0])) longest++;
+        }
+      }
+    }
+    expect(tells).toEqual([]);
+    // Au hasard, la bonne réponse serait la plus longue une fois sur quatre
+    expect(longest / singles).toBeLessThanOrEqual(0.3);
+  });
 });

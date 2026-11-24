@@ -19,7 +19,10 @@ export default quiz('scrum-agilite', 'gestion', 'Scrum',
     'Product Backlog', 'backlog', 'backlog produit', 'carnet de produit',
   ]),
   qcm('Que présente-t-on lors de la Sprint Review ?', [
-    'Le budget du projet', '*L’incrément réalisé', 'Les congés de l’équipe', 'Le planning annuel',
+    'Les axes d’amélioration de l’équipe',
+    '*L’incrément réalisé',
+    'Les obstacles du jour',
+    'Les estimations du backlog',
   ]),
   vf('Le Scrum Master est le chef hiérarchique de l’équipe.', false, {
     explanation: 'Le Scrum Master est un leader au service de l’équipe : il facilite et lève les obstacles, il ne distribue pas le travail.',

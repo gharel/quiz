@@ -18,7 +18,10 @@ export default quiz('ia-generative-quotidien', 'ia', 'IA générative',
     explanation: 'Vérifiez toujours la politique de confidentialité et les règles de votre entreprise avant de partager des données.',
   }),
   qcm('Lesquelles de ces limites concernent les IA génératives ?', [
-    '*Des biais hérités des données d’entraînement', '*Des erreurs présentées comme des faits', '*Des informations parfois dépassées', 'La distance géographique avec le serveur',
+    '*Des biais hérités des données d’entraînement',
+    '*Des erreurs présentées comme des faits',
+    '*Des informations parfois dépassées',
+    'L’incapacité à comprendre le français',
   ], { explanation: 'Une IA générative peut se tromper avec aplomb : vérifiez toujours les informations importantes.' }),
   ordre('Classez ces étapes de l’histoire de l’IA dans l’ordre chronologique.', [
     'Le test de Turing (1950)', 'Deep Blue bat Kasparov aux échecs (1997)', 'AlphaGo bat un champion de go (2016)', 'Lancement de ChatGPT (2022)',

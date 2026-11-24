@@ -3,10 +3,10 @@ import { curseur, ordre, qcm, quiz, saisie, vf } from '../build';
 export default quiz('cybersecurite-essentiels', 'web', 'Cybersécurité : les bons réflexes',
   'Hameçonnage, mots de passe, double authentification, sauvegardes : les gestes simples pour protéger vos comptes et vos données.', [
   qcm('Quel est le signe le plus fiable d’un e-mail d’hameçonnage ?', [
-    'Il contient un logo officiel',
-    '*L’adresse de l’expéditeur ne correspond pas au domaine officiel',
-    'Il est envoyé un lundi',
-    'Il contient une signature',
+    'Il affiche le logo de l’entreprise',
+    '*Le domaine de l’expéditeur est inhabituel',
+    'Il arrive en dehors des heures de bureau',
+    'Il se termine par une signature',
   ], { explanation: 'Les logos se copient facilement : vérifiez toujours le domaine réel de l’expéditeur et des liens.' }),
   vf('Le cadenas dans la barre d’adresse garantit que le site est honnête.', false, {
     explanation: 'Le cadenas (HTTPS) chiffre la connexion, mais un site frauduleux peut aussi l’afficher.',
@@ -31,18 +31,18 @@ export default quiz('cybersecurite-essentiels', 'web', 'Cybersécurité : les bo
   ], { time: 45, explanation: 'La longueur est le critère le plus important, avant la variété des caractères.' }),
   vf('Les mises à jour logicielles corrigent souvent des failles de sécurité.', true),
   qcm('Quel mot de passe est le plus robuste ?', [
-    'Azerty123!',
-    'Nouméa2026',
-    '*cheval-lagon-tapioca-orange',
-    'P@ssw0rd',
+    'Azerty123456!',
+    'Nouméa2026!',
+    '*cheval-lagon-tapioca',
+    'P@ssw0rd2026!',
   ], { explanation: 'Une phrase de passe longue et imprévisible résiste mieux qu’un mot court « complexe ».' }),
   vf('Le Wi-Fi public d’un café est aussi sûr que votre réseau personnel.', false, {
     explanation: 'Sur un réseau public, évitez les opérations sensibles ou utilisez un VPN.',
   }),
   qcm('Que signifie l’authentification à deux facteurs ?', [
     'Utiliser deux mots de passe différents',
-    '*Combiner deux preuves d’identité de nature différente',
     'Se connecter depuis deux appareils',
+    '*Combiner deux preuves d’identité',
     'Changer de mot de passe deux fois par an',
   ], { explanation: 'Par exemple un mot de passe (ce que vous savez) et un code reçu sur votre téléphone (ce que vous possédez).' }),
 ]);

@@ -62,14 +62,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Elle consulte de nombreuses sources et rédige un rapport sourcé",
-     "Elle fouille vos e-mails sans autorisation",
+     "Elle répond plus vite qu’une recherche simple",
+     "Elle croise de nombreuses sources en un rapport",
      "Elle réentraîne le modèle sur votre sujet",
-     "Elle traduit une page web"
+     "Elle recopie la première page web trouvée"
     ],
     "correct": [
-     0
-    ]
+     1
+    ],
+    "explanation": "Elle prend plus de temps qu’une réponse simple, mais produit un rapport avec ses sources."
    },
    {
     "id": "k5",
@@ -95,7 +96,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
      "Les données chiffrées et statistiques",
      "Les dates et événements",
      "Les citations",
-     "Une proposition de reformulation de votre propre texte"
+     "Les reformulations de votre propre texte"
     ],
     "correct": [
      0,
@@ -110,10 +111,10 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Dans les instructions personnalisées (préférences)",
-     "Dans l’historique",
-     "Dans la corbeille",
-     "Dans le mode vocal"
+     "Dans les instructions personnalisées",
+     "Dans l’historique des conversations",
+     "Dans les options du mode vocal",
+     "Dans le dossier des fichiers joints"
     ],
     "correct": [
      0
@@ -134,13 +135,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Il fonctionne sans modèle d’intelligence artificielle",
-     "Il génère seulement des images",
-     "Il répond à des questions techniques",
-     "Il peut enchaîner plusieurs actions"
+     "Il comprend plusieurs langues",
+     "Il produit des réponses plus longues",
+     "Il peut enchaîner plusieurs actions",
+     "Il utilise un modèle plus volumineux"
     ],
     "correct": [
-     3
+     2
     ]
    },
    {
@@ -182,7 +183,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
      "Haiku",
      "Sonnet",
      "Opus",
-     "Astra",
+     "GPT",
      "Gemini"
     ],
     "correct": [
@@ -198,14 +199,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Il fonctionne sur plusieurs ordinateurs",
-     "Il utilise plusieurs modèles simultanément",
-     "Il peut créer plusieurs types de contenu",
-     "Il répond dans plusieurs fenêtres"
+     "Il retrouve des réponses enregistrées à l’avance",
+     "Il crée du contenu nouveau à partir d’une consigne",
+     "Il classe des documents dans des dossiers",
+     "Il traduit chaque texte vers l’anglais"
     ],
     "correct": [
-     2
-    ]
+     1
+    ],
+    "explanation": "Un assistant génératif produit du contenu nouveau (texte, image, code) à partir de ce qu’on lui demande."
    },
    {
     "id": "k14",
@@ -214,15 +216,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Haiku",
      "Opus",
-     "Astra",
+     "Haiku",
+     "Sonnet",
      "Gemini"
     ],
     "correct": [
-     0
+     1
     ],
-    "explanation": "Haiku est le plus léger, Opus le plus puissant."
+    "explanation": "Haiku est le plus léger et le plus rapide, Sonnet est polyvalent, Opus le plus puissant."
    },
    {
     "id": "k15",
@@ -257,13 +259,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
+     "La copier telle quelle sans la relire",
      "Préciser la demande ou relancer la réponse",
-     "Supprimer son compte",
-     "Attendre 24 heures",
-     "Rien, la réponse ne peut pas changer"
+     "Réinstaller l’application Claude",
+     "Changer la langue de l’interface"
     ],
     "correct": [
-     0
+     1
     ]
    },
    {
@@ -298,14 +300,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Qu’il ne contient pas de données que votre organisation interdit de partager",
-     "Sa police de caractères",
-     "Sa date de création",
-     "Rien de particulier"
+     "Qu’il soit parfaitement mis en forme",
+     "Qu’il ne contienne pas de données sensibles",
+     "Qu’il ait été créé il y a moins d’un an",
+     "Qu’il soit rédigé dans un style soutenu"
     ],
     "correct": [
-     0
-    ]
+     1
+    ],
+    "explanation": "Les données que votre organisation interdit de partager ne doivent pas être transmises à l’outil."
    }
   ],
   "createdAt": 1790735011062,
@@ -369,14 +372,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Le nombre de personnes qui l’ont vue",
-     "Le nombre de clics",
-     "Le nombre de partages",
-     "La durée de visionnage"
+     "Le nombre de clics sur la publication",
+     "Le nombre de personnes touchées",
+     "Le nombre de partages obtenus",
+     "La durée moyenne de visionnage"
     ],
     "correct": [
-     0
-    ]
+     1
+    ],
+    "explanation": "La portée est le nombre de personnes qui ont vu la publication au moins une fois."
    },
    {
     "id": "k26",
@@ -394,7 +398,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "type": "single",
     "answers": [
      "Poster plusieurs fois par jour",
-     "Ignorer les commentaires",
+     "Supprimer les commentaires négatifs",
      "Mettre de nombreux emojis",
      "Créer du contenu court et visuel"
     ],
@@ -409,14 +413,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Une publicité ponctuelle",
+     "Le budget alloué aux publicités",
      "Un plan de communication externe",
-     "Un ensemble de règles définissant les sujets de publications",
+     "Le ton et les sujets abordés",
      "Une liste d’influenceurs à contacter"
     ],
     "correct": [
      2
-    ]
+    ],
+    "explanation": "La ligne éditoriale est l’ensemble des règles qui définissent les sujets abordés et le ton des publications."
    },
    {
     "id": "k29",
@@ -467,14 +472,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Un antivirus spécialisé dans les SMS",
-     "Une sauvegarde automatique",
-     "Une usurpation d’identité par e-mail",
-     "Une mise à jour système"
+     "Une attaque qui sature un site de requêtes",
+     "Un logiciel qui chiffre les fichiers contre rançon",
+     "Un e-mail frauduleux imitant un organisme connu",
+     "Un logiciel espion installé à votre insu"
     ],
     "correct": [
      2
-    ]
+    ],
+    "explanation": "Le phishing (hameçonnage) usurpe l’identité d’un organisme de confiance, le plus souvent par e-mail, pour piéger la victime."
    },
    {
     "id": "k32",
@@ -483,14 +489,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Raccrocher et rappeler le support via un numéro officiel",
-     "Donner les identifiants pour gagner du temps",
-     "Envoyer les identifiants par e-mail",
-     "Changer de mot de passe après l’appel"
+     "Donner seulement l’identifiant, pas le mot de passe",
+     "Raccrocher et rappeler le support officiel",
+     "Envoyer les identifiants par e-mail au technicien",
+     "Demander au technicien un numéro de dossier"
     ],
     "correct": [
-     0
-    ]
+     1
+    ],
+    "explanation": "Il faut raccrocher et rappeler le support via un numéro officiel : on ne communique jamais ses identifiants, même sous la pression de l’urgence."
    },
    {
     "id": "k33",
@@ -507,10 +514,10 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "les failles d'antivirus",
-     "la confiance humaine",
-     "le débit Internet",
-     "la puissance du processeur"
+     "les failles non corrigées des logiciels",
+     "les erreurs et les réflexes humains",
+     "les faiblesses du chiffrement des données",
+     "les connexions Wi-Fi non sécurisées"
     ],
     "correct": [
      1
@@ -733,14 +740,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "DIVX",
-     "JPG",
-     "PDF",
-     "MP4"
+     "AVI",
+     "WMV",
+     "MP4",
+     "FLV"
     ],
     "correct": [
-     3
-    ]
+     2
+    ],
+    "explanation": "Le MP4 est le format le plus compatible : web, réseaux sociaux, téléphones."
    }
   ],
   "createdAt": 1779170451671,
@@ -819,12 +827,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "answers": [
      "Accélérer le renouvellement des appareils",
      "Augmenter les marges de production",
-     "Favoriser la consommation énergétique",
-     "Réduire les coûts et favoriser la durabilité du matériel"
+     "Prolonger la durée de vie du matériel",
+     "Favoriser la consommation énergétique"
     ],
     "correct": [
-     3
-    ]
+     2
+    ],
+    "explanation": "Garder le matériel plus longtemps réduit les coûts et favorise la durabilité, ce qui est un enjeu économique du numérique responsable."
    },
    {
     "id": "k56",
@@ -855,18 +864,18 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k58",
-    "text": "Quel usage représente une part importante du trafic web mondial ?",
+    "text": "Quel usage représente la plus grande part du trafic web mondial ?",
     "time": 40,
     "points": 1,
     "type": "single",
     "answers": [
+     "Les pages web textuelles",
      "Le streaming vidéo",
-     "Les signatures d’e-mail",
-     "Les calendriers partagés",
+     "L’envoi d’e-mails",
      "Le stockage cloud"
     ],
     "correct": [
-     0
+     1
     ]
    },
    {
@@ -878,12 +887,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "answers": [
      "Multiplier les appareils pour le confort",
      "Conserver les doublons de fichiers",
-     "Archiver tous les e-mails sur le cloud",
-     "Limiter les destinataires d’un e-mail aux personnes concernées"
+     "Cibler les destinataires de ses e-mails",
+     "Archiver tous les e-mails sur le cloud"
     ],
     "correct": [
-     3
-    ]
+     2
+    ],
+    "explanation": "Limiter les e-mails aux seuls destinataires concernés réduit le volume de messages stockés et transportés."
    },
    {
     "id": "k60",
@@ -929,14 +939,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Un éditeur de code HTML",
-     "Un langage de programmation",
-     "Un outil de génération de fichiers CSS",
-     "Une plateforme pour héberger et collaborer sur des dépôts Git"
+     "Un éditeur de code avec aperçu HTML",
+     "Une plateforme d’hébergement de dépôts Git",
+     "Un langage de balisage pour le web",
+     "Un logiciel de versionnage en local"
     ],
     "correct": [
-     3
-    ]
+     1
+    ],
+    "explanation": "GitLab est une plateforme qui héberge des dépôts Git et permet de collaborer dessus."
    },
    {
     "id": "k63",
@@ -964,13 +975,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k65",
-    "text": "Quel type de fichier est à versionner dans un site web statique ?",
+    "text": "Parmi ces éléments, lequel faut-il versionner dans un site web statique ?",
     "time": 40,
     "points": 1,
     "type": "single",
     "answers": [
      "node_modules/",
-     "HTML",
+     "index.html",
      ".env",
      ".idea/"
     ],
@@ -1105,14 +1116,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Générer des templates PHP",
-     "Héberger des médias",
-     "Gérer les rôles utilisateurs",
-     "Organiser, structurer et filtrer les contenus"
+     "Gérer les rôles des utilisateurs",
+     "Créer des gabarits de page PHP",
+     "Classer et regrouper les contenus",
+     "Stocker les images et les vidéos"
     ],
     "correct": [
-     3
-    ]
+     2
+    ],
+    "explanation": "Une taxonomie (catégories, étiquettes…) sert à organiser, structurer et filtrer les contenus."
    },
    {
     "id": "k76",
@@ -1121,13 +1133,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Dans un thème enfant ou une extension dédiée",
-     "Dans le cœur de WordPress",
-     "Dans le thème parent",
-     "Dans la base de données"
+     "Dans le functions.php du thème parent",
+     "Dans un thème enfant ou une extension",
+     "Dans le dossier wp-includes",
+     "Dans le dossier wp-content/uploads"
     ],
     "correct": [
-     0
+     1
     ]
    },
    {
@@ -1161,14 +1173,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Modifier le cœur de WordPress directement",
-     "Désactiver PHP",
-     "Étendre le comportement sans modifier le cœur ou les plugins tiers",
-     "Générer une base de données"
+     "Réécrire le code source du cœur de WordPress",
+     "Optimiser le chargement des images",
+     "Modifier le comportement sans toucher au cœur",
+     "Sauvegarder le site avant une mise à jour"
     ],
     "correct": [
      2
-    ]
+    ],
+    "explanation": "Les hooks (actions et filtres) permettent d’étendre le comportement de WordPress sans modifier le cœur ni les plugins tiers."
    },
    {
     "id": "k80",
@@ -1242,10 +1255,10 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Une adresse Gmail",
-     "Une URL spécifique de type votreboutique.myshopify.com/admin",
-     "Un logiciel à installer",
-     "Une adresse FTP"
+     "Un compte Google lié à la boutique",
+     "Une URL de type boutique.myshopify.com/admin",
+     "Un logiciel de bureau à installer",
+     "Un accès FTP à l’hébergeur de la boutique"
     ],
     "correct": [
      1
@@ -1258,13 +1271,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Les modes de paiement uniquement",
-     "La comptabilité",
-     "Ce que vous vendez",
-     "Les paramètres juridiques"
+     "Les moyens de paiement acceptés",
+     "Les articles que vous vendez",
+     "Les codes de réduction",
+     "Les clients et leurs commandes"
     ],
     "correct": [
-     2
+     1
     ]
    },
    {
@@ -1317,7 +1330,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
      "Politique de confidentialité",
      "Conditions générales de vente",
      "Mentions légales",
-     "Galerie photo"
+     "Charte graphique de la boutique"
     ],
     "correct": [
      0,
@@ -1353,14 +1366,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Modifier l’apparence du formulaire",
-     "Exporter les données",
-     "Rendre le formulaire dynamique en fonction des réponses",
-     "Ajouter un logo personnalisé"
+     "Changer le thème du formulaire",
+     "Envoyer un e-mail de confirmation",
+     "Afficher des champs selon les réponses",
+     "Limiter le nombre de soumissions"
     ],
     "correct": [
      2
-    ]
+    ],
+    "explanation": "Les champs conditionnels rendent le formulaire dynamique : ils s’affichent ou se masquent en fonction des réponses."
    },
    {
     "id": "k102",
@@ -1370,9 +1384,9 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "type": "single",
     "answers": [
      "Modifier le code HTML du formulaire",
-     "Créer des PDF professionnels et personnalisés",
+     "Générer des documents à partir des réponses",
      "Traduire automatiquement les formulaires",
-     "Ajouter des animations"
+     "Modifier les couleurs du formulaire"
     ],
     "correct": [
      1
@@ -1407,12 +1421,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "type": "single",
     "answers": [
      "Dans les paramètres du compte",
-     "Dans le menu principal Jotform",
      "Dans l’éditeur PDF",
+     "Dans le menu principal",
      "Dans la bibliothèque de modèles"
     ],
     "correct": [
-     1
+     2
     ]
    },
    {
@@ -1440,10 +1454,10 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Vidéo interactive",
-     "Contrat ou devis",
-     "Application mobile",
-     "Module de paiement"
+     "Un diaporama de présentation",
+     "Un contrat ou un devis",
+     "Une feuille de calcul Excel",
+     "Un site web statique"
     ],
     "correct": [
      1
@@ -1480,14 +1494,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Du code Java uniquement",
-     "Un serveur externe",
-     "Un tableau croisé dynamique",
-     "Des pages, du texte et des données de soumission"
+     "Des scripts Python personnalisés",
+     "Un serveur de base de données SQL",
+     "Des pages, du texte et des soumissions",
+     "Un tableau croisé dynamique Excel"
     ],
     "correct": [
-     3
-    ]
+     2
+    ],
+    "explanation": "Une application Jotform se compose de pages, de texte, de formulaires et des données de soumission."
    }
   ],
   "createdAt": 1765162740677,
@@ -1602,14 +1617,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Des bases SQL uniquement",
-     "Des fichiers Word",
-     "D’autres formulaires ou données relationnelles",
-     "Des vidéos YouTube"
+     "Des fichiers Word partagés",
+     "D’autres formulaires ou tables",
+     "Des vidéos publiques sur YouTube",
+     "Des pages d’un site web"
     ],
     "correct": [
-     2
-    ]
+     1
+    ],
+    "explanation": "Dans Jotform Tables, une colonne peut être connectée à d’autres formulaires ou à des données relationnelles."
    },
    {
     "id": "k118",
@@ -1634,13 +1650,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Regrouper l’information par thème",
      "Forcer le plein écran",
      "Ajouter beaucoup de questions ouvertes",
-     "Mettre des validations uniquement à la fin"
+     "Regrouper l’information par thème",
+     "Mettre les validations en fin de formulaire"
     ],
     "correct": [
-     0
+     2
     ]
    },
    {
@@ -1686,9 +1702,9 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "type": "single",
     "answers": [
      "Accélérer les calculs mathématiques",
-     "Supprimer les bugs automatiquement",
-     "Transpiler du JavaScript",
-     "Gérer des connexions multiples de façon non bloquante"
+     "Exécuter le code sur plusieurs processeurs",
+     "Vérifier le type des variables",
+     "Gérer plusieurs requêtes sans bloquer"
     ],
     "correct": [
      3
@@ -1728,8 +1744,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "type": "single",
     "answers": [
      "Transpiler le code",
-     "Obi-Wan Kenobi",
-     "Formater automatiquement le code",
+     "Vérifier la logique du code",
+     "Mettre en forme le code",
      "Tester le code"
     ],
     "correct": [
@@ -1760,13 +1776,14 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "type": "single",
     "answers": [
      "Il est plus rapide pour compiler",
-     "Il simplifie la gestion des routes et middlewares",
-     "Il utilise un langage différent",
-     "Il ne nécessite pas d’installation"
+     "Il simplifie la gestion des routes",
+     "Il utilise un autre langage que JavaScript",
+     "Il évite d’installer des dépendances"
     ],
     "correct": [
      1
-    ]
+    ],
+    "explanation": "Express ajoute le routage et les middlewares au-dessus du module HTTP de Node.js."
    },
    {
     "id": "k128",
@@ -1810,7 +1827,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
      "Mocha",
      "Karma",
      "Jest",
-     "Aucune de ces réponses"
+     "Jasmine"
     ],
     "correct": [
      2
@@ -1888,13 +1905,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
+     "Le recyclage des appareils usagés",
      "Le reconditionnement et la réparation",
-     "Le renouvellement annuel",
-     "La mise en veille prolongée",
-     "Une luminosité plus forte"
+     "Le renouvellement régulier du parc",
+     "Le stockage des appareils inutilisés"
     ],
     "correct": [
-     0
+     1
     ]
    },
    {
@@ -1904,14 +1921,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "sont toujours open source",
-     "génèrent des bases de données volumineuses et du code inutile",
-     "ne s'installent que sur un ordinateur local",
-     "ont trop peu de fonctionnalités"
+     "ne s’installent que chez un seul hébergeur",
+     "embarquent du code et des fonctions inutiles",
+     "n’existent qu’en version payante",
+     "ne sont pas compatibles avec les mobiles"
     ],
     "correct": [
      1
-    ]
+    ],
+    "explanation": "Les CMS génèrent souvent des bases de données volumineuses et du code inutile, ce qui alourdit les pages."
    },
    {
     "id": "k137",
@@ -1936,13 +1954,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
+     "GTmetrix",
      "Ecoindex",
-     "Canva",
-     "Notion",
-     "Matomo"
+     "Matomo",
+     "Google Search Console"
     ],
     "correct": [
-     0
+     1
     ]
    },
    {
@@ -2090,9 +2108,9 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "type": "single",
     "answers": [
      "Flex = 2D, Grid = 1D",
-     "Flex = animation, Grid = positionnement",
+     "Flex = mobile, Grid = ordinateur",
      "Flex = 1D, Grid = 2D",
-     "Aucune différence"
+     "Flex = CSS, Grid = JavaScript"
     ],
     "correct": [
      2
@@ -2100,7 +2118,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k149",
-    "text": "Quelle propriété permet une transition fluide entre deux états ?",
+    "text": "Quelle propriété CSS rend fluide le passage d’un état à un autre ?",
     "time": 40,
     "points": 1,
     "type": "single",
@@ -2158,14 +2176,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Gérer les données",
-     "Faire le lien entre modèle et vue",
-     "Afficher les vues",
-     "Gérer la sécurité"
+     "Stocker et gérer les données",
+     "Afficher les pages à l’utilisateur",
+     "Coordonner le modèle et la vue",
+     "Gérer la sécurité de l’application"
     ],
     "correct": [
-     1
-    ]
+     2
+    ],
+    "explanation": "Le contrôleur reçoit la requête, interroge le modèle et transmet le résultat à la vue."
    },
    {
     "id": "k163",
@@ -2174,10 +2193,10 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "NPM",
+     "KISS",
      "YAGNI",
      "DRY",
-     "YOLO"
+     "TDD"
     ],
     "correct": [
      2
@@ -2276,13 +2295,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
+     "Utiliser HTTPS sur tout le site",
      "Échapper les données avant affichage",
-     "Utiliser des sessions HTTPS",
-     "Filtrer les adresses IP",
-     "Crypter les cookies"
+     "Filtrer les adresses IP des visiteurs",
+     "Chiffrer les cookies de session"
     ],
     "correct": [
-     0
+     1
     ]
    }
   ],
@@ -2343,14 +2362,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Crée une copie indépendante du tableau",
-     "Copie par référence",
-     "Vide le tableau",
+     "Copie la référence du tableau",
+     "Vide le tableau d’origine",
+     "Crée une copie du tableau",
      "Fusionne deux tableaux"
     ],
     "correct": [
-     0
-    ]
+     2
+    ],
+    "explanation": "L’opérateur de décomposition crée une nouvelle copie superficielle : arr2 est indépendant de arr1 (les objets imbriqués restent partagés)."
    },
    {
     "id": "k175",
@@ -2379,13 +2399,14 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "type": "single",
     "answers": [
      ".apply()",
-     ".new()",
      ".bind()",
-     ".setThis()"
+     ".then()",
+     ".assign()"
     ],
     "correct": [
      0
-    ]
+    ],
+    "explanation": ".apply() exécute tout de suite la fonction avec un this donné ; .bind() renvoie une nouvelle fonction sans l’exécuter."
    },
    {
     "id": "k178",
@@ -2396,8 +2417,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "answers": [
      ".trigger()",
      ".on()",
-     ".event()",
-     ".do()"
+     ".listen()",
+     ".addEvent()"
     ],
     "correct": [
      1
@@ -2447,14 +2468,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Faire répondre le modèle à partir de documents retrouvés dans une base",
+     "Appuyer la réponse sur des documents retrouvés",
      "Réentraîner entièrement le modèle sur vos données",
-     "Générer des images à partir de texte",
-     "Réduire la taille d’un modèle"
+     "Compresser le modèle pour qu’il tourne en local",
+     "Générer plusieurs réponses et garder la meilleure"
     ],
     "correct": [
      0
-    ]
+    ],
+    "explanation": "Le modèle retrouve d’abord des passages pertinents dans une base de documents, puis s’en sert pour répondre."
    },
    {
     "id": "k223",
@@ -2530,7 +2552,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
      "Lire un agenda",
      "Créer un ticket dans un outil de suivi",
      "Envoyer un e-mail",
-     "Garantir l’absence d’erreur"
+     "Réentraîner le modèle en temps réel"
     ],
     "correct": [
      0,
@@ -2553,14 +2575,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Pour valider les actions irréversibles avant leur exécution",
-     "Pour accélérer l’agent",
-     "Pour réduire le prix de l’abonnement",
-     "Ce n’est jamais utile"
+     "Pour accélérer l’exécution des tâches",
+     "Pour valider les actions à risque",
+     "Pour réduire le coût de l’abonnement",
+     "Pour éviter de rédiger des consignes"
     ],
     "correct": [
-     0
-    ]
+     1
+    ],
+    "explanation": "Une action irréversible (envoi, suppression, paiement) doit être validée par une personne avant son exécution."
    },
    {
     "id": "k666",
@@ -2569,14 +2592,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Le tester sur des questions dont on connaît la bonne réponse",
-     "Compter le nombre de conversations",
-     "Mesurer la longueur des réponses",
-     "Demander à l’assistant s’il est fiable"
+     "Compter les utilisateurs actifs",
+     "Mesurer la rapidité des réponses",
+     "Demander à l’assistant s’il est fiable",
+     "Le tester sur des cas à réponse connue"
     ],
     "correct": [
-     0
-    ]
+     3
+    ],
+    "explanation": "On compare les réponses de l’assistant à des questions dont on connaît la bonne réponse."
    }
   ],
   "createdAt": 1714080391159,
@@ -2634,13 +2658,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Disposer de plusieurs pistes audio et vidéo pour placer des éléments",
-     "Pouvoir ajouter plusieurs éléments les uns à la suite des autres",
-     "Ajouter un calque pour gérer plusieurs effets",
-     "Avoir plusieurs méthodes pour importer des médias"
+     "Découper une piste en plusieurs parties",
+     "Exporter chaque piste dans un fichier séparé",
+     "Superposer plusieurs pistes audio et vidéo",
+     "Fusionner toutes les pistes en un seul fichier"
     ],
     "correct": [
-     0
+     2
     ]
    },
    {
@@ -2658,14 +2682,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Lieu",
      "Dialogue",
+     "Réverbération",
      "Effets sonores",
      "Musique"
     ],
     "correct": [
-     0
-    ]
+     1
+    ],
+    "explanation": "L’amélioration essentielle de l’audio distingue les dialogues, la musique, les effets sonores et l’ambiance. La réverbération n’est pas un type de son."
    },
    {
     "id": "k237",
@@ -2674,13 +2699,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Couleur",
+     "Couleur du texte",
+     "Police de caractères",
      "Langue de traduction",
-     "Police",
-     "Taille"
+     "Taille du texte"
     ],
     "correct": [
-     1
+     2
     ]
    },
    {
@@ -2814,13 +2839,14 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "type": "single",
     "answers": [
      "Un logiciel de visioconférence automatisé",
-     "Un outil pour créer des sites web automatiquement",
-     "Un assistant vocal intégré aux enceintes connectées",
-     "Un assistant conversationnel automatisé, capable de dialoguer en temps réel"
+     "Un programme qui dialogue avec les internautes",
+     "Un robot qui indexe les pages d’un site web",
+     "Un outil qui crée des sites web automatiquement"
     ],
     "correct": [
-     3
-    ]
+     1
+    ],
+    "explanation": "Un chatbot est un assistant conversationnel automatisé, capable de dialoguer en temps réel."
    },
    {
     "id": "k258",
@@ -2853,13 +2879,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Négociation des tarifs avec les annonceurs",
-     "Réalisation d'interviews avec des influenceurs",
+     "Validation juridique des contenus",
      "Création du calendrier éditorial",
-     "Gestion des paiements publicitaires"
+     "Prise de photos sur le terrain",
+     "Réalisation d’interviews avec des influenceurs"
     ],
     "correct": [
-     2
+     1
     ]
    }
   ],
@@ -2940,13 +2966,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "trouver de nouvelles sources d'inspiration",
-     "remplacer tous les logiciels de design",
-     "automatiser entièrement la création de logos",
-     "uniformiser les créations graphiques"
+     "créer des visuels exempts de droits d’auteur",
+     "se passer de brief et de validation client",
+     "trouver de nouvelles sources d’inspiration",
+     "choisir à leur place la cible d’une campagne"
     ],
     "correct": [
-     0
+     2
     ]
    },
    {
@@ -3003,7 +3029,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k270",
-    "text": "Quel outil de Canva propose des designs complets à partir d’une simple description ?",
+    "text": "Quel outil de Canva crée des mises en page complètes à partir d’une simple description ?",
     "time": 40,
     "points": 1,
     "type": "single",
@@ -3054,7 +3080,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "answers": [
      "Texte",
      "Photo",
-     "Vidéo",
+     "Lien externe",
      "Live"
     ],
     "correct": [
@@ -3205,14 +3231,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "répéter un e-mail qui reviendra plus tard dans votre boîte de réception",
      "mettre en attente un évènement reçu via la messagerie",
+     "faire revenir un e-mail dans votre boîte plus tard",
      "répéter une mise en forme sur le contenu sélectionné",
      "mettre en attente une pièce jointe pour archivage"
     ],
     "correct": [
-     0
-    ]
+     1
+    ],
+    "explanation": "Le bouton permet de répéter un e-mail : il revient plus tard dans votre boîte de réception."
    },
    {
     "id": "k283",
@@ -3237,13 +3264,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "des plans 3D",
      "des blocs-notes",
-     "des sections",
+     "des groupes de sections",
+     "des diapositives",
      "des pages"
     ],
     "correct": [
-     0
+     2
     ]
    },
    {
@@ -3256,7 +3283,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
      "La progression",
      "La priorité",
      "La répétition",
-     "Les calories consommées"
+     "Le temps passé"
     ],
     "correct": [
      0,
@@ -3280,9 +3307,9 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "type": "single",
     "answers": [
      "des questionnaires",
-     "des listes",
-     "des contrats",
-     "des coachings"
+     "des tableaux de bord",
+     "des listes de suivi",
+     "des organigrammes"
     ],
     "correct": [
      0
@@ -3303,10 +3330,10 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "des animations pour Word",
-     "des fonctions personnalisées pour Excel",
+     "des feuilles de calcul partagées",
+     "des formulaires de sondage",
      "des présentations enrichies",
-     "des montages vidéos"
+     "des schémas de processus"
     ],
     "correct": [
      2
@@ -3437,10 +3464,10 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "des données pour les meta-analyses",
+     "les droits d’accès à un fichier ou dossier",
      "des informations complémentaires sur un fichier ou dossier",
-     "des informations sur l'utilisation du site SharePoint",
-     "des données sur l'entreprise Meta"
+     "des informations sur l’utilisation du site SharePoint",
+     "des sauvegardes automatiques du site"
     ],
     "correct": [
      1
@@ -3548,14 +3575,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Dans l’application Microsoft 365 Copilot, sur le web ou dans Edge",
-     "Uniquement dans Excel",
-     "Uniquement sur smartphone",
-     "Après installation d’un logiciel payant"
+     "Après installation d’un logiciel payant",
+     "Sur le web, dans Edge ou l’appli Copilot",
+     "Sur un serveur interne à installer",
+     "Dans un module réservé aux administrateurs"
     ],
     "correct": [
-     0
-    ]
+     1
+    ],
+    "explanation": "Copilot Chat est accessible dans l’application Microsoft 365 Copilot, sur le web et dans le navigateur Edge."
    },
    {
     "id": "k309",
@@ -3580,7 +3608,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
      "Résumer un document joint",
      "Rédiger un brouillon d’e-mail",
      "Générer une image",
-     "Faire le café"
+     "Réparer un poste en panne"
     ],
     "correct": [
      0,
@@ -3616,14 +3644,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "La résumer et répondre à des questions sur son contenu",
-     "Modifier le site en ligne",
-     "Bloquer toutes les publicités",
-     "Supprimer l’historique"
+     "La résumer et répondre à des questions",
+     "Modifier le site pour tous ses visiteurs",
+     "Bloquer les publicités de la page",
+     "Effacer l’historique de navigation"
     ],
     "correct": [
      0
-    ]
+    ],
+    "explanation": "Dans Edge, Copilot peut résumer la page affichée et répondre à des questions sur son contenu."
    },
    {
     "id": "k314",
@@ -3632,13 +3661,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
+     "Copilot Chat gratuit",
+     "Windows 11 Pro",
      "Microsoft 365 Copilot",
-     "Copilot Chat",
-     "Windows 11",
-     "Office 2013"
+     "Office 2021 perpétuel"
     ],
     "correct": [
-     0
+     2
     ],
     "explanation": "Ce niveau est approfondi dans « Microsoft 365 Copilot : l’assistant dans vos applications »."
    }
@@ -3686,7 +3715,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "envoyer un fichier",
+     "ajouter des onglets à un canal",
      "faire des sondages",
      "partager des GIF animés",
      "personnaliser les métadonnées"
@@ -3697,19 +3726,20 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k318",
-    "text": "Dans les options d'une réunion, on ne retrouve PAS :",
+    "text": "Quelle option de réunion Teams fait patienter les invités avant leur admission ?",
     "time": 40,
     "points": 1,
     "type": "single",
     "answers": [
-     "la localisation",
-     "des blocs-notes",
-     "la salle d'attente",
-     "un plan"
+     "Le mode Ensemble",
+     "La salle d’attente",
+     "Les salles pour petits groupes",
+     "Le mode Focus"
     ],
     "correct": [
      1
-    ]
+    ],
+    "explanation": "La salle d’attente retient les invités jusqu’à ce qu’un organisateur les admette ; elle se règle dans les options de la réunion."
    },
    {
     "id": "k319",
@@ -3826,13 +3856,14 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "type": "single",
     "answers": [
      "Déclencheur manuel",
+     "Déclencheur automatisé",
      "Déclencheur programmé",
-     "Déclencheur conditionnel",
-     "Déclencheur automatique basé sur un événement"
+     "Déclencheur instantané"
     ],
     "correct": [
-     3
-    ]
+     1
+    ],
+    "explanation": "Un flux automatisé démarre sur un événement, ici l’arrivée d’un e-mail."
    },
    {
     "id": "k327",
@@ -3882,13 +3913,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "automatisé : nécessite une action manuelle pour démarrer",
-     "instantané : déclenché par un événement spécifique",
-     "automatisé : déclenché par un événement, instantané : lancé manuellement",
-     "pas de différence"
+     "automatisé : sur événement ; instantané : manuel",
+     "automatisé : manuel ; instantané : sur événement",
+     "automatisé : à heure fixe ; instantané : manuel",
+     "automatisé : sur événement ; instantané : à heure fixe"
     ],
     "correct": [
-     2
+     0
     ]
    },
    {
@@ -3898,14 +3929,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "En utilisant des conditions",
-     "En configurant des actions Scope de gestion des erreurs",
-     "En ajoutant des délais",
-     "En créant des boucles"
+     "En ajoutant des actions de délai",
+     "En créant des boucles supplémentaires",
+     "En utilisant des actions Scope",
+     "En désactivant les notifications du flux"
     ],
     "correct": [
-     1
-    ]
+     2
+    ],
+    "explanation": "Les actions Scope regroupent des étapes et, avec « Configurer l’exécution après », permettent de gérer les erreurs."
    },
    {
     "id": "k332",
@@ -3914,14 +3946,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Elles permettent de stocker et manipuler des données dans le flux",
-     "Elles accélèrent l'exécution du flux",
-     "Elles réduisent le nombre d'actions nécessaires",
-     "Elles améliorent la sécurité du flux"
+     "Accélérer l’exécution du flux",
+     "Stocker et réutiliser des données",
+     "Réduire le nombre d’actions",
+     "Améliorer la sécurité du flux"
     ],
     "correct": [
-     0
-    ]
+     1
+    ],
+    "explanation": "Les variables permettent de stocker et de manipuler des données au fil du flux."
    },
    {
     "id": "k333",
@@ -3986,18 +4019,18 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k356",
-    "text": "Quel format d’export choisir pour une impression professionnelle ?",
+    "text": "Quel format d’export convient le mieux pour envoyer un design à l’imprimeur ?",
     "time": 40,
     "points": 1,
     "type": "single",
     "answers": [
-     "PDF pour l’impression",
-     "PNG",
-     "JPG",
-     "GIF"
+     "PNG transparent",
+     "PDF impression",
+     "JPG optimisé web",
+     "GIF animé"
     ],
     "correct": [
-     0
+     1
     ]
    },
    {
@@ -4007,13 +4040,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
+     "Dans les favoris",
      "Dans le kit de marque",
-     "Dans la corbeille",
      "Dans les modèles",
      "Dans les téléchargements"
     ],
     "correct": [
-     0
+     1
     ]
    },
    {
@@ -4071,13 +4104,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "answers": [
      "Une page",
      "Un texte",
-     "Une image",
-     "Un son"
+     "Une piste audio",
+     "Une image"
     ],
     "correct": [
      0,
      1,
-     2
+     3
     ]
    },
    {
@@ -4087,13 +4120,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Le partager avec un accès en modification",
-     "L’exporter en PDF",
-     "Lui envoyer une capture",
-     "L’imprimer"
+     "L’exporter en PDF et l’envoyer",
+     "Lui envoyer une capture d’écran",
+     "Le partager avec droit de modification",
+     "Le partager avec un lien en consultation"
     ],
     "correct": [
-     0
+     2
     ]
    },
    {
@@ -4103,14 +4136,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Avec la fonction Position, puis Aligner",
+     "En les groupant puis en les copiant",
+     "Avec Position, puis Aligner",
      "En les déplaçant à l’œil",
-     "En les supprimant",
-     "C’est impossible"
+     "En les verrouillant sur la page"
     ],
     "correct": [
-     0
-    ]
+     1
+    ],
+    "explanation": "La fonction Position, puis l’option Aligner, place plusieurs éléments avec précision les uns par rapport aux autres."
    }
   ],
   "createdAt": 1730156816955,
@@ -4151,7 +4185,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
      "démographiques",
      "comportementales",
      "psychographiques",
-     "quantitatives"
+     "comptables"
     ],
     "correct": [
      3
@@ -4167,19 +4201,20 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k368",
-    "text": "La newsletter doit être correctement lisible sur :",
+    "text": "Quel principe de lisibilité une newsletter doit-elle respecter ?",
     "time": 40,
     "points": 1,
     "type": "single",
     "answers": [
-     "Ordinateur",
-     "Tout support",
-     "Mobile",
-     "Tablette"
+     "Une largeur fixe de 1200 pixels",
+     "Un design adapté à tous les écrans",
+     "Un format pensé pour l’impression",
+     "Une version en texte brut uniquement"
     ],
     "correct": [
      1
-    ]
+    ],
+    "explanation": "Une newsletter doit rester lisible sur tout support : ordinateur, mobile et tablette."
    },
    {
     "id": "k369",
@@ -4222,7 +4257,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
      "Le taux d’ouverture",
      "Le taux de clics",
      "Le taux de désabonnement",
-     "Le taux de change"
+     "Le taux de rotation des stocks"
     ],
     "correct": [
      0,
@@ -4322,7 +4357,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
      "Midjourney",
      "Adobe Firefly",
      "Gemini",
-     "DeepL"
+     "DeepL Write"
     ],
     "correct": [
      0,
@@ -4361,13 +4396,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Décrire la modification voulue en langage naturel",
-     "Réécrire le code de l’image",
-     "Convertir l’image en PDF",
-     "C’est impossible"
+     "Modifier le code source de l’image",
+     "Convertir l’image en PDF avant retouche",
+     "Décrire la modification en langage naturel",
+     "Relancer l’IA avec une image vide"
     ],
     "correct": [
-     0
+     2
     ]
    },
    {
@@ -4448,9 +4483,9 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "type": "single",
     "answers": [
      "Planifier les tâches et allouer les ressources",
-     "Créer une application mobile",
+     "Créer des organigrammes et des schémas",
      "Gérer les congés et notes de frais des salariés",
-     "Suivre la comptabilité d'une entreprise"
+     "Suivre la comptabilité d’une entreprise"
     ],
     "correct": [
      0
@@ -4506,11 +4541,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
      "Travail",
      "Production",
      "Coût",
-     "Consommable"
+     "Matériel"
     ],
     "correct": [
      1
-    ]
+    ],
+    "explanation": "Microsoft Project connaît trois types de ressources : Travail, Matériel (les consommables) et Coût."
    },
    {
     "id": "k391",
@@ -4559,14 +4595,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Aucune",
-     "Durée fixe : durée constante ; unités fixes : durée selon les ressources",
      "Durée fixe : planifiée en automatique ; unités fixes : en manuel",
-     "Durée fixe peut être déplacée ; unités fixes est fixée à une date"
+     "Durée fixe : durée constante ; unités fixes : durée variable",
+     "Durée fixe : sans ressource ; unités fixes : avec ressources",
+     "Durée fixe : déplaçable ; unités fixes : fixée à une date"
     ],
     "correct": [
      1
-    ]
+    ],
+    "explanation": "Avec une durée fixe, la durée ne change pas quand on modifie les ressources ; avec des unités fixes, la durée varie selon les ressources affectées."
    }
   ],
   "createdAt": 1710477987672,
@@ -4627,18 +4664,18 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k398",
-    "text": "Quelle commande sélectionne automatiquement le sujet principal d’une photo ?",
+    "text": "Quelle commande repère automatiquement la personne ou l’objet principal d’une photo ?",
     "time": 40,
     "points": 1,
     "type": "single",
     "answers": [
+     "Tout sélectionner",
      "Sélectionner un sujet",
-     "Le lasso",
-     "Le rectangle de sélection",
-     "La pipette"
+     "Intervertir la sélection",
+     "Plage de couleurs"
     ],
     "correct": [
-     0
+     1
     ]
    },
    {
@@ -4648,9 +4685,9 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "dupliquer une zone de l'image",
-     "adoucir les couleurs d'une zone de l'image",
-     "écrire du contenu en automatique",
+     "dupliquer une zone de l’image",
+     "adoucir les couleurs d’une zone de l’image",
+     "recadrer l’image selon un ratio",
      "créer un tracé vectoriel"
     ],
     "correct": [
@@ -4876,10 +4913,10 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Formulaire Plus 2",
-     "FormBlast",
+     "Yoast SEO",
+     "Akismet",
      "Contact Form 7",
-     "SuperForm.com"
+     "WooCommerce"
     ],
     "correct": [
      2
@@ -4918,12 +4955,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "type": "single",
     "answers": [
      "un serveur web",
+     "un langage de programmation",
      "un système de gestion de contenu",
-     "un logiciel de gestion de stock",
      "un module pour WordPress"
     ],
     "correct": [
-     1
+     2
     ]
    },
    {
@@ -4974,12 +5011,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "type": "single",
     "answers": [
      "insérer une citation",
-     "créer du texte automatiquement",
-     "ajouter une image",
-     "mettre en gras"
+     "mettre un mot en gras",
+     "écrire le texte à votre place",
+     "ajouter un lien vers une page"
     ],
     "correct": [
-     1
+     2
     ]
    },
    {
@@ -5080,13 +5117,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
+     "un langage de programmation web",
      "un système de gestion de contenu",
-     "un module de WordPress",
-     "un logiciel de gestion de stock",
-     "un module pour PrestaShop"
+     "un hébergeur de sites internet",
+     "une plateforme de vente en ligne"
     ],
     "correct": [
-     0
+     1
     ]
    },
    {
@@ -5123,7 +5160,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
      "PHP",
      "Une base de données",
      "Un serveur web",
-     "Java"
+     "Un serveur Java dédié"
     ],
     "correct": [
      0,
@@ -5140,11 +5177,11 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "answers": [
      "auteur",
      "administrateur",
-     "enregistré",
-     "client"
+     "abonné",
+     "enregistré"
     ],
     "correct": [
-     3
+     2
     ]
    },
    {
@@ -5162,13 +5199,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "générer du texte automatiquement",
-     "créer un tableau",
-     "afficher un lien",
-     "ajouter une image"
+     "insérer un tableau",
+     "générer du texte par IA",
+     "ajouter un lien hypertexte",
+     "insérer une image"
     ],
     "correct": [
-     0
+     1
     ]
    },
    {
@@ -5486,13 +5523,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Un produit avec déclinaisons",
-     "Un pack",
-     "Un produit virtuel",
-     "Une catégorie"
+     "Un produit groupé en pack",
+     "Un produit virtuel téléchargeable",
+     "Un produit à déclinaisons",
+     "Une catégorie de produits"
     ],
     "correct": [
-     0
+     2
     ]
    }
   ],
@@ -5515,13 +5552,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "structurer un document du serveur",
-     "identifier le serveur avec le nom de domaine",
-     "remplir un formulaire automatiquement",
-     "écrire du contenu avec l'IA"
+     "chiffrer les échanges avec le site",
+     "sauvegarder les fichiers du site",
+     "relier un nom de domaine au serveur",
+     "compresser les images du site"
     ],
     "correct": [
-     1
+     2
     ]
    },
    {
@@ -5574,7 +5611,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
      "Créer une commande manuellement",
      "Consulter le détail d’une commande",
      "Changer le statut d’une commande",
-     "Normaliser ses commandes"
+     "Fusionner deux commandes en une seule"
     ],
     "correct": [
      0,
@@ -5711,13 +5748,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Dans Projets",
-     "Dans la corbeille",
      "Dans les modèles",
-     "Nulle part, il faut le refaire"
+     "Dans la corbeille",
+     "Dans Applications",
+     "Dans Projets"
     ],
     "correct": [
-     0
+     3
     ]
    },
    {
@@ -5872,13 +5909,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Le partage d'écran",
-     "L'effet Larsen",
      "La caméra",
-     "Les effets"
+     "Le partage d’écran",
+     "Les sous-titres automatiques",
+     "Le chat"
     ],
     "correct": [
-     0
+     1
     ]
    },
    {
@@ -5912,13 +5949,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "différer la réception de l'email à une date ultérieure",
-     "recevoir un email avec un temps d'attente avant le prochain événement",
-     "devoir attendre la fin de maintenance de Google Drive",
-     "faire attendre un client pour l'envoi d'un document"
+     "ne plus recevoir les messages d’une conversation",
+     "retirer un email de la boîte de réception pour de bon",
+     "reporter la réception de l’email à plus tard",
+     "envoyer un email à une date ultérieure"
     ],
     "correct": [
-     0
+     2
     ]
    },
    {
@@ -5980,19 +6017,20 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k486",
-    "text": "Quel type de vidéo n'existe PAS ?",
+    "text": "Quel type de vidéo présente l’entreprise, ses valeurs et ses métiers ?",
     "time": 40,
     "points": 1,
     "type": "single",
     "answers": [
-     "Éducative",
+     "Promotionnelle",
      "Institutionnelle",
-     "Animée",
-     "Promotionnelle"
+     "Éducative",
+     "Tutoriel"
     ],
     "correct": [
-     2
-    ]
+     1
+    ],
+    "explanation": "La vidéo institutionnelle présente l’entreprise et son image ; la vidéo promotionnelle met en avant une offre ou un produit."
    },
    {
     "id": "k487",
@@ -6062,7 +6100,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "type": "single",
     "answers": [
      "Titre",
-     "Saxophone",
+     "Fondu",
      "Synthé",
      "Sous-titre"
     ],
@@ -6085,13 +6123,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Vertical 9:16",
      "Horizontal 16:9",
+     "Vertical 9:16",
      "Carré 1:1",
-     "4:3"
+     "Ancien format 4:3"
     ],
     "correct": [
-     0
+     1
     ]
    }
   ],
@@ -6133,9 +6171,9 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "type": "single",
     "answers": [
      "vérifier les alignements",
-     "poser un point d'exclamation",
-     "éviter les erreurs d'orthographe",
-     "contrôler l'écart entre les pages"
+     "insérer un saut de page",
+     "éviter les erreurs d’orthographe",
+     "contrôler l’écart entre les pages"
     ],
     "correct": [
      0
@@ -6148,10 +6186,10 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "sont uniquement numériques",
-     "peuvent être modifiées dans un fichier tableur",
-     "peuvent être ajoutées via e-mail",
-     "sont déterminées uniquement à la création"
+     "sont figées après l’insertion du graphique",
+     "peuvent être modifiées dans un tableur",
+     "sont lues depuis le sommaire du document",
+     "se modifient depuis la règle du document"
     ],
     "correct": [
      1
@@ -6232,9 +6270,9 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "toujours identiques",
-     "ajoutés au moment de l'enregistrement",
-     "différents en fonction des sections du document",
+     "identiques dans tout le document",
+     "ajoutés à l’enregistrement",
+     "propres à chaque section du document",
      "figés après génération du sommaire"
     ],
     "correct": [
@@ -6248,13 +6286,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "oui mais ce n'est pas recommandé",
-     "non",
-     "oui",
-     "oui après avoir désactivé le message d'avertissement"
+     "Non, le logiciel l’interdit",
+     "Oui, c’est même recommandé",
+     "Oui, mais ce n’est pas recommandé",
+     "Oui, après désactivation d’un avertissement"
     ],
     "correct": [
-     0
+     2
     ]
    }
   ],
@@ -6299,14 +6337,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Il permet de déceler les problèmes",
-     "Il permet de présenter le travail aux stakeholders",
-     "Il permet d'estimer les dates",
-     "Il permet de synchroniser les équipes"
+     "Il permet d’identifier les risques du projet",
+     "Il permet d’estimer les dates de livraison",
+     "Il permet de synchroniser les équipes",
+     "Il permet de présenter l’incrément livré"
     ],
     "correct": [
-     1
-    ]
+     3
+    ],
+    "explanation": "Présenter l’incrément livré aux parties prenantes relève de la revue de sprint, pas du release planning."
    },
    {
     "id": "k508",
@@ -6381,14 +6420,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Le travail réalisé par sprint, en points",
-     "Sa vitesse de frappe",
-     "Le nombre de réunions",
-     "Le budget consommé"
+     "Le nombre d’heures travaillées par sprint",
+     "Les points terminés à chaque sprint",
+     "Le temps passé en réunions par sprint",
+     "Le nombre de tâches ajoutées au backlog"
     ],
     "correct": [
-     0
-    ]
+     1
+    ],
+    "explanation": "La vélocité mesure le travail terminé par sprint, exprimé en points."
    },
    {
     "id": "k514",
@@ -6418,13 +6458,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "payer pour obtenir plus de visibilité sur une publication existante",
-     "prendre du temps pour augmenter le nombre de commentateurs d'un post",
-     "attendre une semaine avant de publier son contenu",
-     "acquérir des faux commentaires et likes sur une publication"
+     "publier un même contenu sur plusieurs pages",
+     "payer pour augmenter la portée d’une publication",
+     "programmer une publication à l’avance",
+     "acheter des abonnés et des likes"
     ],
     "correct": [
-     0
+     1
     ]
    },
    {
@@ -6434,13 +6474,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "activer l'option d'identification d'une page",
      "désactiver les messages privés",
-     "désactiver la double authentification",
-     "activer votre mot de passe"
+     "masquer le nombre d’abonnés",
+     "activer l’identification de la page",
+     "désactiver la double authentification"
     ],
     "correct": [
-     0
+     2
     ]
    },
    {
@@ -6477,7 +6517,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
      "Notoriété",
      "Trafic",
      "Ventes",
-     "Adaptabilité"
+     "Fidélisation"
     ],
     "correct": [
      0,
@@ -6623,19 +6663,20 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k530",
-    "text": "Quel élément ne permet PAS de garantir le respect de l'accessibilité web ?",
+    "text": "Quelle démarche vérifie qu’un site respecte le RGAA ?",
     "time": 40,
     "points": 1,
     "type": "single",
     "answers": [
-     "Retour utilisateur",
-     "Évaluation périodique",
-     "Revue de conformité",
-     "Amélioration continue"
+     "Un audit de performance",
+     "Un audit de conformité",
+     "Un audit de référencement",
+     "Un test de charge"
     ],
     "correct": [
-     3
-    ]
+     1
+    ],
+    "explanation": "L’audit de conformité contrôle chaque critère du RGAA et calcule un taux de conformité, publié dans la déclaration d’accessibilité."
    },
    {
     "id": "k531",
@@ -6852,13 +6893,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Plusieurs personnes peuvent modifier le document en même temps",
-     "Il fonctionne sans connexion",
+     "Il fonctionne sans connexion Internet",
      "Il a plus de fonctions que Word installé",
-     "Il ne demande pas de compte"
+     "Plusieurs personnes l’éditent ensemble",
+     "Il ne demande pas de compte Microsoft"
     ],
     "correct": [
-     0
+     2
     ]
    },
    {
@@ -6889,13 +6930,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "answers": [
      "Révision",
      "Saut de page",
-     "Publipostage",
-     "Mise en forme conditionnelle"
+     "Plage nommée",
+     "Publipostage"
     ],
     "correct": [
      0,
      1,
-     2
+     3
     ]
    },
    {
@@ -6905,14 +6946,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Les scripts Office (onglet Automatiser)",
-     "Les segments",
-     "La validation de données",
-     "Les filtres"
+     "Les segments dynamiques",
+     "Les tableaux croisés",
+     "Les scripts Office",
+     "Les filtres avancés"
     ],
     "correct": [
-     0
-    ]
+     2
+    ],
+    "explanation": "Les scripts Office, accessibles depuis l’onglet Automatiser, remplacent l’enregistreur de macros VBA dans Excel en ligne."
    },
    {
     "id": "k550",
@@ -7023,13 +7065,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Les nombres sont alignés à droite et le texte à gauche par défaut",
-     "Les nombres sont alignés à gauche et le texte à droite",
-     "Pas de distinction",
-     "Les nombres sont alignés à gauche et le texte centré"
+     "Nombres à gauche et texte à droite par défaut",
+     "Nombres centrés et texte à gauche par défaut",
+     "Nombres à droite et texte à gauche par défaut",
+     "Nombres à droite et texte centré par défaut"
     ],
     "correct": [
-     0
+     2
     ]
    },
    {
@@ -7232,19 +7274,20 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k573",
-    "text": "Quelle est la formule pour calculer un prix TTC avec la TGC dans la cellule C2 et les prix HT dans la colonne A ?",
+    "text": "Quelle formule, à recopier vers le bas, calcule un prix TTC avec la TGC dans la cellule C2 et les prix HT dans la colonne A ?",
     "time": 50,
     "points": 1,
     "type": "single",
     "answers": [
-     "= A * C2",
-     "= A2 + C2 * A",
      "= A2 + $C$2 * A2",
-     "= A * $C$2"
+     "= A2 * $C$2",
+     "= A2 + C2 * A2",
+     "= A2 + $C$2"
     ],
     "correct": [
-     2
-    ]
+     0
+    ],
+    "explanation": "Il faut ajouter la taxe au prix HT, et figer C2 avec $C$2 pour pouvoir recopier la formule."
    },
    {
     "id": "k574",
@@ -7253,14 +7296,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
+     "=B2=0",
      "=$B2=0",
-     "ESTNUL($B$2)",
-     "SI(B2=0;1;0)",
-     "=VIDE(B2)"
+     "=$B$2=0",
+     "=B$2=0"
     ],
     "correct": [
-     0
-    ]
+     1
+    ],
+    "explanation": "Le $ devant B fige la colonne mais pas la ligne : la règle s’applique ainsi à chaque ligne de la plage."
    }
   ],
   "createdAt": 1681378371088,
@@ -7294,14 +7338,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Lui attribuer un accès Facebook ou un accès aux tâches",
      "Lui donner votre mot de passe",
-     "Créer une seconde page",
-     "C’est impossible"
+     "Lui attribuer un accès à la page",
+     "L’ajouter simplement à vos amis",
+     "Lui envoyer un lien vers la page"
     ],
     "correct": [
-     0
-    ]
+     1
+    ],
+    "explanation": "On attribue un accès à la page : accès Facebook (contrôle complet) ou accès aux tâches (droits limités)."
    },
    {
     "id": "k577",
@@ -7334,13 +7379,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Répondre poliment et proposer une solution",
-     "Le supprimer",
-     "L’ignorer",
-     "Bloquer son auteur"
+     "Le masquer et ne pas répondre",
+     "Le signaler comme spam auprès de Facebook",
+     "Y répondre poliment avec une solution",
+     "Le supprimer et bloquer son auteur"
     ],
     "correct": [
-     0
+     2
     ]
    },
    {
@@ -7358,10 +7403,10 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "La performance du post auprès d'autres utilisateurs",
-     "L'intérêt de l'utilisateur envers le créateur de contenu",
+     "La performance du post auprès d’autres utilisateurs",
+     "L’intérêt de l’utilisateur envers le créateur de contenu",
      "Les commentaires des utilisateurs sur une publication",
-     "L'âge d'une publication"
+     "Le temps écoulé depuis la publication du post"
     ],
     "correct": [
      3
@@ -7634,14 +7679,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "un sélecteur pour ajouter des vidéos",
-     "une requête pour ajouter une image de fond",
-     "une règle pour supprimer du contenu",
-     "une règle pour adapter le contenu visuel en fonction du support"
+     "un sélecteur qui cible les balises vidéo",
+     "une requête serveur qui charge des médias",
+     "une règle qui supprime le contenu inutile",
+     "une règle qui adapte le style à l’écran"
     ],
     "correct": [
      3
-    ]
+    ],
+    "explanation": "Une media query applique des règles CSS selon le support (largeur d’écran, impression…) pour adapter l’affichage."
    },
    {
     "id": "k621",
@@ -7685,9 +7731,9 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "type": "single",
     "answers": [
      "un titre de niveau 1",
-     "un paragraphe",
-     "un calque",
-     "un header"
+     "un paragraphe d’introduction",
+     "une zone de navigation",
+     "un en-tête de page"
     ],
     "correct": [
      0
@@ -7762,14 +7808,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "obtenir des sous-objets avec le contour et le fond d'un objet",
-     "retirer la couleur de fond d'un objet",
+     "retirer la couleur de fond d’un objet",
+     "séparer le fond et le contour en objets",
      "rompre une liaison entre deux calques",
-     "créer un calque pour l'élément sélectionné"
+     "créer un calque pour l’élément sélectionné"
     ],
     "correct": [
-     0
-    ]
+     1
+    ],
+    "explanation": "La décomposition donne des sous-objets : un pour le fond et un pour le contour de l’objet."
    },
    {
     "id": "k630",
@@ -7802,13 +7849,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "La couleur de fond",
+     "La couleur de fond sans le contour",
+     "La couleur de contour sans le fond",
      "La couleur de fond et de contour",
-     "La couleur de contour",
-     "La couleur de dégradé"
+     "La couleur du plan de travail"
     ],
     "correct": [
-     1
+     2
     ]
    },
    {
@@ -7826,14 +7873,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "modifier un groupe ou un objet isolé du reste du dessin",
-     "scinder un tracé en plusieurs",
-     "récupérer le fond d'une forme",
-     "supprimer les points isolés d'un tracé"
+     "scinder un tracé en plusieurs morceaux",
+     "modifier un groupe sans toucher au reste",
+     "supprimer les points isolés d’un tracé",
+     "récupérer le fond d’une forme isolée"
     ],
     "correct": [
-     0
-    ]
+     1
+    ],
+    "explanation": "Le mode isolation permet de modifier un groupe ou un objet isolé du reste du dessin."
    }
   ],
   "createdAt": 1630535427458,
@@ -7998,14 +8046,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Changer la mise en page (orientation, marges, en-têtes) d’une partie du document",
      "Passer simplement à la page suivante",
-     "Supprimer un chapitre",
-     "Insérer un sommaire"
+     "Regrouper plusieurs chapitres en un seul",
+     "Appliquer une mise en page à une partie",
+     "Mettre à jour le sommaire automatiquement"
     ],
     "correct": [
-     0
-    ]
+     2
+    ],
+    "explanation": "Chaque section peut avoir sa propre orientation, ses marges et ses en-têtes."
    },
    {
     "id": "k647",
@@ -8039,13 +8088,14 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "type": "single",
     "answers": [
      "Pour insérer des liens hypertextes",
-     "Pour modifier facilement la même mise en forme à des endroits différents",
-     "Pour générer les notes de bas de page",
-     "Pour dessiner des graphiques"
+     "Pour uniformiser la mise en forme",
+     "Pour compter les mots du document",
+     "Pour vérifier l’orthographe du document"
     ],
     "correct": [
      1
-    ]
+    ],
+    "explanation": "Modifier un style met à jour d’un coup tous les textes qui l’utilisent."
    },
    {
     "id": "k650",
@@ -8093,8 +8143,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "answers": [
      "On saute automatiquement à la page suivante",
      "Il faut ajouter un saut de colonne",
-     "Le texte glisse automatiquement dans les colonnes suivantes",
-     "On change de section"
+     "Le texte glisse vers les colonnes suivantes",
+     "Il faut créer une nouvelle section"
     ],
     "correct": [
      2
@@ -8108,9 +8158,9 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "type": "single",
     "answers": [
      "polices de caractères",
-     "formules de tableau",
-     "chansons de Ray Charles",
-     "virus"
+     "styles de paragraphe",
+     "modèles de document",
+     "formats d’image"
     ],
     "correct": [
      0

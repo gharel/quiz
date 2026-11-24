@@ -14,10 +14,10 @@ export default quiz('accessibilite-numerique', 'dev', 'Accessibilité : RGAA et 
   }),
   qcm('Lesquelles de ces pratiques améliorent l’accessibilité ?', [
     '*Associer chaque champ de formulaire à un libellé',
-    'Transmettre une information uniquement par la couleur',
+    'Supprimer l’indicateur de focus des liens',
     '*Permettre la navigation au clavier',
     '*Sous-titrer les vidéos',
-  ]),
+  ], { explanation: 'Le focus visible guide les utilisateurs du clavier : le supprimer rend la navigation très difficile.' }),
   qcm('Que signifie l’acronyme WCAG ?', [
     '*Web Content Accessibility Guidelines',
     'Web Compliance and Access Guide',
@@ -34,6 +34,9 @@ export default quiz('accessibilite-numerique', 'dev', 'Accessibilité : RGAA et 
     min: 1, max: 10, step: 0.5, answer: 3, tolerance: 0,
   }, { explanation: '3:1 pour le texte de grande taille (24 px, ou environ 18,7 px en gras).' }),
   qcm('Qui bénéficie d’un site accessible ?', [
-    '*Les personnes malvoyantes', '*Les personnes âgées', '*Une personne avec un bras dans le plâtre', 'Uniquement les personnes en situation de handicap reconnu',
+    '*Les personnes malvoyantes',
+    '*Les personnes âgées',
+    '*Toute personne avec un bras dans le plâtre',
+    'Seules les personnes handicapées reconnues',
   ], { explanation: 'L’accessibilité profite à tous, y compris dans des situations temporaires.' }),
 ], 2);
