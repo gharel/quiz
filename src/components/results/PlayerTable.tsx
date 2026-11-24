@@ -1,9 +1,9 @@
 import { Check, ChevronDown, X } from 'lucide-react';
 import { useState } from 'react';
 import { answerText } from '../../lib/quizMeta';
-import { ranking } from '../../lib/stats';
+import { levelOf, ranking } from '../../lib/stats';
 import type { Session } from '../../lib/types';
-import { formatNumber, formatSeconds, percent } from '../../lib/util';
+import { formatNumber, formatSeconds } from '../../lib/util';
 import { Avatar } from '../avatars/Avatar';
 
 export function PlayerTable({ session: s }: { session: Session }) {
@@ -19,10 +19,19 @@ export function PlayerTable({ session: s }: { session: Session }) {
               <span className={`rank rank-${p.rank}`}>{p.rank}</span>
               <span className="player-name">{p.avatar && <Avatar id={p.avatar} size={32} />}{p.name}</span>
               <span className="player-score">{formatNumber(p.score)} pts</span>
-              <span className="player-rate">{p.correct}/{n} · {percent(p.correct, n)} %</span>
+              <span className="player-rate">
+                <span className={`rate-track level-${levelOf(p.rate).id}`} aria-hidden="true"><span style={{ width: `${p.rate}%` }} /></span>
+                {p.correct}/{n} · {p.rate} %
+              </span>
               <ChevronDown className="player-chevron" aria-hidden="true" />
             </button>
             {isOpen && (
+              <>
+              <p className="player-facts">
+                <span>Niveau : <strong>{levelOf(p.rate).label}</strong></span>
+                <span>Temps moyen de réponse : <strong>{p.avgMs ? formatSeconds(p.avgMs) : '—'}</strong></span>
+                {p.missed > 0 && <span>Sans réponse : <strong>{p.missed}</strong></span>}
+              </p>
               <ol className="player-answers">
                 {s.quiz.questions.map((q, i) => {
                   const a = p.answers.find((x) => x.q === i);
@@ -40,6 +49,7 @@ export function PlayerTable({ session: s }: { session: Session }) {
                   );
                 })}
               </ol>
+              </>
             )}
           </li>
         );

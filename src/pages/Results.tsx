@@ -34,9 +34,9 @@ export default function Results() {
   }, [state, cat, mode, query]);
 
   const exportAll = () =>
-    downloadFile(`resultats-quiz-${new Date().toISOString().slice(0, 10)}.csv`, sessionsCsv(list, (id) => getCategory(id, state).label), 'text/csv;charset=utf-8');
+    downloadFile(`resultats-quiz-${new Date().toLocaleDateString('fr-CA')}.csv`, sessionsCsv(list, (id) => getCategory(id, state).label), 'text/csv;charset=utf-8');
   const exportOne = (s: Session) =>
-    downloadFile(`resultats-${slugify(s.quiz.title)}-${new Date(s.startedAt).toISOString().slice(0, 10)}.csv`, sessionCsv(s), 'text/csv;charset=utf-8');
+    downloadFile(`bilan-${slugify(s.quiz.title)}-${new Date(s.startedAt).toLocaleDateString('fr-CA')}.csv`, sessionCsv(s, getCategory(s.quiz.category, state).label), 'text/csv;charset=utf-8');
 
   return (
     <div className="page container">

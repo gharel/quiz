@@ -64,4 +64,12 @@ export interface Session {
   startedAt: number;
   endedAt: number;
   players: PlayerResult[];
+  report?: SessionReport;
+}
+
+/** Informations saisies par le formateur pour joindre les résultats à un bilan de formation. */
+export interface SessionReport {
+  training?: string; // intitulé de la formation ou du groupe
+  trainer?: string;
+  note?: string; // observations
 }

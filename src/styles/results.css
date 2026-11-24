@@ -26,11 +26,11 @@
   .session-chevron { display: none; }
 }
 
-.kpis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-3); max-width: 640px; }
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(128px, 1fr)); gap: var(--space-3); max-width: 860px; }
 .kpis > div { display: flex; flex-direction: column; padding: var(--space-3) var(--space-4); border-radius: var(--radius-lg); background: var(--bg-muted); }
 .kpis strong { font-size: var(--text-xl); font-weight: 800; color: var(--text-strong); }
 .kpis span { font-size: var(--text-xs); color: var(--text-secondary); }
-@media (max-width: 420px) { .kpis { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 420px) { .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
 .tabs { display: flex; gap: var(--space-1); border-bottom: 1px solid var(--border); margin-bottom: var(--space-5); }
 .tab { min-height: 44px; padding: 10px 18px; font-weight: 600; color: var(--text-secondary); border-bottom: 3px solid transparent; margin-bottom: -1px; }
@@ -82,3 +82,54 @@
   .dist-row { grid-template-columns: auto minmax(0, 1fr) 32px; }
   .dist-track { grid-column: 1 / -1; grid-row: 2; }
 }
+
+/* Niveau dans la ligne participant */
+.player-rate { display: inline-flex; align-items: center; gap: var(--space-2); }
+.rate-track { width: 72px; height: 8px; border-radius: 999px; background: var(--bg-muted); overflow: hidden; }
+.rate-track > span { display: block; height: 100%; border-radius: inherit; background: var(--lvl, var(--success)); }
+.player-facts { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-5); padding: var(--space-3) var(--space-5) 0; border-top: 1px solid var(--border); font-size: var(--text-sm); color: var(--text-secondary); }
+.player-facts strong { color: var(--text-strong); }
+.player-facts + .player-answers { border-top: 0; }
+@media (max-width: 560px) { .rate-track { width: 48px; } .player-facts { padding: var(--space-3) var(--space-4) 0; } }
+
+/* Niveaux d'acquisition */
+.level-ok { --lvl: var(--success); }
+.level-mid { --lvl: var(--warning); }
+.level-low { --lvl: var(--error); }
+
+/* Informations du bilan */
+.report-info { margin-bottom: var(--space-6); padding: var(--space-4) var(--space-5); }
+.report-info summary { display: flex; align-items: center; gap: var(--space-2); min-height: 32px; font-weight: 700; color: var(--text-strong); cursor: pointer; }
+.report-info summary svg { width: 18px; height: 18px; color: var(--brand-text); }
+.report-info[open] summary { margin-bottom: var(--space-1); }
+.report-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-3) var(--space-4); margin-top: var(--space-3); }
+.report-note { grid-column: 1 / -1; }
+@media (max-width: 640px) { .report-grid { grid-template-columns: minmax(0, 1fr); } }
+
+/* Synthèse */
+.summary { display: flex; flex-direction: column; gap: var(--space-6); }
+.summary-title { display: flex; align-items: center; gap: var(--space-2); font-size: var(--text-lg); font-weight: 700; color: var(--text-strong); margin-bottom: var(--space-3); }
+.summary-title svg { width: 20px; height: 20px; }
+.summary .panel .summary-title { margin-bottom: var(--space-1); }
+.tone-ok { color: var(--success-text); }
+.tone-ko { color: var(--error-text); }
+.levels { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-4); }
+.level { display: flex; flex-direction: column; gap: var(--space-3); border-top: 4px solid var(--lvl); }
+.level-head { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: var(--space-3); }
+.level-head > strong { font-size: var(--text-3xl); font-weight: 800; line-height: 1; color: var(--text-strong); }
+.level-head > span:nth-child(2) { display: flex; flex-direction: column; }
+.level-label { font-weight: 700; color: var(--text-strong); }
+.level-share { font-weight: 700; color: var(--text-secondary); }
+.level-track { height: 8px; border-radius: 999px; background: var(--bg-muted); overflow: hidden; }
+.level-track > span { display: block; height: 100%; background: var(--lvl); border-radius: inherit; }
+.level-names { font-size: var(--text-sm); color: var(--text-secondary); line-height: 1.6; }
+.summary-cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-4); align-items: start; }
+.notions { list-style: none; display: flex; flex-direction: column; gap: var(--space-3); margin-top: var(--space-4); }
+.notions li { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: var(--space-3); align-items: start; }
+.notions li > span:last-child { display: flex; flex-direction: column; gap: 2px; }
+.notion-rate { font-weight: 800; color: var(--success-text); text-align: right; }
+.notion-rate.low { color: var(--error-text); }
+.notion-q { font-weight: 600; color: var(--text-strong); font-size: var(--text-sm); }
+.notion-a { font-size: var(--text-sm); color: var(--text-secondary); }
+.notions-empty { margin-top: var(--space-4); font-size: var(--text-sm); color: var(--text-secondary); }
+@media (max-width: 900px) { .levels, .summary-cols { grid-template-columns: minmax(0, 1fr); } }

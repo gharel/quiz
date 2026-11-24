@@ -12,6 +12,7 @@ import './styles/game.css';
 import './styles/game2.css';
 import './styles/editor.css';
 import './styles/results.css';
+import './styles/print.css';
 import './styles/host.css';
 import './styles/host2.css';
 import './styles/avatars.css';

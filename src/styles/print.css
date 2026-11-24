@@ -1,0 +1,34 @@
+/* Bilan de quiz imprimable (Imprimer → Enregistrer au format PDF) */
+.print-report { display: none; }
+
+@media print {
+  @page { size: A4; margin: 14mm 12mm; }
+  html, body { background: #fff !important; color: #1a1a1a !important; }
+  .header, .app-footer, .to-top, .toasts, .modal-backdrop, .page > :not(.print-report) { display: none !important; }
+  .app-main, .page, .container { padding: 0 !important; margin: 0 !important; max-width: none !important; }
+
+  .print-report { display: block; font-size: 10.5pt; line-height: 1.45; color: #1a1a1a; }
+  .print-report h1 { font-size: 20pt; font-weight: 800; line-height: 1.2; color: #1a1a1a; }
+  .print-report h2 { font-size: 12.5pt; font-weight: 700; margin: 0 0 6pt; color: #2f6b53; }
+  .pr-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16pt; padding-bottom: 10pt; border-bottom: 3pt solid #50967c; }
+  .pr-head img { width: 120pt; height: auto; }
+  .pr-kicker { font-size: 9pt; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #50967c; margin-bottom: 2pt; }
+  .pr-info { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6pt 16pt; margin: 12pt 0; }
+  .pr-info dt { font-size: 8.5pt; color: #666; }
+  .pr-info dd { margin: 0; font-weight: 600; }
+  .pr-kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6pt; margin-bottom: 14pt; }
+  .pr-kpis > div { border: 1pt solid #d9dee3; border-radius: 6pt; padding: 6pt 8pt; display: flex; flex-direction: column; break-inside: avoid; }
+  .pr-kpis strong { font-size: 15pt; font-weight: 800; }
+  .pr-kpis span { font-size: 8.5pt; color: #555; }
+  .pr-section { margin-bottom: 14pt; }
+  .pr-note { white-space: pre-wrap; border-left: 3pt solid #50967c; padding: 4pt 8pt; background: #f4f8f6; }
+  .pr-list { padding-left: 14pt; display: flex; flex-direction: column; gap: 4pt; }
+  .pr-list li { break-inside: avoid; }
+  .print-report table { width: 100%; border-collapse: collapse; font-size: 9.5pt; }
+  .print-report thead { display: table-header-group; }
+  .print-report tr { break-inside: avoid; }
+  .print-report th { text-align: left; font-size: 8.5pt; color: #555; font-weight: 700; border-bottom: 1.5pt solid #1a1a1a; padding: 4pt 6pt; }
+  .print-report td { border-bottom: 0.75pt solid #d9dee3; padding: 4pt 6pt; vertical-align: top; }
+  .print-report td:first-child, .print-report th:first-child { width: 28pt; }
+  .pr-foot { margin-top: 12pt; padding-top: 6pt; border-top: 0.75pt solid #d9dee3; font-size: 8pt; color: #666; }
+}
