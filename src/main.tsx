@@ -1,6 +1,7 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { App } from './App';
+import { watchFrenchSpaces } from './lib/typo';
 import './styles/tokens.css';
 import './styles/base.css';
 import './styles/controls.css';
@@ -18,6 +19,8 @@ import './styles/host2.css';
 import './styles/avatars.css';
 import './styles/select.css';
 import './styles/fx.css';
+
+watchFrenchSpaces();
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

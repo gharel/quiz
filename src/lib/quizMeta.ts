@@ -52,7 +52,7 @@ export function answerText(q: Question, value: unknown, itemsOrder?: number[]): 
   if (value === null || value === undefined || value === '') return 'Pas de réponse';
   switch (q.type) {
     case 'single':
-      return q.answers?.[value as number] ?? '—';
+      return q.answers?.[value as number] ?? '-';
     case 'multiple':
       return (value as number[]).map((i) => q.answers?.[i] ?? '').join(' · ') || 'Pas de réponse';
     case 'truefalse':

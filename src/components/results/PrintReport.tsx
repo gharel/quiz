@@ -60,7 +60,7 @@ export function PrintReport({ session: s, category }: { session: Session; catego
             {ranking(s).map((p) => (
               <tr key={p.id}>
                 <td>{p.rank}</td><td>{p.name}</td><td>{p.correct}/{n}{p.missed ? ` (${p.missed} sans réponse)` : ''}</td>
-                <td>{p.rate} %</td><td>{levelOf(p.rate).label}</td><td>{p.avgMs ? formatSeconds(p.avgMs) : '—'}</td><td>{formatNumber(p.score)}</td>
+                <td>{p.rate} %</td><td>{levelOf(p.rate).label}</td><td>{p.avgMs ? formatSeconds(p.avgMs) : '-'}</td><td>{formatNumber(p.score)}</td>
               </tr>
             ))}
           </tbody>
@@ -72,7 +72,7 @@ export function PrintReport({ session: s, category }: { session: Session; catego
           <h2>À retravailler</h2>
           <ul className="pr-list">
             {weak.map(({ q, index, rate }) => (
-              <li key={q.id}><strong>{index + 1}. {q.text}</strong> — {rate} % de réussite. Bonne réponse : {correctAnswerText(q)}</li>
+              <li key={q.id}><strong>{index + 1}. {q.text}</strong> - {rate} % de réussite. Bonne réponse : {correctAnswerText(q)}</li>
             ))}
           </ul>
         </section>

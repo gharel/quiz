@@ -27,7 +27,7 @@ export function QuestionStats({ session: s }: { session: Session }) {
           <li key={q.id} className="panel qstat">
             <div className="qitem-head">
               <span><T.icon aria-hidden="true" />{T.label}</span>
-              <span>Temps moyen : {answered ? formatSeconds(avgMs) : '—'}</span>
+              <span>Temps moyen : {answered ? formatSeconds(avgMs) : '-'}</span>
               {hard && <span className="hard"><AlertTriangle aria-hidden="true" />Question difficile</span>}
             </div>
             <div className="qstat-top">

@@ -17,7 +17,7 @@ function Choices({ q, set }: Props) {
   };
   return (
     <fieldset className="ed-answers">
-      <legend className="field-label">Réponses <span className="field-hint">— {multi ? 'cochez toutes les bonnes réponses' : 'cochez la bonne réponse'}</span></legend>
+      <legend className="field-label">Réponses <span className="field-hint">- {multi ? 'cochez toutes les bonnes réponses' : 'cochez la bonne réponse'}</span></legend>
       {answers.map((a, i) => (
         <div key={i} className={`ed-answer tile-border-${i}`}>
           <span className={`ed-shape tile-${i}`}><Shape index={i} size={18} /></span>

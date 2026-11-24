@@ -15,6 +15,7 @@ Application de quiz interactifs, en direct ou en solo, pour tester les connaissa
 - **Accès formateur protégé** : l’accueil sert aux apprenants (Rejoindre) ; la bibliothèque, l’animation et les résultats demandent le mot de passe de l’animateur (le même que jeux).
 - **Responsive** (mobile, tablette, bureau) et **thème sombre** : trois modes (celui du système, clair, sombre), choix commun à tous les outils Skazy Formation (clé `skazy-outils:theme` du navigateur).
 - **Mode nuit des navigateurs** : la balise `<meta name="darkreader-lock" />` de `index.html` empêche le mode nuit de Brave (Dark Reader) de repeindre la page, même en thème clair. À conserver.
+- **Typographie française** : à l’affichage, `src/lib/typo.ts` remplace l’espace ordinaire avant `: ; ! ? » % € $ ·` et un tiret d’incise, après `«`, dans les grands nombres (150 000) et entre un nombre et le mot qui le suit (30 s) par une espace insécable, pour qu’aucun signe ne se retrouve seul en début de ligne. Cela vaut pour l’interface et pour tous les quiz, y compris personnels et importés : inutile de saisir des espaces insécables. Le code (`code`, `pre`) et les champs de saisie ne sont pas modifiés. Pas de tiret cadratin : le trait d’union `-`. Règles complètes de rédaction dans `AGENTS.md`.
 
 ## Animer une partie en direct
 
@@ -51,4 +52,4 @@ Chaque outil Skazy Formation a sa couleur de l’arc-en-ciel, dans cet ordre : V
 
 ## Droits
 
-© Skazy Formation — Tous droits réservés. Les quiz, contenus et résultats de cette application sont protégés : toute reproduction ou réutilisation, même partielle, est interdite sans l’accord écrit préalable de Skazy Formation.
+© Skazy Formation - Tous droits réservés. Les quiz, contenus et résultats de cette application sont protégés : toute reproduction ou réutilisation, même partielle, est interdite sans l’accord écrit préalable de Skazy Formation.

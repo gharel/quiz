@@ -51,7 +51,7 @@ function Footer({ unlocked }: { unlocked: boolean }) {
     <footer className="app-footer">
       <div className="container footer-inner">
         <div className="footer-legal">
-          <p>© {year} Skazy Formation — Tous droits réservés.</p>
+          <p>© {year} Skazy Formation - Tous droits réservés.</p>
           <p>Les quiz, contenus et résultats de cette application sont protégés : toute reproduction ou réutilisation, même partielle, est interdite sans l’accord écrit préalable de Skazy Formation.</p>
         </div>
         {unlocked && (

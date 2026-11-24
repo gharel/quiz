@@ -81,7 +81,7 @@ export function sessionCsv(s: Session, categoryLabel = ''): string {
     ...(s.report?.note ? [['Observations', s.report.note]] : []),
   ];
   const head = ['Rang', 'Participant', 'Score', 'Bonnes réponses', 'Réussite (%)', 'Niveau', 'Sans réponse'];
-  s.quiz.questions.forEach((q, i) => head.push(`Q${i + 1} — ${q.text} (${TYPE_INFO[q.type].label})`));
+  s.quiz.questions.forEach((q, i) => head.push(`Q${i + 1} - ${q.text} (${TYPE_INFO[q.type].label})`));
   const rows = ranking(s).map((p) => {
     const cells: (string | number)[] = [p.rank, p.name, p.score, p.correct, p.rate, levelOf(p.rate).label, p.missed];
     s.quiz.questions.forEach((q, i) => {

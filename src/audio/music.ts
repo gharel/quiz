@@ -9,7 +9,7 @@ interface Pattern {
 }
 
 const patterns: Record<Track, Pattern> = {
-  // Salon : groove léger et lumineux (Do – La m – Fa – Sol)
+  // Salon : groove léger et lumineux (Do - La m - Fa - Sol)
   lobby: {
     bpm: 112,
     chords: [[60, 64, 67, 71], [57, 60, 64, 67], [53, 57, 60, 64], [55, 59, 62, 65]],
@@ -26,7 +26,7 @@ const patterns: Record<Track, Pattern> = {
       }
     },
   },
-  // Question : ostinato en mineur, plus tendu (La m – Fa – Do – Mi)
+  // Question : ostinato en mineur, plus tendu (La m - Fa - Do - Mi)
   question: {
     bpm: 126,
     chords: [[57, 60, 64], [53, 57, 60], [48, 52, 55], [52, 56, 59]],

@@ -29,7 +29,7 @@ export function PlayerTable({ session: s }: { session: Session }) {
               <>
               <p className="player-facts">
                 <span>Niveau : <strong>{levelOf(p.rate).label}</strong></span>
-                <span>Temps moyen de réponse : <strong>{p.avgMs ? formatSeconds(p.avgMs) : '—'}</strong></span>
+                <span>Temps moyen de réponse : <strong>{p.avgMs ? formatSeconds(p.avgMs) : '-'}</strong></span>
                 {p.missed > 0 && <span>Sans réponse : <strong>{p.missed}</strong></span>}
               </p>
               <ol className="player-answers">

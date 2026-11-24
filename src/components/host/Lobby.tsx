@@ -25,7 +25,7 @@ interface Props {
 export function Lobby(p: Props) {
   const joinShort = `${location.host}${location.pathname.replace(/\/$/, '')}`;
   const joinFull = `${appUrl()}${href.join(p.pin)}`;
-  const pinLabel = p.pin || '— — — —';
+  const pinLabel = p.pin || '- - - -';
 
   return (
     <div className="lobby">
@@ -33,7 +33,7 @@ export function Lobby(p: Props) {
         <div className="lobby-join">
           <p className="lobby-step">Rejoignez la partie sur <strong>{joinShort}</strong></p>
           <p className="lobby-pin-label">Code de la partie</p>
-          <p className="lobby-pin" aria-live="polite">{p.status === 'error' ? '—' : pinLabel}</p>
+          <p className="lobby-pin" aria-live="polite">{p.status === 'error' ? '-' : pinLabel}</p>
           <p className="lobby-title">{p.title}</p>
         </div>
         {p.pin && p.status !== 'error' && (

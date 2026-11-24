@@ -2,7 +2,7 @@
   "name": "skazy-quiz",
   "private": true,
   "version": "1.0.0",
-  "description": "Quiz interactifs pour tester les connaissances des apprenants — Skazy Formation",
+  "description": "Quiz interactifs pour tester les connaissances des apprenants - Skazy Formation",
   "type": "module",
   "scripts": {
     "dev": "vite",

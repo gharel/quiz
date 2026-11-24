@@ -1547,7 +1547,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k114",
-    "text": "Quel type de champ fait partie des \"Champs basiques\" ?",
+    "text": "Quel type de champ fait partie des « Champs basiques » ?",
     "time": 40,
     "points": 1,
     "type": "single",
