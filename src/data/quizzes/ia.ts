@@ -1,13 +1,13 @@
 import { curseur, ordre, qcm, quiz, saisie, vf } from '../build';
 
 export default quiz('ia-generative-quotidien', 'ia', 'IA générative',
-  'LLM, hallucinations, confidentialité, vérification des réponses : comprendre ce que l’IA générative sait faire, et ses limites.', [
-  qcm('Que signifie le sigle LLM ?', [
-    'Large Learning Machine',
-    '*Large Language Model',
-    'Logical Language Module',
-    'Linked Language Memory',
-  ], { explanation: 'Un LLM est un grand modèle de langage, entraîné sur de très grandes quantités de texte.' }),
+  'Prompt, hallucinations, confidentialité, vérification des réponses : comprendre ce que l’IA générative sait faire, et ses limites.', [
+  qcm('Qu’est-ce qui améliore le plus la réponse d’une IA générative ?', [
+    '*Donner du contexte et le résultat attendu',
+    'Écrire toute la demande en majuscules',
+    'Ajouter des formules de politesse',
+    'Se limiter à quelques mots-clés',
+  ], { explanation: 'Précisez la situation, l’objectif, le public et le format souhaité : l’IA ne sait que ce que vous lui donnez.' }),
   saisie('Comment appelle-t-on une réponse inventée mais présentée comme vraie par une IA ?', [
     'hallucination', 'une hallucination', 'hallucinations',
   ]),
@@ -27,11 +27,14 @@ export default quiz('ia-generative-quotidien', 'ia', 'IA générative',
     'Le test de Turing (1950)', 'Deep Blue bat Kasparov aux échecs (1997)', 'AlphaGo bat un champion de go (2016)', 'Lancement de ChatGPT (2022)',
   ]),
   vf('Une IA générative peut produire des contenus différents à partir du même prompt.', true),
-  qcm('Que signifie le « G » de GPT ?', ['Global', '*Generative', 'Graphic', 'Guided'], {
-    explanation: 'GPT : Generative Pre-trained Transformer.',
-  }),
+  qcm('Sur quoi une IA générative s’appuie-t-elle d’abord pour répondre ?', [
+    'Une base de réponses rédigées à l’avance',
+    '*Ce qu’elle a appris à l’entraînement',
+    'Un humain qui répond en direct',
+    'Des sites officiels vérifiés un par un',
+  ], { explanation: 'Elle a appris sur d’immenses quantités de textes et produit la suite la plus probable. Certains assistants consultent aussi le web, sans garantie d’exactitude.' }),
   saisie('Comment appelle-t-on le texte que l’on soumet à une IA générative pour obtenir une réponse ?', [
-    'prompt', 'un prompt', 'invite', 'requête',
+    'prompt', 'un prompt', 'demande', 'une demande', 'invite', 'requête',
   ]),
   vf('Une IA est toujours fiable, car elle signale quand elle se trompe.', false, {
     explanation: 'Elle peut inventer une réponse sans le signaler (hallucination) : la vérification reste indispensable.',
