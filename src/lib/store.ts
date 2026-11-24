@@ -4,18 +4,20 @@ import { DEFAULT_CATEGORIES, FALLBACK_CATEGORY } from '../data/categories';
 import type { Category, Quiz, Session } from './types';
 import { load, save, uid } from './util';
 
-const K = { quizzes: 'skq.quizzes', categories: 'skq.categories', sessions: 'skq.sessions' };
+const K = { quizzes: 'skq.quizzes', categories: 'skq.categories', sessions: 'skq.sessions', hidden: 'skq.hidden' };
 
 export interface State {
   quizzes: Quiz[]; // quiz créés ou importés (les exemples sont ajoutés à la lecture)
   categories: Category[]; // catégories personnalisées
   sessions: Session[];
+  hidden: string[]; // quiz de la bibliothèque (exemples, importés) supprimés sur cet appareil
 }
 
 let state: State = {
   quizzes: load<Quiz[]>(K.quizzes, []),
   categories: load<Category[]>(K.categories, []),
   sessions: load<Session[]>(K.sessions, []),
+  hidden: load<string[]>(K.hidden, []),
 };
 
 const listeners = new Set<() => void>();
@@ -27,6 +29,7 @@ function set(patch: Partial<State>) {
   if (patch.quizzes) ok = save(K.quizzes, state.quizzes) && ok;
   if (patch.categories) ok = save(K.categories, state.categories) && ok;
   if (patch.sessions) ok = save(K.sessions, state.sessions) && ok;
+  if (patch.hidden) ok = save(K.hidden, state.hidden) && ok;
   storageError = !ok;
   listeners.forEach((l) => l());
 }
@@ -44,7 +47,14 @@ export function useStore(): State {
 export const lastSaveFailed = () => storageError;
 
 /* ---------- Quiz ---------- */
-export const allQuizzes = (s: State = state): Quiz[] => [...s.quizzes, ...BUILTIN_QUIZZES];
+/** Quiz de l'appareil, puis ceux de la bibliothèque ni supprimés ni remplacés par une version modifiée. */
+export const allQuizzes = (s: State = state): Quiz[] => [
+  ...s.quizzes,
+  ...BUILTIN_QUIZZES.filter((b) => !s.hidden.includes(b.id) && !s.quizzes.some((q) => q.id === b.id)),
+];
+export const originalQuiz = (id: string) => BUILTIN_QUIZZES.find((b) => b.id === id);
+/** Vrai si le quiz est une version modifiée d'un quiz de la bibliothèque. */
+export const isModifiedOriginal = (id: string, s: State = state) => !!originalQuiz(id) && s.quizzes.some((q) => q.id === id);
 export const getQuiz = (id: string): Quiz | undefined => allQuizzes().find((q) => q.id === id);
 
 export function saveQuiz(quiz: Quiz): Quiz {
@@ -59,8 +69,22 @@ export function duplicateQuiz(quiz: Quiz, title = `${quiz.title} (copie)`): Quiz
   return saveQuiz({ ...structuredClone(quiz), id: uid(), title, builtin: false, createdAt: now, updatedAt: now });
 }
 
+/** Supprime un quiz ; un quiz de la bibliothèque est masqué sur cet appareil (restaurable). */
 export function deleteQuiz(id: string) {
+  set({
+    quizzes: state.quizzes.filter((q) => q.id !== id),
+    ...(originalQuiz(id) && !state.hidden.includes(id) ? { hidden: [...state.hidden, id] } : {}),
+  });
+}
+
+/** Revient à la version d'origine d'un quiz de la bibliothèque modifié sur cet appareil. */
+export function revertQuiz(id: string) {
   set({ quizzes: state.quizzes.filter((q) => q.id !== id) });
+}
+
+/** Réaffiche les quiz de la bibliothèque supprimés sur cet appareil. */
+export function restoreHiddenQuizzes() {
+  set({ hidden: [] });
 }
 
 /* ---------- Catégories ---------- */

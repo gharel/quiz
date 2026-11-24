@@ -74,3 +74,4 @@
 }
 .select-bar-actions { display: flex; gap: var(--space-2); margin-left: auto; }
 @media (max-width: 640px) { .select-bar-actions { margin-left: 0; width: 100%; } .select-bar-actions .btn { flex: 1; } }
+.link-btn { display: inline; padding: 0; min-height: 0; font: inherit; font-weight: 700; color: var(--brand-text); text-decoration: underline; cursor: pointer; background: none; border: 0; }

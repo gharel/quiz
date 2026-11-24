@@ -16,11 +16,15 @@ export interface Question {
   explanation?: string;
 }
 
+/** Niveau de la charte Skazy : 1 Initiation, 2 Intermédiaire, 3 Avancé. */
+export type QuizLevel = 1 | 2 | 3;
+
 export interface Quiz {
   id: string;
   title: string;
   description: string;
   category: string; // id de catégorie
+  level?: QuizLevel;
   questions: Question[];
   createdAt: number;
   updatedAt: number;

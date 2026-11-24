@@ -1,14 +1,16 @@
-import { ArrowLeft, Check, Clock, Copy, Download, Eye, EyeOff, HelpCircle, Pencil, Play, Radio, Share2, Trash2, X } from 'lucide-react';
+import { ArrowLeft, Check, Clock, Copy, Download, Eye, EyeOff, HelpCircle, Pencil, Play, Radio, RotateCcw, Share2, Trash2, X } from 'lucide-react';
 import { useState } from 'react';
 import { unlockAudio } from '../audio/engine';
 import { CategoryBadge, catVars } from '../components/CategoryBadge';
+import { LevelDots } from '../components/LevelDots';
+import { SourceTag } from '../components/QuizCard';
 import { Confirm } from '../components/Modal';
 import { ShareDialog } from '../components/ShareDialog';
 import { toast } from '../components/Toast';
 import { NotFound } from './NotFound';
 import { correctAnswerText, estimatedSeconds, TYPE_INFO } from '../lib/quizMeta';
 import { href, navigate } from '../lib/router';
-import { deleteQuiz, duplicateQuiz, getCategory, getQuiz, useStore } from '../lib/store';
+import { deleteQuiz, duplicateQuiz, getCategory, getQuiz, isModifiedOriginal, originalQuiz, revertQuiz, useStore } from '../lib/store';
 import { exportQuiz } from '../lib/transfer';
 import type { Question } from '../lib/types';
 import { formatDate, formatDuration, plural } from '../lib/util';
@@ -32,12 +34,14 @@ function Answers({ q }: { q: Question }) {
 
 export function QuizDetail({ id }: { id: string }) {
   const state = useStore();
-  const [showAnswers, setShowAnswers] = useState(true);
-  const [confirmDelete, setConfirmDelete] = useState(false);
+  const [showAnswers, setShowAnswers] = useState(false);
+  const [confirm, setConfirm] = useState<'delete' | 'revert' | null>(null);
   const [sharing, setSharing] = useState(false);
   const quiz = getQuiz(id);
   if (!quiz) return <NotFound text="Ce quiz n’existe pas ou a été supprimé." />;
   const cat = getCategory(quiz.category, state);
+  const fromLibrary = !!originalQuiz(quiz.id);
+  const modified = isModifiedOriginal(quiz.id, state);
 
   const duplicate = () => {
     const copy = duplicateQuiz(quiz);
@@ -54,7 +58,9 @@ export function QuizDetail({ id }: { id: string }) {
         <div className="detail-hero-body">
           <div className="row">
             <CategoryBadge category={cat} />
-            {quiz.builtin && <span className="tag-example">{quiz.source === 'import' ? 'Importé' : 'Exemple'}</span>}
+            <LevelDots level={quiz.level} />
+            <SourceTag quiz={quiz} />
+            {modified && <span className="tag-example">Modifié</span>}
           </div>
           <h1>{quiz.title}</h1>
           {quiz.description && <p className="muted">{quiz.description}</p>}
@@ -68,17 +74,14 @@ export function QuizDetail({ id }: { id: string }) {
             <a className="btn btn-secondary btn-lg" href={href.solo(quiz.id)}><Play aria-hidden="true" />Jouer en solo</a>
           </div>
           <div className="row detail-tools">
-            {quiz.builtin ? (
-              <button type="button" className="btn btn-ghost btn-sm" onClick={duplicate}><Pencil aria-hidden="true" />Dupliquer pour modifier</button>
-            ) : (
-              <a className="btn btn-ghost btn-sm" href={href.edit(quiz.id)}><Pencil aria-hidden="true" />Modifier</a>
-            )}
-            {!quiz.builtin && <button type="button" className="btn btn-ghost btn-sm" onClick={duplicate}><Copy aria-hidden="true" />Dupliquer</button>}
+            <a className="btn btn-ghost btn-sm" href={href.edit(quiz.id)}><Pencil aria-hidden="true" />Modifier</a>
+            <button type="button" className="btn btn-ghost btn-sm" onClick={duplicate}><Copy aria-hidden="true" />Dupliquer</button>
             <button type="button" className="btn btn-ghost btn-sm" onClick={() => setSharing(true)}><Share2 aria-hidden="true" />Partager</button>
             <button type="button" className="btn btn-ghost btn-sm" onClick={() => exportQuiz(quiz)}><Download aria-hidden="true" />Exporter</button>
-            {!quiz.builtin && (
-              <button type="button" className="btn btn-ghost btn-sm danger-text" onClick={() => setConfirmDelete(true)}><Trash2 aria-hidden="true" />Supprimer</button>
+            {modified && (
+              <button type="button" className="btn btn-ghost btn-sm" onClick={() => setConfirm('revert')}><RotateCcw aria-hidden="true" />Version d’origine</button>
             )}
+            <button type="button" className="btn btn-ghost btn-sm danger-text" onClick={() => setConfirm('delete')}><Trash2 aria-hidden="true" />Supprimer</button>
           </div>
         </div>
       </section>
@@ -111,14 +114,26 @@ export function QuizDetail({ id }: { id: string }) {
         })}
       </ol>
 
-      {confirmDelete && (
+      {confirm === 'delete' && (
         <Confirm
           title="Supprimer ce quiz ?"
-          message={`« ${quiz.title} » sera définitivement supprimé de cet appareil. Les résultats déjà enregistrés sont conservés.`}
+          message={fromLibrary
+            ? `« ${quiz.title} » sera retiré de la bibliothèque de cet appareil. Vous pourrez le restaurer depuis la bibliothèque. Les résultats déjà enregistrés sont conservés.`
+            : `« ${quiz.title} » sera définitivement supprimé de cet appareil. Les résultats déjà enregistrés sont conservés.`}
           confirmLabel="Supprimer"
           danger
           onConfirm={() => { deleteQuiz(quiz.id); toast('Quiz supprimé.'); navigate(href.library()); }}
-          onClose={() => setConfirmDelete(false)}
+          onClose={() => setConfirm(null)}
+        />
+      )}
+      {confirm === 'revert' && (
+        <Confirm
+          title="Revenir à la version d’origine ?"
+          message={`Vos modifications de « ${quiz.title} » seront perdues sur cet appareil.`}
+          confirmLabel="Revenir à l’origine"
+          danger
+          onConfirm={() => { revertQuiz(quiz.id); toast('Version d’origine rétablie.'); setConfirm(null); }}
+          onClose={() => setConfirm(null)}
         />
       )}
       {sharing && <ShareDialog quiz={quiz} onClose={() => setSharing(false)} />}

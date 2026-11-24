@@ -24,4 +24,4 @@ export default quiz('nocode-automatisation', 'nocode', 'NoCode et automatisation
   curseur('Un scénario s’exécute toutes les 15 minutes. Combien de fois s’exécute-t-il en une heure ?', {
     min: 0, max: 10, step: 1, answer: 4, tolerance: 0,
   }),
-]);
+], 2);

@@ -1,5 +1,5 @@
 import { getCategory, saveQuiz } from './store';
-import type { Question, Quiz } from './types';
+import type { Question, Quiz, QuizLevel } from './types';
 import { downloadFile, slugify, uid } from './util';
 
 const TYPES = ['single', 'multiple', 'truefalse', 'text', 'slider', 'order'];
@@ -19,6 +19,7 @@ export function sanitizeQuiz(raw: unknown): Quiz {
     title: src.title.slice(0, 120),
     description: typeof src.description === 'string' ? src.description.slice(0, 300) : '',
     category: getCategory(String(src.category ?? '')).id,
+    ...([1, 2, 3].includes(Number(src.level)) ? { level: Number(src.level) as QuizLevel } : {}),
     questions: questions.map((q) => ({ ...q, id: uid(8), time: Number(q.time) || 20, points: ([0, 1, 2] as const).includes(q.points) ? q.points : 1 })),
     createdAt: now,
     updatedAt: now,
@@ -88,7 +89,7 @@ export async function encodeShare(quiz: Quiz): Promise<{ data: string; droppedIm
     }
     return q;
   });
-  const json = JSON.stringify({ title: quiz.title, description: quiz.description, category: quiz.category, questions });
+  const json = JSON.stringify({ title: quiz.title, description: quiz.description, category: quiz.category, level: quiz.level, questions });
   const data = toBase64Url(await pipe(new TextEncoder().encode(json), new CompressionStream('deflate-raw')));
   return { data, droppedImages };
 }

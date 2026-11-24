@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+import { BUILTIN_QUIZZES } from '.';
 import IMPORTED_QUIZZES from './importes';
 
 const questions = IMPORTED_QUIZZES.flatMap((z) => z.questions.map((q, i) => ({ z: z.title, n: i + 1, q })));
@@ -9,9 +10,11 @@ describe('quiz importés', () => {
     expect(new Set(IMPORTED_QUIZZES.map((z) => z.id)).size).toBe(IMPORTED_QUIZZES.length);
     for (const z of IMPORTED_QUIZZES) {
       expect(z.source, z.title).toBe('import');
+      expect([1, 2, 3], z.title).toContain(z.level);
       expect(z.description.length, z.title).toBeGreaterThanOrEqual(40);
     }
     expect(new Set(IMPORTED_QUIZZES.map((z) => z.description)).size).toBe(IMPORTED_QUIZZES.length);
+    expect(new Set(BUILTIN_QUIZZES.map((z) => z.id)).size, 'identifiants uniques entre exemples et quiz importés').toBe(BUILTIN_QUIZZES.length);
   });
 
   it('respectent les durées : vrai/faux 30 s, QCM 45 ou 60 s, choix multiples 60 s', () => {

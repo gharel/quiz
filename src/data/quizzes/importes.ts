@@ -1,5 +1,5 @@
 // Quiz importés (bibliothèque historique du formateur), relus et corrigés.
-// Ce fichier est désormais la référence : les corrections se font ici.
+// Ce fichier est la référence : les corrections se font ici.
 import type { Quiz } from '../../lib/types';
 
 const IMPORTED_QUIZZES: Quiz[] = [
@@ -8,6 +8,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "ia",
   "title": "IA - Intermédiaire",
   "description": "Types d'IA, usages, limites, fiabilité et bonnes pratiques de prompt : les bases de l'IA générative pour mieux l'utiliser.",
+  "level": 2,
   "questions": [
    {
     "id": "k1",
@@ -148,6 +149,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "ia",
   "title": "Claude - Initiation",
   "description": "Modèles Claude, IA générative, ingrédients d'un prompt, fonctionnalités : les bases pour bien démarrer avec Claude.",
+  "level": 1,
   "questions": [
    {
     "id": "k11",
@@ -288,6 +290,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "webmarketing",
   "title": "Réseaux Sociaux",
   "description": "Stratégie de visibilité, engagement, ligne éditoriale, LinkedIn, Facebook : les bases pour animer vos réseaux sociaux.",
+  "level": 1,
   "questions": [
    {
     "id": "k21",
@@ -428,6 +431,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "web",
   "title": "Atelier Cybersécurité 7h",
   "description": "Phishing, ingénierie sociale, mots de passe, MFA, ransomware : les réflexes essentiels pour se protéger des cyberattaques.",
+  "level": 1,
   "questions": [
    {
     "id": "k31",
@@ -584,6 +588,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "graphisme",
   "title": "Davinci Resolve - Initiation",
   "description": "Pages, bins, points In et Out, étalonnage, export : les bases du montage vidéo avec DaVinci Resolve.",
+  "level": 1,
   "questions": [
    {
     "id": "k41",
@@ -732,6 +737,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "gestion",
   "title": "Atelier Numérique responsable 4h",
   "description": "Empreinte du numérique, sobriété, économie circulaire, règle des 5R : les bases d'un numérique plus responsable.",
+  "level": 1,
   "questions": [
    {
     "id": "k51",
@@ -888,6 +894,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "dev",
   "title": "Git & Gitlab - Initiation",
   "description": "Git, commits, branches, GitLab : les notions clés pour versionner un projet et collaborer sur des dépôts.",
+  "level": 1,
   "questions": [
    {
     "id": "k61",
@@ -1036,6 +1043,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "dev",
   "title": "WordPress Bonnes pratiques Dev - Initiation",
   "description": "CPT, taxonomies, ACF, widgets, hooks : structurer et étendre un site WordPress dans les règles de l'art.",
+  "level": 1,
   "questions": [
    {
     "id": "k71",
@@ -1184,6 +1192,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "dev",
   "title": "Shopify - Initiation",
   "description": "Back-office, produits, pages légales, paiement en Nouvelle-Calédonie : prenez en main votre boutique Shopify.",
+  "level": 1,
   "questions": [
    {
     "id": "k81",
@@ -1332,6 +1341,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "ia",
   "title": "IA Arbé",
   "description": "Vocabulaire de l'IA, construction d'un bon prompt, génération d'images et inpainting : les bases pour bien utiliser l'IA.",
+  "level": 1,
   "questions": [
    {
     "id": "k91",
@@ -1472,6 +1482,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "nocode",
   "title": "Jotform - Intermédiaire",
   "description": "Champs conditionnels, éditeur PDF, workflows, rapports, applications : aller plus loin avec Jotform.",
+  "level": 2,
   "questions": [
    {
     "id": "k101",
@@ -1628,6 +1639,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "nocode",
   "title": "Jotform - Initiation",
   "description": "Jotform : créer, intégrer et exporter des formulaires, utiliser Jotform Tables et appliquer les bonnes pratiques de conception.",
+  "level": 1,
   "questions": [
    {
     "id": "k111",
@@ -1784,6 +1796,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "dev",
   "title": "Prototypage avec Node.js",
   "description": "Node.js, npm, Express, TypeScript : les notions clés pour prototyper une API et structurer un projet JavaScript.",
+  "level": 2,
   "questions": [
    {
     "id": "k121",
@@ -1956,6 +1969,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "gestion",
   "title": "Numérique responsable et Green IT",
   "description": "Impact des CMS, loi AGEC, Ecoindex, bilan GES : les repères du numérique responsable et du Green IT.",
+  "level": 2,
   "questions": [
    {
     "id": "k131",
@@ -2112,6 +2126,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "dev",
   "title": "CSS Perfectionnement",
   "description": "Sélecteurs, box-model, Flexbox, Grid, transitions, BEM : les notions pour perfectionner vos feuilles de style.",
+  "level": 3,
   "questions": [
    {
     "id": "k141",
@@ -2284,6 +2299,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "dev",
   "title": "Contributeur web (WordPress) - Initiation",
   "description": "Tableau de bord, articles, pages, catégories, menus, widgets, extensions : prendre en main WordPress pour publier du contenu.",
+  "level": 1,
   "questions": [
    {
     "id": "k151",
@@ -2432,6 +2448,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "dev",
   "title": "PHP - Intermédiaire",
   "description": "MVC, Composer, PDO, API REST, DRY, KISS, XSS : les bonnes pratiques pour développer en PHP.",
+  "level": 2,
   "questions": [
    {
     "id": "k161",
@@ -2580,6 +2597,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "dev",
   "title": "Javascript & jQuery Perfectionnement",
   "description": "Portée des variables, fonctions fléchées, déstructuration, hoisting, promesses et jQuery : les notions clés de JavaScript avancé.",
+  "level": 3,
   "questions": [
    {
     "id": "k171",
@@ -2728,6 +2746,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "ia",
   "title": "Performance IA EDD",
   "description": "Vocabulaire de l'IA, applications, prompt clair et précis, choix des outils : les repères essentiels pour gagner en performance.",
+  "level": 1,
   "questions": [
    {
     "id": "k181",
@@ -2868,6 +2887,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "ia",
   "title": "IA / ChatGPT - Initiation",
   "description": "Réseaux de neurones, types d'IA, prompts clairs et limites : les bases de l'IA générative et de ChatGPT.",
+  "level": 1,
   "questions": [
    {
     "id": "k191",
@@ -3008,6 +3028,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "bureautique",
   "title": "Microsoft 365 Partiel - Initiation",
   "description": "Outlook, OneDrive, OneNote, Planner, Teams, SharePoint, Forms : découvrez les principaux services de Microsoft 365.",
+  "level": 1,
   "questions": [
    {
     "id": "k201",
@@ -3164,6 +3185,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "ia",
   "title": "Bureautique avec l'IA - Initiation",
   "description": "Copilot dans Word, Excel, PowerPoint et Outlook : ce que l'IA apporte à la bureautique, et ses limites.",
+  "level": 1,
   "questions": [
    {
     "id": "k211",
@@ -3304,6 +3326,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "ia",
   "title": "Les IA génératives - Perfectionnement",
   "description": "Frameworks de prompt, choix d'une IA, modes de ChatGPT, images : perfectionnez vos usages de l'IA générative.",
+  "level": 3,
   "questions": [
    {
     "id": "k222",
@@ -3420,6 +3443,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "graphisme",
   "title": "Premiere - Initiation",
   "description": "Types de vidéo, raccourcis, titres, marques, stabilisation, colorimétrie et audio : les bases du montage avec Premiere.",
+  "level": 1,
   "questions": [
    {
     "id": "k231",
@@ -3568,6 +3592,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "ia",
   "title": "ChatGPT CCI - Initiation",
   "description": "Méthodes de prompt (RTF, RACEF), capacités de ChatGPT et protection des données personnelles : les bases pour bien démarrer.",
+  "level": 1,
   "questions": [
    {
     "id": "k241",
@@ -3700,6 +3725,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "webmarketing",
   "title": "Réseaux Sociaux avec l'IA",
   "description": "Plateformes, chatbots, création de contenu, analyse de performance : utiliser l'IA pour animer vos réseaux sociaux.",
+  "level": 2,
   "questions": [
    {
     "id": "k251",
@@ -3848,6 +3874,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "ia",
   "title": "Canva IA",
   "description": "Écriture magique, Dream Lab, gomme magique, filtres intelligents : les outils d'IA de Canva pour vos visuels.",
+  "level": 2,
   "questions": [
    {
     "id": "k261",
@@ -3996,6 +4023,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "webmarketing",
   "title": "Facebook - 1 Bien démarrer",
   "description": "Formats, stratégie de publication, algorithme, Meta Business Suite : les bases pour bien démarrer sur Facebook.",
+  "level": 1,
   "questions": [
    {
     "id": "k271",
@@ -4144,6 +4172,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "bureautique",
   "title": "Microsoft 365 Complet - Initiation",
   "description": "OneDrive, Planner, Stream, Sway, Power Automate, Power Apps, To Do, Lists : découvrez les outils de Microsoft 365.",
+  "level": 1,
   "questions": [
    {
     "id": "k281",
@@ -4356,6 +4385,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "dev",
   "title": "SharePoint - Initiation",
   "description": "Listes, bibliothèques, métadonnées, WebParts et flux de travail : les bases pour créer et gérer un site SharePoint.",
+  "level": 1,
   "questions": [
    {
     "id": "k295",
@@ -4504,6 +4534,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "ia",
   "title": "Microsoft Copilot - Initiation",
   "description": "Types d'IA, applications, éléments d'un prompt et confidentialité : les bases pour bien démarrer avec Microsoft Copilot.",
+  "level": 1,
   "questions": [
    {
     "id": "k305",
@@ -4644,6 +4675,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "bureautique",
   "title": "Microsoft Teams - Initiation",
   "description": "Équipes, canaux, réunions, partage de fichiers, rôles et sécurité : prendre en main Microsoft Teams au quotidien.",
+  "level": 1,
   "questions": [
    {
     "id": "k315",
@@ -4792,6 +4824,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "nocode",
   "title": "Power Automate - Initiation",
   "description": "Déclencheurs, actions, connecteurs, variables, boucles, erreurs : automatisez vos tâches avec Power Automate.",
+  "level": 1,
   "questions": [
    {
     "id": "k325",
@@ -4964,6 +4997,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "ia",
   "title": "ChatGPT EDD - Initiation",
   "description": "Vocabulaire de l'IA, éléments d'un prompt, rôles et tons : les bases pour bien dialoguer avec ChatGPT.",
+  "level": 1,
   "questions": [
    {
     "id": "k335",
@@ -5104,6 +5138,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "ia",
   "title": "IA Images & Textes",
   "description": "Prompts, ChatGPT, Copilot, fiabilité des réponses, images : les bases pour bien utiliser l'IA générative.",
+  "level": 1,
   "questions": [
    {
     "id": "k345",
@@ -5244,6 +5279,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "graphisme",
   "title": "Canva - Perfectionnement",
   "description": "Modèles, export, historique des versions, raccourcis, retouche d'image, animations et écriture magique : perfectionnez-vous sur Canva.",
+  "level": 3,
   "questions": [
    {
     "id": "k355",
@@ -5392,6 +5428,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "webmarketing",
   "title": "Newsletter",
   "description": "Typologies, personas, fréquence, contenu, indicateurs et outils d'envoi : les bons réflexes pour réussir vos newsletters.",
+  "level": 1,
   "questions": [
    {
     "id": "k365",
@@ -5540,6 +5577,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "ia",
   "title": "Génération d'images avec l'IA - Initiation",
   "description": "Histoire de l'IA, outils comme Midjourney ou Firefly, paramètres de prompt et inpainting : créer des images avec l'IA.",
+  "level": 1,
   "questions": [
    {
     "id": "k375",
@@ -5688,6 +5726,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "gestion",
   "title": "Microsoft Project - Initiation",
   "description": "Fichiers .mpp, Gantt, tâches, ressources, effort, dépendances : planifiez vos projets avec Microsoft Project.",
+  "level": 1,
   "questions": [
    {
     "id": "k385",
@@ -5844,6 +5883,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "graphisme",
   "title": "Photoshop - Intermédiaire",
   "description": "Raccourcis, masques d'écrêtage, plume, styles de calque, filtres, traitement par lots : approfondir Photoshop.",
+  "level": 2,
   "questions": [
    {
     "id": "k395",
@@ -5992,6 +6032,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "dev",
   "title": "WordPress - Initiation",
   "description": "CMS, administration, articles, médias, thèmes, extensions : les notions clés pour démarrer avec WordPress.",
+  "level": 1,
   "questions": [
    {
     "id": "k405",
@@ -6140,6 +6181,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "dev",
   "title": "Contributeur web (Drupal) - Initiation",
   "description": "Contenus, menus, éditeur WYSIWYG, taxonomies, blocs et champs : les bases pour publier et gérer un site Drupal.",
+  "level": 1,
   "questions": [
    {
     "id": "k415",
@@ -6288,6 +6330,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "dev",
   "title": "Contributeur web (Joomla) - Initiation",
   "description": "Joomla, extensions, rôles, catégories et éditeur WYSIWYG : les notions clés pour contribuer à un site web et gérer ses articles.",
+  "level": 1,
   "questions": [
    {
     "id": "k425",
@@ -6436,6 +6479,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "graphisme",
   "title": "Figma - Initiation",
   "description": "Outils vectoriels, commentaires, composants, variantes, historique et interactions : prendre en main Figma.",
+  "level": 1,
   "questions": [
    {
     "id": "k435",
@@ -6584,6 +6628,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "dev",
   "title": "PrestaShop - Initiation",
   "description": "Installation, administration, sécurité, groupes d'utilisateurs, produits : prenez en main une boutique PrestaShop.",
+  "level": 1,
   "questions": [
    {
     "id": "k445",
@@ -6732,6 +6777,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "dev",
   "title": "WooCommerce - Initiation",
   "description": "DNS, produits, commandes, clients, statistiques, stock : les notions clés pour gérer une boutique avec WooCommerce.",
+  "level": 1,
   "questions": [
    {
     "id": "k455",
@@ -6880,6 +6926,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "graphisme",
   "title": "Canva - Initiation",
   "description": "Modèles, calques, grilles d'images, blocs de texte, imports : prenez en main Canva pour vos créations.",
+  "level": 1,
   "questions": [
    {
     "id": "k465",
@@ -7028,6 +7075,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "bureautique",
   "title": "Google Workspace - Initiation",
   "description": "Gmail, Drive, Keep, Agenda, Meet, Slides, Chat : les fonctionnalités clés de Google Workspace pour mieux travailler au quotidien.",
+  "level": 1,
   "questions": [
    {
     "id": "k475",
@@ -7176,6 +7224,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "graphisme",
   "title": "Vidéo web - Initiation",
   "description": "Formats, outils de montage, structure du récit, composition et motion design : les bases pour réaliser une vidéo web.",
+  "level": 1,
   "questions": [
    {
     "id": "k485",
@@ -7324,6 +7373,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "bureautique",
   "title": "Traitement de texte - Initiation",
   "description": "Images, règle, retraits, en-têtes, titres, révisions et export PDF : maîtriser les bases du traitement de texte.",
+  "level": 1,
   "questions": [
    {
     "id": "k495",
@@ -7480,6 +7530,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "gestion",
   "title": "Scrum",
   "description": "Rôles, release planning, sprint, backlog, définition du done, story points, burndown chart : les bases de Scrum.",
+  "level": 2,
   "questions": [
    {
     "id": "k505",
@@ -7620,6 +7671,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "webmarketing",
   "title": "Facebook - 3 Booster votre stratégie publicitaire",
   "description": "Boost, enchères, ciblage, objectifs, test A/B, pixel : les notions clés pour réussir vos publicités Facebook.",
+  "level": 3,
   "questions": [
    {
     "id": "k515",
@@ -7768,6 +7820,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "dev",
   "title": "Accessibilité web",
   "description": "Handicaps, technologies d'assistance, RGAA, WCAG, ergonomie : les bases de l'accessibilité web.",
+  "level": 1,
   "questions": [
    {
     "id": "k525",
@@ -7908,6 +7961,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "graphisme",
   "title": "After Effects - Initiation",
   "description": "Interface, outils, points clés, Keylight, suivi de mouvement, rotoscopie, 3D et expressions : les bases de l'animation avec After Effects.",
+  "level": 1,
   "questions": [
    {
     "id": "k535",
@@ -8056,6 +8110,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "bureautique",
   "title": "Microsoft 365 vs Office 2013",
   "description": "Word, Excel, PowerPoint, Outlook et OneDrive en ligne : les services et fonctions clés de Microsoft 365 pour travailler en ligne.",
+  "level": 1,
   "questions": [
    {
     "id": "k545",
@@ -8196,6 +8251,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "bureautique",
   "title": "Tableur - Initiation",
   "description": "Raccourcis, saisie, formules, recopie, dates, CSV et mise en forme : les bases du tableur pour gérer vos données.",
+  "level": 1,
   "questions": [
    {
     "id": "k555",
@@ -8344,6 +8400,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "bureautique",
   "title": "Tableur - Perfectionnement",
   "description": "Validation de données, mise en forme conditionnelle, sparklines, segments, références absolues : perfectionnez votre tableur.",
+  "level": 3,
   "questions": [
    {
     "id": "k565",
@@ -8500,6 +8557,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "webmarketing",
   "title": "Facebook - 2 Faire vivre sa page",
   "description": "Marronniers, rôles, algorithme, modération, Meta Business Suite : les bons réflexes pour animer votre page Facebook.",
+  "level": 2,
   "questions": [
    {
     "id": "k575",
@@ -8648,6 +8706,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "graphisme",
   "title": "Photoshop - Initiation (Orienté GIF)",
   "description": "Format PSD, outils, tampon, correcteur, calques de remplissage et retouche de GIF : les bases de Photoshop.",
+  "level": 1,
   "questions": [
    {
     "id": "k595",
@@ -8796,6 +8855,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "dev",
   "title": "Google Apps Script",
   "description": "Scripts, variables JavaScript, événements, menus et boîtes de dialogue : les notions clés pour automatiser Google Workspace.",
+  "level": 3,
   "questions": [
    {
     "id": "k605",
@@ -8936,6 +8996,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "dev",
   "title": "HTML & CSS - Initiation",
   "description": "Balises HTML, propriétés CSS, unités, media queries et liens : les fondamentaux pour structurer et styler une page web.",
+  "level": 1,
   "questions": [
    {
     "id": "k615",
@@ -9092,6 +9153,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "graphisme",
   "title": "Illustrator - Initiation",
   "description": "Formats vectoriels, plume, tangentes, pathfinder, pipette, mode isolation : les bases pour dessiner avec Illustrator.",
+  "level": 1,
   "questions": [
    {
     "id": "k625",
@@ -9240,6 +9302,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "graphisme",
   "title": "Principe de l'image numérique",
   "description": "Vectoriel et bitmap, formats de fichiers, RVB et CMJN, transparence : les fondamentaux de l'image numérique.",
+  "level": 1,
   "questions": [
    {
     "id": "k635",
@@ -9373,6 +9436,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "bureautique",
   "title": "Traitement de texte - Perfectionnement",
   "description": "Styles, sections, marges, colonnes, révisions, mise en forme : perfectionnez-vous en traitement de texte.",
+  "level": 3,
   "questions": [
    {
     "id": "k645",
@@ -9529,6 +9593,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "category": "graphisme",
   "title": "Photoshop - Initiation",
   "description": "Modes de fusion, liaison de calques, déformation du texte : les bases de Photoshop pour composer et retoucher vos images.",
+  "level": 1,
   "questions": [
    {
     "id": "k655",

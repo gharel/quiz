@@ -1,4 +1,4 @@
-import { answerText, correctAnswerText, TYPE_INFO } from './quizMeta';
+import { answerText, correctAnswerText, levelLabel, TYPE_INFO } from './quizMeta';
 import type { Session } from './types';
 import { formatDateTime, formatDuration, percent } from './util';
 
@@ -67,6 +67,7 @@ export function sessionCsv(s: Session, categoryLabel = ''): string {
   const info: (string | number)[][] = [
     ['Quiz', s.quiz.title],
     ...(categoryLabel ? [['Catégorie', categoryLabel]] : []),
+    ...(s.quiz.level ? [['Niveau', levelLabel(s.quiz.level)]] : []),
     ...(s.report?.training ? [['Formation', s.report.training]] : []),
     ...(s.report?.trainer ? [['Formateur', s.report.trainer]] : []),
     ['Date', formatDateTime(s.startedAt)],

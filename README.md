@@ -1,12 +1,12 @@
 # Quiz · Skazy Formation
 
-Application de quiz interactifs pour tester les connaissances des apprenants, aux couleurs du design system **Skazy Formation**.
+Application de quiz interactifs, en direct ou en solo, pour tester les connaissances des apprenants, aux couleurs du design system **Skazy Formation**.
 
 **En ligne : https://gharel.github.io/quiz/**
 
 ## Fonctionnalités
 
-- **Bibliothèque** : quiz d’exemple, quiz importés et quiz personnels, recherche, tri, **filtre par catégorie** (domaines de formation Skazy) et par origine. Création, modification, duplication, import/export JSON et partage par lien. **Sélectionner** permet de cocher plusieurs quiz et de les **exporter** dans un seul fichier JSON, réimportable avec **Importer**.
+- **Bibliothèque** : quiz d’exemple, quiz importés (badge « Importé ») et quiz personnels, recherche, tri, **filtre par catégorie** (domaines de formation Skazy), par niveau et par origine. Le **niveau** (Initiation, Intermédiaire, Avancé) est symbolisé par 3 points dans la couleur de la catégorie. Chaque quiz se **modifie**, se **duplique** ou se **supprime** depuis sa page (réponses masquées par défaut) ; un quiz de la bibliothèque modifié ou supprimé ne l’est que sur l’appareil, avec retour à la version d’origine et restauration possibles. Import/export JSON et partage par lien. **Sélectionner** permet de cocher plusieurs quiz et de les **exporter** dans un seul fichier JSON, réimportable avec **Importer**.
 - **Six types de questions** : QCM, choix multiples, vrai ou faux, réponse libre (casse, accents et ponctuation ignorés), curseur avec marge d’erreur, remise en ordre. Image et explication facultatives, temps et points (standard, doublés, sans points) réglables par question.
 - **Mode en direct** : vous projetez le quiz, les apprenants rejoignent depuis leur téléphone avec un code à 4 chiffres ou un QR code, et reçoivent un animal (24 au choix, modifiable). Chrono, répartition des réponses, classement, podium, musique et effets sonores.
 - **Mode solo** : chaque apprenant s’entraîne à son rythme, avec correction et explication après chaque question, puis un bilan détaillé.
@@ -31,7 +31,7 @@ Seule une empreinte PBKDF2 (SHA-256, 600 000 itérations) est publiée dans `src
 
 Tout est enregistré dans le navigateur de l’appareil utilisé (aucun serveur, aucun compte). Pensez à **exporter** vos quiz (JSON) pour les sauvegarder ou les transférer sur un autre poste, et vos résultats (CSV).
 
-Les quiz importés (`src/data/quizzes/importes.ts`) ont été relus et corrigés (descriptions, fautes, réponses ambiguës ou dépassées, durées : vrai/faux 30 s, QCM 45 s ou 60 s si long, choix multiples 60 s). **Ce fichier est désormais la référence** : les corrections se font directement dedans, et `importes.test.ts` vérifie descriptions, durées et cohérence des réponses.
+Les quiz importés (`src/data/quizzes/importes.ts`) ont été relus et corrigés (descriptions, fautes, réponses ambiguës ou dépassées, niveaux, durées : vrai/faux 30 s, QCM 45 s ou 60 s si long, choix multiples 60 s). Les corrections se font directement dans ce fichier ; `importes.test.ts` vérifie descriptions, niveaux, durées et cohérence des réponses.
 
 ## Développement
 

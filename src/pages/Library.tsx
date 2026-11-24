@@ -5,7 +5,8 @@ import { QuizCard } from '../components/QuizCard';
 import { Select } from '../components/Select';
 import { toast } from '../components/Toast';
 import { href, navigate } from '../lib/router';
-import { allQuizzes, getCategory, useStore } from '../lib/store';
+import { LEVELS } from '../lib/quizMeta';
+import { allQuizzes, getCategory, restoreHiddenQuizzes, useStore } from '../lib/store';
 import { exportQuizzes, importQuizFile } from '../lib/transfer';
 import { normalize } from '../lib/scoring';
 import type { Quiz } from '../lib/types';
@@ -22,10 +23,14 @@ export function Library() {
   const [query, setQuery] = useState('');
   const [sort, setSort] = useState<Sort>('recent');
   const [origin, setOrigin] = useState<Origin>('all');
+  const [level, setLevel] = useState(0); // 0 : tous les niveaux
   const [selected, setSelected] = useState<Set<string> | null>(null); // null : pas en mode sélection
   const fileRef = useRef<HTMLInputElement>(null);
 
-  const quizzes = useMemo(() => allQuizzes(state).filter((q) => origin === 'all' || originOf(q) === origin), [state, origin]);
+  const quizzes = useMemo(
+    () => allQuizzes(state).filter((q) => (origin === 'all' || originOf(q) === origin) && (!level || q.level === level)),
+    [state, origin, level],
+  );
 
   const categories = useMemo(() => {
     const counts = new Map<string, number>();
@@ -129,6 +134,14 @@ export function Library() {
           />
         </div>
         <div className="toolbar-sort">
+          <Select<number>
+            label="Niveau des quiz"
+            value={level}
+            onChange={(v) => { setLevel(v); setCat(''); }}
+            options={[{ value: 0, label: 'Tous les niveaux' }, ...LEVELS.map((l) => ({ value: l.value, label: l.label }))]}
+          />
+        </div>
+        <div className="toolbar-sort">
           <Select<Sort>
             label="Trier les quiz"
             value={sort}
@@ -144,7 +157,15 @@ export function Library() {
 
       <CategoryFilter categories={categories} total={quizzes.length} value={cat} onChange={setCat} />
 
-      <p className="result-count muted small" aria-live="polite">{plural(visible.length, 'quiz', 'quiz')}</p>
+      <p className="result-count muted small" aria-live="polite">
+        {plural(visible.length, 'quiz', 'quiz')}
+        {state.hidden.length > 0 && (
+          <>
+            {' · '}{plural(state.hidden.length, 'quiz supprimé', 'quiz supprimés')} de la bibliothèque{' '}
+            <button type="button" className="link-btn" onClick={() => { const n = state.hidden.length; restoreHiddenQuizzes(); toast(`${plural(n, 'quiz restauré', 'quiz restaurés')}.`); }}>Restaurer</button>
+          </>
+        )}
+      </p>
 
       {visible.length > 0 ? (
         <div className="grid-cards">
@@ -157,7 +178,7 @@ export function Library() {
           <div className="empty-icon"><SearchX aria-hidden="true" /></div>
           <h2>Aucun quiz ne correspond</h2>
           <p>Modifiez votre recherche ou choisissez une autre catégorie.</p>
-          <button type="button" className="btn btn-secondary" onClick={() => { setQuery(''); setCat(''); setOrigin('all'); }}>Réinitialiser les filtres</button>
+          <button type="button" className="btn btn-secondary" onClick={() => { setQuery(''); setCat(''); setOrigin('all'); setLevel(0); }}>Réinitialiser les filtres</button>
         </div>
       )}
 

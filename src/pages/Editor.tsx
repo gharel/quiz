@@ -1,6 +1,7 @@
 import { ArrowLeft, Plus, Save } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';
 import { CategoryPicker } from '../components/editor/CategoryPicker';
+import { LevelPicker } from '../components/LevelDots';
 import { QuestionEditor } from '../components/editor/QuestionEditor';
 import { toast } from '../components/Toast';
 import { blankQuestion, blankQuiz, cleanQuiz, validateQuiz } from '../lib/editorModel';
@@ -12,7 +13,7 @@ import { NotFound } from './NotFound';
 
 export default function Editor({ id }: { id?: string }) {
   const existing = id ? getQuiz(id) : undefined;
-  if (id && (!existing || existing.builtin)) return <NotFound text="Ce quiz ne peut pas être modifié. Dupliquez-le depuis sa page pour l’adapter." />;
+  if (id && !existing) return <NotFound text="Ce quiz n’existe pas ou a été supprimé." />;
   return <EditorForm initial={existing ? structuredClone(existing) : blankQuiz()} isNew={!existing} />;
 }
 
@@ -75,6 +76,7 @@ function EditorForm({ initial, isNew }: { initial: Quiz; isNew: boolean }) {
           <textarea className="textarea" rows={2} maxLength={300} value={quiz.description} placeholder="En une phrase : ce que ce quiz permet de vérifier." onChange={(e) => update({ description: e.target.value })} />
         </label>
         <CategoryPicker value={quiz.category} onChange={(category) => update({ category })} />
+        <LevelPicker value={quiz.level} onChange={(level) => update({ level })} />
       </section>
 
       <h2 className="section-title ed-section">Questions <span className="muted">({quiz.questions.length})</span></h2>

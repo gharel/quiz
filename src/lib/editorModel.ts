@@ -26,7 +26,7 @@ export function convertQuestion(q: Question, type: QuestionType): Question {
 
 export function blankQuiz(): Quiz {
   const now = Date.now();
-  return { id: uid(), title: '', description: '', category: 'general', questions: [blankQuestion()], createdAt: now, updatedAt: now };
+  return { id: uid(), title: '', description: '', category: 'general', level: 1, questions: [blankQuestion()], createdAt: now, updatedAt: now };
 }
 
 /** Erreurs de saisie, indexées par question (−1 = quiz). */

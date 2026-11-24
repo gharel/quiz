@@ -1,5 +1,5 @@
 import { CircleDot, ListChecks, ListOrdered, SlidersHorizontal, ToggleLeft, Type, type LucideIcon } from 'lucide-react';
-import type { Question, QuestionType, Quiz } from './types';
+import type { Question, QuestionType, Quiz, QuizLevel } from './types';
 
 export const TYPE_INFO: Record<QuestionType, { label: string; hint: string; icon: LucideIcon }> = {
   single: { label: 'QCM', hint: 'Une seule bonne réponse', icon: CircleDot },
@@ -9,6 +9,15 @@ export const TYPE_INFO: Record<QuestionType, { label: string; hint: string; icon
   slider: { label: 'Curseur', hint: 'Choisissez une valeur', icon: SlidersHorizontal },
   order: { label: 'Remise en ordre', hint: 'Remettez dans le bon ordre', icon: ListOrdered },
 };
+
+/** Niveaux de la charte Skazy Formation (sélecteur de niveau des modèles design-skazy). */
+export const LEVELS: { value: QuizLevel; label: string }[] = [
+  { value: 1, label: 'Initiation' },
+  { value: 2, label: 'Intermédiaire' },
+  { value: 3, label: 'Avancé' },
+];
+
+export const levelLabel = (level?: QuizLevel) => LEVELS.find((l) => l.value === level)?.label ?? '';
 
 export const TIME_OPTIONS = [5, 10, 15, 20, 30, 45, 60, 90, 120];
 

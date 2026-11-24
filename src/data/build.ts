@@ -1,4 +1,4 @@
-import type { Question, Quiz } from '../lib/types';
+import type { Question, Quiz, QuizLevel } from '../lib/types';
 
 type Extra = Partial<Pick<Question, 'time' | 'points' | 'explanation' | 'image'>>;
 let n = 0;
@@ -35,7 +35,7 @@ export function ordre(text: string, items: string[], extra: Extra = {}): Questio
   return { id: id(), type: 'order', text, items, time: 40, points: 1, ...extra };
 }
 
-export function quiz(idv: string, category: string, title: string, description: string, questions: Question[]): Quiz {
+export function quiz(idv: string, category: string, title: string, description: string, questions: Question[], level: QuizLevel = 1): Quiz {
   const t = Date.UTC(2026, 9, 1);
-  return { id: idv, category, title, description, questions, createdAt: t, updatedAt: t, builtin: true };
+  return { id: idv, category, title, description, level, questions, createdAt: t, updatedAt: t, builtin: true };
 }

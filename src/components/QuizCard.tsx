@@ -6,6 +6,7 @@ import { estimatedSeconds } from '../lib/quizMeta';
 import type { Quiz } from '../lib/types';
 import { formatDuration, plural } from '../lib/util';
 import { CategoryBadge, catVars } from './CategoryBadge';
+import { LevelDots } from './LevelDots';
 
 interface Props {
   quiz: Quiz;
@@ -15,23 +16,28 @@ interface Props {
   onSelect?: () => void;
 }
 
+/** Origine d'un quiz de la bibliothèque : importé ou exemple (rien pour un quiz créé sur l'appareil). */
+export function SourceTag({ quiz, className = '' }: { quiz: Quiz; className?: string }) {
+  const label = quiz.source === 'import' ? 'Importé' : quiz.builtin ? 'Exemple' : '';
+  return label ? <span className={`tag-example ${className}`.trim()}>{label}</span> : null;
+}
+
 export function QuizCard({ quiz, state, selected = false, onSelect }: Props) {
   const cat = getCategory(quiz.category, state);
   const selecting = !!onSelect;
   const content = (
     <>
-      <div className="row" style={{ justifyContent: 'space-between' }}>
-        <span className="row card-badges">
-          {selecting && <input type="checkbox" className="card-check" checked={selected} onChange={onSelect} />}
-          <CategoryBadge category={cat} size="sm" />
-        </span>
-        {quiz.builtin && <span className="tag-example">{quiz.source === 'import' ? 'Importé' : 'Exemple'}</span>}
+      <div className="card-tags">
+        {selecting && <input type="checkbox" className="card-check" checked={selected} onChange={onSelect} />}
+        <CategoryBadge category={cat} size="sm" />
+        <LevelDots level={quiz.level} />
       </div>
       <h3 className="card-title">{quiz.title}</h3>
       {quiz.description && <p className="card-desc">{quiz.description}</p>}
       <div className="card-meta">
         <span><HelpCircle aria-hidden="true" />{plural(quiz.questions.length, 'question', 'questions')}</span>
         <span><Clock aria-hidden="true" />{formatDuration(estimatedSeconds(quiz))} environ</span>
+        <SourceTag quiz={quiz} className="card-source" />
       </div>
     </>
   );

@@ -1,4 +1,4 @@
-import { correctAnswerText } from '../../lib/quizMeta';
+import { correctAnswerText, levelLabel } from '../../lib/quizMeta';
 import { levelOf, levels, questionStats, ranking, sessionStats } from '../../lib/stats';
 import type { Category, Session } from '../../lib/types';
 import { formatDateTime, formatDuration, formatNumber, formatSeconds } from '../../lib/util';
@@ -16,6 +16,7 @@ export function PrintReport({ session: s, category }: { session: Session; catego
     ['Mode', s.mode === 'live' ? 'Partie en direct' : 'Partie en solo'],
     ['Durée', formatDuration(st.durationMs / 1000)],
     ['Catégorie', category.label],
+    ...(s.quiz.level ? [['Niveau', levelLabel(s.quiz.level)] as [string, string]] : []),
   ];
 
   return (
