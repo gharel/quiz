@@ -1,12 +1,13 @@
 import type { Question, QuestionType, Quiz } from './types';
 import { uid } from './util';
 
+/** Durées conseillées : la question est lue 4 s avant l'affichage des réponses (vrai ou faux 20 s, QCM 40 s, choix multiples 50 s). */
 export function blankQuestion(type: QuestionType = 'single'): Question {
-  const base = { id: uid(8), type, text: '', time: 20, points: 1 as const, explanation: '' };
+  const base = { id: uid(8), type, text: '', time: 40, points: 1 as const, explanation: '' };
   switch (type) {
     case 'single': return { ...base, answers: ['', '', '', ''], correct: [0] };
-    case 'multiple': return { ...base, time: 30, answers: ['', '', '', ''], correct: [0, 1] };
-    case 'truefalse': return { ...base, time: 15, truth: true };
+    case 'multiple': return { ...base, time: 50, answers: ['', '', '', ''], correct: [0, 1] };
+    case 'truefalse': return { ...base, time: 20, truth: true };
     case 'text': return { ...base, time: 30, accepted: [''] };
     case 'slider': return { ...base, time: 30, slider: { min: 0, max: 100, step: 1, answer: 50, tolerance: 0, unit: '' } };
     case 'order': return { ...base, time: 40, items: ['', '', ''] };

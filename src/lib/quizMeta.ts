@@ -19,7 +19,7 @@ export const LEVELS: { value: QuizLevel; label: string }[] = [
 
 export const levelLabel = (level?: QuizLevel) => LEVELS.find((l) => l.value === level)?.label ?? '';
 
-export const TIME_OPTIONS = [5, 10, 15, 20, 30, 45, 60, 90, 120];
+export const TIME_OPTIONS = [5, 10, 15, 20, 30, 40, 45, 50, 60, 90, 120];
 
 /** Durée estimée d'une partie (temps de réponse + lecture et correction). */
 export function estimatedSeconds(quiz: Quiz): number {

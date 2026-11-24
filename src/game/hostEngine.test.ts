@@ -22,11 +22,14 @@ describe('HostEngine', () => {
     expect(e.players.get('p1')!.score).toBe(1000);
     expect(e.players.get('p2')!.score).toBe(0);
     expect(e.outcomes.p1.rank).toBe(1);
+    expect(e.outcomes.p2.prev).toBe(2);
+    expect(e.outcomes.p2.rank).toBe(2);
     e.startIntro(1, 5000);
     e.startQuestion(6000);
     e.receive({ t: 'answer', pid: 'p1', qi: 1, value: true, ms: 0 }, 6000);
     e.reveal();
-    expect(e.players.get('p1')!.score).toBe(1000 + 1000 + 100);
+    expect(e.players.get('p1')!.score).toBe(2000);
+    expect(e.outcomes.p1.prev).toBe(1);
     expect(e.outcomes.p2.answered).toBe(false);
     expect(e.snapshot().results?.p1.streak).toBe(2);
   });
@@ -39,7 +42,7 @@ describe('HostEngine', () => {
     e.receive({ t: 'join', pid: 'p3', name: 'B' });
     e.startIntro(0, 0);
     e.startQuestion(0);
-    expect(e.receive({ t: 'answer', pid: 'p3', qi: 0, value: 1, ms: 0 }, 25000)).toBeNull();
+    expect(e.receive({ t: 'answer', pid: 'p3', qi: 0, value: 1, ms: 0 }, 45000)).toBeNull();
   });
 
   it('mélange les réponses sans perdre la bonne', () => {

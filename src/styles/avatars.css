@@ -13,7 +13,4 @@
 .avatar-pick { display: flex; flex-direction: column; align-items: center; gap: var(--space-2); }
 .avatar-pick .avatar { box-shadow: var(--shadow-md); }
 .me-tag { display: inline-flex; align-items: center; gap: var(--space-2); color: var(--text-strong); }
-.player-chip { padding-left: 6px; gap: var(--space-2); }
 .player-name { display: inline-flex; align-items: center; gap: var(--space-2); min-width: 0; }
-.podium-avatar { opacity: 0; transform: scale(0.6); transition: opacity 300ms, transform 400ms cubic-bezier(.2, .9, .3, 1.4); }
-.podium-avatar.on { opacity: 1; transform: none; }

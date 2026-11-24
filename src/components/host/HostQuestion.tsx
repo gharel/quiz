@@ -6,6 +6,7 @@ import { formatValue } from '../../lib/quizMeta';
 import { QuestionCard, QuestionType } from '../game/QuestionCard';
 import { Shape, TF_INDEX } from '../game/Shape';
 import { TimerRing, useCountdown } from '../game/Timer';
+import { Avatar } from '../avatars/Avatar';
 
 interface Props {
   phase: 'intro' | 'question';
@@ -17,6 +18,7 @@ interface Props {
   deadline: number;
   answered: number;
   total: number;
+  players: { id: string; name: string; avatar: string; answered: boolean }[];
   onSkip: () => void;
 }
 
@@ -68,7 +70,6 @@ function AnswerBoard({ q, question }: { q: PlayQuestion; question: Question }) {
 }
 
 export function HostQuestion(p: Props) {
-  const introLeft = useCountdown(p.phase === 'intro' ? p.introEndsAt : null);
   const msLeft = useCountdown(p.phase === 'question' ? p.deadline : null, (s) => {
     if (s <= 5 && s > 0) sfx.tick(s === 1);
   });
@@ -80,10 +81,10 @@ export function HostQuestion(p: Props) {
         <QuestionType q={p.q} />
       </div>
       {p.phase === 'intro' ? (
-        <div className="host-intro appear">
-          <QuestionCard q={{ ...p.q, image: p.question.image }} />
-          <div className="progress intro-bar" aria-hidden="true"><span style={{ width: `${100 - (introLeft / 4000) * 100}%`, transition: 'none' }} /></div>
-          <p className="muted">Préparez-vous…</p>
+        <div className="host-intro">
+          <div className="fx-pop"><QuestionCard q={{ ...p.q, image: p.question.image }} /></div>
+          <div className="progress intro-bar intro-fill" aria-hidden="true"><span key={p.introEndsAt} /></div>
+          <p className="muted intro-hint">Lisez bien la question, les réponses arrivent…</p>
         </div>
       ) : (
         <>
@@ -91,11 +92,21 @@ export function HostQuestion(p: Props) {
             <TimerRing msLeft={msLeft} total={p.question.time * 1000} size={96} />
             <QuestionCard q={{ ...p.q, image: p.question.image }} />
             <div className="answer-count" aria-live="polite">
-              <strong>{p.answered}</strong>
+              <strong key={p.answered} className={p.answered ? 'bump' : undefined}>{p.answered}</strong>
               <span>{p.answered > 1 ? 'réponses' : 'réponse'} sur {p.total}</span>
             </div>
           </div>
           <AnswerBoard q={p.q} question={p.question} />
+          {p.players.length > 0 && (
+            <ul className="answer-strip" aria-label="Participants ayant répondu">
+              {p.players.map((pl) => (
+                <li key={pl.id} className={pl.answered ? 'on' : undefined} title={pl.answered ? `${pl.name} a répondu` : `${pl.name} n’a pas encore répondu`}>
+                  <Avatar id={pl.avatar} size={36} />
+                  <span className="sr-only">{pl.name}{pl.answered ? ' a répondu' : ''}</span>
+                </li>
+              ))}
+            </ul>
+          )}
           <div className="stage-actions">
             <button type="button" className="btn btn-ghost" onClick={p.onSkip}><SkipForward aria-hidden="true" />Arrêter le chrono</button>
           </div>

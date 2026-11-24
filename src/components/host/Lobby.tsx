@@ -64,9 +64,9 @@ export function Lobby(p: Props) {
           ) : (
             <ul className="player-chips">
               {p.players.map((pl) => (
-                <li key={pl.id} className="player-chip appear">
-                  <Avatar id={pl.avatar} size={36} title={avatarLabel(pl.avatar)} />
-                  <span>{pl.name}</span>
+                <li key={pl.id} className="player-chip">
+                  <Avatar id={pl.avatar} size={44} title={avatarLabel(pl.avatar)} />
+                  <span className="player-chip-name">{pl.name}</span>
                   <button type="button" onClick={() => p.onKick(pl.id)} aria-label={`Exclure ${pl.name}`} title="Exclure"><X /></button>
                 </li>
               ))}

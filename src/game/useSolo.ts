@@ -3,7 +3,7 @@ import { playMusic, stopMusic } from '../audio/music';
 import { sfx } from '../audio/sfx';
 import { unlockAudio } from '../audio/engine';
 import { toPlayQuestion } from '../lib/play';
-import { basePoints, isCorrect, streakBonus } from '../lib/scoring';
+import { basePoints, isCorrect } from '../lib/scoring';
 import { saveSession } from '../lib/store';
 import type { AnswerRecord, AnswerValue, Quiz } from '../lib/types';
 import { uid } from '../lib/util';
@@ -14,7 +14,6 @@ export interface LastResult {
   correct: boolean;
   answered: boolean;
   points: number;
-  bonus: number;
   streak: number;
 }
 
@@ -57,14 +56,13 @@ export function useSolo(quiz: Quiz) {
     const ms = Math.min(Date.now() - qStart.current, q.time * 1000);
     const ok = value !== null && isCorrect(q, value);
     const newStreak = ok ? streak + 1 : 0;
-    const bonus = ok ? streakBonus(newStreak, q) : 0;
-    const points = ok ? basePoints(q, value, ms) + bonus : 0;
+    const points = ok ? basePoints(q, value, ms) : 0;
     const rec: AnswerRecord = { q: index, value, ms, correct: ok, points };
     const all = [...answers, rec];
     setAnswers(all);
     setScore((s) => s + points);
     setStreak(newStreak);
-    setLast({ correct: ok, answered: value !== null, points, bonus, streak: newStreak });
+    setLast({ correct: ok, answered: value !== null, points, streak: newStreak });
     setDeadline(null);
     setPhase('feedback');
     stopMusic(0.2);

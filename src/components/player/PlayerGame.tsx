@@ -9,6 +9,7 @@ import { formatNumber, ordinal } from '../../lib/util';
 import { NameForm } from '../../pages/Join';
 import { AnswerPad } from '../game/AnswerPad';
 import { Feedback } from '../game/Feedback';
+import { CountUp } from '../game/fx';
 import { QuestionType } from '../game/QuestionCard';
 import { StageBar } from '../game/StageBar';
 import { TimerRing, useCountdown } from '../game/Timer';
@@ -76,14 +77,15 @@ export function PlayerGame({ pin }: { pin: string }) {
     body = (
       <Center title={`Question ${s.qi + 1} sur ${s.qn}`}>
         <QuestionType q={s.q} />
-        <p className="player-qtext">{s.q.text}</p>
-        <p className="muted">Préparez-vous…</p>
+        <p className="player-qtext fx-in">{s.q.text}</p>
+        <div className="progress intro-bar intro-fill" aria-hidden="true"><span /></div>
+        <p className="muted">Lisez bien la question, les réponses arrivent…</p>
       </Center>
     );
   } else if (s.phase === 'question' && s.q) {
     const done = p.answers[s.qi] !== undefined;
     body = done ? (
-      <Center icon={<Hourglass />} title="Réponse envoyée !" text="En attente des autres participants…" />
+      <Center icon={<Hourglass className="fx-float" />} title="Réponse envoyée !" text="En attente des autres participants…" />
     ) : (
       <div className="player-q">
         <div className="q-head">
@@ -96,10 +98,14 @@ export function PlayerGame({ pin }: { pin: string }) {
     );
   } else if (s.phase === 'reveal') {
     body = me ? (
-      <Feedback correct={me.ok} answered={me.answered} points={me.pts} streak={me.streak} correctText={s.correct} explanation={s.explanation} extra={`Vous êtes ${ordinal(me.rank)} avec ${formatNumber(me.score)} points.`} />
+      <Feedback correct={me.ok} answered={me.answered} points={me.pts} streak={me.streak} correctText={s.correct} explanation={s.explanation} rank={me.rank} prevRank={me.prev} score={me.score} />
     ) : <Center title="Correction en cours…" />;
   } else if (s.phase === 'scoreboard') {
-    body = <Center icon={<Trophy />} title={me ? `Vous êtes ${ordinal(me.rank)}` : 'Classement'} text={me ? `${formatNumber(me.score)} points — regardez l’écran pour le classement.` : undefined} />;
+    body = (
+      <Center icon={<Trophy />} title={me ? `Vous êtes ${ordinal(me.rank)}` : 'Classement'} text="Regardez l’écran pour le classement.">
+        {me && <p className="player-score"><CountUp value={me.score} from={me.score - me.pts} duration={1000} delay={300} /> <span>points</span></p>}
+      </Center>
+    );
   } else if (s.phase === 'podium') {
     body = (
       <Center icon={<Trophy />} title={me ? (me.rank <= 3 ? `Bravo, vous terminez ${ordinal(me.rank)} !` : `Vous terminez ${ordinal(me.rank)}`) : 'Partie terminée'} text={me ? `${formatNumber(me.score)} points au total.` : undefined}>

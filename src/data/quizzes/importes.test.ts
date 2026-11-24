@@ -17,9 +17,9 @@ describe('quiz importés', () => {
     expect(new Set(BUILTIN_QUIZZES.map((z) => z.id)).size, 'identifiants uniques entre exemples et quiz importés').toBe(BUILTIN_QUIZZES.length);
   });
 
-  it('respectent les durées : vrai/faux 30 s, QCM 45 ou 60 s, choix multiples 60 s', () => {
+  it('respectent les durées : vrai/faux 20 s, QCM 40 s (50 s si longue), choix multiples 50 s', () => {
     for (const x of questions) {
-      const expected = x.q.type === 'truefalse' ? [30] : x.q.type === 'multiple' ? [60] : [45, 60];
+      const expected = x.q.type === 'truefalse' ? [20] : x.q.type === 'multiple' ? [50] : [40, 50];
       expect(expected, label(x)).toContain(x.q.time);
     }
   });

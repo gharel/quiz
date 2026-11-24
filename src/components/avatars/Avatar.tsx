@@ -45,7 +45,7 @@ export function Avatar({ id, size = 48, title }: { id?: string; size?: number; t
   const a = BY_ID.get(id ?? '') ?? AVATARS[0];
   const clip = useId();
   return (
-    <svg className="avatar" width={size} height={size} viewBox="0 0 100 100" role={title ? 'img' : undefined} aria-hidden={title ? undefined : true} aria-label={title}>
+    <svg className="avatar" width={size} height={size} style={{ width: size, height: size }} viewBox="0 0 100 100" role={title ? 'img' : undefined} aria-hidden={title ? undefined : true} aria-label={title}>
       <defs><clipPath id={clip}><circle cx="50" cy="50" r="50" /></clipPath></defs>
       <g clipPath={`url(#${CSS.escape(clip)})`}>
         <circle cx="50" cy="50" r="50" fill={a.bg} />

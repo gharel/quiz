@@ -13,14 +13,14 @@ export function qcm(text: string, answers: string[], extra: Extra = {}): Questio
     text,
     answers: answers.map((a) => a.replace(/^\*/, '')),
     correct,
-    time: correct.length > 1 ? 30 : 20,
+    time: correct.length > 1 ? 50 : 40,
     points: 1,
     ...extra,
   };
 }
 
 export function vf(text: string, truth: boolean, extra: Extra = {}): Question {
-  return { id: id(), type: 'truefalse', text, truth, time: 15, points: 1, ...extra };
+  return { id: id(), type: 'truefalse', text, truth, time: 20, points: 1, ...extra };
 }
 
 export function saisie(text: string, accepted: string[], extra: Extra = {}): Question {

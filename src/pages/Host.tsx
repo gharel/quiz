@@ -89,6 +89,7 @@ function HostGame({ quiz }: { quiz: Quiz }) {
             deadline={e.deadline}
             answered={e.answeredIds().length}
             total={e.active.length}
+            players={e.active.map((pl) => ({ id: pl.id, name: pl.name, avatar: pl.avatar, answered: pl.answers.some((a) => a.q === e.qi) }))}
             onSkip={h.skip}
           />
         )}

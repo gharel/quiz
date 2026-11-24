@@ -55,6 +55,16 @@ export const sfx = {
     tone(79, t, 0.08, { type: 'triangle', gain: 0.15 });
     tone(86, t + 0.09, 0.2, { type: 'triangle', gain: 0.15 });
   },
+  /** Défilement des scores (classement) : petits tics qui montent. */
+  tally(duration = 1) {
+    const t = now();
+    const hits = Math.max(4, Math.floor(duration / 0.07));
+    for (let i = 0; i < hits; i++) tone(84 + Math.round((i / hits) * 12), t + i * 0.07, 0.03, { type: 'square', gain: 0.035, cutoff: 3200 });
+  },
+  /** Changement de place au classement. */
+  swap() {
+    noise(now(), 0.35, { type: 'bandpass', freq: 900, sweepTo: 3000, q: 1.5, gain: 0.08 });
+  },
   /** Roulement de tambour (podium). */
   drumroll(duration = 2) {
     const t = now();

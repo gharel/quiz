@@ -10,6 +10,7 @@ export interface PlayerOutcome {
   pts: number; // points gagnés sur la question
   score: number; // total
   rank: number;
+  prev?: number; // rang avant cette question
   streak: number;
 }
 

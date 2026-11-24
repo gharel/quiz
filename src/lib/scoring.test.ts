@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { accuracy, basePoints, normalize, shuffledIndexes, streakBonus } from './scoring';
+import { accuracy, basePoints, normalize, shuffledIndexes } from './scoring';
 import type { Question } from './types';
 
 const q = (over: Partial<Question>): Question => ({ id: 'q', type: 'single', text: '?', time: 20, points: 1, ...over });
@@ -48,19 +48,28 @@ describe('accuracy', () => {
 
 describe('points', () => {
   const s = q({ answers: ['a', 'b'], correct: [0] });
-  it('1000 immédiat, 500 au gong, 0 si faux', () => {
+  it('1000 immédiat, dégressif, 500 au gong, 0 si faux', () => {
     expect(basePoints(s, 0, 0)).toBe(1000);
+    expect(basePoints(s, 0, 10000)).toBe(750);
     expect(basePoints(s, 0, 20000)).toBe(500);
+    expect(basePoints(s, 0, 99999)).toBe(500);
     expect(basePoints(s, 1, 0)).toBe(0);
+  });
+  it('jamais plus de 1000 ni moins de 500 pour une bonne réponse', () => {
+    for (let ms = 0; ms <= 20000; ms += 1000) {
+      const p = basePoints(s, 0, ms);
+      expect(p).toBeLessThanOrEqual(1000);
+      expect(p).toBeGreaterThanOrEqual(500);
+    }
+  });
+  it('curseur approximatif : au moins 500 points', () => {
+    const c = q({ type: 'slider', slider: { min: 0, max: 100, step: 1, answer: 50, tolerance: 10 } });
+    expect(basePoints(c, 60, 0)).toBe(750);
+    expect(basePoints(c, 60, 20000)).toBe(500);
   });
   it('double points et sans points', () => {
     expect(basePoints({ ...s, points: 2 }, 0, 0)).toBe(2000);
     expect(basePoints({ ...s, points: 0 }, 0, 0)).toBe(0);
-  });
-  it('bonus de série plafonné', () => {
-    expect(streakBonus(1, s)).toBe(0);
-    expect(streakBonus(3, s)).toBe(200);
-    expect(streakBonus(12, s)).toBe(500);
   });
   it('mélange différent de l’ordre initial', () => {
     for (let i = 0; i < 20; i++) expect(shuffledIndexes(3).join()).not.toBe('0,1,2');

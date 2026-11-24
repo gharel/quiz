@@ -45,19 +45,17 @@ export function accuracy(q: Question, value: AnswerValue): number {
 
 export const isCorrect = (q: Question, v: AnswerValue) => accuracy(q, v) > 0;
 
-/** Points selon la rapidité : 1000 si réponse immédiate, 500 au gong. */
+/**
+ * Points d'une bonne réponse : 1000 si elle est immédiate, puis de moins en moins
+ * à mesure que le temps passe, jusqu'à 500 au gong (jamais moins pour une bonne réponse).
+ * Curseur : la précision réduit seulement la part liée à la rapidité.
+ */
 export function basePoints(q: Question, value: AnswerValue, ms: number): number {
   const acc = accuracy(q, value);
   if (acc === 0 || q.points === 0) return 0;
   const limit = q.time * 1000;
   const t = Math.min(Math.max(ms, 0), limit) / limit;
-  return Math.round(1000 * q.points * acc * (1 - t / 2));
-}
-
-/** Bonus de série : +100 par bonne réponse consécutive au-delà de la première, plafonné à 500. */
-export function streakBonus(streak: number, q: Question): number {
-  if (q.points === 0 || streak < 2) return 0;
-  return Math.min(100 * (streak - 1), 500);
+  return Math.round((500 + 500 * acc * (1 - t)) * q.points);
 }
 
 /** Mélange déterministe d'indices (ne renvoie jamais l'ordre initial si n > 1). */

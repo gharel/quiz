@@ -1,6 +1,6 @@
 import { toPlayQuestion, type PlayQuestion } from '../lib/play';
 import { correctAnswerText } from '../lib/quizMeta';
-import { basePoints, isCorrect, shuffledIndexes, streakBonus } from '../lib/scoring';
+import { basePoints, isCorrect, shuffledIndexes } from '../lib/scoring';
 import type { AnswerRecord, AnswerValue, Question, Quiz, Session } from '../lib/types';
 import { uid } from '../lib/util';
 import { isAvatar } from '../components/avatars/Avatar';
@@ -135,11 +135,12 @@ export class HostEngine {
     this.deadline = now + this.question.time * 1000;
   }
 
-  /** Corrige la question courante et met à jour scores, séries et rangs. */
+  /** Corrige la question courante et met à jour scores, séries et rangs (avec le rang précédent pour l'animation). */
   reveal() {
     if (this.phase !== 'question') return;
     this.phase = 'reveal';
     const q = this.question;
+    const before = new Map(this.ranking().map((p, i) => [p.id, i + 1]));
     for (const p of this.players.values()) {
       let a = p.answers.find((x) => x.q === this.qi);
       if (!a) {
@@ -148,14 +149,14 @@ export class HostEngine {
       }
       a.correct = a.value !== null && isCorrect(q, a.value as AnswerValue);
       p.streak = a.correct ? p.streak + 1 : 0;
-      a.points = a.correct ? basePoints(q, a.value, a.ms) + streakBonus(p.streak, q) : 0;
+      a.points = a.correct ? basePoints(q, a.value, a.ms) : 0;
       p.score += a.points;
     }
     const ranked = this.ranking();
     this.outcomes = {};
     ranked.forEach((p, i) => {
       const a = p.answers.find((x) => x.q === this.qi)!;
-      this.outcomes[p.id] = { ok: a.correct, answered: a.value !== null, pts: a.points, score: p.score, rank: i + 1, streak: p.streak };
+      this.outcomes[p.id] = { ok: a.correct, answered: a.value !== null, pts: a.points, score: p.score, rank: i + 1, prev: before.get(p.id) ?? i + 1, streak: p.streak };
     });
   }
 

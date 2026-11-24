@@ -12,7 +12,7 @@ import { normalize } from '../lib/scoring';
 import type { Quiz } from '../lib/types';
 import { plural } from '../lib/util';
 
-type Sort = 'recent' | 'title' | 'questions';
+type Sort = 'title' | 'recent' | 'questions';
 type Origin = 'all' | 'mine' | 'import' | 'example';
 
 const originOf = (q: Quiz): Origin => (q.source === 'import' ? 'import' : q.builtin ? 'example' : 'mine');
@@ -21,7 +21,7 @@ export function Library() {
   const state = useStore();
   const [cat, setCat] = useState('');
   const [query, setQuery] = useState('');
-  const [sort, setSort] = useState<Sort>('recent');
+  const [sort, setSort] = useState<Sort>('title');
   const [origin, setOrigin] = useState<Origin>('all');
   const [level, setLevel] = useState(0); // 0 : tous les niveaux
   const [selected, setSelected] = useState<Set<string> | null>(null); // null : pas en mode sélection
@@ -147,8 +147,8 @@ export function Library() {
             value={sort}
             onChange={setSort}
             options={[
-              { value: 'recent', label: 'Plus récents' },
               { value: 'title', label: 'Titre (A à Z)' },
+              { value: 'recent', label: 'Plus récents' },
               { value: 'questions', label: 'Nombre de questions' },
             ]}
           />

@@ -1,10 +1,10 @@
 import { useSyncExternalStore } from 'react';
 import { BUILTIN_QUIZZES } from '../data/quizzes';
 import { DEFAULT_CATEGORIES, FALLBACK_CATEGORY } from '../data/categories';
-import type { Category, Quiz, Session } from './types';
+import type { Category, QuestionType, Quiz, Session } from './types';
 import { load, save, uid } from './util';
 
-const K = { quizzes: 'skq.quizzes', categories: 'skq.categories', sessions: 'skq.sessions', hidden: 'skq.hidden' };
+const K = { quizzes: 'skq.quizzes', categories: 'skq.categories', sessions: 'skq.sessions', hidden: 'skq.hidden', durations: 'skq.durations' };
 
 export interface State {
   quizzes: Quiz[]; // quiz créés ou importés (les exemples sont ajoutés à la lecture)
@@ -13,8 +13,22 @@ export interface State {
   hidden: string[]; // quiz de la bibliothèque (exemples, importés) supprimés sur cet appareil
 }
 
+/**
+ * Une seule fois : raccourcit les durées des quiz de la bibliothèque modifiés sur cet appareil
+ * (nouvelles durées : vrai/faux 20 s, QCM 40 s ou 50 s si long, choix multiples 50 s). Les quiz créés ne sont pas touchés.
+ */
+function migrateDurations(quizzes: Quiz[]): Quiz[] {
+  if (load(K.durations, 0) >= 2) return quizzes;
+  const map: Partial<Record<QuestionType, Record<number, number>>> = { truefalse: { 15: 20, 30: 20 }, single: { 20: 40, 45: 40, 60: 50 }, multiple: { 30: 50, 60: 50 } };
+  const fromLibrary = (z: Quiz) => z.source === 'import' || BUILTIN_QUIZZES.some((b) => b.id === z.id);
+  const out = quizzes.map((z) => (fromLibrary(z) ? { ...z, questions: z.questions.map((q) => ({ ...q, time: map[q.type]?.[q.time] ?? q.time })) } : z));
+  if (quizzes.length) save(K.quizzes, out);
+  save(K.durations, 2);
+  return out;
+}
+
 let state: State = {
-  quizzes: load<Quiz[]>(K.quizzes, []),
+  quizzes: migrateDurations(load<Quiz[]>(K.quizzes, [])),
   categories: load<Category[]>(K.categories, []),
   sessions: load<Session[]>(K.sessions, []),
   hidden: load<string[]>(K.hidden, []),
@@ -104,6 +118,11 @@ export function addCategory(label: string, color: Category['color']): Category {
 export function saveSession(s: Session) {
   const exists = state.sessions.some((x) => x.id === s.id);
   set({ sessions: exists ? state.sessions.map((x) => (x.id === s.id ? s : x)) : [s, ...state.sessions] });
+}
+
+/** Ajoute des parties reconstruites (import CSV), triées de la plus récente à la plus ancienne. */
+export function importSessions(list: Session[]) {
+  set({ sessions: [...list, ...state.sessions].sort((a, b) => b.startedAt - a.startedAt) });
 }
 
 export function deleteSession(id: string) {

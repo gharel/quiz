@@ -1,12 +1,14 @@
-import { BarChart3, ChevronRight, Download, Radio, Search, User, Users } from 'lucide-react';
-import { useMemo, useState } from 'react';
+import { BarChart3, ChevronRight, Download, Radio, Search, Upload, User, Users } from 'lucide-react';
+import { useMemo, useRef, useState } from 'react';
 import { CategoryBadge, catVars } from '../components/CategoryBadge';
 import { CategoryFilter } from '../components/CategoryFilter';
-import { href } from '../lib/router';
+import { toast } from '../components/Toast';
+import { decodeCsv, sameSession, sessionFromCsv } from '../lib/csvImport';
+import { href, navigate } from '../lib/router';
 import { normalize } from '../lib/scoring';
 import { sessionCsv, sessionsCsv, sessionStats } from '../lib/stats';
 import type { Session } from '../lib/types';
-import { getCategory, useStore } from '../lib/store';
+import { allCategories, allQuizzes, getCategory, importSessions, useStore } from '../lib/store';
 import { downloadFile, formatDateTime, plural, slugify } from '../lib/util';
 
 type Mode = '' | 'live' | 'solo';
@@ -16,6 +18,7 @@ export default function Results() {
   const [cat, setCat] = useState('');
   const [mode, setMode] = useState<Mode>('');
   const [query, setQuery] = useState('');
+  const fileRef = useRef<HTMLInputElement>(null);
 
   const categories = useMemo(() => {
     const counts = new Map<string, number>();
@@ -38,6 +41,38 @@ export default function Results() {
   const exportOne = (s: Session) =>
     downloadFile(`bilan-${slugify(s.quiz.title)}-${new Date(s.startedAt).toLocaleDateString('fr-CA')}.csv`, sessionCsv(s, getCategory(s.quiz.category, state).label), 'text/csv;charset=utf-8');
 
+  /** Reconstruit des parties à partir de bilans CSV exportés (un fichier par partie). */
+  async function onImport(files: File[]) {
+    const added: Session[] = [];
+    const errors: string[] = [];
+    let duplicates = 0;
+    for (const f of files) {
+      try {
+        const s = sessionFromCsv(decodeCsv(await f.arrayBuffer()), { quizzes: allQuizzes(state), categories: allCategories(state) });
+        if ([...state.sessions, ...added].some((x) => sameSession(x, s))) duplicates++;
+        else added.push(s);
+      } catch (e) {
+        errors.push(files.length > 1 ? `${f.name} : ${(e as Error).message}` : (e as Error).message);
+      }
+    }
+    if (added.length) {
+      importSessions(added);
+      toast(added.length === 1 ? `Résultats de « ${added[0].quiz.title} » importés.` : `${plural(added.length, 'partie importée', 'parties importées')}.`);
+      if (added.length === 1 && !errors.length) navigate(href.result(added[0].id));
+    }
+    if (duplicates) toast(duplicates === 1 ? 'Cette partie figure déjà dans vos résultats.' : `${duplicates} parties figurent déjà dans vos résultats.`, added.length ? 'success' : 'error');
+    if (errors.length) toast(errors.join(' '), 'error');
+  }
+
+  const importButton = (
+    <>
+      <button type="button" className="btn btn-secondary" onClick={() => fileRef.current?.click()}>
+        <Upload aria-hidden="true" />Importer un bilan (CSV)
+      </button>
+      <input ref={fileRef} type="file" accept=".csv,text/csv" multiple hidden onChange={(e) => { void onImport([...(e.target.files ?? [])]); e.target.value = ''; }} />
+    </>
+  );
+
   return (
     <div className="page container">
       <div className="page-head">
@@ -45,18 +80,21 @@ export default function Results() {
           <h1 className="page-title">Résultats</h1>
           <p className="page-sub">Retrouvez chaque partie jouée sur cet appareil : classement, réussite par question et réponses de chaque participant.</p>
         </div>
-        {list.length > 0 && (
-          <button type="button" className="btn btn-secondary" onClick={exportAll}>
-            <Download aria-hidden="true" />Exporter {list.length > 1 ? `les ${list.length} parties` : 'la partie'} (CSV)
-          </button>
-        )}
+        <div className="row">
+          {importButton}
+          {list.length > 0 && (
+            <button type="button" className="btn btn-secondary" onClick={exportAll}>
+              <Download aria-hidden="true" />Exporter {list.length > 1 ? `les ${list.length} parties` : 'la partie'} (CSV)
+            </button>
+          )}
+        </div>
       </div>
 
       {state.sessions.length === 0 ? (
         <div className="empty">
           <div className="empty-icon"><BarChart3 aria-hidden="true" /></div>
           <h2>Aucun résultat pour l’instant</h2>
-          <p>Lancez un quiz en direct ou jouez en solo : les résultats apparaîtront ici à la fin de la partie.</p>
+          <p>Lancez un quiz en direct ou jouez en solo : les résultats apparaîtront ici à la fin de la partie. Vous avez un bilan CSV exporté ? Importez-le pour retrouver la partie.</p>
           <a className="btn btn-primary" href={href.library()}>Choisir un quiz</a>
         </div>
       ) : (
