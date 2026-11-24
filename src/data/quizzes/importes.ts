@@ -6,33 +6,38 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "ia-intermediaire",
   "category": "ia",
-  "title": "IA - Intermédiaire",
-  "description": "Types d'IA, usages, limites, fiabilité et bonnes pratiques de prompt : les bases de l'IA générative pour mieux l'utiliser.",
+  "title": "IA générative : aller plus loin",
+  "description": "Multimodalité, agents, recherche web, fiabilité et confidentialité : mieux exploiter les assistants d’IA générative au travail.",
   "level": 2,
   "questions": [
    {
     "id": "k1",
-    "text": "Une intelligence artificielle est basée sur des statistiques.",
+    "text": "Activer la mémoire permet à un assistant de réutiliser des informations d’une conversation à l’autre.",
     "time": 20,
     "points": 1,
     "type": "truefalse",
-    "truth": true
+    "truth": true,
+    "explanation": "La mémoire se consulte, se modifie et se désactive dans les paramètres."
    },
    {
     "id": "k2",
-    "text": "Quel assistant n'est PAS américain ?",
-    "time": 40,
+    "text": "Lesquels de ces assistants sont développés par des entreprises américaines ?",
+    "time": 50,
     "points": 1,
-    "type": "single",
+    "type": "multiple",
     "answers": [
      "ChatGPT",
      "Gemini",
      "Claude",
-     "DeepSeek"
+     "DeepSeek",
+     "Le Chat (Mistral)"
     ],
     "correct": [
-     3
-    ]
+     0,
+     1,
+     2
+    ],
+    "explanation": "DeepSeek est chinois, Mistral AI est français."
    },
    {
     "id": "k3",
@@ -52,67 +57,75 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k4",
-    "text": "L'IA est toujours fiable, car elle indiquera quand elle se trompe.",
-    "time": 20,
-    "points": 1,
-    "type": "truefalse",
-    "truth": false
-   },
-   {
-    "id": "k5",
-    "text": "Quels sont les ingrédients fondamentaux d’un prompt ?",
+    "text": "Que fait la recherche approfondie (deep research) d’un assistant ?",
     "time": 40,
     "points": 1,
     "type": "single",
     "answers": [
-     "Une source et une conclusion",
-     "Un objectif et un contexte",
-     "Une date et une signature",
-     "Une image et un lien"
+     "Elle consulte de nombreuses sources et rédige un rapport sourcé",
+     "Elle fouille vos e-mails sans autorisation",
+     "Elle réentraîne le modèle sur votre sujet",
+     "Elle traduit une page web"
     ],
     "correct": [
-     1
+     0
     ]
    },
    {
-    "id": "k6",
-    "text": "Parmi les éléments suivants, lequel ne nécessite PAS systématiquement une vérification lorsqu’il est généré par une IA ?",
-    "time": 40,
+    "id": "k5",
+    "text": "Comment appelle-t-on la quantité maximale de texte qu’un modèle peut prendre en compte en une seule fois ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
+    "type": "text",
+    "accepted": [
+     "fenêtre de contexte",
+     "la fenêtre de contexte",
+     "contexte",
+     "context window"
+    ],
+    "explanation": "Au-delà, les éléments les plus anciens de la conversation ne sont plus pris en compte."
+   },
+   {
+    "id": "k6",
+    "text": "Lesquels de ces éléments faut-il vérifier systématiquement dans une réponse d’IA ?",
+    "time": 50,
+    "points": 1,
+    "type": "multiple",
     "answers": [
-     "Données chiffrées et statistiques",
-     "Dates et événements historiques",
-     "Citations",
-     "Proposition de reformulation"
+     "Les données chiffrées et statistiques",
+     "Les dates et événements",
+     "Les citations",
+     "Une proposition de reformulation de votre propre texte"
     ],
     "correct": [
-     3
+     0,
+     1,
+     2
     ]
    },
    {
     "id": "k7",
-    "text": "Un prompt doit être réécrit à chaque utilisation.",
-    "time": 20,
-    "points": 1,
-    "type": "truefalse",
-    "truth": false
-   },
-   {
-    "id": "k8",
-    "text": "Quelle fonctionnalité n'existe PAS dans ChatGPT ou Claude ?",
+    "text": "Où enregistrer des consignes pour qu’un assistant les applique à toutes vos conversations ?",
     "time": 40,
     "points": 1,
     "type": "single",
     "answers": [
-     "Tâche planifiée",
-     "Traduction de vidéos",
-     "Recherche web",
-     "Mode vocal"
+     "Dans les instructions personnalisées (préférences)",
+     "Dans l’historique",
+     "Dans la corbeille",
+     "Dans le mode vocal"
     ],
     "correct": [
-     1
+     0
     ]
+   },
+   {
+    "id": "k8",
+    "text": "Un assistant qui utilise la recherche web cite ses sources, mais il faut quand même les ouvrir pour vérifier.",
+    "time": 20,
+    "points": 1,
+    "type": "truefalse",
+    "truth": true
    },
    {
     "id": "k9",
@@ -147,13 +160,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "claude-initiation",
   "category": "ia",
-  "title": "Claude - Initiation",
-  "description": "Modèles Claude, IA générative, ingrédients d'un prompt, fonctionnalités : les bases pour bien démarrer avec Claude.",
+  "title": "Claude",
+  "description": "Modèles, conversations, fichiers, recherche web et bonnes pratiques : les bases pour bien démarrer avec l’assistant d’Anthropic.",
   "level": 1,
   "questions": [
    {
     "id": "k11",
-    "text": "Une intelligence artificielle est basée sur des statistiques.",
+    "text": "Claude peut analyser les fichiers PDF, images et tableaux que vous lui joignez.",
     "time": 20,
     "points": 1,
     "type": "truefalse",
@@ -161,18 +174,21 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k12",
-    "text": "Quel modèle ne fait PAS partie de Claude ?",
-    "time": 40,
+    "text": "Lesquels de ces noms désignent des modèles Claude ?",
+    "time": 50,
     "points": 1,
-    "type": "single",
+    "type": "multiple",
     "answers": [
      "Haiku",
-     "Fable",
+     "Sonnet",
      "Opus",
-     "Astra"
+     "Astra",
+     "Gemini"
     ],
     "correct": [
-     3
+     0,
+     1,
+     2
     ]
    },
    {
@@ -193,51 +209,62 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k14",
-    "text": "L'IA est toujours fiable, car elle indiquera quand elle se trompe.",
-    "time": 20,
-    "points": 1,
-    "type": "truefalse",
-    "truth": false
-   },
-   {
-    "id": "k15",
-    "text": "Quels sont les trois ingrédients fondamentaux d’un prompt ?",
-    "time": 50,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "Une source, un tableau et une conclusion",
-     "Une tâche, un objectif et un contexte",
-     "Un titre, une date et une signature",
-     "Un exemple, une image et un lien"
-    ],
-    "correct": [
-     1
-    ]
-   },
-   {
-    "id": "k16",
-    "text": "Trouvez l'intrus parmi ces fonctionnalités :",
+    "text": "Quel modèle Claude privilégier pour des réponses rapides et économiques ?",
     "time": 40,
     "points": 1,
     "type": "single",
     "answers": [
-     "Mode vocal",
-     "Vision et analyse de fichiers",
-     "Recherche",
-     "Montage vidéo"
+     "Haiku",
+     "Opus",
+     "Astra",
+     "Gemini"
     ],
     "correct": [
-     3
+     0
+    ],
+    "explanation": "Haiku est le plus léger, Opus le plus puissant."
+   },
+   {
+    "id": "k15",
+    "text": "On peut modifier un message déjà envoyé pour obtenir une nouvelle réponse de Claude.",
+    "time": 20,
+    "points": 1,
+    "type": "truefalse",
+    "truth": true
+   },
+   {
+    "id": "k16",
+    "text": "Lesquelles de ces fonctionnalités Claude propose-t-il ?",
+    "time": 50,
+    "points": 1,
+    "type": "multiple",
+    "answers": [
+     "Le mode vocal",
+     "L’analyse d’images et de fichiers",
+     "La recherche web",
+     "Le montage vidéo"
+    ],
+    "correct": [
+     0,
+     1,
+     2
     ]
    },
    {
     "id": "k17",
-    "text": "Un prompt doit être réécrit à chaque utilisation.",
-    "time": 20,
+    "text": "Une réponse de Claude ne convient pas : que faire ?",
+    "time": 40,
     "points": 1,
-    "type": "truefalse",
-    "truth": false
+    "type": "single",
+    "answers": [
+     "Préciser la demande ou relancer la réponse",
+     "Supprimer son compte",
+     "Attendre 24 heures",
+     "Rien, la réponse ne peut pas changer"
+    ],
+    "correct": [
+     0
+    ]
    },
    {
     "id": "k18",
@@ -257,27 +284,28 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k19",
-    "text": "Quel élément distingue un agent IA d'un assistant IA ?",
-    "time": 50,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "Il fonctionne sans modèle d’intelligence artificielle",
-     "Il génère seulement des images",
-     "Il répond à des questions techniques",
-     "Il peut enchaîner plusieurs actions"
-    ],
-    "correct": [
-     3
-    ]
-   },
-   {
-    "id": "k20",
-    "text": "L'IA apprend en direct de vos conversations pour être plus performante dans les interactions avec d'autres utilisateurs.",
+    "text": "Claude accède par défaut à vos e-mails et à votre agenda, sans autorisation.",
     "time": 20,
     "points": 1,
     "type": "truefalse",
-    "truth": false
+    "truth": false,
+    "explanation": "Il faut connecter ces outils et autoriser l’accès."
+   },
+   {
+    "id": "k20",
+    "text": "Avant de joindre un document à Claude, que faut-il vérifier ?",
+    "time": 40,
+    "points": 1,
+    "type": "single",
+    "answers": [
+     "Qu’il ne contient pas de données que votre organisation interdit de partager",
+     "Sa police de caractères",
+     "Sa date de création",
+     "Rien de particulier"
+    ],
+    "correct": [
+     0
+    ]
    }
   ],
   "createdAt": 1790735011062,
@@ -288,8 +316,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "reseaux-sociaux",
   "category": "webmarketing",
-  "title": "Réseaux Sociaux",
-  "description": "Stratégie de visibilité, engagement, ligne éditoriale, LinkedIn, Facebook : les bases pour animer vos réseaux sociaux.",
+  "title": "Réseaux sociaux",
+  "description": "Visibilité, engagement, ligne éditoriale, choix des plateformes : les bases pour animer les réseaux sociaux de votre structure.",
   "level": 1,
   "questions": [
    {
@@ -326,34 +354,28 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k24",
-    "text": "Quelle plateforme est la plus adaptée au B2B ?",
-    "time": 40,
+    "text": "Quel réseau social est le plus adapté au B2B ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "YouTube",
-     "LinkedIn",
-     "Facebook",
-     "TikTok"
-    ],
-    "correct": [
-     1
+    "type": "text",
+    "accepted": [
+     "LinkedIn"
     ]
    },
    {
     "id": "k25",
-    "text": "Quelle action relève de l’engagement ?",
+    "text": "Que désigne la portée d’une publication ?",
     "time": 40,
     "points": 1,
     "type": "single",
     "answers": [
-     "Cliquer sur une publicité",
-     "Aimer ou commenter un post",
-     "Acheter un produit",
-     "Télécharger une brochure"
+     "Le nombre de personnes qui l’ont vue",
+     "Le nombre de clics",
+     "Le nombre de partages",
+     "La durée de visionnage"
     ],
     "correct": [
-     1
+     0
     ]
    },
    {
@@ -398,11 +420,16 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k29",
-    "text": "Facebook, LinkedIn et Instagram sont les trois réseaux sociaux les plus utilisés en Europe et aux États-Unis.",
-    "time": 20,
+    "text": "Classez ces réseaux du plus au moins utilisé dans le monde (utilisateurs actifs).",
+    "time": 40,
     "points": 1,
-    "type": "truefalse",
-    "truth": false
+    "type": "order",
+    "items": [
+     "Facebook",
+     "YouTube",
+     "TikTok",
+     "LinkedIn"
+    ]
    },
    {
     "id": "k30",
@@ -429,9 +456,9 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "atelier-cybersecurite-7h",
   "category": "web",
-  "title": "Atelier Cybersécurité 7h",
-  "description": "Phishing, ingénierie sociale, mots de passe, MFA, ransomware : les réflexes essentiels pour se protéger des cyberattaques.",
-  "level": 1,
+  "title": "Cybersécurité : ingénierie sociale et incidents",
+  "description": "Leviers de manipulation, hameçonnage, rançongiciels, navigateurs, conduite à tenir en cas d’incident : renforcez votre vigilance.",
+  "level": 2,
   "questions": [
    {
     "id": "k31",
@@ -451,18 +478,18 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k32",
-    "text": "La règle de sauvegarde 3-2-1 prévoit notamment…",
+    "text": "Un « technicien » vous appelle en urgence et demande vos identifiants. Le bon réflexe ?",
     "time": 40,
     "points": 1,
     "type": "single",
     "answers": [
-     "3 antivirus différents",
-     "2 supports ou emplacements différents",
-     "2 mots de passe différents",
-     "1 seul fichier local"
+     "Raccrocher et rappeler le support via un numéro officiel",
+     "Donner les identifiants pour gagner du temps",
+     "Envoyer les identifiants par e-mail",
+     "Changer de mot de passe après l’appel"
     ],
     "correct": [
-     1
+     0
     ]
    },
    {
@@ -491,63 +518,53 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k35",
-    "text": "Trouvez l'intrus parmi ces leviers d'ingénierie sociale :",
-    "time": 40,
+    "text": "Quels leviers l’ingénierie sociale exploite-t-elle ?",
+    "time": 50,
     "points": 1,
-    "type": "single",
+    "type": "multiple",
     "answers": [
-     "L'autorité",
-     "L'urgence",
+     "L’autorité",
+     "L’urgence",
      "L’appartenance au groupe",
-     "Le mot de passe"
+     "Le chiffrement"
     ],
     "correct": [
-     3
+     0,
+     1,
+     2
     ]
    },
    {
     "id": "k36",
-    "text": "Quel mot de passe est particulièrement risqué ?",
-    "time": 40,
+    "text": "Un QR code collé sur un parcmètre peut mener vers un faux site de paiement.",
+    "time": 20,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "MotdePasseTrèsRisqué !",
-     ",P4ssW0rd !",
-     "4dMin4Ever#:",
-     "Azerty123"
-    ],
-    "correct": [
-     3
-    ]
+    "type": "truefalse",
+    "truth": true,
+    "explanation": "C’est le « quishing », l’hameçonnage par QR code."
    },
    {
     "id": "k37",
-    "text": "À quoi sert la MFA ?",
-    "time": 40,
+    "text": "Comment appelle-t-on l’hameçonnage par SMS ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "Supprimer les pièces jointes",
-     "Ajouter un niveau de vérification",
-     "Accélérer la navigation web",
-     "Remplacer toutes les sauvegardes"
-    ],
-    "correct": [
-     1
+    "type": "text",
+    "accepted": [
+     "smishing",
+     "hameçonnage par SMS"
     ]
    },
    {
     "id": "k38",
-    "text": "Que fait un ransomware ?",
+    "text": "Un faux dirigeant exige un virement urgent et confidentiel. De quelle arnaque s’agit-il ?",
     "time": 40,
     "points": 1,
     "type": "single",
     "answers": [
-     "Il chiffre les données et exige une rançon",
-     "Il supprime les fichiers temporaires",
-     "Il espionne l'activité et vole les données",
-     "Il intercepte les frappes clavier"
+     "La fraude au président",
+     "Le rançongiciel",
+     "Le typosquatting",
+     "Le déni de service"
     ],
     "correct": [
      0
@@ -571,11 +588,17 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k40",
-    "text": "Les réflexes ISOLER, ALERTER, DOCUMENTER, INFORMER et STOP sont dans le bon ordre.",
-    "time": 20,
+    "text": "Remettez dans l’ordre les réflexes en cas d’incident.",
+    "time": 45,
     "points": 1,
-    "type": "truefalse",
-    "truth": false
+    "type": "order",
+    "items": [
+     "STOP",
+     "ISOLER",
+     "ALERTER",
+     "DOCUMENTER",
+     "INFORMER"
+    ]
    }
   ],
   "createdAt": 1781562015418,
@@ -586,8 +609,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "davinci-resolve-initiation",
   "category": "graphisme",
-  "title": "Davinci Resolve - Initiation",
-  "description": "Pages, bins, points In et Out, étalonnage, export : les bases du montage vidéo avec DaVinci Resolve.",
+  "title": "DaVinci Resolve",
+  "description": "Pages, chutiers, points d’entrée et de sortie, étalonnage, export : les bases du montage vidéo avec DaVinci Resolve.",
   "level": 1,
   "questions": [
    {
@@ -632,15 +655,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k44",
-    "text": "Qu'est-ce que le multipiste ?",
-    "time": 50,
+    "text": "Quelle page de DaVinci Resolve est dédiée au son ?",
+    "time": 40,
     "points": 1,
     "type": "single",
     "answers": [
-     "Disposer de plusieurs pistes audio et vidéo pour placer des éléments",
-     "Pouvoir ajouter plusieurs éléments les uns à la suite des autres",
-     "Ajouter un calque pour gérer plusieurs effets",
-     "Avoir plusieurs méthodes pour importer des médias"
+     "Fairlight",
+     "Fusion",
+     "Color",
+     "Media"
     ],
     "correct": [
      0
@@ -672,34 +695,27 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k47",
-    "text": "Quelle étape consiste à harmoniser les couleurs des plans ?",
-    "time": 40,
+    "text": "Comment appelle-t-on l’étape qui harmonise les couleurs des plans ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "Assemblage",
-     "Étalonnage",
-     "Encodage",
-     "Habillage"
-    ],
-    "correct": [
-     1
+    "type": "text",
+    "accepted": [
+     "étalonnage",
+     "l’étalonnage",
+     "color grading"
     ]
    },
    {
     "id": "k48",
-    "text": "Que permettent les points In et Out ?",
-    "time": 50,
+    "text": "Remettez dans l’ordre l’insertion d’un extrait dans la timeline.",
+    "time": 40,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "Régler les niveaux audio d’une piste",
-     "Sélectionner l’entrée et la sortie d’un clip à insérer",
-     "Créer automatiquement un générique",
-     "Choisir le codec d’export"
-    ],
-    "correct": [
-     1
+    "type": "order",
+    "items": [
+     "Ouvrir le clip dans le visualiseur",
+     "Placer le point d’entrée (I)",
+     "Placer le point de sortie (O)",
+     "Insérer dans la timeline"
     ]
    },
    {
@@ -735,25 +751,24 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "atelier-numerique-responsable-4h",
   "category": "gestion",
-  "title": "Atelier Numérique responsable 4h",
-  "description": "Empreinte du numérique, sobriété, économie circulaire, règle des 5R : les bases d'un numérique plus responsable.",
+  "title": "Numérique responsable",
+  "description": "Empreinte environnementale, durée de vie des équipements, règle des 5R, sobriété : les bases d’un numérique plus responsable.",
   "level": 1,
   "questions": [
    {
     "id": "k51",
-    "text": "Quelle part des émissions mondiales de gaz à effet de serre représente le numérique ?",
-    "time": 40,
+    "text": "Quelle part des émissions mondiales de gaz à effet de serre le numérique représente-t-il, environ ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "1%",
-     "2%",
-     "4%",
-     "8%"
-    ],
-    "correct": [
-     2
-    ]
+    "type": "slider",
+    "slider": {
+     "tolerance": 1,
+     "min": 0,
+     "max": 10,
+     "step": 0.5,
+     "answer": 4,
+     "unit": "%"
+    }
    },
    {
     "id": "k52",
@@ -830,17 +845,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k57",
     "text": "Quelle stratégie des 5R consiste à éviter l’achat inutile ?",
-    "time": 40,
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "Réparer",
-     "Refuser",
-     "Réutiliser",
-     "Recycler"
-    ],
-    "correct": [
-     1
+    "type": "text",
+    "accepted": [
+     "refuser",
+     "refus"
     ]
    },
    {
@@ -892,8 +902,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "git-gitlab-initiation",
   "category": "dev",
-  "title": "Git & Gitlab - Initiation",
-  "description": "Git, commits, branches, GitLab : les notions clés pour versionner un projet et collaborer sur des dépôts.",
+  "title": "Git et GitLab",
+  "description": "Commits, branches, fusion, tags et conventions de messages : versionnez un projet et collaborez sur GitLab.",
   "level": 1,
   "questions": [
    {
@@ -970,18 +980,14 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k66",
-    "text": "Quelle commande sert à sélectionner des changements à enregistrer ?",
+    "text": "Remettez dans l’ordre les commandes pour publier une modification.",
     "time": 40,
     "points": 1,
-    "type": "single",
-    "answers": [
+    "type": "order",
+    "items": [
      "git add",
      "git commit",
-     "git stash",
      "git push"
-    ],
-    "correct": [
-     0
     ]
    },
    {
@@ -994,18 +1000,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k68",
-    "text": "Que permet git status ?",
-    "time": 40,
+    "text": "Quelle commande affiche l’état du dépôt (fichiers modifiés, indexés…) ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "Afficher l’état actuel du dépôt",
-     "Créer une branche distante",
-     "Générer un changelog",
-     "Fusionner une merge request"
-    ],
-    "correct": [
-     0
+    "type": "text",
+    "accepted": [
+     "git status",
+     "status"
     ]
    },
    {
@@ -1041,9 +1042,9 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "wordpress-bonnes-pratiques-dev-initiation",
   "category": "dev",
-  "title": "WordPress Bonnes pratiques Dev - Initiation",
-  "description": "CPT, taxonomies, ACF, widgets, hooks : structurer et étendre un site WordPress dans les règles de l'art.",
-  "level": 1,
+  "title": "WordPress : développement et bonnes pratiques",
+  "description": "Types de contenu personnalisés, taxonomies, ACF, hooks, nettoyage de l’administration : structurez et étendez WordPress.",
+  "level": 2,
   "questions": [
    {
     "id": "k71",
@@ -1063,18 +1064,14 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k72",
-    "text": "Quel type de champ ACF est recommandé pour des listes d’éléments ?",
-    "time": 40,
+    "text": "Quel type de champ ACF gère une liste d’éléments répétés ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "Champ couleur",
-     "Champ liste",
-     "Champ URL",
-     "Répéteur"
-    ],
-    "correct": [
-     3
+    "type": "text",
+    "accepted": [
+     "répéteur",
+     "repeater",
+     "champ répéteur"
     ]
    },
    {
@@ -1119,18 +1116,18 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k76",
-    "text": "Quelle est l'utilité des widgets dans WordPress ?",
+    "text": "Où placer son code personnalisé pour qu’il survive aux mises à jour du thème ?",
     "time": 40,
     "points": 1,
     "type": "single",
     "answers": [
-     "Gérer les révisions des articles",
-     "Créer une page de formulaire",
-     "Attribuer une catégorie à une page",
-     "Ajouter une zone réutilisable"
+     "Dans un thème enfant ou une extension dédiée",
+     "Dans le cœur de WordPress",
+     "Dans le thème parent",
+     "Dans la base de données"
     ],
     "correct": [
-     3
+     0
     ]
    },
    {
@@ -1175,11 +1172,20 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k80",
-    "text": "WordPress ne permet pas de changer les menus.",
-    "time": 20,
+    "text": "Quels sont les deux types de hooks WordPress ?",
+    "time": 50,
     "points": 1,
-    "type": "truefalse",
-    "truth": false
+    "type": "multiple",
+    "answers": [
+     "Les actions",
+     "Les filtres",
+     "Les widgets",
+     "Les shortcodes"
+    ],
+    "correct": [
+     0,
+     1
+    ]
    }
   ],
   "createdAt": 1775789246382,
@@ -1190,24 +1196,19 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "shopify-initiation",
   "category": "dev",
-  "title": "Shopify - Initiation",
-  "description": "Back-office, produits, pages légales, paiement en Nouvelle-Calédonie : prenez en main votre boutique Shopify.",
+  "title": "Shopify",
+  "description": "Solution SaaS, back-office, produits, pages légales, paiement en Nouvelle-Calédonie : prenez en main votre boutique Shopify.",
   "level": 1,
   "questions": [
    {
     "id": "k81",
-    "text": "Shopify est une solution :",
-    "time": 40,
+    "text": "Shopify est un logiciel en ligne par abonnement. Quel sigle désigne ce modèle ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "PaaS",
+    "type": "text",
+    "accepted": [
      "SaaS",
-     "Open Source",
-     "IaaS"
-    ],
-    "correct": [
-     1
+     "Software as a Service"
     ]
    },
    {
@@ -1308,17 +1309,19 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k89",
-    "text": "Quelle page fait partie des pages légales obligatoires d'une boutique en ligne ?",
-    "time": 40,
+    "text": "Quelles pages légales une boutique en ligne doit-elle afficher ?",
+    "time": 50,
     "points": 1,
-    "type": "single",
+    "type": "multiple",
     "answers": [
-     "Galerie photo",
-     "Blog actualités",
      "Politique de confidentialité",
-     "Fiche produit"
+     "Conditions générales de vente",
+     "Mentions légales",
+     "Galerie photo"
     ],
     "correct": [
+     0,
+     1,
      2
     ]
    },
@@ -1337,151 +1340,10 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "source": "import"
  },
  {
-  "id": "ia-arbe",
-  "category": "ia",
-  "title": "IA Arbé",
-  "description": "Vocabulaire de l'IA, construction d'un bon prompt, génération d'images et inpainting : les bases pour bien utiliser l'IA.",
-  "level": 1,
-  "questions": [
-   {
-    "id": "k91",
-    "text": "Une intelligence artificielle utilise un modèle d'apprentissage.",
-    "time": 20,
-    "points": 1,
-    "type": "truefalse",
-    "truth": true
-   },
-   {
-    "id": "k92",
-    "text": "Quel mot ne fait PAS partie du vocabulaire lié à l'intelligence artificielle ?",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "Prompt",
-     "Hallucination",
-     "Inpainting",
-     "Responsive"
-    ],
-    "correct": [
-     3
-    ]
-   },
-   {
-    "id": "k93",
-    "text": "Trouvez l'intrus parmi ces applications possibles de l'IA :",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "prédiction",
-     "monitoring",
-     "variabilité",
-     "automatisation"
-    ],
-    "correct": [
-     2
-    ]
-   },
-   {
-    "id": "k94",
-    "text": "L'IA est toujours fiable, car elle indiquera quand elle se trompe.",
-    "time": 20,
-    "points": 1,
-    "type": "truefalse",
-    "truth": false
-   },
-   {
-    "id": "k95",
-    "text": "Quel est un des points fondamentaux du prompt ?",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "Confus et court",
-     "Clair et précis",
-     "Long et simple",
-     "Subjectif et partiel"
-    ],
-    "correct": [
-     1
-    ]
-   },
-   {
-    "id": "k96",
-    "text": "Trouvez l'intrus parmi ces éléments à ajouter au prompt :",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "Format",
-     "Action",
-     "Contexte",
-     "Modèle"
-    ],
-    "correct": [
-     3
-    ]
-   },
-   {
-    "id": "k97",
-    "text": "ChatGPT peut vous poser des questions pour améliorer ses réponses.",
-    "time": 20,
-    "points": 1,
-    "type": "truefalse",
-    "truth": true
-   },
-   {
-    "id": "k98",
-    "text": "Quel ajout n'est PAS utile à un prompt graphique ?",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "La lumière",
-     "La politesse",
-     "Un moteur de rendu",
-     "Un style graphique"
-    ],
-    "correct": [
-     1
-    ]
-   },
-   {
-    "id": "k99",
-    "text": "Que permet Photoshop grâce à l'IA ?",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "L'aérographe",
-     "Le painting",
-     "L'inpainting",
-     "La sélection de tracé"
-    ],
-    "correct": [
-     2
-    ]
-   },
-   {
-    "id": "k100",
-    "text": "Les IA de génération d'images ont de meilleurs résultats en ajoutant des adjectifs à vos prompts.",
-    "time": 20,
-    "points": 1,
-    "type": "truefalse",
-    "truth": true
-   }
-  ],
-  "createdAt": 1773112623486,
-  "updatedAt": 1773112908076,
-  "builtin": true,
-  "source": "import"
- },
- {
   "id": "jotform-intermediaire",
   "category": "nocode",
-  "title": "Jotform - Intermédiaire",
-  "description": "Champs conditionnels, éditeur PDF, workflows, rapports, applications : aller plus loin avec Jotform.",
+  "title": "Jotform : workflows et PDF",
+  "description": "Champs conditionnels, éditeur PDF, approbations, rapports et applications : allez plus loin avec Jotform.",
   "level": 2,
   "questions": [
    {
@@ -1526,18 +1388,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k104",
-    "text": "Parmi ces modèles de formulaires, lequel n'existe PAS dans Jotform ?",
+    "text": "Remettez dans l’ordre un workflow d’approbation.",
     "time": 40,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "Formulaires multipages",
-     "Formulaires avec calculs",
-     "Formulaires conditionnels imbriqués",
-     "Formulaires en réalité augmentée"
-    ],
-    "correct": [
-     3
+    "type": "order",
+    "items": [
+     "Le formulaire est soumis",
+     "L’approbateur est notifié",
+     "Il approuve ou refuse",
+     "Le demandeur est informé"
     ]
    },
    {
@@ -1558,17 +1417,19 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k106",
-    "text": "Quel rôle peut jouer un approbateur dans un workflow ?",
-    "time": 40,
+    "text": "Que peut faire un approbateur dans un workflow ?",
+    "time": 50,
     "points": 1,
-    "type": "single",
+    "type": "multiple",
     "answers": [
-     "Modifier le formulaire",
-     "Supprimer les données",
-     "Approuver, refuser ou demander une révision",
-     "Modifier les conditions"
+     "Approuver",
+     "Refuser",
+     "Demander une révision",
+     "Modifier le formulaire"
     ],
     "correct": [
+     0,
+     1,
      2
     ]
    },
@@ -1637,8 +1498,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "jotform-initiation",
   "category": "nocode",
-  "title": "Jotform - Initiation",
-  "description": "Jotform : créer, intégrer et exporter des formulaires, utiliser Jotform Tables et appliquer les bonnes pratiques de conception.",
+  "title": "Jotform",
+  "description": "Création, intégration et export de formulaires, Jotform Tables, bonnes pratiques de conception : prenez en main Jotform.",
   "level": 1,
   "questions": [
    {
@@ -1675,11 +1536,14 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k113",
-    "text": "Jotform ne propose pas d'intégrer un formulaire sur un site web.",
-    "time": 20,
+    "text": "Quelle balise HTML permet d’intégrer un formulaire Jotform dans une page web ?",
+    "time": 30,
     "points": 1,
-    "type": "truefalse",
-    "truth": false
+    "type": "text",
+    "accepted": [
+     "iframe",
+     "<iframe>"
+    ]
    },
    {
     "id": "k114",
@@ -1699,18 +1563,20 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k115",
-    "text": "Quels formats d'export Jotform propose-t-il pour les données d'un formulaire ?",
-    "time": 40,
+    "text": "Dans quels formats exporter les données d’un formulaire ?",
+    "time": 50,
     "points": 1,
-    "type": "single",
+    "type": "multiple",
     "answers": [
-     "Uniquement en PDF",
-     "Impossible d'exporter",
-     "Uniquement vers Google Sheets",
-     "Excel, CSV et PDF"
+     "Excel",
+     "CSV",
+     "PDF",
+     "PowerPoint"
     ],
     "correct": [
-     3
+     0,
+     1,
+     2
     ]
    },
    {
@@ -1794,25 +1660,23 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "prototypage-avec-node-js",
   "category": "dev",
-  "title": "Prototypage avec Node.js",
-  "description": "Node.js, npm, Express, TypeScript : les notions clés pour prototyper une API et structurer un projet JavaScript.",
+  "title": "Node.js : prototyper une API",
+  "description": "Event Loop, npm, package.json, Express, TypeScript, Prettier et Jest : les outils pour prototyper une API en JavaScript.",
   "level": 2,
   "questions": [
    {
     "id": "k121",
-    "text": "En quelle année a été créé Node.js ?",
-    "time": 40,
+    "text": "En quelle année Node.js a-t-il été créé ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "2007",
-     "2005",
-     "2009",
-     "2011"
-    ],
-    "correct": [
-     2
-    ]
+    "type": "slider",
+    "slider": {
+     "tolerance": 0,
+     "min": 2000,
+     "max": 2020,
+     "step": 1,
+     "answer": 2009
+    }
    },
    {
     "id": "k122",
@@ -1832,18 +1696,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k123",
-    "text": "Quel fichier central décrit les dépendances d’un projet Node.js ?",
-    "time": 40,
+    "text": "Quel fichier décrit les dépendances d’un projet Node.js ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "app.js",
-     "package.json",
-     "node_modules",
-     "config.js"
-    ],
-    "correct": [
-     1
+    "type": "text",
+    "accepted": [
+     "package.json"
     ]
    },
    {
@@ -1967,80 +1825,76 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "numerique-responsable-et-green-it",
   "category": "gestion",
-  "title": "Numérique responsable et Green IT",
-  "description": "Impact des CMS, loi AGEC, Ecoindex, bilan GES : les repères du numérique responsable et du Green IT.",
+  "title": "Green IT : mesurer et réduire",
+  "description": "Ecoindex, loi AGEC, impact des CMS, bilan GES, écoconception : mesurez et réduisez l’impact de vos services numériques.",
   "level": 2,
   "questions": [
    {
     "id": "k131",
-    "text": "Quelle part des émissions mondiales de gaz à effet de serre représente le numérique ?",
-    "time": 40,
+    "text": "Quelle part de l’empreinte carbone du numérique en France vient de la fabrication des équipements ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "1%",
-     "2%",
-     "4%",
-     "8%"
-    ],
-    "correct": [
-     2
-    ]
+    "type": "slider",
+    "slider": {
+     "tolerance": 10,
+     "min": 0,
+     "max": 100,
+     "step": 5,
+     "answer": 80,
+     "unit": "%"
+    },
+    "explanation": "Environ 80 % selon l’ADEME et l’Arcep."
    },
    {
     "id": "k132",
-    "text": "En moyenne, la durée de vie d’un ordinateur aujourd’hui est de :",
-    "time": 40,
+    "text": "Comment appelle-t-on la conception d’un service qui réduit son impact environnemental dès le départ ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "2 ans",
-     "4 ans",
-     "7 ans",
-     "11 ans"
-    ],
-    "correct": [
-     1
+    "type": "text",
+    "accepted": [
+     "écoconception",
+     "éco-conception",
+     "eco conception"
     ]
    },
    {
     "id": "k133",
-    "text": "La raréfaction de l’eau n’a aucun lien avec le numérique.",
-    "time": 20,
-    "points": 1,
-    "type": "truefalse",
-    "truth": false
-   },
-   {
-    "id": "k134",
-    "text": "Le pilier social du numérique responsable inclut :",
+    "text": "Quel référentiel français regroupe les bonnes pratiques d’écoconception des services numériques ?",
     "time": 40,
     "points": 1,
     "type": "single",
     "answers": [
-     "L’économie circulaire",
-     "L’accessibilité numérique",
-     "Réduction des émissions",
-     "Gestion des déchets électroniques"
+     "Le RGESN",
+     "Le RGAA",
+     "Le RGPD",
+     "L’Ecoindex"
     ],
     "correct": [
-     1
+     0
     ]
    },
    {
+    "id": "k134",
+    "text": "Une page plus légère (moins de requêtes, d’images et de scripts) obtient en général un meilleur Ecoindex.",
+    "time": 20,
+    "points": 1,
+    "type": "truefalse",
+    "truth": true
+   },
+   {
     "id": "k135",
-    "text": "L’un des enjeux économiques du numérique responsable est de :",
-    "time": 50,
+    "text": "Quel levier prolonge le plus la durée de vie du matériel informatique ?",
+    "time": 40,
     "points": 1,
     "type": "single",
     "answers": [
-     "Accélérer le renouvellement des appareils",
-     "Augmenter les marges de production",
-     "Favoriser la consommation énergétique",
-     "Réduire les coûts et favoriser la durabilité du matériel"
+     "Le reconditionnement et la réparation",
+     "Le renouvellement annuel",
+     "La mise en veille prolongée",
+     "Une luminosité plus forte"
     ],
     "correct": [
-     3
+     0
     ]
    },
    {
@@ -2093,18 +1947,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k139",
-    "text": "Quelle est une bonne pratique professionnelle de sobriété numérique ?",
-    "time": 50,
+    "text": "Classez ces formats d’image du plus léger au plus lourd, pour une photo de qualité comparable.",
+    "time": 40,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "Multiplier les appareils pour le confort",
-     "Conserver les doublons de fichiers",
-     "Archiver tous les e-mails sur le cloud",
-     "Limiter les destinataires d’un e-mail aux personnes concernées"
-    ],
-    "correct": [
-     3
+    "type": "order",
+    "items": [
+     "AVIF",
+     "WebP",
+     "JPEG",
+     "PNG"
     ]
    },
    {
@@ -2124,8 +1975,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "css-perfectionnement",
   "category": "dev",
-  "title": "CSS Perfectionnement",
-  "description": "Sélecteurs, box-model, Flexbox, Grid, transitions, BEM : les notions pour perfectionner vos feuilles de style.",
+  "title": "CSS : mise en page avancée",
+  "description": "Sélecteurs, z-index, reset, Flexbox et Grid, transitions, méthodologie BEM : perfectionnez vos feuilles de style.",
   "level": 3,
   "questions": [
    {
@@ -2178,50 +2029,41 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k144",
-    "text": "Quelle notation couleur n’existe PAS en CSS ?",
-    "time": 40,
+    "text": "Quelles notations de couleur existent en CSS ?",
+    "time": 50,
     "points": 1,
-    "type": "single",
+    "type": "multiple",
     "answers": [
-     "Nom de couleur (ex: red)",
-     "Hexadécimal (ex: #FF0000)",
-     "RGB (ex: rgb(255,0,0))",
-     "CMYK (ex: cmyk(0,100,100,0))"
+     "red",
+     "#FF0000",
+     "rgb(255, 0, 0)",
+     "cmyk(0, 100, 100, 0)"
     ],
     "correct": [
-     3
+     0,
+     1,
+     2
     ]
    },
    {
     "id": "k145",
-    "text": "Le box-model comprend :",
-    "time": 40,
+    "text": "Quelle fonction CSS calcule une taille comme « 100% - 2rem » ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "margin, border, padding, content",
-     "margin, table, cell, box",
-     "content, frame, area, border",
-     "padding, row, div, align"
-    ],
-    "correct": [
-     0
+    "type": "text",
+    "accepted": [
+     "calc",
+     "calc()"
     ]
    },
    {
     "id": "k146",
-    "text": "Quelle propriété contrôle la profondeur d’affichage d’un élément ?",
-    "time": 40,
+    "text": "Quelle propriété contrôle l’ordre d’empilement des éléments ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "depth",
-     "layer",
-     "z-index",
-     "position"
-    ],
-    "correct": [
-     2
+    "type": "text",
+    "accepted": [
+     "z-index"
     ]
    },
    {
@@ -2295,159 +2137,10 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "source": "import"
  },
  {
-  "id": "contributeur-web-wordpress-initiation",
-  "category": "dev",
-  "title": "Contributeur web (WordPress) - Initiation",
-  "description": "Tableau de bord, articles, pages, catégories, menus, widgets, extensions : prendre en main WordPress pour publier du contenu.",
-  "level": 1,
-  "questions": [
-   {
-    "id": "k151",
-    "text": "WordPress est…",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "un serveur web",
-     "un système de gestion de contenu",
-     "un logiciel de gestion de stock",
-     "un module pour WordPress"
-    ],
-    "correct": [
-     1
-    ]
-   },
-   {
-    "id": "k152",
-    "text": "Quel élément n'est PAS présent dans le menu d'administration WordPress ?",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "Pages",
-     "Contenu",
-     "Médias",
-     "Articles"
-    ],
-    "correct": [
-     1
-    ]
-   },
-   {
-    "id": "k153",
-    "text": "WordPress est composé d'un front et d'un back office.",
-    "time": 20,
-    "points": 1,
-    "type": "truefalse",
-    "truth": true
-   },
-   {
-    "id": "k154",
-    "text": "Quelle action n'est PAS disponible sur un contenu dans WordPress ?",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "Voir",
-     "Archiver",
-     "Modifier",
-     "Supprimer"
-    ],
-    "correct": [
-     1
-    ]
-   },
-   {
-    "id": "k155",
-    "text": "Trouvez l'intrus : l'éditeur de WordPress permet de…",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "insérer une citation",
-     "créer du texte automatiquement",
-     "ajouter une image",
-     "mettre en gras"
-    ],
-    "correct": [
-     1
-    ]
-   },
-   {
-    "id": "k156",
-    "text": "Pour quel élément les catégories sont-elles disponibles ?",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "une page",
-     "un commentaire",
-     "une étiquette",
-     "un article"
-    ],
-    "correct": [
-     3
-    ]
-   },
-   {
-    "id": "k157",
-    "text": "WordPress permet de modifier les menus du site.",
-    "time": 20,
-    "points": 1,
-    "type": "truefalse",
-    "truth": true
-   },
-   {
-    "id": "k158",
-    "text": "Qu'est-ce qu'un widget dans WordPress ?",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "une zone de contenu réutilisable",
-     "des images qui défilent automatiquement",
-     "un bloc de texte",
-     "un module pour ajouter une fonctionnalité"
-    ],
-    "correct": [
-     0
-    ]
-   },
-   {
-    "id": "k159",
-    "text": "Où peut-on installer ou supprimer un plugin ?",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "Apparence",
-     "Réglages",
-     "Extensions",
-     "Outils"
-    ],
-    "correct": [
-     2
-    ]
-   },
-   {
-    "id": "k160",
-    "text": "WordPress permet aussi de gérer les formulaires nativement.",
-    "time": 20,
-    "points": 1,
-    "type": "truefalse",
-    "truth": false
-   }
-  ],
-  "createdAt": 1759983771420,
-  "updatedAt": 1759984231520,
-  "builtin": true,
-  "source": "import"
- },
- {
   "id": "php-intermediare",
   "category": "dev",
-  "title": "PHP - Intermédiaire",
-  "description": "MVC, Composer, PDO, API REST, DRY, KISS, XSS : les bonnes pratiques pour développer en PHP.",
+  "title": "PHP : bonnes pratiques",
+  "description": "MVC, Composer, PDO, API REST, principes DRY et KISS, protection contre les failles XSS : développez proprement en PHP.",
   "level": 2,
   "questions": [
    {
@@ -2492,18 +2185,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k164",
-    "text": "Quel outil est utilisé pour gérer les dépendances externes en PHP ?",
-    "time": 40,
+    "text": "Quel outil gère les dépendances externes en PHP ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "Bower",
-     "PIP",
-     "Gradle",
+    "type": "text",
+    "accepted": [
      "Composer"
-    ],
-    "correct": [
-     3
     ]
    },
    {
@@ -2564,11 +2251,23 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k169",
-    "text": "Une API REST peut utiliser les méthodes HTTP comme GET, POST, PUT et DELETE.",
-    "time": 20,
+    "text": "Quelles méthodes HTTP une API REST utilise-t-elle couramment ?",
+    "time": 50,
     "points": 1,
-    "type": "truefalse",
-    "truth": true
+    "type": "multiple",
+    "answers": [
+     "GET",
+     "POST",
+     "PUT",
+     "DELETE",
+     "SEND"
+    ],
+    "correct": [
+     0,
+     1,
+     2,
+     3
+    ]
    },
    {
     "id": "k170",
@@ -2595,8 +2294,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "javascript-jquery-perfectionnement",
   "category": "dev",
-  "title": "Javascript & jQuery Perfectionnement",
-  "description": "Portée des variables, fonctions fléchées, déstructuration, hoisting, promesses et jQuery : les notions clés de JavaScript avancé.",
+  "title": "JavaScript et jQuery",
+  "description": "Portée des variables, fonctions fléchées, déstructuration, hoisting, promesses, async/await et jQuery : JavaScript en profondeur.",
   "level": 3,
   "questions": [
    {
@@ -2625,19 +2324,17 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k173",
-    "text": "Que retourne la ligne const [a, b] = [10, 20]; ?",
-    "time": 40,
+    "text": "Après const [a, b] = [10, 20]; que vaut a + b ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "Crée un tableau [a, b]",
-     "Lance une erreur",
-     "Attribue 10 à a et 20 à b",
-     "Retourne {a:10, b:20}"
-    ],
-    "correct": [
-     2
-    ]
+    "type": "slider",
+    "slider": {
+     "tolerance": 0,
+     "min": 0,
+     "max": 50,
+     "step": 1,
+     "answer": 30
+    }
    },
    {
     "id": "k174",
@@ -2665,18 +2362,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k176",
-    "text": "Quel mot décrit le mécanisme où les déclarations sont “remontées” ?",
-    "time": 40,
+    "text": "Comment appelle-t-on la remontée des déclarations en début de portée ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "Memoization",
-     "Hoisting",
-     "Scoping",
-     "Binding"
-    ],
-    "correct": [
-     1
+    "type": "text",
+    "accepted": [
+     "hoisting",
+     "hissage"
     ]
    },
    {
@@ -2742,686 +2434,108 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "source": "import"
  },
  {
-  "id": "performance-ia-edd",
-  "category": "ia",
-  "title": "Performance IA EDD",
-  "description": "Vocabulaire de l'IA, applications, prompt clair et précis, choix des outils : les repères essentiels pour gagner en performance.",
-  "level": 1,
-  "questions": [
-   {
-    "id": "k181",
-    "text": "Une intelligence artificielle utilise un modèle d'apprentissage.",
-    "time": 20,
-    "points": 1,
-    "type": "truefalse",
-    "truth": true
-   },
-   {
-    "id": "k182",
-    "text": "Quel mot ne fait PAS partie du vocabulaire lié à l'intelligence artificielle ?",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "Prompt",
-     "Hallucination",
-     "Entraînement",
-     "Responsive"
-    ],
-    "correct": [
-     3
-    ]
-   },
-   {
-    "id": "k183",
-    "text": "Trouvez l'intrus parmi ces applications possibles :",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "prédiction",
-     "monitoring",
-     "pilotage",
-     "automatisation"
-    ],
-    "correct": [
-     2
-    ]
-   },
-   {
-    "id": "k184",
-    "text": "L'IA est toujours fiable, car elle indiquera quand elle se trompe.",
-    "time": 20,
-    "points": 1,
-    "type": "truefalse",
-    "truth": false
-   },
-   {
-    "id": "k185",
-    "text": "Quel est un des points fondamentaux du prompt ?",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "Transparent et court",
-     "Clair et précis",
-     "Ouvert et simple",
-     "Complet et subjectif"
-    ],
-    "correct": [
-     1
-    ]
-   },
-   {
-    "id": "k186",
-    "text": "Trouvez l'intrus parmi ces éléments à ajouter au prompt :",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "Format",
-     "Action",
-     "Rôle",
-     "Algorithme"
-    ],
-    "correct": [
-     3
-    ]
-   },
-   {
-    "id": "k187",
-    "text": "L'IA peut vous poser des questions pour améliorer ses réponses.",
-    "time": 20,
-    "points": 1,
-    "type": "truefalse",
-    "truth": true
-   },
-   {
-    "id": "k188",
-    "text": "Quel critère n'est PAS utile pour choisir son outil ?",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "Coût",
-     "Mode veille",
-     "Qualité des résultats",
-     "Ergonomie"
-    ],
-    "correct": [
-     1
-    ]
-   },
-   {
-    "id": "k189",
-    "text": "Trouvez l'intrus parmi ces tons :",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "Humoristique",
-     "Concis",
-     "Régional",
-     "Formel"
-    ],
-    "correct": [
-     2
-    ]
-   },
-   {
-    "id": "k190",
-    "text": "ChatGPT apprend des conversations avec les utilisateurs pour être plus performant dans les interactions futures.",
-    "time": 20,
-    "points": 1,
-    "type": "truefalse",
-    "truth": false
-   }
-  ],
-  "createdAt": 1757475976982,
-  "updatedAt": 1757476658093,
-  "builtin": true,
-  "source": "import"
- },
- {
-  "id": "ia-chatgpt-initiation",
-  "category": "ia",
-  "title": "IA / ChatGPT - Initiation",
-  "description": "Réseaux de neurones, types d'IA, prompts clairs et limites : les bases de l'IA générative et de ChatGPT.",
-  "level": 1,
-  "questions": [
-   {
-    "id": "k191",
-    "text": "Une intelligence artificielle utilise un réseau de neurones artificiels.",
-    "time": 20,
-    "points": 1,
-    "type": "truefalse",
-    "truth": true
-   },
-   {
-    "id": "k192",
-    "text": "Quel type d'intelligence artificielle ne fait PAS partie des trois niveaux classiques ?",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "Superintelligente",
-     "Spécialisée",
-     "Générale",
-     "En essaim"
-    ],
-    "correct": [
-     3
-    ]
-   },
-   {
-    "id": "k193",
-    "text": "Trouvez l'intrus parmi ces applications possibles de l'IA :",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "prédiction",
-     "monitoring",
-     "téléportation",
-     "automatisation"
-    ],
-    "correct": [
-     2
-    ]
-   },
-   {
-    "id": "k194",
-    "text": "L'IA est toujours fiable, car elle indiquera quand elle se trompe.",
-    "time": 20,
-    "points": 1,
-    "type": "truefalse",
-    "truth": false
-   },
-   {
-    "id": "k195",
-    "text": "Quel est un des points fondamentaux du prompt ?",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "Transparent et court",
-     "Clair et précis",
-     "Ouvert et simple",
-     "Complet et ambigu"
-    ],
-    "correct": [
-     1
-    ]
-   },
-   {
-    "id": "k196",
-    "text": "Trouvez l'intrus parmi ces éléments à ajouter au prompt selon les frameworks :",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "Format",
-     "Action",
-     "Rôle",
-     "Vision"
-    ],
-    "correct": [
-     3
-    ]
-   },
-   {
-    "id": "k197",
-    "text": "L'IA peut vous poser des questions pour améliorer ses réponses.",
-    "time": 20,
-    "points": 1,
-    "type": "truefalse",
-    "truth": true
-   },
-   {
-    "id": "k198",
-    "text": "Quelle limite n'est PAS présente dans l'IA générative ?",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "Biais",
-     "Distance géographique",
-     "Précision",
-     "Compréhension"
-    ],
-    "correct": [
-     1
-    ]
-   },
-   {
-    "id": "k199",
-    "text": "Trouvez l'intrus parmi ces propositions d'utilisation de l'IA :",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "Faire le café",
-     "Rédiger un mail",
-     "Générer une image",
-     "Analyser des données"
-    ],
-    "correct": [
-     0
-    ]
-   },
-   {
-    "id": "k200",
-    "text": "L'IA apprend en direct de vos conversations pour être plus performante dans les interactions avec d'autres utilisateurs.",
-    "time": 20,
-    "points": 1,
-    "type": "truefalse",
-    "truth": false
-   }
-  ],
-  "createdAt": 1728603655904,
-  "updatedAt": 1756958314319,
-  "builtin": true,
-  "source": "import"
- },
- {
-  "id": "microsoft-365-partiel-initiation",
-  "category": "bureautique",
-  "title": "Microsoft 365 Partiel - Initiation",
-  "description": "Outlook, OneDrive, OneNote, Planner, Teams, SharePoint, Forms : découvrez les principaux services de Microsoft 365.",
-  "level": 1,
-  "questions": [
-   {
-    "id": "k201",
-    "text": "Quel service ne fait PAS partie de Microsoft 365 ?",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "Word",
-     "Looker Studio",
-     "Teams",
-     "Excel"
-    ],
-    "correct": [
-     1
-    ]
-   },
-   {
-    "id": "k202",
-    "text": "Que permet de faire le bouton répéter/mise en attente dans Outlook ?",
-    "time": 50,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "répéter un e-mail qui reviendra plus tard dans votre boîte de réception",
-     "mettre en attente un évènement reçu via la messagerie",
-     "répéter une mise en forme sur le contenu sélectionné",
-     "mettre en attente une pièce jointe pour archivage"
-    ],
-    "correct": [
-     0
-    ]
-   },
-   {
-    "id": "k203",
-    "text": "Trouvez l'intrus, OneDrive permet de :",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "télécharger une copie d'un fichier",
-     "stocker des fichiers",
-     "partager un dossier",
-     "éditer des vidéos"
-    ],
-    "correct": [
-     3
-    ]
-   },
-   {
-    "id": "k204",
-    "text": "OneNote ne permet PAS de créer :",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "des plans 3D",
-     "des blocs-notes",
-     "des sections",
-     "des pages"
-    ],
-    "correct": [
-     0
-    ]
-   },
-   {
-    "id": "k205",
-    "text": "Trouvez l'intrus, Planner propose d'enrichir les tâches avec :",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "la progression",
-     "les calories consommées",
-     "la priorité",
-     "la répétition"
-    ],
-    "correct": [
-     1
-    ]
-   },
-   {
-    "id": "k206",
-    "text": "Teams permet de créer des canaux.",
-    "time": 20,
-    "points": 1,
-    "type": "truefalse",
-    "truth": true
-   },
-   {
-    "id": "k207",
-    "text": "SharePoint permet de créer :",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "des sites d'équipe",
-     "des sites e-commerce",
-     "des affiches",
-     "des cartes de visite"
-    ],
-    "correct": [
-     0
-    ]
-   },
-   {
-    "id": "k208",
-    "text": "Forms offre la possibilité de concevoir :",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "des questionnaires",
-     "des listes",
-     "des contrats",
-     "des coachings"
-    ],
-    "correct": [
-     0
-    ]
-   },
-   {
-    "id": "k209",
-    "text": "OneDrive inclut un historique des versions des fichiers.",
-    "time": 20,
-    "points": 1,
-    "type": "truefalse",
-    "truth": true
-   },
-   {
-    "id": "k210",
-    "text": "Quel élément ne figure PAS dans les modèles de Microsoft Lists ou SharePoint ?",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "Suivi des problèmes",
-     "Gestion des ventes",
-     "Demande de déplacement",
-     "Inventaire de cryptomonnaies"
-    ],
-    "correct": [
-     3
-    ]
-   }
-  ],
-  "createdAt": 1739495481109,
-  "updatedAt": 1756957069746,
-  "builtin": true,
-  "source": "import"
- },
- {
-  "id": "bureautique-avec-l-ia-initiation",
-  "category": "ia",
-  "title": "Bureautique avec l'IA - Initiation",
-  "description": "Copilot dans Word, Excel, PowerPoint et Outlook : ce que l'IA apporte à la bureautique, et ses limites.",
-  "level": 1,
-  "questions": [
-   {
-    "id": "k211",
-    "text": "Une intelligence artificielle utilise un réseau de neurones artificiels.",
-    "time": 20,
-    "points": 1,
-    "type": "truefalse",
-    "truth": true
-   },
-   {
-    "id": "k212",
-    "text": "Quel logiciel ne dispose PAS de Copilot ?",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "Word",
-     "Excel",
-     "PowerPoint",
-     "Calculatrice"
-    ],
-    "correct": [
-     3
-    ]
-   },
-   {
-    "id": "k213",
-    "text": "Que ne peut PAS faire Copilot dans Outlook ?",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "Trier",
-     "Rédiger",
-     "Planifier",
-     "Résumer"
-    ],
-    "correct": [
-     0
-    ]
-   },
-   {
-    "id": "k214",
-    "text": "L'IA est toujours fiable, car elle indiquera quand elle se trompe.",
-    "time": 20,
-    "points": 1,
-    "type": "truefalse",
-    "truth": false
-   },
-   {
-    "id": "k215",
-    "text": "Quelle fonctionnalité n'est PAS disponible dans Excel grâce à l'IA ?",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "Prévision des tendances",
-     "Mise en forme conditionnelle",
-     "Suggestions de visualisation",
-     "Détection d'anomalies"
-    ],
-    "correct": [
-     1
-    ]
-   },
-   {
-    "id": "k216",
-    "text": "Que propose PowerPoint grâce à l'IA ?",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "Créer une présentation",
-     "Générer des images pour vos slides",
-     "Vous évaluer avec Speaker Coach",
-     "Toutes les propositions précédentes"
-    ],
-    "correct": [
-     3
-    ]
-   },
-   {
-    "id": "k217",
-    "text": "Copilot peut vous poser des questions pour améliorer ses réponses.",
-    "time": 20,
-    "points": 1,
-    "type": "truefalse",
-    "truth": true
-   },
-   {
-    "id": "k218",
-    "text": "Quelle limite n'est PAS présente dans Copilot ?",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "Biais",
-     "Distance",
-     "Précision",
-     "Compréhension"
-    ],
-    "correct": [
-     1
-    ]
-   },
-   {
-    "id": "k219",
-    "text": "Trouvez l'intrus parmi ces propositions d'utilisation de l'IA :",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "Faire le café",
-     "Rédiger un mail",
-     "Générer une image",
-     "Analyser des données"
-    ],
-    "correct": [
-     0
-    ]
-   },
-   {
-    "id": "k220",
-    "text": "L'IA apprend immédiatement des échanges avec vous pour être plus performante dans les interactions avec d'autres.",
-    "time": 20,
-    "points": 1,
-    "type": "truefalse",
-    "truth": false
-   }
-  ],
-  "createdAt": 1754540569655,
-  "updatedAt": 1754541167803,
-  "builtin": true,
-  "source": "import"
- },
- {
   "id": "les-ia-generatives-perfectionnement",
   "category": "ia",
-  "title": "Les IA génératives - Perfectionnement",
-  "description": "Frameworks de prompt, choix d'une IA, modes de ChatGPT, images : perfectionnez vos usages de l'IA générative.",
+  "title": "IA générative : agents et automatisation",
+  "description": "Agents, connecteurs, fenêtre de contexte, sources documentaires, évaluation : passez de l’assistant ponctuel aux usages avancés.",
   "level": 3,
   "questions": [
    {
     "id": "k222",
-    "text": "Dans le framework RTF, à quoi correspondent les lettres ?",
+    "text": "Que désigne la RAG (génération augmentée par récupération) ?",
     "time": 40,
     "points": 1,
     "type": "single",
     "answers": [
-     "Régulation, Tendance, Force",
-     "Rapide, Technologie, Framework",
-     "Robot, Test, Fond",
-     "Rôle, Tâche, Format"
+     "Faire répondre le modèle à partir de documents retrouvés dans une base",
+     "Réentraîner entièrement le modèle sur vos données",
+     "Générer des images à partir de texte",
+     "Réduire la taille d’un modèle"
     ],
     "correct": [
-     3
+     0
     ]
    },
    {
     "id": "k223",
-    "text": "Trouvez l'intrus parmi ces frameworks :",
-    "time": 40,
+    "text": "Comment appelle-t-on l’unité de découpage du texte qui sert à mesurer et facturer l’usage d’un modèle ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "RTF",
-     "RACEF",
-     "Chaîne de variation",
-     "Chaîne de densité"
-    ],
-    "correct": [
-     2
+    "type": "text",
+    "accepted": [
+     "token",
+     "tokens",
+     "jeton",
+     "jetons"
     ]
    },
    {
     "id": "k224",
-    "text": "L'IA est toujours fiable, car elle indiquera quand elle se trompe.",
-    "time": 20,
-    "points": 1,
-    "type": "truefalse",
-    "truth": false
-   },
-   {
-    "id": "k226",
-    "text": "Trouvez l'intrus parmi ces critères pour le choix d'une IA :",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "Coût",
-     "Facilité d'utilisation",
-     "Qualité des résultats",
-     "Popularité"
-    ],
-    "correct": [
-     3
-    ]
-   },
-   {
-    "id": "k227",
-    "text": "ChatGPT pourra utiliser un ton décontracté.",
+    "text": "Un modèle « open weights » peut être exécuté sur votre propre serveur, sans envoyer vos données à un fournisseur.",
     "time": 20,
     "points": 1,
     "type": "truefalse",
     "truth": true
    },
    {
-    "id": "k228",
-    "text": "Quel mode ne fait PAS partie des modes de ChatGPT ?",
-    "time": 40,
+    "id": "k226",
+    "text": "Lesquels de ces critères comptent pour choisir une IA ?",
+    "time": 50,
     "points": 1,
-    "type": "single",
+    "type": "multiple",
     "answers": [
-     "Coach",
-     "Facilitateur",
-     "Professeur",
-     "Stagiaire"
+     "Le coût",
+     "La qualité des résultats",
+     "La confidentialité des données",
+     "Sa popularité sur les réseaux sociaux"
     ],
     "correct": [
-     1
+     0,
+     1,
+     2
     ]
    },
    {
-    "id": "k229",
-    "text": "Trouvez l'intrus parmi ces IA :",
-    "time": 40,
+    "id": "k227",
+    "text": "Un modèle coûte 3 $ par million de tokens en entrée. Combien coûtent 200 000 tokens ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
+    "type": "slider",
+    "slider": {
+     "tolerance": 0,
+     "min": 0,
+     "max": 3,
+     "step": 0.1,
+     "answer": 0.6,
+     "unit": "$"
+    },
+    "explanation": "200 000 / 1 000 000 × 3 = 0,6 $."
+   },
+   {
+    "id": "k228",
+    "text": "Dans une très longue conversation, un modèle risque d’oublier ou de mélanger les consignes du début.",
+    "time": 20,
+    "points": 1,
+    "type": "truefalse",
+    "truth": true,
+    "explanation": "Mieux vaut repartir d’une nouvelle conversation avec un résumé des consignes."
+   },
+   {
+    "id": "k229",
+    "text": "Avec les bons connecteurs, que peut faire un agent ?",
+    "time": 50,
+    "points": 1,
+    "type": "multiple",
     "answers": [
-     "Midjourney",
-     "WriteSonic",
-     "Smodin",
-     "Paraphraser"
+     "Lire un agenda",
+     "Créer un ticket dans un outil de suivi",
+     "Envoyer un e-mail",
+     "Garantir l’absence d’erreur"
     ],
     "correct": [
-     0
+     0,
+     1,
+     2
     ]
    },
    {
@@ -3431,6 +2545,38 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "truefalse",
     "truth": false
+   },
+   {
+    "id": "k665",
+    "text": "Pourquoi garder un humain dans la boucle avec un agent qui agit à votre place ?",
+    "time": 40,
+    "points": 1,
+    "type": "single",
+    "answers": [
+     "Pour valider les actions irréversibles avant leur exécution",
+     "Pour accélérer l’agent",
+     "Pour réduire le prix de l’abonnement",
+     "Ce n’est jamais utile"
+    ],
+    "correct": [
+     0
+    ]
+   },
+   {
+    "id": "k666",
+    "text": "Comment évaluer la qualité d’un assistant déployé dans votre service ?",
+    "time": 40,
+    "points": 1,
+    "type": "single",
+    "answers": [
+     "Le tester sur des questions dont on connaît la bonne réponse",
+     "Compter le nombre de conversations",
+     "Mesurer la longueur des réponses",
+     "Demander à l’assistant s’il est fiable"
+    ],
+    "correct": [
+     0
+    ]
    }
   ],
   "createdAt": 1714080391159,
@@ -3441,40 +2587,36 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "premiere-initiation",
   "category": "graphisme",
-  "title": "Premiere - Initiation",
-  "description": "Types de vidéo, raccourcis, titres, marques, stabilisation, colorimétrie et audio : les bases du montage avec Premiere.",
+  "title": "Premiere Pro",
+  "description": "Raccourcis, multipiste, titres, marques, stabilisation et audio : les bases du montage vidéo avec Adobe Premiere Pro.",
   "level": 1,
   "questions": [
    {
     "id": "k231",
-    "text": "Quel type de vidéo n'existe PAS ?",
+    "text": "Quel outil de Premiere Pro coupe un clip dans la timeline ?",
     "time": 40,
     "points": 1,
     "type": "single",
     "answers": [
-     "Éducative",
-     "Institutionnelle",
-     "Animée",
-     "Promotionnelle"
+     "L’outil Cutter",
+     "L’outil Sélection",
+     "L’outil Main",
+     "L’outil Texte"
     ],
     "correct": [
-     2
+     0
     ]
    },
    {
     "id": "k232",
-    "text": "Quel raccourci permet de lire ou mettre en pause ?",
-    "time": 40,
+    "text": "Quelle touche lance ou met en pause la lecture ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "Ctrl",
-     "P",
+    "type": "text",
+    "accepted": [
      "Espace",
-     "J"
-    ],
-    "correct": [
-     2
+     "barre d’espace",
+     "la barre d’espace"
     ]
    },
    {
@@ -3503,7 +2645,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k235",
-    "text": "La méthode pancake facilite le dérushage.",
+    "text": "Premiere Pro peut générer automatiquement des sous-titres à partir de la voix.",
     "time": 20,
     "points": 1,
     "type": "truefalse",
@@ -3567,18 +2709,16 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k240",
-    "text": "Quel format privilégier pour vos exports ?",
-    "time": 40,
+    "text": "Remettez dans l’ordre les étapes d’un montage.",
+    "time": 45,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "DIVX",
-     "JPG",
-     "PDF",
-     "MP4"
-    ],
-    "correct": [
-     3
+    "type": "order",
+    "items": [
+     "Importer les rushes",
+     "Dérusher",
+     "Monter",
+     "Étalonner et mixer",
+     "Exporter"
     ]
    }
   ],
@@ -3588,143 +2728,10 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "source": "import"
  },
  {
-  "id": "chatgpt-cci-initiation",
-  "category": "ia",
-  "title": "ChatGPT CCI - Initiation",
-  "description": "Méthodes de prompt (RTF, RACEF), capacités de ChatGPT et protection des données personnelles : les bases pour bien démarrer.",
-  "level": 1,
-  "questions": [
-   {
-    "id": "k241",
-    "text": "Une intelligence artificielle utilise un réseau de neurones artificiels.",
-    "time": 20,
-    "points": 1,
-    "type": "truefalse",
-    "truth": true
-   },
-   {
-    "id": "k242",
-    "text": "La méthode de prompt RTF veut dire Rôle, Tâche et…",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "Forward",
-     "Forting",
-     "For testing",
-     "Format"
-    ],
-    "correct": [
-     3
-    ]
-   },
-   {
-    "id": "k243",
-    "text": "ChatGPT ne crée PAS de…",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "texte",
-     "présentation",
-     "plan 3D",
-     "image"
-    ],
-    "correct": [
-     2
-    ]
-   },
-   {
-    "id": "k244",
-    "text": "Trouvez l'intrus parmi ces éléments à ajouter au prompt pour du texte :",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "Format",
-     "Action",
-     "Role",
-     "Couleurs"
-    ],
-    "correct": [
-     3
-    ]
-   },
-   {
-    "id": "k245",
-    "text": "L'IA est toujours fiable, car elle indiquera quand elle se trompe.",
-    "time": 20,
-    "points": 1,
-    "type": "truefalse",
-    "truth": false
-   },
-   {
-    "id": "k246",
-    "text": "Quel est un des points fondamentaux du prompt ?",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "Transparent et court",
-     "Clair et précis",
-     "Ouvert et simple",
-     "Complet et subjectif"
-    ],
-    "correct": [
-     1
-    ]
-   },
-   {
-    "id": "k247",
-    "text": "ChatGPT peut vous poser des questions pour améliorer ses réponses.",
-    "time": 20,
-    "points": 1,
-    "type": "truefalse",
-    "truth": true
-   },
-   {
-    "id": "k248",
-    "text": "Trouvez l'intrus parmi ces frameworks pour le prompt :",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "Chaîne de densité",
-     "RISK",
-     "RACEF",
-     "RTF"
-    ],
-    "correct": [
-     1
-    ]
-   },
-   {
-    "id": "k249",
-    "text": "Je peux sans problème partager mes données personnelles avec ChatGPT.",
-    "time": 20,
-    "points": 1,
-    "type": "truefalse",
-    "truth": false
-   },
-   {
-    "id": "k250",
-    "text": "ChatGPT apprend en direct des conversations avec les utilisateurs pour plus de performance dans les interactions futures.",
-    "time": 20,
-    "points": 1,
-    "type": "truefalse",
-    "truth": false
-   }
-  ],
-  "createdAt": 1730114584726,
-  "updatedAt": 1752699156499,
-  "builtin": true,
-  "source": "import"
- },
- {
   "id": "reseaux-sociaux-avec-l-ia",
   "category": "webmarketing",
-  "title": "Réseaux Sociaux avec l'IA",
-  "description": "Plateformes, chatbots, création de contenu, analyse de performance : utiliser l'IA pour animer vos réseaux sociaux.",
+  "title": "Réseaux sociaux : créer avec l’IA",
+  "description": "Création de contenu assistée, chatbots, calendrier éditorial, analyse des performances : l’IA au service de vos réseaux sociaux.",
   "level": 2,
   "questions": [
    {
@@ -3745,23 +2752,20 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k252",
-    "text": "Trouvez l'intrus parmi ces notions :",
+    "text": "Remettez dans l’ordre la création d’une publication avec l’IA.",
     "time": 40,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "Machine Learning",
-     "Automatisation",
-     "IA générative",
-     "Big Data"
-    ],
-    "correct": [
-     3
+    "type": "order",
+    "items": [
+     "Définir l’objectif et la cible",
+     "Générer une première version",
+     "Relire et adapter au ton de la marque",
+     "Publier puis analyser les résultats"
     ]
    },
    {
     "id": "k253",
-    "text": "Facebook est le réseau social numéro 1 en Nouvelle-Calédonie.",
+    "text": "Une IA peut adapter un même message au ton de chaque réseau (LinkedIn, Instagram, TikTok).",
     "time": 20,
     "points": 1,
     "type": "truefalse",
@@ -3769,35 +2773,30 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k254",
-    "text": "Trouvez l'intrus parmi les rôles de l'IA :",
-    "time": 40,
+    "text": "Quels rôles l’IA peut-elle jouer sur les réseaux sociaux ?",
+    "time": 50,
     "points": 1,
-    "type": "single",
+    "type": "multiple",
     "answers": [
-     "Création de contenu assistée",
-     "Stockage de données",
-     "Analyse de performance",
-     "Automatisation des tâches"
+     "Créer du contenu",
+     "Analyser les performances",
+     "Automatiser des tâches",
+     "Stocker vos données"
     ],
     "correct": [
-     1
+     0,
+     1,
+     2
     ]
    },
    {
     "id": "k255",
-    "text": "Quelle IA est développée par une entreprise française ?",
-    "time": 40,
+    "text": "Certaines plateformes demandent de signaler les contenus réalistes générés par IA.",
+    "time": 20,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "ChatGPT",
-     "Mistral",
-     "Gemini",
-     "Claude"
-    ],
-    "correct": [
-     1
-    ]
+    "type": "truefalse",
+    "truth": true,
+    "explanation": "Meta, TikTok ou YouTube affichent une mention « IA » sur ces contenus."
    },
    {
     "id": "k256",
@@ -3872,24 +2871,26 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "canva-ia",
   "category": "ia",
-  "title": "Canva IA",
-  "description": "Écriture magique, Dream Lab, gomme magique, filtres intelligents : les outils d'IA de Canva pour vos visuels.",
+  "title": "Canva : les outils d’IA",
+  "description": "Écriture magique, Dream Lab, gomme magique, voix de marque : les fonctions d’IA de Canva au service de vos visuels.",
   "level": 2,
   "questions": [
    {
     "id": "k261",
-    "text": "Quel outil n'existe PAS dans Canva ?",
-    "time": 40,
+    "text": "Lesquels de ces outils existent dans Canva ?",
+    "time": 50,
     "points": 1,
-    "type": "single",
+    "type": "multiple",
     "answers": [
      "Écriture magique",
-     "Plan magique",
      "Édition magique",
-     "Dream Lab"
+     "Dream Lab",
+     "Plan magique"
     ],
     "correct": [
-     1
+     0,
+     1,
+     2
     ]
    },
    {
@@ -3950,11 +2951,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k266",
-    "text": "La gomme magique permet d'effacer les fichiers inutiles.",
-    "time": 20,
+    "text": "Quel outil de Canva efface un objet indésirable d’une photo ?",
+    "time": 30,
     "points": 1,
-    "type": "truefalse",
-    "truth": false
+    "type": "text",
+    "accepted": [
+     "gomme magique",
+     "la gomme magique",
+     "magic eraser"
+    ]
    },
    {
     "id": "k267",
@@ -3998,18 +3003,18 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k270",
-    "text": "Trouvez l'intrus parmi ces IA de génération d'images :",
+    "text": "Quel outil de Canva propose des designs complets à partir d’une simple description ?",
     "time": 40,
     "points": 1,
     "type": "single",
     "answers": [
-     "Midjourney",
-     "Firefly",
-     "ChatGPT",
-     "Claude"
+     "Design magique",
+     "Gomme magique",
+     "Grab magique",
+     "Animation magique"
     ],
     "correct": [
-     3
+     0
     ]
    }
   ],
@@ -4021,25 +3026,24 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "facebook-1-bien-demarrer",
   "category": "webmarketing",
-  "title": "Facebook - 1 Bien démarrer",
-  "description": "Formats, stratégie de publication, algorithme, Meta Business Suite : les bases pour bien démarrer sur Facebook.",
+  "title": "Facebook : bien démarrer",
+  "description": "Formats, stratégie de publication, algorithme et Meta Business Suite : lancez la page Facebook de votre structure.",
   "level": 1,
   "questions": [
    {
     "id": "k271",
-    "text": "Combien d'utilisateurs Facebook compte la Nouvelle-Calédonie ?",
-    "time": 40,
+    "text": "Combien d’utilisateurs Facebook compte la Nouvelle-Calédonie, environ ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "environ 170 000",
-     "environ 200 000",
-     "environ 140 000",
-     "environ 110 000"
-    ],
-    "correct": [
-     2
-    ]
+    "type": "slider",
+    "slider": {
+     "tolerance": 20000,
+     "min": 50000,
+     "max": 250000,
+     "step": 10000,
+     "answer": 150000
+    },
+    "explanation": "Environ 150 000 fin 2025, soit la moitié de la population (Digital 2026, We Are Social et Meltwater). Une marge de 20 000 est acceptée."
    },
    {
     "id": "k272",
@@ -4099,11 +3103,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k276",
-    "text": "Meta Business Suite est un outil pour vous aider dans la gestion de vos comptes sociaux.",
-    "time": 20,
+    "text": "Quel outil gratuit de Meta gère une page Facebook et un compte Instagram au même endroit ?",
+    "time": 30,
     "points": 1,
-    "type": "truefalse",
-    "truth": true
+    "type": "text",
+    "accepted": [
+     "Meta Business Suite",
+     "Business Suite",
+     "MBS"
+    ]
    },
    {
     "id": "k277",
@@ -4170,8 +3178,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "microsoft-365-complet-initiation",
   "category": "bureautique",
-  "title": "Microsoft 365 Complet - Initiation",
-  "description": "OneDrive, Planner, Stream, Sway, Power Automate, Power Apps, To Do, Lists : découvrez les outils de Microsoft 365.",
+  "title": "Microsoft 365",
+  "description": "Outlook, OneDrive, OneNote, Planner, Forms, Lists, Power Automate : faites le tour des services de Microsoft 365.",
   "level": 1,
   "questions": [
    {
@@ -4240,43 +3248,29 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k285",
-    "text": "Trouvez l'intrus, Planner propose d'enrichir les tâches avec :",
-    "time": 40,
+    "text": "Avec quoi Planner permet-il d’enrichir une tâche ?",
+    "time": 50,
     "points": 1,
-    "type": "single",
+    "type": "multiple",
     "answers": [
-     "la progression",
-     "le service concerné",
-     "la priorité",
-     "la répétition"
+     "La progression",
+     "La priorité",
+     "La répétition",
+     "Les calories consommées"
     ],
     "correct": [
-     1
+     0,
+     1,
+     2
     ]
    },
    {
     "id": "k286",
-    "text": "Teams permet de créer des canaux.",
+    "text": "OneDrive conserve un historique des versions de vos fichiers.",
     "time": 20,
     "points": 1,
     "type": "truefalse",
     "truth": true
-   },
-   {
-    "id": "k287",
-    "text": "SharePoint permet de créer :",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "des sites d'équipe",
-     "des sites e-commerce",
-     "des affiches",
-     "des cartes de visite"
-    ],
-    "correct": [
-     0
-    ]
    },
    {
     "id": "k288",
@@ -4319,35 +3313,14 @@ const IMPORTED_QUIZZES: Quiz[] = [
     ]
    },
    {
-    "id": "k291",
-    "text": "Power Automate propose d'automatiser…",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "le nettoyage de son bureau",
-     "la génération d'images",
-     "des tâches récurrentes",
-     "la rédaction de documents"
-    ],
-    "correct": [
-     2
-    ]
-   },
-   {
     "id": "k292",
-    "text": "Power Apps est un service pour générer :",
-    "time": 40,
+    "text": "Quel service de Microsoft 365 permet de créer des applications en low-code ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "des applications en Low-Code",
-     "des sites en No-Code",
-     "des listes de données",
-     "des formulaires interactifs"
-    ],
-    "correct": [
-     0
+    "type": "text",
+    "accepted": [
+     "Power Apps",
+     "PowerApps"
     ]
    },
    {
@@ -4382,9 +3355,9 @@ const IMPORTED_QUIZZES: Quiz[] = [
  },
  {
   "id": "sharepoint-initiation",
-  "category": "dev",
-  "title": "SharePoint - Initiation",
-  "description": "Listes, bibliothèques, métadonnées, WebParts et flux de travail : les bases pour créer et gérer un site SharePoint.",
+  "category": "bureautique",
+  "title": "SharePoint",
+  "description": "Sites, listes, bibliothèques, métadonnées, composants WebPart et flux : les bases pour créer et gérer un site SharePoint.",
   "level": 1,
   "questions": [
    {
@@ -4405,18 +3378,20 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k296",
-    "text": "Trouvez l'intrus, SharePoint permet de créer :",
-    "time": 40,
+    "text": "Que permet de créer SharePoint ?",
+    "time": 50,
     "points": 1,
-    "type": "single",
+    "type": "multiple",
     "answers": [
-     "des listes",
-     "des pages",
-     "des bibliothèques",
-     "des vidéos"
+     "Des listes",
+     "Des pages",
+     "Des bibliothèques",
+     "Des vidéos"
     ],
     "correct": [
-     3
+     0,
+     1,
+     2
     ]
    },
    {
@@ -4445,18 +3420,14 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k299",
-    "text": "Quelle est l'utilité des bibliothèques dans SharePoint ?",
-    "time": 40,
+    "text": "Dans SharePoint, comment s’appelle l’espace qui stocke et partage des documents ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "envoyer en PDF des documents",
-     "classer les pages du site",
-     "archiver les articles du site",
-     "partager et gérer des documents"
-    ],
-    "correct": [
-     3
+    "type": "text",
+    "accepted": [
+     "bibliothèque",
+     "bibliothèque de documents",
+     "une bibliothèque"
     ]
    },
    {
@@ -4532,88 +3503,89 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "microsoft-copilot-initiation",
   "category": "ia",
-  "title": "Microsoft Copilot - Initiation",
-  "description": "Types d'IA, applications, éléments d'un prompt et confidentialité : les bases pour bien démarrer avec Microsoft Copilot.",
+  "title": "Microsoft Copilot",
+  "description": "Copilot Chat, rédaction des demandes, vérification des réponses et confidentialité : les bases pour démarrer avec l’assistant de Microsoft.",
   "level": 1,
   "questions": [
    {
     "id": "k305",
-    "text": "Une intelligence artificielle utilise un réseau de neurones artificiels.",
+    "text": "Copilot Chat est inclus sans surcoût pour les comptes professionnels Microsoft 365.",
     "time": 20,
     "points": 1,
     "type": "truefalse",
-    "truth": true
+    "truth": true,
+    "explanation": "La licence Microsoft 365 Copilot, payante, ajoute l’accès aux données de l’organisation."
    },
    {
     "id": "k306",
-    "text": "Quel type d'intelligence artificielle n'existe PAS ?",
+    "text": "Sans licence Microsoft 365 Copilot, sur quoi s’appuie Copilot Chat ?",
     "time": 40,
     "points": 1,
     "type": "single",
     "answers": [
-     "Superintelligente",
-     "Spécialisée",
-     "Générale",
-     "Multifactorielle"
+     "Sur le web et les fichiers que vous lui transmettez",
+     "Sur tous les e-mails de votre entreprise",
+     "Sur l’ensemble de votre OneDrive",
+     "Sur les conversations Teams de vos collègues"
     ],
     "correct": [
-     3
+     0
     ]
    },
    {
     "id": "k307",
-    "text": "Trouvez l'intrus parmi ces applications possibles :",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "prédiction",
-     "monitoring",
-     "variation",
-     "automatisation"
-    ],
-    "correct": [
-     2
-    ]
-   },
-   {
-    "id": "k308",
-    "text": "L'IA est toujours fiable, car elle indiquera quand elle se trompe.",
+    "text": "Avec un compte professionnel, vos échanges dans Copilot Chat ne servent pas à entraîner les modèles.",
     "time": 20,
     "points": 1,
     "type": "truefalse",
-    "truth": false
+    "truth": true,
+    "explanation": "C’est la protection des données entreprise, signalée par un bouclier."
    },
    {
-    "id": "k309",
-    "text": "Quel est un des points fondamentaux du prompt ?",
+    "id": "k308",
+    "text": "Où trouver Copilot Chat ?",
     "time": 40,
     "points": 1,
     "type": "single",
     "answers": [
-     "Transparent et court",
-     "Clair et précis",
-     "Ouvert et simple",
-     "Complet et subjectif"
+     "Dans l’application Microsoft 365 Copilot, sur le web ou dans Edge",
+     "Uniquement dans Excel",
+     "Uniquement sur smartphone",
+     "Après installation d’un logiciel payant"
     ],
     "correct": [
-     1
+     0
+    ]
+   },
+   {
+    "id": "k309",
+    "text": "Remettez dans l’ordre le bon usage d’une réponse de Copilot.",
+    "time": 40,
+    "points": 1,
+    "type": "order",
+    "items": [
+     "Formuler la demande avec son contexte",
+     "Lire la réponse",
+     "Vérifier les sources citées",
+     "Réutiliser le contenu"
     ]
    },
    {
     "id": "k310",
-    "text": "Trouvez l'intrus parmi ces éléments à ajouter au prompt :",
-    "time": 40,
+    "text": "Lesquelles de ces tâches Copilot Chat peut-il réaliser ?",
+    "time": 50,
     "points": 1,
-    "type": "single",
+    "type": "multiple",
     "answers": [
-     "Format",
-     "Action",
-     "Exemple",
-     "Scénario"
+     "Résumer un document joint",
+     "Rédiger un brouillon d’e-mail",
+     "Générer une image",
+     "Faire le café"
     ],
     "correct": [
-     3
+     0,
+     1,
+     2
     ]
    },
    {
@@ -4626,31 +3598,28 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k312",
-    "text": "Quelle limite n'est PAS présente dans Copilot ?",
-    "time": 40,
+    "text": "Comment s’appelle l’espace où une réponse de Copilot devient un document modifiable et partageable ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "Biais",
-     "Distance",
-     "Précision",
-     "Compréhension"
-    ],
-    "correct": [
-     1
+    "type": "text",
+    "accepted": [
+     "Pages",
+     "Copilot Pages",
+     "page",
+     "une page"
     ]
    },
    {
     "id": "k313",
-    "text": "Trouvez l'intrus parmi ces propositions d'utilisation de l'IA :",
+    "text": "Dans Edge, que peut faire Copilot sur la page web affichée ?",
     "time": 40,
     "points": 1,
     "type": "single",
     "answers": [
-     "Faire le café",
-     "Rédiger un mail",
-     "Générer une image",
-     "Analyser des données"
+     "La résumer et répondre à des questions sur son contenu",
+     "Modifier le site en ligne",
+     "Bloquer toutes les publicités",
+     "Supprimer l’historique"
     ],
     "correct": [
      0
@@ -4658,11 +3627,20 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k314",
-    "text": "Copilot apprend des conversations avec vous pour être plus performant dans les interactions avec d'autres utilisateurs.",
-    "time": 20,
+    "text": "Quelle licence ajoute Copilot dans Word, Excel, PowerPoint, Outlook et Teams, avec les données de l’organisation ?",
+    "time": 40,
     "points": 1,
-    "type": "truefalse",
-    "truth": false
+    "type": "single",
+    "answers": [
+     "Microsoft 365 Copilot",
+     "Copilot Chat",
+     "Windows 11",
+     "Office 2013"
+    ],
+    "correct": [
+     0
+    ],
+    "explanation": "Ce niveau est approfondi dans « Microsoft 365 Copilot : l’assistant dans vos applications »."
    }
   ],
   "createdAt": 1733018616669,
@@ -4673,8 +3651,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "microsoft-teams-initiation",
   "category": "bureautique",
-  "title": "Microsoft Teams - Initiation",
-  "description": "Équipes, canaux, réunions, partage de fichiers, rôles et sécurité : prendre en main Microsoft Teams au quotidien.",
+  "title": "Microsoft Teams",
+  "description": "Équipes, canaux, réunions, partage de fichiers, rôles et sécurité : prenez en main Microsoft Teams au quotidien.",
   "level": 1,
   "questions": [
    {
@@ -4743,18 +3721,20 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k320",
-    "text": "Quel type de canal n'existe PAS ?",
-    "time": 40,
+    "text": "Quels types de canaux existent dans Teams ?",
+    "time": 50,
     "points": 1,
-    "type": "single",
+    "type": "multiple",
     "answers": [
      "Standard",
-     "Externe",
      "Privé",
-     "Partagé"
+     "Partagé",
+     "Externe"
     ],
     "correct": [
-     1
+     0,
+     1,
+     2
     ]
    },
    {
@@ -4799,18 +3779,14 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k324",
-    "text": "Quel rôle n'existe PAS dans Teams ?",
-    "time": 40,
+    "text": "Dans une équipe Teams, quel rôle gère les membres et les paramètres ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
+    "type": "text",
+    "accepted": [
      "propriétaire",
-     "membre",
-     "éditeur",
-     "invité"
-    ],
-    "correct": [
-     2
+     "le propriétaire",
+     "owner"
     ]
    }
   ],
@@ -4822,8 +3798,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "power-automate-initiation",
   "category": "nocode",
-  "title": "Power Automate - Initiation",
-  "description": "Déclencheurs, actions, connecteurs, variables, boucles, erreurs : automatisez vos tâches avec Power Automate.",
+  "title": "Power Automate",
+  "description": "Déclencheurs, actions, connecteurs, variables, boucles et gestion des erreurs : automatisez vos tâches avec Power Automate.",
   "level": 1,
   "questions": [
    {
@@ -4860,50 +3836,43 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k327",
-    "text": "Dans Power Automate, comment appelle-t-on les étapes individuelles qui composent un flux ?",
+    "text": "Comment appelle-t-on les étapes qui composent un flux Power Automate ?",
+    "time": 30,
+    "points": 1,
+    "type": "text",
+    "accepted": [
+     "actions",
+     "action",
+     "les actions"
+    ]
+   },
+   {
+    "id": "k328",
+    "text": "Où trouver des flux prêts à l’emploi pour démarrer rapidement ?",
     "time": 40,
     "points": 1,
     "type": "single",
     "answers": [
-     "Actions",
-     "Connecteurs",
-     "Variables",
-     "Conditions"
+     "Dans les modèles",
+     "Dans la corbeille",
+     "Dans Power BI",
+     "Dans l’historique d’exécution"
     ],
     "correct": [
      0
     ]
    },
    {
-    "id": "k328",
-    "text": "Quel connecteur utiliseriez-vous pour intégrer Power Automate avec SharePoint ?",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "SQL Server",
-     "OneDrive",
-     "SharePoint",
-     "Outlook"
-    ],
-    "correct": [
-     2
-    ]
-   },
-   {
     "id": "k329",
-    "text": "Quelle action permet d'envoyer une notification par e-mail dans un flux Power Automate ?",
+    "text": "Remettez dans l’ordre la création d’un flux automatisé.",
     "time": 40,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "Envoyer un message Teams",
-     "Créer un fichier",
-     "Envoyer un e-mail",
-     "Démarrer une approbation"
-    ],
-    "correct": [
-     2
+    "type": "order",
+    "items": [
+     "Choisir le déclencheur",
+     "Ajouter les actions",
+     "Tester le flux",
+     "Activer le flux"
     ]
    },
    {
@@ -4993,340 +3962,58 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "source": "import"
  },
  {
-  "id": "chatgpt-edd-initiation",
-  "category": "ia",
-  "title": "ChatGPT EDD - Initiation",
-  "description": "Vocabulaire de l'IA, éléments d'un prompt, rôles et tons : les bases pour bien dialoguer avec ChatGPT.",
-  "level": 1,
+  "id": "canva-perfectionnement",
+  "category": "graphisme",
+  "title": "Canva : aller plus loin",
+  "description": "Historique des versions, raccourcis, retouche d’image, transparence et animations : gagnez en efficacité sur Canva.",
+  "level": 3,
   "questions": [
    {
-    "id": "k335",
-    "text": "Une intelligence artificielle utilise un modèle d'apprentissage.",
-    "time": 20,
-    "points": 1,
-    "type": "truefalse",
-    "truth": true
-   },
-   {
-    "id": "k336",
-    "text": "Quel mot ne fait PAS partie du vocabulaire lié à l'intelligence artificielle ?",
+    "id": "k355",
+    "text": "Quelle fonction adapte un design à d’autres formats en un clic ?",
     "time": 40,
     "points": 1,
     "type": "single",
     "answers": [
-     "Prompt",
-     "Hallucination",
-     "Inpainting",
-     "Responsive"
-    ],
-    "correct": [
-     3
-    ]
-   },
-   {
-    "id": "k337",
-    "text": "Trouvez l'intrus parmi ces applications possibles :",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "prédiction",
-     "monitoring",
-     "variation",
-     "automatisation"
-    ],
-    "correct": [
-     2
-    ]
-   },
-   {
-    "id": "k338",
-    "text": "L'IA est toujours fiable, car elle indiquera quand elle se trompe.",
-    "time": 20,
-    "points": 1,
-    "type": "truefalse",
-    "truth": false
-   },
-   {
-    "id": "k339",
-    "text": "Quel est un des points fondamentaux du prompt ?",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "Transparent et court",
-     "Clair et précis",
-     "Ouvert et simple",
-     "Complet et subjectif"
-    ],
-    "correct": [
-     1
-    ]
-   },
-   {
-    "id": "k340",
-    "text": "Trouvez l'intrus parmi ces éléments à ajouter au prompt :",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "Format",
-     "Action",
-     "Exemple",
-     "Question"
-    ],
-    "correct": [
-     3
-    ]
-   },
-   {
-    "id": "k341",
-    "text": "ChatGPT peut vous poser des questions pour améliorer ses réponses.",
-    "time": 20,
-    "points": 1,
-    "type": "truefalse",
-    "truth": true
-   },
-   {
-    "id": "k342",
-    "text": "Quel mode n'existe PAS avec ChatGPT ?",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "Stagiaire",
-     "Directeur",
-     "Coach",
-     "Partenaire"
-    ],
-    "correct": [
-     1
-    ]
-   },
-   {
-    "id": "k343",
-    "text": "Trouvez l'intrus parmi ces tons :",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "Dynamique",
-     "Concis",
-     "Humoristique",
-     "Formel"
+     "Redimensionner",
+     "Dupliquer",
+     "Exporter",
+     "Grille"
     ],
     "correct": [
      0
     ]
    },
    {
-    "id": "k344",
-    "text": "ChatGPT apprend des conversations avec les utilisateurs pour être plus performant dans les interactions futures.",
-    "time": 20,
-    "points": 1,
-    "type": "truefalse",
-    "truth": false
-   }
-  ],
-  "createdAt": 1730929402558,
-  "updatedAt": 1730963833493,
-  "builtin": true,
-  "source": "import"
- },
- {
-  "id": "ia-images-textes",
-  "category": "ia",
-  "title": "IA Images & Textes",
-  "description": "Prompts, ChatGPT, Copilot, fiabilité des réponses, images : les bases pour bien utiliser l'IA générative.",
-  "level": 1,
-  "questions": [
-   {
-    "id": "k345",
-    "text": "Une intelligence artificielle utilise un modèle d'apprentissage.",
-    "time": 20,
-    "points": 1,
-    "type": "truefalse",
-    "truth": true
-   },
-   {
-    "id": "k346",
-    "text": "Quel mot ne fait PAS partie du vocabulaire lié à l'intelligence artificielle ?",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "Prompt",
-     "Hallucination",
-     "Inpainting",
-     "Responsive"
-    ],
-    "correct": [
-     3
-    ]
-   },
-   {
-    "id": "k347",
-    "text": "Trouvez l'intrus parmi ces applications possibles :",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "prédiction",
-     "monitoring",
-     "variation",
-     "automatisation"
-    ],
-    "correct": [
-     2
-    ]
-   },
-   {
-    "id": "k348",
-    "text": "L'IA est toujours fiable, car elle indiquera quand elle se trompe.",
-    "time": 20,
-    "points": 1,
-    "type": "truefalse",
-    "truth": false
-   },
-   {
-    "id": "k349",
-    "text": "Quel est un des points fondamentaux du prompt ?",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "Transparent et court",
-     "Clair et précis",
-     "Ouvert et simple",
-     "Complet et subjectif"
-    ],
-    "correct": [
-     1
-    ]
-   },
-   {
-    "id": "k350",
-    "text": "Trouvez l'intrus parmi ces éléments à ajouter au prompt :",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "Format",
-     "Action",
-     "Exemple",
-     "Question"
-    ],
-    "correct": [
-     3
-    ]
-   },
-   {
-    "id": "k351",
-    "text": "ChatGPT peut vous poser des questions pour améliorer ses réponses.",
-    "time": 20,
-    "points": 1,
-    "type": "truefalse",
-    "truth": true
-   },
-   {
-    "id": "k352",
-    "text": "Quel ajout n'est PAS utile à un prompt graphique ?",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "La lumière",
-     "La politesse",
-     "Un moteur de rendu",
-     "Un style graphique"
-    ],
-    "correct": [
-     1
-    ]
-   },
-   {
-    "id": "k353",
-    "text": "Que permet Photoshop grâce à l'IA ?",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "L'aérographe",
-     "Le painting",
-     "L'inpainting",
-     "La sélection de tracé"
-    ],
-    "correct": [
-     2
-    ]
-   },
-   {
-    "id": "k354",
-    "text": "Les IA de génération d'images ont de meilleurs résultats en ajoutant des adjectifs à vos prompts.",
-    "time": 20,
-    "points": 1,
-    "type": "truefalse",
-    "truth": true
-   }
-  ],
-  "createdAt": 1730754505180,
-  "updatedAt": 1730774977136,
-  "builtin": true,
-  "source": "import"
- },
- {
-  "id": "canva-perfectionnement",
-  "category": "graphisme",
-  "title": "Canva - Perfectionnement",
-  "description": "Modèles, export, historique des versions, raccourcis, retouche d'image, animations et écriture magique : perfectionnez-vous sur Canva.",
-  "level": 3,
-  "questions": [
-   {
-    "id": "k355",
-    "text": "Quel modèle n'est PAS disponible dans Canva ?",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "Affiche",
-     "Plan 3D",
-     "Carte de visite",
-     "Publication Facebook"
-    ],
-    "correct": [
-     1
-    ]
-   },
-   {
     "id": "k356",
-    "text": "Quel format Canva suggère-t-il par défaut pour l'exportation d'un design ?",
+    "text": "Quel format d’export choisir pour une impression professionnelle ?",
     "time": 40,
     "points": 1,
     "type": "single",
     "answers": [
-     "JPG",
-     "SVG",
+     "PDF pour l’impression",
      "PNG",
-     "PDF"
+     "JPG",
+     "GIF"
     ],
     "correct": [
-     2
+     0
     ]
    },
    {
     "id": "k357",
-    "text": "Qu'est-ce que la voix de marque ?",
-    "time": 50,
+    "text": "Où regrouper les logos, couleurs et polices de votre organisation ?",
+    "time": 40,
     "points": 1,
     "type": "single",
     "answers": [
-     "Créer une voix off en chargeant un son de départ",
-     "Paramétrer les prochaines publications Facebook",
-     "Définir un ton pour l'écriture magique",
-     "Choisir parmi les voix proposées pour les voix off"
+     "Dans le kit de marque",
+     "Dans la corbeille",
+     "Dans les modèles",
+     "Dans les téléchargements"
     ],
     "correct": [
-     2
+     0
     ]
    },
    {
@@ -5363,58 +4050,66 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k361",
-    "text": "Quelles sont les valeurs possibles pour la transparence ?",
+    "text": "Quelle valeur de transparence rend un élément totalement opaque dans Canva ?",
+    "time": 30,
+    "points": 1,
+    "type": "slider",
+    "slider": {
+     "tolerance": 0,
+     "min": 0,
+     "max": 100,
+     "step": 1,
+     "answer": 100
+    }
+   },
+   {
+    "id": "k362",
+    "text": "Quels éléments peut-on animer dans Canva ?",
+    "time": 50,
+    "points": 1,
+    "type": "multiple",
+    "answers": [
+     "Une page",
+     "Un texte",
+     "Une image",
+     "Un son"
+    ],
+    "correct": [
+     0,
+     1,
+     2
+    ]
+   },
+   {
+    "id": "k363",
+    "text": "Comment permettre à un collègue de modifier votre design ?",
     "time": 40,
     "points": 1,
     "type": "single",
     "answers": [
-     "entre 0 et 100",
-     "entre -100 et 100",
-     "entre -50 et 50",
-     "entre 0 et 10"
+     "Le partager avec un accès en modification",
+     "L’exporter en PDF",
+     "Lui envoyer une capture",
+     "L’imprimer"
     ],
     "correct": [
      0
     ]
    },
    {
-    "id": "k362",
-    "text": "Trouvez l'intrus : quel élément ne peut PAS être animé ?",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "page",
-     "son",
-     "texte",
-     "image"
-    ],
-    "correct": [
-     1
-    ]
-   },
-   {
-    "id": "k363",
-    "text": "Canva ne dispose que du format carré pour la génération d'image par IA.",
-    "time": 20,
-    "points": 1,
-    "type": "truefalse",
-    "truth": false
-   },
-   {
     "id": "k364",
-    "text": "L'écriture magique ne permet PAS de :",
+    "text": "Comment aligner précisément plusieurs éléments ?",
     "time": 40,
     "points": 1,
     "type": "single",
     "answers": [
-     "reformuler",
-     "changer le ton",
-     "raccourcir",
-     "dessiner"
+     "Avec la fonction Position, puis Aligner",
+     "En les déplaçant à l’œil",
+     "En les supprimant",
+     "C’est impossible"
     ],
     "correct": [
-     3
+     0
     ]
    }
   ],
@@ -5427,7 +4122,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "newsletter",
   "category": "webmarketing",
   "title": "Newsletter",
-  "description": "Typologies, personas, fréquence, contenu, indicateurs et outils d'envoi : les bons réflexes pour réussir vos newsletters.",
+  "description": "Typologies, personas, fréquence, mise en page et indicateurs : les bons réflexes pour concevoir et envoyer vos newsletters.",
   "level": 1,
   "questions": [
    {
@@ -5504,42 +4199,51 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k370",
-    "text": "L'A/B testing permet d'essayer deux versions de newsletters différentes.",
-    "time": 20,
+    "text": "Sur 2 000 newsletters envoyées, 500 sont ouvertes. Quel est le taux d’ouverture ?",
+    "time": 30,
     "points": 1,
-    "type": "truefalse",
-    "truth": true
+    "type": "slider",
+    "slider": {
+     "tolerance": 0,
+     "min": 0,
+     "max": 100,
+     "step": 1,
+     "answer": 25,
+     "unit": "%"
+    }
    },
    {
     "id": "k371",
-    "text": "Quel indicateur n'est PAS révélateur ?",
-    "time": 40,
+    "text": "Quels indicateurs mesurent la performance d’une newsletter ?",
+    "time": 50,
     "points": 1,
-    "type": "single",
+    "type": "multiple",
     "answers": [
-     "le taux d'ouverture",
-     "le taux de change",
-     "le taux de clics",
-     "le taux de désabonnement"
+     "Le taux d’ouverture",
+     "Le taux de clics",
+     "Le taux de désabonnement",
+     "Le taux de change"
     ],
     "correct": [
-     1
+     0,
+     1,
+     2
     ]
    },
    {
     "id": "k372",
-    "text": "Quel outil ne permet PAS d'envoyer une newsletter ?",
-    "time": 40,
+    "text": "Citez un outil d’envoi de newsletters.",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
+    "type": "text",
+    "accepted": [
      "Mailchimp",
-     "Firefly",
      "Brevo",
-     "Sarbacane"
-    ],
-    "correct": [
-     1
+     "Sendinblue",
+     "Sarbacane",
+     "MailerLite",
+     "Mailjet",
+     "Klaviyo"
     ]
    },
    {
@@ -5575,55 +4279,54 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "generation-d-images-avec-l-ia-initiation",
   "category": "ia",
-  "title": "Génération d'images avec l'IA - Initiation",
-  "description": "Histoire de l'IA, outils comme Midjourney ou Firefly, paramètres de prompt et inpainting : créer des images avec l'IA.",
+  "title": "IA générative : créer des images",
+  "description": "Outils de génération, retouche par instructions, inpainting, droits d’auteur et deepfakes : créer des images avec l’IA en connaissance de cause.",
   "level": 1,
   "questions": [
    {
     "id": "k375",
-    "text": "Trouvez l'intrus dans ces dates :",
-    "time": 50,
+    "text": "Quelle technique produit la plupart des images générées par IA aujourd’hui ?",
+    "time": 40,
     "points": 1,
     "type": "single",
     "answers": [
-     "Depuis 2010 : Essor avec le Big Data et la puissance de calcul",
-     "1970 - 1980 : Essor avec l'arrivée d'internet",
-     "1980 - 1990 : Systèmes experts",
-     "1940 - 1960 : Naissance de l'IA"
+     "Les modèles de diffusion",
+     "Les systèmes experts",
+     "Les arbres de décision",
+     "La compression JPEG"
     ],
     "correct": [
-     1
+     0
     ]
    },
    {
     "id": "k376",
-    "text": "Quelle notion n'appartient PAS à l'IA ?",
-    "time": 40,
+    "text": "Comment appelle-t-on une fausse image ou vidéo réaliste créée par IA pour imiter une personne ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "Le générateur",
-     "Les données d'entraînement",
-     "Le processeur",
-     "Le discriminateur"
-    ],
-    "correct": [
-     2
+    "type": "text",
+    "accepted": [
+     "deepfake",
+     "deepfakes",
+     "deep fake",
+     "hypertrucage"
     ]
    },
    {
     "id": "k377",
-    "text": "Quelle IA ne génère PAS d'images ?",
-    "time": 40,
+    "text": "Lesquels de ces outils génèrent des images ?",
+    "time": 50,
     "points": 1,
-    "type": "single",
+    "type": "multiple",
     "answers": [
-     "DALL-E",
-     "Firefly",
-     "Hume AI",
-     "Midjourney"
+     "Midjourney",
+     "Adobe Firefly",
+     "Gemini",
+     "DeepL"
     ],
     "correct": [
+     0,
+     1,
      2
     ]
    },
@@ -5637,15 +4340,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k379",
-    "text": "Quel outil permet de vérifier si une image est protégée par copyright ?",
+    "text": "Que permet une recherche d’image inversée (Google Lens, TinEye) ?",
     "time": 40,
     "points": 1,
     "type": "single",
     "answers": [
-     "Google Images",
-     "Photoshop Rights",
-     "Avocat.nc",
-     "Copyright.ai"
+     "Retrouver où une image a déjà été publiée",
+     "Vérifier automatiquement ses droits d’auteur",
+     "Augmenter sa résolution",
+     "Supprimer un filigrane"
     ],
     "correct": [
      0
@@ -5653,42 +4356,40 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k380",
-    "text": "ChatGPT peut être utilisé pour enrichir ses prompts.",
-    "time": 20,
-    "points": 1,
-    "type": "truefalse",
-    "truth": true
-   },
-   {
-    "id": "k381",
-    "text": "Quel moteur de rendu n'existe PAS parmi ces mots-clés utilisés pour enrichir un prompt ?",
+    "text": "Comment modifier une image existante avec les outils d’IA actuels ?",
     "time": 40,
     "points": 1,
     "type": "single",
     "answers": [
-     "Prompt engine",
-     "Ray tracing",
-     "Unreal engine",
-     "Octane render"
+     "Décrire la modification voulue en langage naturel",
+     "Réécrire le code de l’image",
+     "Convertir l’image en PDF",
+     "C’est impossible"
     ],
     "correct": [
      0
     ]
    },
    {
-    "id": "k382",
-    "text": "Dans Midjourney, le paramètre --ar permet de :",
-    "time": 40,
+    "id": "k381",
+    "text": "Certains outils ajoutent un marquage invisible ou des métadonnées pour signaler qu’une image est générée par IA.",
+    "time": 20,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "créer une texture répétable",
-     "modifier le ratio de l'image",
-     "répéter le prompt",
-     "gérer la qualité de l'image"
-    ],
-    "correct": [
-     1
+    "type": "truefalse",
+    "truth": true,
+    "explanation": "Par exemple les Content Credentials (C2PA) ou SynthID."
+   },
+   {
+    "id": "k382",
+    "text": "Dans Midjourney, quel paramètre modifie le ratio de l’image ? (ex. --?? 16:9)",
+    "time": 30,
+    "points": 1,
+    "type": "text",
+    "accepted": [
+     "--ar",
+     "ar",
+     "--aspect",
+     "aspect"
     ]
    },
    {
@@ -5724,24 +4425,19 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "microsoft-project-initiation",
   "category": "gestion",
-  "title": "Microsoft Project - Initiation",
-  "description": "Fichiers .mpp, Gantt, tâches, ressources, effort, dépendances : planifiez vos projets avec Microsoft Project.",
+  "title": "Microsoft Project",
+  "description": "Diagramme de Gantt, tâches, ressources, effort, dépendances : planifiez et suivez vos projets avec Microsoft Project.",
   "level": 1,
   "questions": [
    {
     "id": "k385",
-    "text": "Quelle est l'extension d'un fichier Microsoft Project ?",
-    "time": 40,
+    "text": "Quelle est l’extension d’un fichier Microsoft Project ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "tpp",
+    "type": "text",
+    "accepted": [
      "mpp",
-     "ptt",
-     "mtt"
-    ],
-    "correct": [
-     1
+     ".mpp"
     ]
    },
    {
@@ -5786,19 +4482,19 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k389",
-    "text": "Quel est le bon calcul pour l'effort :",
-    "time": 50,
+    "text": "Une tâche dure 4 jours avec une ressource affectée à 50 %. Quel est l’effort (travail), en jours ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "Effort = Durée x Unités",
-     "Effort = Durée - Unités",
-     "Effort = Unités / Durée",
-     "Effort = Durée - ( Durée x Unités )"
-    ],
-    "correct": [
-     0
-    ]
+    "type": "slider",
+    "slider": {
+     "tolerance": 0,
+     "min": 0,
+     "max": 8,
+     "step": 0.5,
+     "answer": 2,
+     "unit": "j"
+    },
+    "explanation": "Travail = durée × unités = 4 × 0,5 = 2 jours."
    },
    {
     "id": "k390",
@@ -5881,24 +4577,20 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "photoshop-intermediaire",
   "category": "graphisme",
-  "title": "Photoshop - Intermédiaire",
-  "description": "Raccourcis, masques d'écrêtage, plume, styles de calque, filtres, traitement par lots : approfondir Photoshop.",
+  "title": "Photoshop : masques, tracés et automatisation",
+  "description": "Masques d’écrêtage, plume, détourage, styles de calque, filtres et traitement par lots : approfondissez Photoshop.",
   "level": 2,
   "questions": [
    {
     "id": "k395",
-    "text": "Quel est le raccourci de la main (pour se déplacer dans un document) ?",
-    "time": 40,
+    "text": "Quelle touche maintenir pour se déplacer dans le document avec l’outil main ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "Maj + H",
+    "type": "text",
+    "accepted": [
      "Espace",
-     "Ctrl + M",
-     "M"
-    ],
-    "correct": [
-     1
+     "barre d’espace",
+     "la barre d’espace"
     ]
    },
    {
@@ -5935,11 +4627,19 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k398",
-    "text": "La baguette magique est le meilleur outil pour sélectionner des objets peu contrastés.",
-    "time": 20,
+    "text": "Quelle commande sélectionne automatiquement le sujet principal d’une photo ?",
+    "time": 40,
     "points": 1,
-    "type": "truefalse",
-    "truth": false
+    "type": "single",
+    "answers": [
+     "Sélectionner un sujet",
+     "Le lasso",
+     "Le rectangle de sélection",
+     "La pipette"
+    ],
+    "correct": [
+     0
+    ]
    },
    {
     "id": "k399",
@@ -5999,11 +4699,16 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k403",
-    "text": "Le traitement par lots permet d'exécuter une action sur plusieurs fichiers.",
-    "time": 20,
+    "text": "Remettez dans l’ordre un traitement par lots.",
+    "time": 40,
     "points": 1,
-    "type": "truefalse",
-    "truth": true
+    "type": "order",
+    "items": [
+     "Enregistrer une action",
+     "Fichier, Automatisation, Traitement par lots",
+     "Choisir l’action et le dossier source",
+     "Lancer le traitement"
+    ]
    },
    {
     "id": "k404",
@@ -6030,8 +4735,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "wordpress-initiation",
   "category": "dev",
-  "title": "WordPress - Initiation",
-  "description": "CMS, administration, articles, médias, thèmes, extensions : les notions clés pour démarrer avec WordPress.",
+  "title": "WordPress",
+  "description": "Administration, articles et pages, médias, menus, widgets, thèmes et extensions : créez et animez un site WordPress.",
   "level": 1,
   "questions": [
    {
@@ -6068,11 +4773,19 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k407",
-    "text": "WordPress représente plus de 40% des sites web mondiaux.",
-    "time": 20,
+    "text": "Quelle part des sites web dans le monde utilise WordPress, environ ?",
+    "time": 30,
     "points": 1,
-    "type": "truefalse",
-    "truth": true
+    "type": "slider",
+    "slider": {
+     "tolerance": 5,
+     "min": 0,
+     "max": 100,
+     "step": 1,
+     "answer": 43,
+     "unit": "%"
+    },
+    "explanation": "Environ 43 % des sites selon W3Techs : une marge de 5 points est acceptée."
    },
    {
     "id": "k408",
@@ -6092,18 +4805,20 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k409",
-    "text": "Trouvez l'intrus, WordPress permet nativement de…",
-    "time": 40,
+    "text": "Que permet WordPress nativement ?",
+    "time": 50,
     "points": 1,
-    "type": "single",
+    "type": "multiple",
     "answers": [
      "Créer un article",
-     "Valider des commandes",
      "Ajouter des images",
-     "Gérer des commentaires"
+     "Gérer des commentaires",
+     "Valider des commandes"
     ],
     "correct": [
-     1
+     0,
+     1,
+     2
     ]
    },
    {
@@ -6124,11 +4839,19 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k411",
-    "text": "WordPress permet de gérer les médias.",
-    "time": 20,
+    "text": "Pour quel type de contenu les catégories sont-elles disponibles par défaut ?",
+    "time": 40,
     "points": 1,
-    "type": "truefalse",
-    "truth": true
+    "type": "single",
+    "answers": [
+     "Les articles",
+     "Les pages",
+     "Les commentaires",
+     "Les médias"
+    ],
+    "correct": [
+     0
+    ]
    },
    {
     "id": "k412",
@@ -6164,11 +4887,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k414",
-    "text": "WordPress ne permet pas de changer les menus.",
-    "time": 20,
+    "text": "Dans quel menu de l’administration installe-t-on une extension ?",
+    "time": 30,
     "points": 1,
-    "type": "truefalse",
-    "truth": false
+    "type": "text",
+    "accepted": [
+     "Extensions",
+     "le menu Extensions",
+     "Plugins"
+    ]
    }
   ],
   "createdAt": 1706237677110,
@@ -6179,8 +4906,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "contributeur-web-drupal-initiation",
   "category": "dev",
-  "title": "Contributeur web (Drupal) - Initiation",
-  "description": "Contenus, menus, éditeur WYSIWYG, taxonomies, blocs et champs : les bases pour publier et gérer un site Drupal.",
+  "title": "Drupal : contribuer au site",
+  "description": "Contenus, menus, éditeur, taxonomies, blocs et champs : publiez et mettez à jour les pages d’un site Drupal.",
   "level": 1,
   "questions": [
    {
@@ -6257,18 +4984,14 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k420",
-    "text": "Qu'est-ce qu'une taxonomie ?",
-    "time": 40,
+    "text": "Dans Drupal, comment s’appelle le système de classement par catégories et étiquettes ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "un tag",
-     "une catégorie",
-     "une étiquette",
-     "toutes les réponses à la fois"
-    ],
-    "correct": [
-     3
+    "type": "text",
+    "accepted": [
+     "taxonomie",
+     "la taxonomie",
+     "taxonomy"
     ]
    },
    {
@@ -6297,17 +5020,19 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k423",
-    "text": "Quel type de champ n'est PAS disponible dans Drupal ?",
-    "time": 40,
+    "text": "Quels types de champs Drupal propose-t-il ?",
+    "time": 50,
     "points": 1,
-    "type": "single",
+    "type": "multiple",
     "answers": [
      "Texte simple",
      "Référence",
-     "Filtre et tri",
-     "Fichier"
+     "Fichier",
+     "Filtre et tri"
     ],
     "correct": [
+     0,
+     1,
      2
     ]
    },
@@ -6328,8 +5053,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "contributeur-web-joomla-initiation",
   "category": "dev",
-  "title": "Contributeur web (Joomla) - Initiation",
-  "description": "Joomla, extensions, rôles, catégories et éditeur WYSIWYG : les notions clés pour contribuer à un site web et gérer ses articles.",
+  "title": "Joomla : contribuer au site",
+  "description": "Articles, catégories, éditeur, rôles, extensions et corbeille : publiez et gérez les contenus d’un site Joomla.",
   "level": 1,
   "questions": [
    {
@@ -6390,18 +5115,20 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k429",
-    "text": "Trouvez l'intrus : Joomla a besoin de…",
-    "time": 40,
+    "text": "De quoi Joomla a-t-il besoin pour fonctionner ?",
+    "time": 50,
     "points": 1,
-    "type": "single",
+    "type": "multiple",
     "answers": [
      "PHP",
-     "Java",
-     "Base de données",
-     "Serveur web"
+     "Une base de données",
+     "Un serveur web",
+     "Java"
     ],
     "correct": [
-     1
+     0,
+     1,
+     2
     ]
    },
    {
@@ -6446,18 +5173,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k433",
-    "text": "Comment retrouver les articles supprimés dans Joomla ?",
+    "text": "Remettez dans l’ordre la restauration d’un article mis à la corbeille.",
     "time": 40,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "via l'auteur qui a créé le contenu",
-     "via la corbeille du navigateur",
-     "via les filtres d'affichage",
-     "via les dossiers de la médiathèque"
-    ],
-    "correct": [
-     2
+    "type": "order",
+    "items": [
+     "Ouvrir Contenus, puis Articles",
+     "Filtrer sur le statut « À la corbeille »",
+     "Sélectionner l’article",
+     "Le publier"
     ]
    },
    {
@@ -6477,8 +5201,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "figma-initiation",
   "category": "graphisme",
-  "title": "Figma - Initiation",
-  "description": "Outils vectoriels, commentaires, composants, variantes, historique et interactions : prendre en main Figma.",
+  "title": "Figma",
+  "description": "Outils vectoriels, composants, variantes, commentaires, historique et interactions : les bases pour maquetter avec Figma.",
   "level": 1,
   "questions": [
    {
@@ -6499,17 +5223,19 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k436",
-    "text": "Quel outil n'existe PAS dans Figma ?",
-    "time": 40,
+    "text": "Quels outils existent dans Figma ?",
+    "time": 50,
     "points": 1,
-    "type": "single",
+    "type": "multiple",
     "answers": [
      "La plume",
      "Le crayon",
-     "L'aérographe",
-     "La pipette"
+     "La pipette",
+     "L’aérographe"
     ],
     "correct": [
+     0,
+     1,
      2
     ]
    },
@@ -6539,18 +5265,14 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k439",
-    "text": "L'outil plume permet de :",
-    "time": 40,
+    "text": "Comment appelle-t-on un élément réutilisable dont les copies se mettent à jour automatiquement ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "créer un tracé vectoriel",
-     "adoucir les couleurs d'une zone de l'image",
-     "masquer une zone de l'image",
-     "dupliquer une zone de l'image"
-    ],
-    "correct": [
-     0
+    "type": "text",
+    "accepted": [
+     "composant",
+     "un composant",
+     "component"
     ]
    },
    {
@@ -6626,24 +5348,26 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "prestashop-initiation",
   "category": "dev",
-  "title": "PrestaShop - Initiation",
-  "description": "Installation, administration, sécurité, groupes d'utilisateurs, produits : prenez en main une boutique PrestaShop.",
+  "title": "PrestaShop",
+  "description": "Installation, administration, sécurité, groupes de clients, fiches produits : prenez en main une boutique PrestaShop.",
   "level": 1,
   "questions": [
    {
     "id": "k445",
-    "text": "Quelle technologie n'est PAS utile pour PrestaShop ?",
-    "time": 40,
+    "text": "Quelles technologies sont utiles pour PrestaShop ?",
+    "time": 50,
     "points": 1,
-    "type": "single",
+    "type": "multiple",
     "answers": [
      "DNS",
-     "Python",
      "PHP",
-     "HTML"
+     "HTML",
+     "Python"
     ],
     "correct": [
-     1
+     0,
+     1,
+     2
     ]
    },
    {
@@ -6720,27 +5444,24 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k451",
-    "text": "PrestaShop permet d'accéder à une fiche détail par produit.",
+    "text": "Remettez dans l’ordre le parcours d’achat d’un client.",
+    "time": 40,
+    "points": 1,
+    "type": "order",
+    "items": [
+     "Ajouter au panier",
+     "Renseigner ses informations",
+     "Choisir la livraison",
+     "Payer"
+    ]
+   },
+   {
+    "id": "k452",
+    "text": "Un module PrestaShop ajoute une fonctionnalité sans modifier le cœur du logiciel.",
     "time": 20,
     "points": 1,
     "type": "truefalse",
     "truth": true
-   },
-   {
-    "id": "k452",
-    "text": "Quel système de paiement choisir, si vous avez un compte calédonien ?",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "EPay",
-     "Paypal",
-     "Stripe",
-     "Visa"
-    ],
-    "correct": [
-     0
-    ]
    },
    {
     "id": "k453",
@@ -6760,11 +5481,19 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k454",
-    "text": "PrestaShop propose de vendre des produits virtuels.",
-    "time": 20,
+    "text": "Comment appelle-t-on un produit proposé en plusieurs tailles ou couleurs ?",
+    "time": 40,
     "points": 1,
-    "type": "truefalse",
-    "truth": true
+    "type": "single",
+    "answers": [
+     "Un produit avec déclinaisons",
+     "Un pack",
+     "Un produit virtuel",
+     "Une catégorie"
+    ],
+    "correct": [
+     0
+    ]
    }
   ],
   "createdAt": 1699424047929,
@@ -6775,8 +5504,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "woocommerce-initiation",
   "category": "dev",
-  "title": "WooCommerce - Initiation",
-  "description": "DNS, produits, commandes, clients, statistiques, stock : les notions clés pour gérer une boutique avec WooCommerce.",
+  "title": "WooCommerce",
+  "description": "Nom de domaine, produits, commandes, clients, stock et statistiques : gérez une boutique en ligne avec WooCommerce.",
   "level": 1,
   "questions": [
    {
@@ -6837,34 +5566,33 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k459",
-    "text": "Trouvez l'intrus : WooCommerce permet de…",
-    "time": 40,
+    "text": "Que permet WooCommerce pour les commandes ?",
+    "time": 50,
     "points": 1,
-    "type": "single",
+    "type": "multiple",
     "answers": [
      "Créer une commande manuellement",
-     "Normaliser ses commandes",
-     "Consulter le détail d'une commande",
-     "Gérer ses commandes"
+     "Consulter le détail d’une commande",
+     "Changer le statut d’une commande",
+     "Normaliser ses commandes"
     ],
     "correct": [
-     1
+     0,
+     1,
+     2
     ]
    },
    {
     "id": "k460",
     "text": "Quel rôle WooCommerce ajoute-t-il à WordPress ?",
-    "time": 40,
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "abonné",
-     "administrateur",
-     "éditeur",
-     "client"
-    ],
-    "correct": [
-     3
+    "type": "text",
+    "accepted": [
+     "client",
+     "customer",
+     "gestionnaire de boutique",
+     "shop manager"
     ]
    },
    {
@@ -6924,8 +5652,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "canva-initiation",
   "category": "graphisme",
-  "title": "Canva - Initiation",
-  "description": "Modèles, calques, grilles d'images, blocs de texte, imports : prenez en main Canva pour vos créations.",
+  "title": "Canva",
+  "description": "Modèles, calques, grilles d’images, blocs de texte et imports : prenez en main Canva pour réaliser vos premiers visuels.",
   "level": 1,
   "questions": [
    {
@@ -6978,11 +5706,19 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k468",
-    "text": "Canva dispose d'un historique de versions pour les utilisateurs de la version gratuite.",
-    "time": 20,
+    "text": "Où retrouver un design créé précédemment ?",
+    "time": 40,
     "points": 1,
-    "type": "truefalse",
-    "truth": false
+    "type": "single",
+    "answers": [
+     "Dans Projets",
+     "Dans la corbeille",
+     "Dans les modèles",
+     "Nulle part, il faut le refaire"
+    ],
+    "correct": [
+     0
+    ]
    },
    {
     "id": "k469",
@@ -7010,18 +5746,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k471",
-    "text": "Les grilles d'images sont un moyen de :",
-    "time": 50,
+    "text": "Quel élément de Canva dispose plusieurs images dans des cases ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "faciliter la disposition des images",
-     "créer des images avec une variante de couleur",
-     "incorporer une image dans un calque",
-     "détourer facilement des images"
-    ],
-    "correct": [
-     0
+    "type": "text",
+    "accepted": [
+     "grille",
+     "une grille",
+     "grille d’images",
+     "grilles"
     ]
    },
    {
@@ -7050,18 +5783,20 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k474",
-    "text": "Trouvez l'intrus, on peut importer :",
-    "time": 40,
+    "text": "Que peut-on importer dans Canva ?",
+    "time": 50,
     "points": 1,
-    "type": "single",
+    "type": "multiple",
     "answers": [
-     "une image",
-     "un son",
-     "une vidéo",
-     "un PSD"
+     "Une image",
+     "Un son",
+     "Une vidéo",
+     "Un programme .exe"
     ],
     "correct": [
-     3
+     0,
+     1,
+     2
     ]
    }
   ],
@@ -7073,8 +5808,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "google-workspace-initiation",
   "category": "bureautique",
-  "title": "Google Workspace - Initiation",
-  "description": "Gmail, Drive, Keep, Agenda, Meet, Slides, Chat : les fonctionnalités clés de Google Workspace pour mieux travailler au quotidien.",
+  "title": "Google Workspace",
+  "description": "Gmail, Drive, Agenda, Meet, Keep, Slides et Chat : les fonctions clés de Google Workspace pour travailler au quotidien.",
   "level": 1,
   "questions": [
    {
@@ -7119,18 +5854,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k478",
-    "text": "Le planning de rendez-vous :",
-    "time": 40,
+    "text": "Dans quel outil Google crée-t-on un planning de prise de rendez-vous ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "est disponible via Google Meet",
-     "est disponible via Gmail",
-     "n'est pas disponible",
-     "est disponible via Google Agenda"
-    ],
-    "correct": [
-     3
+    "type": "text",
+    "accepted": [
+     "Google Agenda",
+     "Agenda",
+     "Google Calendar",
+     "Calendar"
     ]
    },
    {
@@ -7191,18 +5923,20 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k483",
-    "text": "Trouvez l'intrus parmi ces services :",
-    "time": 40,
+    "text": "Lesquels de ces services font partie de Google Workspace ?",
+    "time": 50,
     "points": 1,
-    "type": "single",
+    "type": "multiple",
     "answers": [
      "Tasks",
-     "Scribus",
      "Keep",
-     "Slides"
+     "Slides",
+     "Scribus"
     ],
     "correct": [
-     1
+     0,
+     1,
+     2
     ]
    },
    {
@@ -7222,24 +5956,26 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "video-web-initiation",
   "category": "graphisme",
-  "title": "Vidéo web - Initiation",
-  "description": "Formats, outils de montage, structure du récit, composition et motion design : les bases pour réaliser une vidéo web.",
+  "title": "Vidéo web",
+  "description": "Formats, outils, structure du récit, composition, motion design et transitions : les bases d’une vidéo pour le web.",
   "level": 1,
   "questions": [
    {
     "id": "k485",
-    "text": "Quel format n'est PAS un format vidéo ?",
-    "time": 40,
+    "text": "Lesquels de ces formats sont des formats vidéo ?",
+    "time": 50,
     "points": 1,
-    "type": "single",
+    "type": "multiple",
     "answers": [
      "MP4",
-     "WEBP",
      "MOV",
-     "WEBM"
+     "WEBM",
+     "WEBP"
     ],
     "correct": [
-     1
+     0,
+     1,
+     2
     ]
    },
    {
@@ -7308,18 +6044,14 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k491",
-    "text": "Quelle règle est importante en composition ?",
-    "time": 40,
+    "text": "Quelle règle de composition découpe l’image en neuf zones égales ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "La règle des tiers",
-     "La règle de trois",
-     "La règle graduée",
-     "La règle de Pythagore"
-    ],
-    "correct": [
-     0
+    "type": "text",
+    "accepted": [
+     "règle des tiers",
+     "la règle des tiers",
+     "tiers"
     ]
    },
    {
@@ -7348,18 +6080,18 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k494",
-    "text": "Quelle étape n'est PAS présente dans la création d'une vidéo ?",
+    "text": "Quel format d’image privilégier pour une vidéo en story ou en Reels ?",
     "time": 40,
     "points": 1,
     "type": "single",
     "answers": [
-     "Étalonnage",
-     "Mixage",
-     "Montage",
-     "Élagage"
+     "Vertical 9:16",
+     "Horizontal 16:9",
+     "Carré 1:1",
+     "4:3"
     ],
     "correct": [
-     3
+     0
     ]
    }
   ],
@@ -7371,24 +6103,26 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "traitement-de-texte-initiation",
   "category": "bureautique",
-  "title": "Traitement de texte - Initiation",
-  "description": "Images, règle, retraits, en-têtes, titres, révisions et export PDF : maîtriser les bases du traitement de texte.",
+  "title": "Traitement de texte",
+  "description": "Images, règle, retraits, en-têtes, niveaux de titre, suggestions et export PDF : les bases pour mettre en forme un document.",
   "level": 1,
   "questions": [
    {
     "id": "k495",
-    "text": "Une image ne peut PAS être placée :",
-    "time": 40,
+    "text": "Comment peut-on positionner une image par rapport au texte ?",
+    "time": 50,
     "points": 1,
-    "type": "single",
+    "type": "multiple",
     "answers": [
-     "derrière le texte",
-     "entre deux pages",
-     "alignée sur le texte",
-     "devant le texte"
+     "Derrière le texte",
+     "Devant le texte",
+     "Alignée sur le texte",
+     "Entre deux pages"
     ],
     "correct": [
-     1
+     0,
+     1,
+     2
     ]
    },
    {
@@ -7425,11 +6159,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k498",
-    "text": "Le raccourci Ctrl + F permet de présenter son fichier en visio.",
-    "time": 20,
+    "text": "Quel raccourci ouvre la recherche dans un document ? (Ctrl + ?)",
+    "time": 30,
     "points": 1,
-    "type": "truefalse",
-    "truth": false
+    "type": "text",
+    "accepted": [
+     "Ctrl + F",
+     "Ctrl+F",
+     "F"
+    ]
    },
    {
     "id": "k499",
@@ -7528,8 +6266,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "scrum",
   "category": "gestion",
-  "title": "Scrum",
-  "description": "Rôles, release planning, sprint, backlog, définition du done, story points, burndown chart : les bases de Scrum.",
+  "title": "Scrum : pilotage et estimation",
+  "description": "Release planning, définition du terminé, story points, sprint 0, burndown chart : pilotez un projet Scrum au-delà des bases.",
   "level": 2,
   "questions": [
    {
@@ -7542,19 +6280,17 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k506",
-    "text": "Trouvez l'intrus parmi ces rôles Scrum :",
-    "time": 40,
+    "text": "Dans la suite de Fibonacci des story points (1, 2, 3, 5, 8…), quel nombre suit 8 ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "Scrum Master",
-     "Développeurs",
-     "Product Owner",
-     "Chef de projet"
-    ],
-    "correct": [
-     3
-    ]
+    "type": "slider",
+    "slider": {
+     "tolerance": 0,
+     "min": 0,
+     "max": 30,
+     "step": 1,
+     "answer": 13
+    }
    },
    {
     "id": "k507",
@@ -7598,18 +6334,20 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k510",
-    "text": "Quel adjectif ne décrit PAS le Product Backlog ?",
-    "time": 40,
+    "text": "Quels adjectifs décrivent un bon Product Backlog ?",
+    "time": 50,
     "points": 1,
-    "type": "single",
+    "type": "multiple",
     "answers": [
      "Priorisé",
-     "Détaillé",
      "Estimé",
+     "Détaillé",
      "Équilibré"
     ],
     "correct": [
-     3
+     0,
+     1,
+     2
     ]
    },
    {
@@ -7638,15 +6376,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k513",
-    "text": "Quelle cérémonie ne fait PAS partie de Scrum ?",
+    "text": "Que mesure la vélocité d’une équipe ?",
     "time": 40,
     "points": 1,
     "type": "single",
     "answers": [
-     "Comité de pilotage",
-     "Rétrospective",
-     "Stand-up meeting",
-     "Sprint review"
+     "Le travail réalisé par sprint, en points",
+     "Sa vitesse de frappe",
+     "Le nombre de réunions",
+     "Le budget consommé"
     ],
     "correct": [
      0
@@ -7669,8 +6407,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "facebook-3-booster-votre-strategie-publicitaire",
   "category": "webmarketing",
-  "title": "Facebook - 3 Booster votre stratégie publicitaire",
-  "description": "Boost, enchères, ciblage, objectifs, test A/B, pixel : les notions clés pour réussir vos publicités Facebook.",
+  "title": "Facebook : la publicité",
+  "description": "Boost, enchères, objectifs, ciblage, test A/B et pixel Meta : construisez des campagnes publicitaires efficaces.",
   "level": 3,
   "questions": [
    {
@@ -7731,18 +6469,20 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k519",
-    "text": "Trouvez l'intrus parmi ces objectifs publicitaires :",
-    "time": 40,
+    "text": "Quels objectifs de campagne Meta propose-t-il ?",
+    "time": 50,
     "points": 1,
-    "type": "single",
+    "type": "multiple",
     "answers": [
-     "Conversion",
-     "Adaptabilité",
-     "Fidélisation",
-     "Notoriété"
+     "Notoriété",
+     "Trafic",
+     "Ventes",
+     "Adaptabilité"
     ],
     "correct": [
-     1
+     0,
+     1,
+     2
     ]
    },
    {
@@ -7771,19 +6511,19 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k522",
-    "text": "Qu'est-ce que l'A/B testing ?",
-    "time": 50,
+    "text": "Une campagne coûte 50 000 XPF et génère 250 clics. Quel est le coût par clic ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "Facebook vérifie l'orthographe",
-     "Facebook vérifie les propos de vos fans",
-     "Facebook teste la performance d'une pub A et B puis laisse la meilleure",
-     "Facebook teste vos visuels avant publication"
-    ],
-    "correct": [
-     2
-    ]
+    "type": "slider",
+    "slider": {
+     "tolerance": 0,
+     "min": 0,
+     "max": 500,
+     "step": 10,
+     "answer": 200,
+     "unit": "XPF"
+    },
+    "explanation": "50 000 / 250 = 200 XPF."
    },
    {
     "id": "k523",
@@ -7795,18 +6535,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k524",
-    "text": "Le pixel Meta (ex-pixel Facebook) permet de :",
-    "time": 40,
+    "text": "Quel outil de Meta, installé sur votre site, permet le reciblage publicitaire ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "Ajouter son logo sur ses visuels",
-     "Suivre les internautes sur Amazon",
-     "Faire du reciblage publicitaire",
-     "Suivre l'ouverture des e-mails Facebook"
-    ],
-    "correct": [
-     2
+    "type": "text",
+    "accepted": [
+     "pixel Meta",
+     "pixel",
+     "le pixel Meta",
+     "pixel Facebook"
     ]
    }
   ],
@@ -7818,8 +6555,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "accessibilite-web",
   "category": "dev",
-  "title": "Accessibilité web",
-  "description": "Handicaps, technologies d'assistance, RGAA, WCAG, ergonomie : les bases de l'accessibilité web.",
+  "title": "Accessibilité : handicaps et usages",
+  "description": "Types de handicap, technologies d’assistance, référentiels, lois de l’ergonomie : pour qui et pourquoi rendre un site accessible.",
   "level": 1,
   "questions": [
    {
@@ -7832,34 +6569,32 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k526",
-    "text": "Trouvez l'intrus parmi ces handicaps :",
-    "time": 40,
+    "text": "Quels types de handicap distingue-t-on ?",
+    "time": 50,
     "points": 1,
-    "type": "single",
+    "type": "multiple",
     "answers": [
-     "Handicap moteur",
-     "Handicap sensoriel",
-     "Handicap cognitif",
-     "Handicap visible"
+     "Moteur",
+     "Sensoriel",
+     "Cognitif",
+     "Visible"
     ],
     "correct": [
-     3
+     0,
+     1,
+     2
     ]
    },
    {
     "id": "k527",
-    "text": "Quelle technologie ne fait PAS partie des technologies d'assistance ?",
-    "time": 40,
+    "text": "Quel logiciel lit à voix haute le contenu de l’écran pour les personnes aveugles ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "Lecteur d'écran",
-     "Clavier mécanique",
-     "Clavier alternatif",
-     "Assistant virtuel"
-    ],
-    "correct": [
-     1
+    "type": "text",
+    "accepted": [
+     "lecteur d’écran",
+     "un lecteur d’écran",
+     "screen reader"
     ]
    },
    {
@@ -7959,8 +6694,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "after-effects-initiation",
   "category": "graphisme",
-  "title": "After Effects - Initiation",
-  "description": "Interface, outils, points clés, Keylight, suivi de mouvement, rotoscopie, 3D et expressions : les bases de l'animation avec After Effects.",
+  "title": "After Effects",
+  "description": "Interface, images clés, incrustation, suivi de mouvement, rotoscopie, 3D et expressions : les bases de l’animation.",
   "level": 1,
   "questions": [
    {
@@ -7981,17 +6716,19 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k536",
-    "text": "Quel outil n'existe PAS dans After Effects ?",
-    "time": 40,
+    "text": "Quels outils existent dans After Effects ?",
+    "time": 50,
     "points": 1,
-    "type": "single",
+    "type": "multiple",
     "answers": [
      "La plume",
      "Le roto-pinceau",
-     "L'aérographe",
-     "La gomme"
+     "La gomme",
+     "Le pot de peinture"
     ],
     "correct": [
+     0,
+     1,
      2
     ]
    },
@@ -8013,7 +6750,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k538",
-    "text": "Les points clés permettent d'animer l'opacité d'un calque.",
+    "text": "Les images clés permettent d’animer l’opacité d’un calque.",
     "time": 20,
     "points": 1,
     "type": "truefalse",
@@ -8085,18 +6822,14 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k544",
-    "text": "Parmi ces codecs, lequel est le plus efficace pour exporter votre vidéo ?",
-    "time": 40,
+    "text": "Quel codec, aussi appelé HEVC, compresse mieux que le H.264 ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "Vorbis",
-     "Divx",
-     "VP5",
-     "H.265"
-    ],
-    "correct": [
-     3
+    "type": "text",
+    "accepted": [
+     "H.265",
+     "H265",
+     "HEVC"
     ]
    }
   ],
@@ -8108,40 +6841,35 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "microsoft-365-vs-office-2013",
   "category": "bureautique",
-  "title": "Microsoft 365 vs Office 2013",
-  "description": "Word, Excel, PowerPoint, Outlook et OneDrive en ligne : les services et fonctions clés de Microsoft 365 pour travailler en ligne.",
+  "title": "Microsoft 365 : les applications en ligne",
+  "description": "Word, Excel, PowerPoint et Outlook dans le navigateur, enregistrement automatique, historique : ce qui change face aux logiciels installés.",
   "level": 1,
   "questions": [
    {
     "id": "k545",
-    "text": "Quel service ne fait PAS partie de Microsoft 365 ?",
+    "text": "Quel est le principal avantage de Word en ligne ?",
     "time": 40,
     "points": 1,
     "type": "single",
     "answers": [
-     "Word",
-     "Looker Studio",
-     "Teams",
-     "Excel"
+     "Plusieurs personnes peuvent modifier le document en même temps",
+     "Il fonctionne sans connexion",
+     "Il a plus de fonctions que Word installé",
+     "Il ne demande pas de compte"
     ],
     "correct": [
-     1
+     0
     ]
    },
    {
     "id": "k546",
-    "text": "Que permet de faire le bouton répéter/mise en attente dans Outlook ?",
-    "time": 50,
+    "text": "Dans Word en ligne, sur quel bouton cliquer pour inviter des collègues à modifier un document ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "répéter un e-mail qui reviendra plus tard dans votre boîte de réception",
-     "mettre en attente un évènement reçu via la messagerie",
-     "répéter une mise en forme sur le contenu sélectionné",
-     "mettre en attente une pièce jointe pour archivage"
-    ],
-    "correct": [
-     0
+    "type": "text",
+    "accepted": [
+     "Partager",
+     "partage"
     ]
    },
    {
@@ -8154,31 +6882,33 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k548",
-    "text": "Trouvez l'intrus dans ces fonctionnalités Word :",
-    "time": 40,
+    "text": "Lesquelles de ces fonctionnalités appartiennent à Word ?",
+    "time": 50,
     "points": 1,
-    "type": "single",
+    "type": "multiple",
     "answers": [
      "Révision",
-     "Mise en forme conditionnelle",
      "Saut de page",
-     "Publipostage"
+     "Publipostage",
+     "Mise en forme conditionnelle"
     ],
     "correct": [
-     1
+     0,
+     1,
+     2
     ]
    },
    {
     "id": "k549",
-    "text": "Quelle fonctionnalité n'est PAS disponible sur Excel en ligne ?",
+    "text": "Dans Excel en ligne, quel outil remplace l’enregistreur de macros VBA ?",
     "time": 40,
     "points": 1,
     "type": "single",
     "answers": [
-     "Les connexions de données",
-     "L'enregistrement de macro",
+     "Les scripts Office (onglet Automatiser)",
+     "Les segments",
      "La validation de données",
-     "Les filtres et les segments"
+     "Les filtres"
     ],
     "correct": [
      0
@@ -8194,18 +6924,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k551",
-    "text": "Trouvez l'intrus : OneDrive permet de…",
+    "text": "Remettez dans l’ordre la restauration d’une version précédente d’un document en ligne.",
     "time": 40,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "télécharger une copie d'un fichier",
-     "stocker des fichiers",
-     "partager un dossier",
-     "ajouter des étiquettes"
-    ],
-    "correct": [
-     3
+    "type": "order",
+    "items": [
+     "Ouvrir le document",
+     "Menu Fichier, puis Infos",
+     "Historique des versions",
+     "Choisir et restaurer la version"
     ]
    },
    {
@@ -8218,23 +6945,22 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k553",
-    "text": "OneNote ne permet PAS de créer :",
-    "time": 40,
+    "text": "Quel espace OneDrive la plupart des abonnements Microsoft 365 entreprise incluent-ils par utilisateur ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "des plans 3D",
-     "des blocs-notes",
-     "des sections",
-     "des pages"
-    ],
-    "correct": [
-     0
-    ]
+    "type": "slider",
+    "slider": {
+     "tolerance": 0,
+     "min": 0,
+     "max": 5,
+     "step": 1,
+     "answer": 1,
+     "unit": "To"
+    }
    },
    {
     "id": "k554",
-    "text": "Teams permet de créer des canaux.",
+    "text": "Les applications en ligne de Microsoft 365 fonctionnent dans le navigateur, sans installation.",
     "time": 20,
     "points": 1,
     "type": "truefalse",
@@ -8249,8 +6975,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "tableur-initiation",
   "category": "bureautique",
-  "title": "Tableur - Initiation",
-  "description": "Raccourcis, saisie, formules, recopie, dates, CSV et mise en forme : les bases du tableur pour gérer vos données.",
+  "title": "Tableur",
+  "description": "Raccourcis, sélection, saisie de dates, recopie, priorité des opérations, CSV : les bases pour gérer vos données dans un tableur.",
   "level": 1,
   "questions": [
    {
@@ -8271,18 +6997,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k556",
-    "text": "Quelle touche du clavier doit-on maintenir pour sélectionner des plages de cellules discontinues ?",
-    "time": 40,
+    "text": "Quelle touche maintenir pour sélectionner des cellules non contiguës ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "ALT",
-     "CTRL",
-     "SHIFT ou MAJ",
-     "ESPACE"
-    ],
-    "correct": [
-     1
+    "type": "text",
+    "accepted": [
+     "Ctrl",
+     "Control",
+     "Contrôle",
+     "Cmd"
     ]
    },
    {
@@ -8311,19 +7034,18 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k559",
-    "text": "Quel est le résultat de 10 + 5 x 4 ?",
-    "time": 40,
+    "text": "Combien de cellules compte la plage A1:C4 ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "60",
-     "45",
-     "30",
-     "20"
-    ],
-    "correct": [
-     2
-    ]
+    "type": "slider",
+    "slider": {
+     "tolerance": 0,
+     "min": 0,
+     "max": 20,
+     "step": 1,
+     "answer": 12
+    },
+    "explanation": "3 colonnes (A à C) × 4 lignes = 12 cellules."
    },
    {
     "id": "k560",
@@ -8351,18 +7073,20 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k562",
-    "text": "Quelle méthode ne permet PAS de déplacer des données ?",
+    "text": "Quelles méthodes permettent de déplacer des données ?",
     "time": 50,
     "points": 1,
-    "type": "single",
+    "type": "multiple",
     "answers": [
-     "Dans le menu \"Données\" ⇨ \"Déplacer\"",
-     "Clic droit ⇨ Couper, Clic droit ⇨ Coller",
-     "Ctrl + X, Ctrl + V",
-     "Glisser, déposer"
+     "Clic droit, Couper puis Coller",
+     "Ctrl + X puis Ctrl + V",
+     "Glisser-déposer",
+     "Menu Données, puis Déplacer"
     ],
     "correct": [
-     0
+     0,
+     1,
+     2
     ]
    },
    {
@@ -8398,8 +7122,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "tableur-perfectionnement",
   "category": "bureautique",
-  "title": "Tableur - Perfectionnement",
-  "description": "Validation de données, mise en forme conditionnelle, sparklines, segments, références absolues : perfectionnez votre tableur.",
+  "title": "Tableur : mise en forme et analyse",
+  "description": "Validation de données, mise en forme conditionnelle, sparklines, segments, références absolues : analysez vos données plus vite.",
   "level": 3,
   "questions": [
    {
@@ -8420,18 +7144,14 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k566",
-    "text": "Quel outil utilise-t-on pour mettre en forme des cellules selon un critère ?",
-    "time": 50,
+    "text": "Quel outil met en forme des cellules selon un critère ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "La mise en forme conditionnelle",
-     "Le pot de peinture",
-     "Reproduire la mise en forme",
-     "La mise en gras"
-    ],
-    "correct": [
-     0
+    "type": "text",
+    "accepted": [
+     "mise en forme conditionnelle",
+     "la mise en forme conditionnelle",
+     "MFC"
     ]
    },
    {
@@ -8444,18 +7164,14 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k568",
-    "text": "Les sparklines sont…",
-    "time": 40,
+    "text": "Comment appelle-t-on les mini-graphiques affichés dans une seule cellule ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "des lignes de données triées",
-     "des graphiques affichés dans une cellule",
-     "des segments filtrés",
-     "des plages de données nommées"
-    ],
-    "correct": [
-     1
+    "type": "text",
+    "accepted": [
+     "sparkline",
+     "sparklines",
+     "graphique sparkline"
     ]
    },
    {
@@ -8492,7 +7208,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k571",
-    "text": "L'utilisation de $ permet de figer la référence d'une cellule.",
+    "text": "Une plage nommée permet d’utiliser un nom (ex. TauxTGC) à la place d’une référence de cellule dans une formule.",
     "time": 20,
     "points": 1,
     "type": "truefalse",
@@ -8555,40 +7271,36 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "facebook-2-faire-vivre-sa-page",
   "category": "webmarketing",
-  "title": "Facebook - 2 Faire vivre sa page",
-  "description": "Marronniers, rôles, algorithme, modération, Meta Business Suite : les bons réflexes pour animer votre page Facebook.",
+  "title": "Facebook : faire vivre sa page",
+  "description": "Marronniers, rôles, modération, récence et programmation : les bons réflexes pour animer une page Facebook dans la durée.",
   "level": 2,
   "questions": [
    {
     "id": "k575",
-    "text": "Les marronniers en marketing sont :",
-    "time": 50,
+    "text": "Comment appelle-t-on un sujet qui revient chaque année (rentrée, fête des mères…) ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "Les événements récurrents au cours de l'année",
-     "Les méthodes d'acquisition de fans",
-     "Les arbres qui donnent des marrons",
-     "Les fans qui dépensent dans vos produits ou services"
-    ],
-    "correct": [
-     0
+    "type": "text",
+    "accepted": [
+     "marronnier",
+     "marronniers",
+     "un marronnier"
     ]
    },
    {
     "id": "k576",
-    "text": "Le rôle de modérateur ne permet PAS de :",
+    "text": "Comment donner la main à un collaborateur sur une page Facebook ?",
     "time": 40,
     "points": 1,
     "type": "single",
     "answers": [
-     "Créer des publicités",
-     "Répondre aux commentaires",
-     "Consulter les statistiques",
-     "Affecter des rôles"
+     "Lui attribuer un accès Facebook ou un accès aux tâches",
+     "Lui donner votre mot de passe",
+     "Créer une seconde page",
+     "C’est impossible"
     ],
     "correct": [
-     3
+     0
     ]
    },
    {
@@ -8617,18 +7329,18 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k579",
-    "text": "Pour une bonne publication, on met en place un contenu :",
+    "text": "Que faire face à un commentaire négatif mais légitime ?",
     "time": 40,
     "points": 1,
     "type": "single",
     "answers": [
-     "long et percutant",
-     "court et avec un visuel",
-     "court avec du texte uniquement",
-     "long avec un appel à l'action"
+     "Répondre poliment et proposer une solution",
+     "Le supprimer",
+     "L’ignorer",
+     "Bloquer son auteur"
     ],
     "correct": [
-     1
+     0
     ]
    },
    {
@@ -8657,18 +7369,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k582",
-    "text": "Facebook permet de :",
+    "text": "Remettez dans l’ordre la programmation d’une publication.",
     "time": 40,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "retoucher la photo d'une publication",
-     "modifier les statistiques",
-     "programmer la publication de ses contenus",
-     "identifier chaque personne ayant consulté la page"
-    ],
-    "correct": [
-     2
+    "type": "order",
+    "items": [
+     "Créer une publication",
+     "Rédiger le texte et ajouter un visuel",
+     "Choisir « Programmer »",
+     "Fixer la date et l’heure"
     ]
    },
    {
@@ -8702,159 +7411,10 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "source": "import"
  },
  {
-  "id": "photoshop-initiation-oriente-gif",
-  "category": "graphisme",
-  "title": "Photoshop - Initiation (Orienté GIF)",
-  "description": "Format PSD, outils, tampon, correcteur, calques de remplissage et retouche de GIF : les bases de Photoshop.",
-  "level": 1,
-  "questions": [
-   {
-    "id": "k595",
-    "text": "Quel est le format de fichier Photoshop ?",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "SVG",
-     "PSD",
-     "EPS",
-     "BMP"
-    ],
-    "correct": [
-     1
-    ]
-   },
-   {
-    "id": "k596",
-    "text": "Quel outil n'existe PAS dans Photoshop ?",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "La plume",
-     "Le tampon",
-     "L'aérographe",
-     "La pipette"
-    ],
-    "correct": [
-     2
-    ]
-   },
-   {
-    "id": "k597",
-    "text": "Quel est le mode colorimétrique pour l'impression ?",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "RVB",
-     "TSL",
-     "CMJN",
-     "LAB"
-    ],
-    "correct": [
-     2
-    ]
-   },
-   {
-    "id": "k598",
-    "text": "La baguette magique est le meilleur outil pour sélectionner des objets peu contrastés.",
-    "time": 20,
-    "points": 1,
-    "type": "truefalse",
-    "truth": false
-   },
-   {
-    "id": "k599",
-    "text": "L'outil tampon permet de :",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "dupliquer une zone de l'image",
-     "adoucir les couleurs d'une zone de l'image",
-     "masquer une zone de l'image",
-     "appliquer un logo sur une image"
-    ],
-    "correct": [
-     0
-    ]
-   },
-   {
-    "id": "k600",
-    "text": "Pour modifier un GIF, il faut passer en espace de travail peinture.",
-    "time": 20,
-    "points": 1,
-    "type": "truefalse",
-    "truth": false
-   },
-   {
-    "id": "k601",
-    "text": "Le correcteur localisé permet de :",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "supprimer une zone de l'image",
-     "gommer les défauts sur une zone",
-     "corriger les niveaux de couleurs d'une image",
-     "remplacer une zone par du blanc"
-    ],
-    "correct": [
-     1
-    ]
-   },
-   {
-    "id": "k602",
-    "text": "Le meilleur format de fichier pour une photo est :",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "JPG",
-     "GIF",
-     "AI",
-     "SVG"
-    ],
-    "correct": [
-     0
-    ]
-   },
-   {
-    "id": "k603",
-    "text": "On peut rechercher dans les calques par leurs noms.",
-    "time": 20,
-    "points": 1,
-    "type": "truefalse",
-    "truth": true
-   },
-   {
-    "id": "k604",
-    "text": "Trouvez l'intrus, on peut créer un calque de remplissage :",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "de type dégradé",
-     "de type couleur",
-     "de type luminosité / contraste",
-     "de type texte"
-    ],
-    "correct": [
-     3
-    ]
-   }
-  ],
-  "createdAt": 1641962035255,
-  "updatedAt": 1686304308053,
-  "builtin": true,
-  "source": "import"
- },
- {
   "id": "google-apps-script",
   "category": "dev",
   "title": "Google Apps Script",
-  "description": "Scripts, variables JavaScript, événements, menus et boîtes de dialogue : les notions clés pour automatiser Google Workspace.",
+  "description": "Scripts autonomes et liés, variables, boucles, déclencheurs, menus et boîtes de dialogue : automatisez Google Workspace.",
   "level": 3,
   "questions": [
    {
@@ -8867,10 +7427,10 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k606",
-    "text": "Quel service ne fait PAS partie de Google Apps Script ?",
-    "time": 40,
+    "text": "Quels services Google Apps Script peut-il piloter ?",
+    "time": 50,
     "points": 1,
-    "type": "single",
+    "type": "multiple",
     "answers": [
      "Docs",
      "Sheets",
@@ -8878,23 +7438,19 @@ const IMPORTED_QUIZZES: Quiz[] = [
      "Power Automate"
     ],
     "correct": [
-     3
+     0,
+     1,
+     2
     ]
    },
    {
     "id": "k607",
-    "text": "Trouvez l'intrus pour définir une nouvelle variable en JavaScript :",
-    "time": 40,
+    "text": "Quel mot-clé déclare une constante en JavaScript ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "const texte = \"Bonjour\";",
-     "let tableau = \"18\";",
-     "define booleen = true;",
-     "var nombre = 2;"
-    ],
-    "correct": [
-     2
+    "type": "text",
+    "accepted": [
+     "const"
     ]
    },
    {
@@ -8963,15 +7519,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k613",
-    "text": "Trouvez l'intrus parmi les événements Apps Script :",
+    "text": "Quel déclencheur simple s’exécute à l’ouverture d’un fichier ?",
     "time": 40,
     "points": 1,
     "type": "single",
     "answers": [
-     "onChange",
-     "onInstall",
+     "onOpen",
      "onEdit",
-     "onOpen"
+     "onInstall",
+     "doGet"
     ],
     "correct": [
      0
@@ -8994,8 +7550,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "html-css-initiation",
   "category": "dev",
-  "title": "HTML & CSS - Initiation",
-  "description": "Balises HTML, propriétés CSS, unités, media queries et liens : les fondamentaux pour structurer et styler une page web.",
+  "title": "HTML & CSS",
+  "description": "Balises, propriétés CSS, marges, unités, media queries et liens : les premiers pas pour structurer et styler une page web.",
   "level": 1,
   "questions": [
    {
@@ -9056,17 +7612,18 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k619",
-    "text": "En CSS, quelles unités faut-il privilégier pour un site adaptatif ?",
-    "time": 40,
+    "text": "Quelles unités privilégier pour un site adaptatif ?",
+    "time": 50,
     "points": 1,
-    "type": "single",
+    "type": "multiple",
     "answers": [
-     "px et pt",
-     "rem et %",
-     "% et px",
-     "cm et m"
+     "rem",
+     "%",
+     "px",
+     "pt"
     ],
     "correct": [
+     0,
      1
     ]
    },
@@ -9096,18 +7653,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k622",
-    "text": "La propriété CSS padding permet de gérer :",
-    "time": 40,
+    "text": "Quelle propriété CSS gère les marges internes d’un élément ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "les marges internes",
-     "les marges externes",
-     "la largeur d'un bloc",
-     "l'espacement entre les lignes"
-    ],
-    "correct": [
-     0
+    "type": "text",
+    "accepted": [
+     "padding"
     ]
    },
    {
@@ -9151,24 +7702,19 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "illustrator-initiation",
   "category": "graphisme",
-  "title": "Illustrator - Initiation",
-  "description": "Formats vectoriels, plume, tangentes, pathfinder, pipette, mode isolation : les bases pour dessiner avec Illustrator.",
+  "title": "Illustrator",
+  "description": "Formats vectoriels, plume, points d’ancrage, Pathfinder, pipette, mode isolation : les bases du dessin vectoriel.",
   "level": 1,
   "questions": [
    {
     "id": "k625",
-    "text": "Quel format n'est PAS vectoriel ?",
-    "time": 40,
+    "text": "Quelle est l’extension des fichiers Illustrator ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "SVG",
-     "TGA",
-     "EPS",
-     "AI"
-    ],
-    "correct": [
-     1
+    "type": "text",
+    "accepted": [
+     "AI",
+     ".ai"
     ]
    },
    {
@@ -9189,19 +7735,17 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k627",
-    "text": "De combien de points d'ancrage un cercle est-il composé en vectoriel ?",
-    "time": 40,
+    "text": "De combien de points d’ancrage un cercle vectoriel est-il composé ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "6",
-     "4",
-     "3",
-     "2"
-    ],
-    "correct": [
-     1
-    ]
+    "type": "slider",
+    "slider": {
+     "tolerance": 0,
+     "min": 0,
+     "max": 8,
+     "step": 1,
+     "answer": 4
+    }
    },
    {
     "id": "k628",
@@ -9300,8 +7844,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "principe-de-l-image-numerique",
   "category": "graphisme",
-  "title": "Principe de l'image numérique",
-  "description": "Vectoriel et bitmap, formats de fichiers, RVB et CMJN, transparence : les fondamentaux de l'image numérique.",
+  "title": "Image numérique : les fondamentaux",
+  "description": "Vectoriel et bitmap, formats de fichiers, RVB et CMJN, transparence : les notions indispensables avant de retoucher une image.",
   "level": 1,
   "questions": [
    {
@@ -9354,36 +7898,37 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k639",
-    "text": "Lequel de ces formats est un format vectoriel ?",
-    "time": 40,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "PNG",
-     "SVG",
-     "PSD",
-     "TIFF"
-    ],
-    "correct": [
-     1
-    ]
-   },
-   {
-    "id": "k640",
-    "text": "Quels sont les deux espaces colorimétriques les plus répandus ?",
+    "text": "Lesquels de ces formats sont vectoriels ?",
     "time": 50,
     "points": 1,
     "type": "multiple",
     "answers": [
-     "LAB et TSL",
-     "RVB et CMJN",
-     "RVB et TSL",
-     "CMYK et RGB"
+     "SVG",
+     "EPS",
+     "AI",
+     "PNG",
+     "TIFF"
     ],
     "correct": [
+     0,
      1,
-     3
+     2
     ]
+   },
+   {
+    "id": "k640",
+    "text": "Quelle résolution recommande-t-on pour une image destinée à l’impression ?",
+    "time": 30,
+    "points": 1,
+    "type": "slider",
+    "slider": {
+     "tolerance": 0,
+     "min": 0,
+     "max": 600,
+     "step": 50,
+     "answer": 300,
+     "unit": "ppp"
+    }
    },
    {
     "id": "k641",
@@ -9395,18 +7940,14 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k642",
-    "text": "Quel est le format recommandé pour les photos ?",
-    "time": 40,
+    "text": "Comment appelle-t-on le plus petit point coloré qui compose une image bitmap ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "TIFF",
-     "JPG",
-     "PDF",
-     "SVG"
-    ],
-    "correct": [
-     1
+    "type": "text",
+    "accepted": [
+     "pixel",
+     "un pixel",
+     "pixels"
     ]
    },
    {
@@ -9434,40 +7975,36 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "traitement-de-texte-perfectionnement",
   "category": "bureautique",
-  "title": "Traitement de texte - Perfectionnement",
-  "description": "Styles, sections, marges, colonnes, révisions, mise en forme : perfectionnez-vous en traitement de texte.",
+  "title": "Traitement de texte : styles et mise en page",
+  "description": "Styles, sections, marges, interligne, colonnes, collage sans mise en forme : structurez des documents longs et soignés.",
   "level": 3,
   "questions": [
    {
     "id": "k645",
-    "text": "Quel outil utilise-t-on pour récupérer uniquement le texte lors d'un copier-coller ?",
-    "time": 40,
+    "text": "Quel raccourci colle un texte sans sa mise en forme ? (Ctrl + Maj + ?)",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "Le presse-papiers",
-     "L'outil \"coller sans formatage\"",
-     "L'outil \"supprimer le formatage\"",
-     "Le bâton de colle"
-    ],
-    "correct": [
-     1
+    "type": "text",
+    "accepted": [
+     "V",
+     "Ctrl + Maj + V",
+     "Ctrl + Shift + V"
     ]
    },
    {
     "id": "k646",
-    "text": "Que permet de faire la règle d'un traitement de texte ?",
+    "text": "À quoi sert un saut de section ?",
     "time": 40,
     "points": 1,
     "type": "single",
     "answers": [
-     "Tracer une ligne droite",
-     "Insérer une tabulation",
-     "Éviter les erreurs de contenu",
-     "Mesurer l'écart entre les caractères"
+     "Changer la mise en page (orientation, marges, en-têtes) d’une partie du document",
+     "Passer simplement à la page suivante",
+     "Supprimer un chapitre",
+     "Insérer un sommaire"
     ],
     "correct": [
-     1
+     0
     ]
    },
    {
@@ -9536,18 +8073,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k652",
-    "text": "À quoi sert l'outil Suggestions ou Révisions ?",
-    "time": 50,
+    "text": "Quel élément se génère automatiquement à partir des styles de titre ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "À faciliter le travail collaboratif",
-     "À revenir en arrière en cas d'erreur",
-     "À mettre en page le texte",
-     "À corriger les fautes d'orthographe"
-    ],
-    "correct": [
-     0
+    "type": "text",
+    "accepted": [
+     "table des matières",
+     "la table des matières",
+     "sommaire",
+     "le sommaire"
     ]
    },
    {
@@ -9591,40 +8125,35 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "photoshop-initiation",
   "category": "graphisme",
-  "title": "Photoshop - Initiation",
-  "description": "Modes de fusion, liaison de calques, déformation du texte : les bases de Photoshop pour composer et retoucher vos images.",
+  "title": "Photoshop",
+  "description": "Format PSD, calques, tampon, correcteur, modes de fusion et animation GIF : les bases pour retoucher vos images.",
   "level": 1,
   "questions": [
    {
     "id": "k655",
-    "text": "Quel est le format de fichier Photoshop ?",
-    "time": 40,
+    "text": "Quelle est l’extension des fichiers Photoshop ?",
+    "time": 30,
     "points": 1,
-    "type": "single",
-    "answers": [
-     "SVG",
+    "type": "text",
+    "accepted": [
      "PSD",
-     "EPS",
-     "BMP"
-    ],
-    "correct": [
-     1
+     ".psd"
     ]
    },
    {
     "id": "k656",
-    "text": "Quel outil n'existe PAS dans Photoshop ?",
+    "text": "Quel panneau permet d’animer un GIF dans Photoshop ?",
     "time": 40,
     "points": 1,
     "type": "single",
     "answers": [
-     "La plume",
-     "Le tampon",
-     "L'aérographe",
-     "La pipette"
+     "Le panneau Montage",
+     "Le panneau Calques",
+     "Le panneau Historique",
+     "Le panneau Propriétés"
     ],
     "correct": [
-     2
+     0
     ]
    },
    {
@@ -9717,18 +8246,20 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k664",
-    "text": "Trouvez l'intrus, on peut créer un calque de remplissage :",
-    "time": 40,
+    "text": "Quels calques de remplissage peut-on créer ?",
+    "time": 50,
     "points": 1,
-    "type": "single",
+    "type": "multiple",
     "answers": [
-     "de type dégradé",
-     "de type couleur",
-     "de type luminosité / contraste",
-     "de type texte"
+     "Couleur unie",
+     "Dégradé",
+     "Motif",
+     "Texte"
     ],
     "correct": [
-     3
+     0,
+     1,
+     2
     ]
    }
   ],

@@ -1,7 +1,7 @@
 import { curseur, ordre, qcm, quiz, saisie, vf } from '../build';
 
-export default quiz('ia-generative-quotidien', 'ia', 'L’IA générative au quotidien',
-  'ChatGPT, Claude, Gemini, Copilot : comprendre les bases et les bons usages en entreprise.', [
+export default quiz('ia-generative-quotidien', 'ia', 'IA générative',
+  'LLM, hallucinations, confidentialité, vérification des réponses : comprendre ce que l’IA générative sait faire, et ses limites.', [
   qcm('Que signifie le sigle LLM ?', [
     'Large Learning Machine',
     '*Large Language Model',
@@ -17,11 +17,11 @@ export default quiz('ia-generative-quotidien', 'ia', 'L’IA générative au quo
   vf('On peut coller sans risque des données clients confidentielles dans un assistant IA grand public.', false, {
     explanation: 'Vérifiez toujours la politique de confidentialité et les règles de votre entreprise avant de partager des données.',
   }),
-  qcm('Lesquels de ces éléments améliorent généralement un prompt ?', [
-    '*Préciser le rôle attendu', '*Donner du contexte', 'Écrire le plus court possible', '*Indiquer le format de réponse',
-  ]),
-  ordre('Classez ces étapes d’une démarche de prompt efficace.', [
-    'Définir l’objectif', 'Rédiger le prompt avec contexte', 'Analyser la réponse', 'Affiner le prompt',
+  qcm('Lesquelles de ces limites concernent les IA génératives ?', [
+    '*Des biais hérités des données d’entraînement', '*Des erreurs présentées comme des faits', '*Des informations parfois dépassées', 'La distance géographique avec le serveur',
+  ], { explanation: 'Une IA générative peut se tromper avec aplomb : vérifiez toujours les informations importantes.' }),
+  ordre('Classez ces étapes de l’histoire de l’IA dans l’ordre chronologique.', [
+    'Le test de Turing (1950)', 'Deep Blue bat Kasparov aux échecs (1997)', 'AlphaGo bat un champion de go (2016)', 'Lancement de ChatGPT (2022)',
   ]),
   qcm('Quel outil est développé par Anthropic ?', ['Gemini', 'Copilot', '*Claude', 'Mistral'], {}),
   vf('Une IA générative peut produire des contenus différents à partir du même prompt.', true),
@@ -31,4 +31,7 @@ export default quiz('ia-generative-quotidien', 'ia', 'L’IA générative au quo
   saisie('Comment appelle-t-on le texte que l’on soumet à une IA générative pour obtenir une réponse ?', [
     'prompt', 'un prompt', 'invite', 'requête',
   ]),
+  vf('Une IA est toujours fiable, car elle signale quand elle se trompe.', false, {
+    explanation: 'Elle peut inventer une réponse sans le signaler (hallucination) : la vérification reste indispensable.',
+  }),
 ]);

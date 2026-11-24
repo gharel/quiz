@@ -1,7 +1,7 @@
 import { curseur, qcm, quiz, saisie, vf } from '../build';
 
-export default quiz('tableur-excel-sheets', 'bureautique', 'Excel & Google Sheets : formules de base',
-  'Références, fonctions et calculs : testez vos réflexes sur tableur.', [
+export default quiz('tableur-excel-sheets', 'bureautique', 'Tableur : les formules',
+  'SOMME, MOYENNE, SI, NB, RECHERCHEX, références absolues et priorités de calcul : maîtrisez les formules essentielles.', [
   qcm('Quelle formule additionne les cellules A1 à A10 ?', [
     '=ADDITION(A1:A10)', '*=SOMME(A1:A10)', '=TOTAL(A1;A10)', '=PLUS(A1-A10)',
   ]),
@@ -25,4 +25,4 @@ export default quiz('tableur-excel-sheets', 'bureautique', 'Excel & Google Sheet
   vf('Une formule recopiée vers le bas adapte automatiquement ses références relatives.', true),
   qcm('Quelle fonction renvoie une valeur différente selon qu’une condition est vraie ou fausse ?', ['*SI', 'ET', 'NB.SI', 'MAX']),
   qcm('Quel raccourci clavier annule la dernière action ?', ['Ctrl + Y', '*Ctrl + Z', 'Ctrl + X', 'Ctrl + A']),
-]);
+], 2);

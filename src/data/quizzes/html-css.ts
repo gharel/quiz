@@ -1,9 +1,9 @@
 import { ordre, qcm, quiz, saisie, vf } from '../build';
 
-export default quiz('html-css-fondamentaux', 'dev', 'HTML & CSS : les fondamentaux',
-  'Balises, sélecteurs et mise en page : vérifiez vos bases en intégration web.', [
-  qcm('Quelle balise HTML crée un lien hypertexte ?', ['<link>', '*<a>', '<href>', '<url>'], {
-    explanation: 'La balise <a> avec l’attribut href. <link> sert à lier une ressource, comme une feuille de style.',
+export default quiz('html-css-fondamentaux', 'dev', 'HTML & CSS : sémantique et mise en page',
+  'Balises sémantiques, attributs, spécificité, modèle de boîte, Flexbox et unités : consolidez vos bases en intégration web.', [
+  qcm('Quelle balise regroupe le contenu principal et unique d’une page ?', ['*<main>', '<section>', '<body>', '<div>'], {
+    explanation: 'Une page ne contient qu’un seul <main>, hors en-tête, navigation et pied de page.',
   }),
   saisie('Quel attribut HTML décrit une image pour les lecteurs d’écran ?', ['alt'], {
     explanation: 'L’attribut alt fournit le texte alternatif de l’image.',
@@ -28,4 +28,4 @@ export default quiz('html-css-fondamentaux', 'dev', 'HTML & CSS : les fondamenta
   vf('La balise <br> nécessite une balise fermante </br>.', false, {
     explanation: '<br> est un élément vide : il n’a pas de balise fermante.',
   }),
-]);
+], 2);

@@ -1,7 +1,7 @@
 import { curseur, ordre, qcm, quiz, saisie, vf } from '../build';
 
-export default quiz('accessibilite-numerique', 'gestion', 'Accessibilité numérique',
-  'RGAA, contrastes, textes alternatifs : concevez des services utilisables par tous.', [
+export default quiz('accessibilite-numerique', 'dev', 'Accessibilité : RGAA et WCAG',
+  'Contrastes, textes alternatifs, niveaux de conformité, navigation au clavier : appliquez les règles du RGAA et des WCAG.', [
   saisie('Quel est le sigle du référentiel français d’accessibilité des services numériques ?', ['RGAA'], {
     explanation: 'Référentiel général d’amélioration de l’accessibilité.',
   }),
@@ -24,7 +24,9 @@ export default quiz('accessibilite-numerique', 'gestion', 'Accessibilité numér
     'World Content Access Group',
     'Web Coding Accessibility Grade',
   ]),
-  qcm('Quelle balise HTML définit le titre de plus haut niveau dans le contenu d’une page ?', ['<header>', '*<h1>', '<title>', '<main>']),
+  qcm('Quel attribut HTML indique la langue de la page aux lecteurs d’écran ?', ['*lang', 'alt', 'title', 'role'], {
+    explanation: 'Par exemple <html lang="fr"> : le lecteur d’écran choisit alors la bonne prononciation.',
+  }),
   vf('Un lien intitulé « Cliquez ici » est suffisamment explicite pour un lecteur d’écran.', false, {
     explanation: 'L’intitulé d’un lien doit indiquer sa destination, même lu hors de son contexte.',
   }),
@@ -34,4 +36,4 @@ export default quiz('accessibilite-numerique', 'gestion', 'Accessibilité numér
   qcm('Qui bénéficie d’un site accessible ?', [
     '*Les personnes malvoyantes', '*Les personnes âgées', '*Une personne avec un bras dans le plâtre', 'Uniquement les personnes en situation de handicap reconnu',
   ], { explanation: 'L’accessibilité profite à tous, y compris dans des situations temporaires.' }),
-]);
+], 2);

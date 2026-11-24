@@ -1,7 +1,7 @@
 import { curseur, ordre, qcm, quiz, saisie, vf } from '../build';
 
-export default quiz('webmarketing-reseaux-sociaux', 'webmarketing', 'Webmarketing et réseaux sociaux',
-  'SEO, indicateurs clés et publicité en ligne : maîtrisez le vocabulaire du webmarketing.', [
+export default quiz('webmarketing-reseaux-sociaux', 'webmarketing', 'Webmarketing : SEO, SEA et indicateurs',
+  'Référencement naturel et payant, taux de clics, AIDA, test A/B, KPI : le vocabulaire et les calculs clés du webmarketing.', [
   qcm('Que mesure le taux de clics (CTR) ?', [
     'Le nombre d’abonnés gagnés',
     '*Le rapport entre les clics et les impressions',

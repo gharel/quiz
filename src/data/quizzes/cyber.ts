@@ -1,7 +1,7 @@
 import { curseur, ordre, qcm, quiz, saisie, vf } from '../build';
 
-export default quiz('cybersecurite-essentiels', 'web', 'Les essentiels de la cybersécurité',
-  'Mots de passe, hameçonnage, sauvegardes : les bons réflexes pour protéger vos données.', [
+export default quiz('cybersecurite-essentiels', 'web', 'Cybersécurité : les bons réflexes',
+  'Hameçonnage, mots de passe, double authentification, sauvegardes : les gestes simples pour protéger vos comptes et vos données.', [
   qcm('Quel est le signe le plus fiable d’un e-mail d’hameçonnage ?', [
     'Il contient un logo officiel',
     '*L’adresse de l’expéditeur ne correspond pas au domaine officiel',

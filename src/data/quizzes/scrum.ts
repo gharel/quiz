@@ -1,7 +1,7 @@
 import { curseur, ordre, qcm, quiz, saisie, vf } from '../build';
 
-export default quiz('scrum-agilite', 'gestion', 'Scrum et agilité',
-  'Rôles, événements et artefacts : êtes-vous prêt pour votre premier sprint ?', [
+export default quiz('scrum-agilite', 'gestion', 'Scrum',
+  'Rôles, événements, backlog et incrément : les fondamentaux du cadre Scrum pour aborder votre premier sprint.', [
   qcm('Quels sont les trois rôles (responsabilités) définis par Scrum ?', [
     '*Product Owner', '*Scrum Master', 'Chef de projet', '*Développeurs',
   ], { explanation: 'Le Scrum Guide 2020 définit le Product Owner, le Scrum Master et les Developers.' }),

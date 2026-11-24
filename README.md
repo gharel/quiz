@@ -32,7 +32,7 @@ Seule une empreinte PBKDF2 (SHA-256, 600 000 itérations) est publiée dans `src
 
 Tout est enregistré dans le navigateur de l’appareil utilisé (aucun serveur, aucun compte). Pensez à **exporter** vos quiz (JSON) pour les sauvegarder ou les transférer sur un autre poste, et vos résultats (CSV).
 
-Les quiz importés (`src/data/quizzes/importes.ts`) ont été relus et corrigés (descriptions, fautes, réponses ambiguës ou dépassées, niveaux, durées : vrai/faux 30 s, QCM 45 s ou 60 s si long, choix multiples 60 s). Les corrections se font directement dans ce fichier ; `importes.test.ts` vérifie descriptions, niveaux, durées et cohérence des réponses.
+Les quiz importés (`src/data/quizzes/importes.ts`) ont été relus et corrigés : titres au format « Sujet : angle » (le niveau est porté par les pastilles, jamais par le titre), descriptions, fautes, réponses ambiguës ou dépassées, quiz trop proches fusionnés, et chaque quiz mélange désormais QCM, vrai/faux, choix multiples, réponse libre, curseur et remise en ordre. Durées : vrai/faux 20 s, QCM 40 s (50 s si long), choix multiples 50 s, réponse libre et curseur 30 s, remise en ordre 40 s (45 s si longue). Les corrections se font directement dans ce fichier ; `importes.test.ts` vérifie descriptions, niveaux, durées, cohérence des réponses par type, titres et absence de question répétée d’un quiz à l’autre.
 
 ## Développement
 

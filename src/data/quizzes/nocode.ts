@@ -1,7 +1,7 @@
 import { curseur, ordre, qcm, quiz, saisie, vf } from '../build';
 
-export default quiz('nocode-automatisation', 'nocode', 'NoCode et automatisation',
-  'Airtable, Notion, Make, n8n : les notions clés pour automatiser sans coder.', [
+export default quiz('nocode-automatisation', 'nocode', 'NoCode : automatiser sans coder',
+  'Déclencheurs, webhooks, API, Make, n8n, Zapier, Airtable et Notion : les notions clés pour automatiser vos tâches.', [
   qcm('Dans un scénario d’automatisation, comment appelle-t-on l’événement qui le déclenche ?', [
     'Une action', '*Un déclencheur', 'Un filtre', 'Un module',
   ], { explanation: 'Le déclencheur (trigger) lance le scénario : nouvel e-mail, nouvelle ligne, formulaire envoyé…' }),
