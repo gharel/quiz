@@ -1,4 +1,5 @@
-// Quiz importés (bibliothèque historique du formateur).
+// Quiz importés (bibliothèque historique du formateur), relus et corrigés.
+// Ce fichier est désormais la référence : les corrections se font ici.
 import type { Quiz } from '../../lib/types';
 
 const IMPORTED_QUIZZES: Quiz[] = [
@@ -6,11 +7,11 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "ia-intermediaire",
   "category": "ia",
   "title": "IA - Intermédiaire",
-  "description": "Découvrez les bases de l’intelligence artificielle générative : types d’IA, usages possibles, limites actuelles et bonnes pratiques de rédaction de prompts pour mieux dialoguer avec des outils comme ChatGPT.",
+  "description": "Types d'IA, usages, limites, fiabilité et bonnes pratiques de prompt : les bases de l'IA générative pour mieux l'utiliser.",
   "questions": [
    {
     "id": "k1",
-    "text": "Une intelligence artificielle est basée sur des statistiques",
+    "text": "Une intelligence artificielle est basée sur des statistiques.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -18,8 +19,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k2",
-    "text": "Quel assistant n'est pas américain ?",
-    "time": 60,
+    "text": "Quel assistant n'est PAS américain ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -50,7 +51,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k4",
-    "text": "L'IA est toujours fiable, car elle indiquera quand elle se trompe",
+    "text": "L'IA est toujours fiable, car elle indiquera quand elle se trompe.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -59,7 +60,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k5",
     "text": "Quels sont les ingrédients fondamentaux d’un prompt ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -74,8 +75,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k6",
-    "text": "Parmi les éléments suivants, lequel ne nécessite pas systématiquement une vérification lorsqu’il est généré par une IA ?",
-    "time": 60,
+    "text": "Parmi les éléments suivants, lequel ne nécessite PAS systématiquement une vérification lorsqu’il est généré par une IA ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -98,12 +99,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k8",
-    "text": "Quelle fonctionnalité n'existe pas dans ChatGPT ou Claude ?",
-    "time": 60,
+    "text": "Quelle fonctionnalité n'existe PAS dans ChatGPT ou Claude ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
-     "Tache planifiée",
+     "Tâche planifiée",
      "Traduction de vidéos",
      "Recherche web",
      "Mode vocal"
@@ -114,7 +115,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k9",
-    "text": "Quel élément distingue un agent IA, d’un assistant IA ?",
+    "text": "Quel élément distingue un agent IA d'un assistant IA ?",
     "time": 60,
     "points": 1,
     "type": "single",
@@ -130,7 +131,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k10",
-    "text": "l'IA apprend en direct de vos conversations pour être plus performante dans les interactions avec d'autres utilisateurs",
+    "text": "L'IA apprend en direct de vos conversations pour être plus performante dans les interactions avec d'autres utilisateurs.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -146,11 +147,11 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "claude-initiation",
   "category": "ia",
   "title": "Claude - Initiation",
-  "description": "Découvrez les bases de l’intelligence artificielle générative : types d’IA, usages possibles, limites actuelles et bonnes pratiques de rédaction de prompts pour mieux dialoguer avec des outils comme ChatGPT.",
+  "description": "Modèles Claude, IA générative, ingrédients d'un prompt, fonctionnalités : les bases pour bien démarrer avec Claude.",
   "questions": [
    {
     "id": "k11",
-    "text": "Une intelligence artificielle est basée sur des statistiques",
+    "text": "Une intelligence artificielle est basée sur des statistiques.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -158,8 +159,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k12",
-    "text": "Quel modèle ne fait pas partie de Claude ?",
-    "time": 60,
+    "text": "Quel modèle ne fait PAS partie de Claude ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -190,7 +191,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k14",
-    "text": "L'IA est toujours fiable, car elle indiquera quand elle se trompe",
+    "text": "L'IA est toujours fiable, car elle indiquera quand elle se trompe.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -204,7 +205,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "type": "single",
     "answers": [
      "Une source, un tableau et une conclusion",
-     "Une tache, un objectif et un contexte",
+     "Une tâche, un objectif et un contexte",
      "Un titre, une date et une signature",
      "Un exemple, une image et un lien"
     ],
@@ -214,8 +215,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k16",
-    "text": "Trouvez l'intrus parmi ces fonctionnalités",
-    "time": 60,
+    "text": "Trouvez l'intrus parmi ces fonctionnalités :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -238,8 +239,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k18",
-    "text": "Quelle notion ne concerne pas l'IA ?",
-    "time": 60,
+    "text": "Quelle notion ne concerne PAS l'IA ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -254,7 +255,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k19",
-    "text": "Quel élément distingue un agent IA, d’un assistant IA ?",
+    "text": "Quel élément distingue un agent IA d'un assistant IA ?",
     "time": 60,
     "points": 1,
     "type": "single",
@@ -270,7 +271,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k20",
-    "text": "l'IA apprend en direct de vos conversations pour être plus performante dans les interactions avec d'autres utilisateurs",
+    "text": "L'IA apprend en direct de vos conversations pour être plus performante dans les interactions avec d'autres utilisateurs.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -286,12 +287,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "reseaux-sociaux",
   "category": "webmarketing",
   "title": "Réseaux Sociaux",
-  "description": "",
+  "description": "Stratégie de visibilité, engagement, ligne éditoriale, LinkedIn, Facebook : les bases pour animer vos réseaux sociaux.",
   "questions": [
    {
     "id": "k21",
-    "text": "En Nouvelle-Calédonie, il est conseillé de publier le même contenu sur tous les réseaux sans modification",
-    "time": 60,
+    "text": "En Nouvelle-Calédonie, il est conseillé de publier le même contenu sur tous les réseaux sans modification.",
+    "time": 30,
     "points": 1,
     "type": "truefalse",
     "truth": false
@@ -299,7 +300,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k22",
     "text": "Quel est l’objectif principal d’une stratégie de visibilité sur les réseaux sociaux ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -314,7 +315,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k23",
-    "text": "Le taux d’engagement moyen d’un post vidéo sur Facebook est supérieur à celui d’un post image",
+    "text": "Le taux d’engagement moyen d’un post vidéo sur Facebook est supérieur à celui d’un post image.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -323,14 +324,14 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k24",
     "text": "Quelle plateforme est la plus adaptée au B2B ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
-     "Youtube",
-     "Linkedin",
+     "YouTube",
+     "LinkedIn",
      "Facebook",
-     "Tiktok"
+     "TikTok"
     ],
     "correct": [
      1
@@ -339,7 +340,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k25",
     "text": "Quelle action relève de l’engagement ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -354,7 +355,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k26",
-    "text": "Le community manager et le social media manager ont les mêmes missions",
+    "text": "Le community manager et le social media manager ont les mêmes missions.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -363,7 +364,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k27",
     "text": "Quelle est la bonne pratique de publication sur Facebook ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -394,7 +395,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k29",
-    "text": "Facebook, LinkedIn et Instagram sont les trois réseaux sociaux les plus utilisés en Europe et aux États-Unis",
+    "text": "Facebook, LinkedIn et Instagram sont les trois réseaux sociaux les plus utilisés en Europe et aux États-Unis.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -403,7 +404,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k30",
     "text": "Quel site gratuit est utile pour créer des visuels de publication ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -426,12 +427,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "atelier-cybersecurite-7h",
   "category": "web",
   "title": "Atelier Cybersécurité 7h",
-  "description": "",
+  "description": "Phishing, ingénierie sociale, mots de passe, MFA, ransomware : les réflexes essentiels pour se protéger des cyberattaques.",
   "questions": [
    {
     "id": "k31",
     "text": "Qu’est-ce que le phishing ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -446,8 +447,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k32",
-    "text": "La règle de sauvegarde visible dans le support évoque…",
-    "time": 20,
+    "text": "La règle de sauvegarde 3-2-1 prévoit notamment…",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -463,7 +464,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k33",
     "text": "La DSI peut avoir besoin de votre mot de passe.",
-    "time": 20,
+    "time": 30,
     "points": 1,
     "type": "truefalse",
     "truth": false
@@ -471,7 +472,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k34",
     "text": "L’ingénierie sociale exploite surtout…",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -486,8 +487,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k35",
-    "text": "Trouvez l'intrus parmi ces leviers d’ingénierie sociale ?",
-    "time": 20,
+    "text": "Trouvez l'intrus parmi ces leviers d'ingénierie sociale :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -503,12 +504,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k36",
     "text": "Quel mot de passe est particulièrement risqué ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
-     "MotdePasseTrèsRisqué!",
-     ",P4ssW0rd!",
+     "MotdePasseTrèsRisqué !",
+     ",P4ssW0rd !",
      "4dMin4Ever#:",
      "Azerty123"
     ],
@@ -519,7 +520,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k37",
     "text": "À quoi sert la MFA ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -535,7 +536,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k38",
     "text": "Que fait un ransomware ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -550,8 +551,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k39",
-    "text": "Quel navigateur est recommandé ?",
-    "time": 20,
+    "text": "Parmi ces navigateurs, lequel intègre par défaut un bloqueur de publicités et de traqueurs ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -566,8 +567,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k40",
-    "text": "Les réflexes ISOLER, ALERTER, DOCUMENTER, INFORMER et STOP sont-ils dans le bon ordre ?",
-    "time": 20,
+    "text": "Les réflexes ISOLER, ALERTER, DOCUMENTER, INFORMER et STOP sont dans le bon ordre.",
+    "time": 30,
     "points": 1,
     "type": "truefalse",
     "truth": false
@@ -582,12 +583,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "davinci-resolve-initiation",
   "category": "graphisme",
   "title": "Davinci Resolve - Initiation",
-  "description": "",
+  "description": "Pages, bins, points In et Out, étalonnage, export : les bases du montage vidéo avec DaVinci Resolve.",
   "questions": [
    {
     "id": "k41",
     "text": "Quelle page sert à importer et organiser les fichiers ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -626,7 +627,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k44",
-    "text": "Qu'est ce que le multipiste ?",
+    "text": "Qu'est-ce que le multipiste ?",
     "time": 60,
     "points": 1,
     "type": "single",
@@ -642,7 +643,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k45",
-    "text": "La méthode pancake facilite le dérushage",
+    "text": "La méthode pancake facilite le dérushage.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -667,7 +668,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k47",
     "text": "Quelle étape consiste à harmoniser les couleurs des plans ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -707,7 +708,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k50",
     "text": "Quel format privilégier pour vos exports ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -730,12 +731,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "atelier-numerique-responsable-4h",
   "category": "gestion",
   "title": "Atelier Numérique responsable 4h",
-  "description": "",
+  "description": "Empreinte du numérique, sobriété, économie circulaire, règle des 5R : les bases d'un numérique plus responsable.",
   "questions": [
    {
     "id": "k51",
     "text": "Quelle part des émissions mondiales de gaz à effet de serre représente le numérique ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -751,7 +752,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k52",
     "text": "En moyenne, la durée de vie d’un ordinateur aujourd’hui est de :",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -767,7 +768,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k53",
     "text": "La raréfaction de l’eau n’a aucun lien avec le numérique.",
-    "time": 20,
+    "time": 30,
     "points": 1,
     "type": "truefalse",
     "truth": false
@@ -775,7 +776,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k54",
     "text": "Le pilier social du numérique responsable inclut :",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -791,7 +792,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k55",
     "text": "L’un des enjeux économiques du numérique responsable est de :",
-    "time": 20,
+    "time": 60,
     "points": 1,
     "type": "single",
     "answers": [
@@ -806,8 +807,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k56",
-    "text": "Quel geste réduit les émissions liées à une recherche internet selon le support ?",
-    "time": 20,
+    "text": "Quel geste réduit les émissions liées à une recherche internet ?",
+    "time": 60,
     "points": 1,
     "type": "single",
     "answers": [
@@ -823,7 +824,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k57",
     "text": "Quelle stratégie des 5R consiste à éviter l’achat inutile ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -839,7 +840,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k58",
     "text": "Quel usage représente une part importante du trafic web mondial ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -855,7 +856,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k59",
     "text": "Quelle est une bonne pratique professionnelle de sobriété numérique ?",
-    "time": 20,
+    "time": 60,
     "points": 1,
     "type": "single",
     "answers": [
@@ -870,8 +871,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k60",
-    "text": "Le greenwashing et le pinkwashing sont des techniques marketing",
-    "time": 20,
+    "text": "Le greenwashing et le pinkwashing sont des techniques marketing.",
+    "time": 30,
     "points": 1,
     "type": "truefalse",
     "truth": true
@@ -886,12 +887,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "git-gitlab-initiation",
   "category": "dev",
   "title": "Git & Gitlab - Initiation",
-  "description": "",
+  "description": "Git, commits, branches, GitLab : les notions clés pour versionner un projet et collaborer sur des dépôts.",
   "questions": [
    {
     "id": "k61",
     "text": "Quel est le rôle de Git ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -931,7 +932,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k64",
     "text": "Que représente un commit ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -947,7 +948,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k65",
     "text": "Quel type de fichier est à versionner dans un site web statique ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -963,7 +964,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k66",
     "text": "Quelle commande sert à sélectionner des changements à enregistrer ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -987,7 +988,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k68",
     "text": "Que permet git status ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -1003,7 +1004,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k69",
     "text": "Dans GitLab, où peut-on voir un historique visuel du dépôt ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -1018,8 +1019,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k70",
-    "text": "L’exemple de convention de tag donné dans le support est v1.5.3",
-    "time": 60,
+    "text": "Une convention courante pour nommer les tags est le format v1.5.3.",
+    "time": 30,
     "points": 1,
     "type": "truefalse",
     "truth": true
@@ -1034,12 +1035,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "wordpress-bonnes-pratiques-dev-initiation",
   "category": "dev",
   "title": "WordPress Bonnes pratiques Dev - Initiation",
-  "description": "",
+  "description": "CPT, taxonomies, ACF, widgets, hooks : structurer et étendre un site WordPress dans les règles de l'art.",
   "questions": [
    {
     "id": "k71",
     "text": "Quel outil est recommandé pour structurer proprement des données personnalisées ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -1055,7 +1056,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k72",
     "text": "Quel type de champ ACF est recommandé pour des listes d’éléments ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -1079,7 +1080,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k74",
     "text": "Un CPT correspond à :",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -1094,8 +1095,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k75",
-    "text": "Une taxonomie sert principalement à",
-    "time": 60,
+    "text": "Une taxonomie sert principalement à…",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -1110,15 +1111,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k76",
-    "text": "Qu'est l'utilité des widgets dans WordPress ?",
-    "time": 60,
+    "text": "Quelle est l'utilité des widgets dans WordPress ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
-     "gère les révisions des articles",
-     "crée une page de formulaire",
-     "attribue une catégorie à une page",
-     "ajoute une zone réutilisable"
+     "Gérer les révisions des articles",
+     "Créer une page de formulaire",
+     "Attribuer une catégorie à une page",
+     "Ajouter une zone réutilisable"
     ],
     "correct": [
      3
@@ -1134,8 +1135,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k78",
-    "text": "Quel outil est cité pour faciliter la création de Custom Post Types ?",
-    "time": 60,
+    "text": "Quel plugin facilite la création de Custom Post Types ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -1151,7 +1152,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k79",
     "text": "Que permettent les hooks WordPress ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -1166,8 +1167,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k80",
-    "text": "WordPress ne permet pas de changer les menus",
-    "time": 60,
+    "text": "WordPress ne permet pas de changer les menus.",
+    "time": 30,
     "points": 1,
     "type": "truefalse",
     "truth": false
@@ -1182,12 +1183,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "shopify-initiation",
   "category": "dev",
   "title": "Shopify - Initiation",
-  "description": "",
+  "description": "Back-office, produits, pages légales, paiement en Nouvelle-Calédonie : prenez en main votre boutique Shopify.",
   "questions": [
    {
     "id": "k81",
-    "text": "Shopify est une solution",
-    "time": 60,
+    "text": "Shopify est une solution :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -1203,7 +1204,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k82",
     "text": "Un site e-commerce se compose de deux parties :",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -1218,7 +1219,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k83",
-    "text": "Shopify est présenté comme une solution nécessitant une installation locale complète",
+    "text": "Shopify est présenté comme une solution nécessitant une installation locale complète.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -1227,7 +1228,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k84",
     "text": "Pour accéder à l’administration, on utilise :",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -1243,7 +1244,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k85",
     "text": "Dans la structure d’une boutique, la section « Produits » correspond à :",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -1259,7 +1260,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k86",
     "text": "La section « Pages » sert à gérer :",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -1283,7 +1284,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k88",
     "text": "Quel système de paiement choisir, si vous avez un compte calédonien ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -1298,8 +1299,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k89",
-    "text": "Quelle page fait partie des pages légales obligatoires citées dans le support ?",
-    "time": 60,
+    "text": "Quelle page fait partie des pages légales obligatoires d'une boutique en ligne ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -1314,8 +1315,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k90",
-    "text": "Shopify propose de vendre des produits virtuels",
-    "time": 60,
+    "text": "Shopify propose de vendre des produits virtuels.",
+    "time": 30,
     "points": 1,
     "type": "truefalse",
     "truth": true
@@ -1330,11 +1331,11 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "ia-arbe",
   "category": "ia",
   "title": "IA Arbé",
-  "description": "",
+  "description": "Vocabulaire de l'IA, construction d'un bon prompt, génération d'images et inpainting : les bases pour bien utiliser l'IA.",
   "questions": [
    {
     "id": "k91",
-    "text": "Une intelligence artificielle utilise un modèle d'apprentissage",
+    "text": "Une intelligence artificielle utilise un modèle d'apprentissage.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -1342,8 +1343,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k92",
-    "text": "Quel mot ne fait pas partie du vocabulaire lié à l'intelligence artificielle ?",
-    "time": 60,
+    "text": "Quel mot ne fait PAS partie du vocabulaire lié à l'intelligence artificielle ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -1358,8 +1359,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k93",
-    "text": "Trouvez l'intrus parmi ces applications possibles",
-    "time": 60,
+    "text": "Trouvez l'intrus parmi ces applications possibles de l'IA :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -1374,7 +1375,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k94",
-    "text": "L'IA est toujours fiable, car elle indiquera quand elle se trompe",
+    "text": "L'IA est toujours fiable, car elle indiquera quand elle se trompe.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -1383,7 +1384,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k95",
     "text": "Quel est un des points fondamentaux du prompt ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -1398,8 +1399,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k96",
-    "text": "Trouvez l'intrus parmi ces éléments à ajouter au prompt",
-    "time": 60,
+    "text": "Trouvez l'intrus parmi ces éléments à ajouter au prompt :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -1414,7 +1415,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k97",
-    "text": "ChatGPT peut vous poser des questions pour améliorer ses réponses",
+    "text": "ChatGPT peut vous poser des questions pour améliorer ses réponses.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -1422,8 +1423,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k98",
-    "text": "Quel ajout n'est pas utile à un prompt graphique ?",
-    "time": 60,
+    "text": "Quel ajout n'est PAS utile à un prompt graphique ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -1438,8 +1439,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k99",
-    "text": "Photoshop permet grâce à l'IA ?",
-    "time": 60,
+    "text": "Que permet Photoshop grâce à l'IA ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -1454,7 +1455,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k100",
-    "text": "Les IA de génération d'images ont des meilleurs résultats en ajoutant des adjectifs à vos prompts",
+    "text": "Les IA de génération d'images ont de meilleurs résultats en ajoutant des adjectifs à vos prompts.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -1470,12 +1471,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "jotform-intermediaire",
   "category": "nocode",
   "title": "Jotform - Intermédiaire",
-  "description": "",
+  "description": "Champs conditionnels, éditeur PDF, workflows, rapports, applications : aller plus loin avec Jotform.",
   "questions": [
    {
     "id": "k101",
     "text": "À quoi servent principalement les champs conditionnels dans Jotform ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -1491,7 +1492,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k102",
     "text": "Que permet l’éditeur PDF dans Jotform ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -1507,15 +1508,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k103",
     "text": "Il est possible de limiter les soumissions dans les options de sécurité.",
-    "time": 20,
+    "time": 30,
     "points": 1,
     "type": "truefalse",
     "truth": true
    },
    {
     "id": "k104",
-    "text": "Parmi les modèles complexes, lequel n’est pas mentionné ?",
-    "time": 20,
+    "text": "Parmi ces modèles de formulaires, lequel n'existe PAS dans Jotform ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -1531,7 +1532,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k105",
     "text": "Où trouve-t-on le générateur d’applications Jotform ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -1547,7 +1548,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k106",
     "text": "Quel rôle peut jouer un approbateur dans un workflow ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -1563,7 +1564,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k107",
     "text": "Quel type de document peut être généré via l’éditeur PDF ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -1579,7 +1580,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k108",
     "text": "Les rapports de données permettent de créer des graphiques basés sur les soumissions.",
-    "time": 20,
+    "time": 30,
     "points": 1,
     "type": "truefalse",
     "truth": true
@@ -1587,7 +1588,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k109",
     "text": "Quelle action peut être automatisée dans Jotform ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -1603,7 +1604,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k110",
     "text": "Que peut-on ajouter dans une application Jotform ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -1626,12 +1627,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "jotform-initiation",
   "category": "nocode",
   "title": "Jotform - Initiation",
-  "description": "",
+  "description": "Jotform : créer, intégrer et exporter des formulaires, utiliser Jotform Tables et appliquer les bonnes pratiques de conception.",
   "questions": [
    {
     "id": "k111",
-    "text": "Jotform est principalement une plateforme permettant de",
-    "time": 20,
+    "text": "Jotform est principalement une plateforme permettant de…",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -1647,7 +1648,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k112",
     "text": "Quel endroit permet d’afficher la liste des formulaires créés ou partagés ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -1663,7 +1664,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k113",
     "text": "Jotform ne propose pas d'intégrer un formulaire sur un site web.",
-    "time": 20,
+    "time": 30,
     "points": 1,
     "type": "truefalse",
     "truth": false
@@ -1671,7 +1672,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k114",
     "text": "Quel type de champ fait partie des \"Champs basiques\" ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -1686,14 +1687,14 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k115",
-    "text": "Où peut-on exporter les données d’un formulaire ?",
-    "time": 20,
+    "text": "Quels formats d'export Jotform propose-t-il pour les données d'un formulaire ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "Uniquement en PDF",
      "Impossible d'exporter",
-     "Vers Google Sheets",
+     "Uniquement vers Google Sheets",
      "Excel, CSV et PDF"
     ],
     "correct": [
@@ -1702,8 +1703,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k116",
-    "text": "Quelle vue n’est pas proposée dans Jotform Tables ?",
-    "time": 20,
+    "text": "Quelle vue n’est PAS proposée dans Jotform Tables ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -1718,8 +1719,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k117",
-    "text": "Jotform permet de connecter des colonnes à",
-    "time": 20,
+    "text": "Jotform permet de connecter des colonnes à…",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -1735,7 +1736,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k118",
     "text": "Quelle action peut-on effectuer sur une colonne dans Jotform Tables ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -1750,8 +1751,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k119",
-    "text": "Une bonne pratique de conception UX est",
-    "time": 20,
+    "text": "Une bonne pratique de conception UX est…",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -1767,7 +1768,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k120",
     "text": "Jotform propose plus de 10 000 modèles pré-conçus.",
-    "time": 20,
+    "time": 30,
     "points": 1,
     "type": "truefalse",
     "truth": true
@@ -1782,12 +1783,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "prototypage-avec-node-js",
   "category": "dev",
   "title": "Prototypage avec Node.js",
-  "description": "",
+  "description": "Node.js, npm, Express, TypeScript : les notions clés pour prototyper une API et structurer un projet JavaScript.",
   "questions": [
    {
     "id": "k121",
     "text": "En quelle année a été créé Node.js ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -1803,7 +1804,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k122",
     "text": "Quel est le principal avantage de l’Event Loop de Node.js ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -1819,7 +1820,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k123",
     "text": "Quel fichier central décrit les dépendances d’un projet Node.js ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -1835,7 +1836,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k124",
     "text": "Quelle commande initialise un projet Node.js avec npm ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -1851,7 +1852,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k125",
     "text": "À quoi sert Prettier ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -1867,7 +1868,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k126",
     "text": "Quelle est la bonne syntaxe pour démarrer un serveur Express ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -1882,8 +1883,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k127",
-    "text": "Pourquoi Express est-il préféré à Node.js pour créer une API REST ?",
-    "time": 20,
+    "text": "Pourquoi utiliser Express plutôt que Node.js seul pour créer une API REST ?",
+    "time": 60,
     "points": 1,
     "type": "single",
     "answers": [
@@ -1899,7 +1900,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k128",
     "text": "Qui a créé TypeScript ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -1915,7 +1916,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k129",
     "text": "Quel est l’avantage principal de TypeScript ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -1930,15 +1931,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k130",
-    "text": "Quel outil a t'on utilisé pour écrire des tests unitaires en Node.js ?",
-    "time": 20,
+    "text": "Quel framework de test, créé par Facebook, permet d'écrire des tests unitaires en Node.js ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "Mocha",
      "Karma",
      "Jest",
-     "La réponse D"
+     "Aucune de ces réponses"
     ],
     "correct": [
      2
@@ -1954,12 +1955,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "numerique-responsable-et-green-it",
   "category": "gestion",
   "title": "Numérique responsable et Green IT",
-  "description": "",
+  "description": "Impact des CMS, loi AGEC, Ecoindex, bilan GES : les repères du numérique responsable et du Green IT.",
   "questions": [
    {
     "id": "k131",
     "text": "Quelle part des émissions mondiales de gaz à effet de serre représente le numérique ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -1975,7 +1976,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k132",
     "text": "En moyenne, la durée de vie d’un ordinateur aujourd’hui est de :",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -1991,7 +1992,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k133",
     "text": "La raréfaction de l’eau n’a aucun lien avec le numérique.",
-    "time": 20,
+    "time": 30,
     "points": 1,
     "type": "truefalse",
     "truth": false
@@ -1999,7 +2000,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k134",
     "text": "Le pilier social du numérique responsable inclut :",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -2015,7 +2016,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k135",
     "text": "L’un des enjeux économiques du numérique responsable est de :",
-    "time": 20,
+    "time": 60,
     "points": 1,
     "type": "single",
     "answers": [
@@ -2031,13 +2032,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k136",
     "text": "Les CMS posent problème notamment parce qu’ils :",
-    "time": 20,
+    "time": 60,
     "points": 1,
     "type": "single",
     "answers": [
      "sont toujours open source",
      "génèrent des bases de données volumineuses et du code inutile",
-     "consomment énormément de ressources serveur",
+     "ne s'installent que sur un ordinateur local",
      "ont trop peu de fonctionnalités"
     ],
     "correct": [
@@ -2047,13 +2048,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k137",
     "text": "Quelle loi a instauré l’indice de réparabilité des produits ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "Loi Climat et Résilience",
      "Loi AGEC",
-     "Loi Numérique Equitable",
+     "Loi Numérique Équitable",
      "Loi REEN"
     ],
     "correct": [
@@ -2063,7 +2064,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k138",
     "text": "Quel outil permet d’évaluer l’impact environnemental d’un site web ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -2079,7 +2080,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k139",
     "text": "Quelle est une bonne pratique professionnelle de sobriété numérique ?",
-    "time": 20,
+    "time": 60,
     "points": 1,
     "type": "single",
     "answers": [
@@ -2095,7 +2096,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k140",
     "text": "Le bilan GES réglementaire prend en compte toutes les émissions directes et indirectes.",
-    "time": 20,
+    "time": 30,
     "points": 1,
     "type": "truefalse",
     "truth": false
@@ -2110,12 +2111,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "css-perfectionnement",
   "category": "dev",
   "title": "CSS Perfectionnement",
-  "description": "",
+  "description": "Sélecteurs, box-model, Flexbox, Grid, transitions, BEM : les notions pour perfectionner vos feuilles de style.",
   "questions": [
    {
     "id": "k141",
     "text": "Quelle est la signification de CSS ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -2131,7 +2132,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k142",
     "text": "Quelle balise HTML permet d’inclure une feuille de style externe ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -2147,7 +2148,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k143",
     "text": "Parmi ces sélecteurs, lequel est basé sur l’ID ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -2162,8 +2163,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k144",
-    "text": "Quelle notation couleur n’existe pas en CSS ?",
-    "time": 20,
+    "text": "Quelle notation couleur n’existe PAS en CSS ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -2179,7 +2180,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k145",
     "text": "Le box-model comprend :",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -2195,7 +2196,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k146",
     "text": "Quelle propriété contrôle la profondeur d’affichage d’un élément ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -2211,7 +2212,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k147",
     "text": "À quoi sert un Reset CSS ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -2227,7 +2228,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k148",
     "text": "La différence principale entre Flex et Grid est :",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -2243,7 +2244,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k149",
     "text": "Quelle propriété permet une transition fluide entre deux états ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -2259,13 +2260,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k150",
     "text": "Quelle méthodologie CSS repose sur des blocs, éléments et modificateurs ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "OOCSS",
      "SMACSS",
-     "BEMIT",
+     "BEM",
      "Atomic CSS"
     ],
     "correct": [
@@ -2282,12 +2283,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "contributeur-web-wordpress-initiation",
   "category": "dev",
   "title": "Contributeur web (WordPress) - Initiation",
-  "description": "",
+  "description": "Tableau de bord, articles, pages, catégories, menus, widgets, extensions : prendre en main WordPress pour publier du contenu.",
   "questions": [
    {
     "id": "k151",
-    "text": "WordPress est",
-    "time": 60,
+    "text": "WordPress est…",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -2302,15 +2303,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k152",
-    "text": "Quel élément n'est pas présent dans le menu d'administration WordPress ?",
-    "time": 60,
+    "text": "Quel élément n'est PAS présent dans le menu d'administration WordPress ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "Pages",
      "Contenu",
-     "Comptes",
-     "Article"
+     "Médias",
+     "Articles"
     ],
     "correct": [
      1
@@ -2318,7 +2319,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k153",
-    "text": "WordPress est composé d'un front et d'un back office",
+    "text": "WordPress est composé d'un front et d'un back office.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -2326,8 +2327,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k154",
-    "text": "Quelle action n'est pas disponible sur un contenu dans WordPress ?",
-    "time": 60,
+    "text": "Quelle action n'est PAS disponible sur un contenu dans WordPress ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -2342,8 +2343,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k155",
-    "text": "Trouver l'intrus, l'éditeur de WordPress permet de",
-    "time": 60,
+    "text": "Trouvez l'intrus : l'éditeur de WordPress permet de…",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -2358,8 +2359,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k156",
-    "text": "Pour quel élément les catégories sont elles disponibles ?",
-    "time": 60,
+    "text": "Pour quel élément les catégories sont-elles disponibles ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -2374,7 +2375,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k157",
-    "text": "WordPress permet de modifier les menus du site",
+    "text": "WordPress permet de modifier les menus du site.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -2382,8 +2383,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k158",
-    "text": "Qu'est ce qu'un widget dans WordPress ?",
-    "time": 60,
+    "text": "Qu'est-ce qu'un widget dans WordPress ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -2399,7 +2400,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k159",
     "text": "Où peut-on installer ou supprimer un plugin ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -2414,8 +2415,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k160",
-    "text": "WordPress permet aussi de gérer les formulaires nativement",
-    "time": 60,
+    "text": "WordPress permet aussi de gérer les formulaires nativement.",
+    "time": 30,
     "points": 1,
     "type": "truefalse",
     "truth": false
@@ -2429,13 +2430,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
  {
   "id": "php-intermediare",
   "category": "dev",
-  "title": "PHP intermédiare",
-  "description": "",
+  "title": "PHP - Intermédiaire",
+  "description": "MVC, Composer, PDO, API REST, DRY, KISS, XSS : les bonnes pratiques pour développer en PHP.",
   "questions": [
    {
     "id": "k161",
-    "text": "Les variables PHP sont toujours globales par défaut",
-    "time": 20,
+    "text": "Les variables PHP sont toujours globales par défaut.",
+    "time": 30,
     "points": 1,
     "type": "truefalse",
     "truth": false
@@ -2443,7 +2444,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k162",
     "text": "Quel est le rôle principal du contrôleur dans une architecture MVC ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -2459,7 +2460,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k163",
     "text": "Quelle bonne pratique favorise la réutilisation du code ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -2475,7 +2476,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k164",
     "text": "Quel outil est utilisé pour gérer les dépendances externes en PHP ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -2490,8 +2491,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k165",
-    "text": "L’utilisation de PDO est recommandée pour interagir avec une base de données",
-    "time": 20,
+    "text": "L’utilisation de PDO est recommandée pour interagir avec une base de données.",
+    "time": 30,
     "points": 1,
     "type": "truefalse",
     "truth": true
@@ -2499,7 +2500,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k166",
     "text": "Que signifie le sigle MVC ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -2515,7 +2516,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k167",
     "text": "Quel est le format de réponse typique d’une API REST ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -2531,7 +2532,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k168",
     "text": "Quel principe recommande d’écrire du code simple et compréhensible ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -2546,8 +2547,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k169",
-    "text": "Une API REST peut utiliser les méthodes HTTP comme GET, POST, PUT et DELETE",
-    "time": 20,
+    "text": "Une API REST peut utiliser les méthodes HTTP comme GET, POST, PUT et DELETE.",
+    "time": 30,
     "points": 1,
     "type": "truefalse",
     "truth": true
@@ -2555,7 +2556,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k170",
     "text": "Quelle mesure protège contre les attaques XSS ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -2578,12 +2579,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "javascript-jquery-perfectionnement",
   "category": "dev",
   "title": "Javascript & jQuery Perfectionnement",
-  "description": "",
+  "description": "Portée des variables, fonctions fléchées, déstructuration, hoisting, promesses et jQuery : les notions clés de JavaScript avancé.",
   "questions": [
    {
     "id": "k171",
-    "text": "En JavaScript, let et const ont une portée de bloc",
-    "time": 20,
+    "text": "En JavaScript, let et const ont une portée de bloc.",
+    "time": 30,
     "points": 1,
     "type": "truefalse",
     "truth": true
@@ -2591,7 +2592,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k172",
     "text": "Quelle syntaxe crée une fonction fléchée correcte ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -2607,7 +2608,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k173",
     "text": "Que retourne la ligne const [a, b] = [10, 20]; ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -2623,7 +2624,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k174",
     "text": "Quel est l’effet de const arr2 = [...arr1]; ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -2638,8 +2639,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k175",
-    "text": "jQuery n’est plus utilisé en 2025",
-    "time": 20,
+    "text": "jQuery n'est plus utilisé en 2026.",
+    "time": 30,
     "points": 1,
     "type": "truefalse",
     "truth": false
@@ -2647,7 +2648,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k176",
     "text": "Quel mot décrit le mécanisme où les déclarations sont “remontées” ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -2663,7 +2664,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k177",
     "text": "Quelle méthode appelle immédiatement une fonction avec un this donné ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -2679,7 +2680,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k178",
     "text": "Quelle méthode jQuery permet d’attacher un événement ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -2695,7 +2696,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k179",
     "text": "Une promesse JavaScript peut être dans l’un des trois états : pending, fulfilled, rejected.",
-    "time": 20,
+    "time": 30,
     "points": 1,
     "type": "truefalse",
     "truth": true
@@ -2703,7 +2704,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k180",
     "text": "Quelle est la bonne façon de gérer les erreurs dans un async/await ?",
-    "time": 20,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -2726,11 +2727,11 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "performance-ia-edd",
   "category": "ia",
   "title": "Performance IA EDD",
-  "description": "",
+  "description": "Vocabulaire de l'IA, applications, prompt clair et précis, choix des outils : les repères essentiels pour gagner en performance.",
   "questions": [
    {
     "id": "k181",
-    "text": "Une intelligence artificielle utilise un modèle d'apprentissage",
+    "text": "Une intelligence artificielle utilise un modèle d'apprentissage.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -2738,14 +2739,14 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k182",
-    "text": "Quel mot ne fait pas partie du vocabulaire lié à d'intelligence artificielle ?",
-    "time": 60,
+    "text": "Quel mot ne fait PAS partie du vocabulaire lié à l'intelligence artificielle ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "Prompt",
      "Hallucination",
-     "Entrainement",
+     "Entraînement",
      "Responsive"
     ],
     "correct": [
@@ -2754,8 +2755,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k183",
-    "text": "Trouvez l'intrus parmi ces applications possibles",
-    "time": 60,
+    "text": "Trouvez l'intrus parmi ces applications possibles :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -2770,7 +2771,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k184",
-    "text": "L'IA est toujours fiable, car elle indiquera quand elle se trompe",
+    "text": "L'IA est toujours fiable, car elle indiquera quand elle se trompe.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -2779,7 +2780,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k185",
     "text": "Quel est un des points fondamentaux du prompt ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -2794,14 +2795,14 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k186",
-    "text": "Trouvez l'intrus parmi ces éléments à ajouter au prompt",
-    "time": 60,
+    "text": "Trouvez l'intrus parmi ces éléments à ajouter au prompt :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "Format",
      "Action",
-     "Role",
+     "Rôle",
      "Algorithme"
     ],
     "correct": [
@@ -2810,7 +2811,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k187",
-    "text": "L'IA peut vous poser des questions pour améliorer ses réponses",
+    "text": "L'IA peut vous poser des questions pour améliorer ses réponses.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -2818,8 +2819,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k188",
-    "text": "Quel critère n'est pas utile pour choisir son outil ?",
-    "time": 60,
+    "text": "Quel critère n'est PAS utile pour choisir son outil ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -2834,8 +2835,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k189",
-    "text": "Trouvez l'intrus parmi ces tons ?",
-    "time": 60,
+    "text": "Trouvez l'intrus parmi ces tons :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -2850,7 +2851,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k190",
-    "text": "ChatGPT apprend des conversations avec les utilisateurs pour être plus performant dans les interactions futures",
+    "text": "ChatGPT apprend des conversations avec les utilisateurs pour être plus performant dans les interactions futures.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -2866,11 +2867,11 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "ia-chatgpt-initiation",
   "category": "ia",
   "title": "IA / ChatGPT - Initiation",
-  "description": "",
+  "description": "Réseaux de neurones, types d'IA, prompts clairs et limites : les bases de l'IA générative et de ChatGPT.",
   "questions": [
    {
     "id": "k191",
-    "text": "Une intelligence artificielle utilise un réseau de neurones artificiels",
+    "text": "Une intelligence artificielle utilise un réseau de neurones artificiels.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -2878,8 +2879,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k192",
-    "text": "Quel type d'intelligence artificielle n'a pas été abordé dans la formation ?",
-    "time": 60,
+    "text": "Quel type d'intelligence artificielle ne fait PAS partie des trois niveaux classiques ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -2894,8 +2895,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k193",
-    "text": "Trouvez l'intrus parmi ces applications possibles de l'IA",
-    "time": 60,
+    "text": "Trouvez l'intrus parmi ces applications possibles de l'IA :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -2910,7 +2911,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k194",
-    "text": "L'IA est toujours fiable, car elle indiquera quand elle se trompe",
+    "text": "L'IA est toujours fiable, car elle indiquera quand elle se trompe.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -2919,7 +2920,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k195",
     "text": "Quel est un des points fondamentaux du prompt ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -2934,14 +2935,14 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k196",
-    "text": "Trouvez l'intrus parmi ces éléments à ajouter au prompt selon les frameworks",
-    "time": 60,
+    "text": "Trouvez l'intrus parmi ces éléments à ajouter au prompt selon les frameworks :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "Format",
      "Action",
-     "Role",
+     "Rôle",
      "Vision"
     ],
     "correct": [
@@ -2950,7 +2951,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k197",
-    "text": "L'IA peut vous poser des questions pour améliorer ses réponses",
+    "text": "L'IA peut vous poser des questions pour améliorer ses réponses.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -2958,8 +2959,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k198",
-    "text": "Quelle limite n'est pas présente dans l'IA générative ?",
-    "time": 60,
+    "text": "Quelle limite n'est PAS présente dans l'IA générative ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -2974,8 +2975,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k199",
-    "text": "Trouvez l'intrus parmi ces propositions d'utilisation de l'IA ?",
-    "time": 60,
+    "text": "Trouvez l'intrus parmi ces propositions d'utilisation de l'IA :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -2990,7 +2991,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k200",
-    "text": "l'IA apprend en direct de vos conversations pour être plus performante dans les interactions avec d'autres utilisateurs",
+    "text": "L'IA apprend en direct de vos conversations pour être plus performante dans les interactions avec d'autres utilisateurs.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -3006,17 +3007,17 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "microsoft-365-partiel-initiation",
   "category": "bureautique",
   "title": "Microsoft 365 Partiel - Initiation",
-  "description": "",
+  "description": "Outlook, OneDrive, OneNote, Planner, Teams, SharePoint, Forms : découvrez les principaux services de Microsoft 365.",
   "questions": [
    {
     "id": "k201",
-    "text": "Quel service ne fait pas partie de Microsoft 365 ?",
-    "time": 60,
+    "text": "Quel service ne fait PAS partie de Microsoft 365 ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "Word",
-     "LookerStudio",
+     "Looker Studio",
      "Teams",
      "Excel"
     ],
@@ -3031,7 +3032,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "répéter un e-mail qui reviendra plus tard dans votre boite de réception",
+     "répéter un e-mail qui reviendra plus tard dans votre boîte de réception",
      "mettre en attente un évènement reçu via la messagerie",
      "répéter une mise en forme sur le contenu sélectionné",
      "mettre en attente une pièce jointe pour archivage"
@@ -3042,8 +3043,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k203",
-    "text": "Trouver l'intrus, OneDrive permet de :",
-    "time": 60,
+    "text": "Trouvez l'intrus, OneDrive permet de :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -3058,13 +3059,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k204",
-    "text": "OneNote ne permet pas de créer :",
-    "time": 60,
+    "text": "OneNote ne permet PAS de créer :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "des plans 3D",
-     "des bloc-notes",
+     "des blocs-notes",
      "des sections",
      "des pages"
     ],
@@ -3074,8 +3075,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k205",
-    "text": "Trouver l'intrus, Planner propose d'enrichir les taches avec :",
-    "time": 60,
+    "text": "Trouvez l'intrus, Planner propose d'enrichir les tâches avec :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -3090,7 +3091,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k206",
-    "text": "Teams permet de créer des canaux ?",
+    "text": "Teams permet de créer des canaux.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -3099,7 +3100,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k207",
     "text": "SharePoint permet de créer :",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -3115,7 +3116,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k208",
     "text": "Forms offre la possibilité de concevoir :",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -3130,7 +3131,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k209",
-    "text": "Microsoft propose un historique de version inclus à OneDrive ?",
+    "text": "OneDrive inclut un historique des versions des fichiers.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -3138,8 +3139,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k210",
-    "text": "Quel élément Microsoft ne propose pas dans ses modèles de listes (Lists ou Sharepoint) ?",
-    "time": 60,
+    "text": "Quel élément ne figure PAS dans les modèles de Microsoft Lists ou SharePoint ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -3162,11 +3163,11 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "bureautique-avec-l-ia-initiation",
   "category": "ia",
   "title": "Bureautique avec l'IA - Initiation",
-  "description": "",
+  "description": "Copilot dans Word, Excel, PowerPoint et Outlook : ce que l'IA apporte à la bureautique, et ses limites.",
   "questions": [
    {
     "id": "k211",
-    "text": "Une intelligence artificielle utilise un réseau de neurones artificiels",
+    "text": "Une intelligence artificielle utilise un réseau de neurones artificiels.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -3174,15 +3175,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k212",
-    "text": "Quel logiciel ne dispose pas de Copilot ?",
-    "time": 60,
+    "text": "Quel logiciel ne dispose PAS de Copilot ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "Word",
      "Excel",
      "PowerPoint",
-     "Planner"
+     "Calculatrice"
     ],
     "correct": [
      3
@@ -3190,8 +3191,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k213",
-    "text": "Copilot dans Outlook ne peut pas ?",
-    "time": 60,
+    "text": "Que ne peut PAS faire Copilot dans Outlook ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -3206,7 +3207,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k214",
-    "text": "L'IA est toujours fiable, car elle indiquera quand elle se trompe",
+    "text": "L'IA est toujours fiable, car elle indiquera quand elle se trompe.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -3214,8 +3215,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k215",
-    "text": "Quelle fonctionnalité n'est pas disponible dans Excel grâce à l'IA ?",
-    "time": 60,
+    "text": "Quelle fonctionnalité n'est PAS disponible dans Excel grâce à l'IA ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -3230,8 +3231,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k216",
-    "text": "PowerPoint propose avec l'IA de ?",
-    "time": 60,
+    "text": "Que propose PowerPoint grâce à l'IA ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -3246,7 +3247,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k217",
-    "text": "Copilot peut vous poser des questions pour améliorer ses réponses",
+    "text": "Copilot peut vous poser des questions pour améliorer ses réponses.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -3254,8 +3255,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k218",
-    "text": "Quelle limite n'est pas présente dans Copilot ?",
-    "time": 60,
+    "text": "Quelle limite n'est PAS présente dans Copilot ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -3270,8 +3271,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k219",
-    "text": "Trouvez l'intrus parmi ces propositions d'utilisation de l'IA ?",
-    "time": 60,
+    "text": "Trouvez l'intrus parmi ces propositions d'utilisation de l'IA :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -3286,7 +3287,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k220",
-    "text": "L'IA apprend immédiatement des échanges avec vous pour être plus performant dans les interactions avec d'autres",
+    "text": "L'IA apprend immédiatement des échanges avec vous pour être plus performante dans les interactions avec d'autres.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -3302,27 +3303,19 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "les-ia-generatives-perfectionnement",
   "category": "ia",
   "title": "Les IA génératives - Perfectionnement",
-  "description": "",
+  "description": "Frameworks de prompt, choix d'une IA, modes de ChatGPT, images : perfectionnez vos usages de l'IA générative.",
   "questions": [
-   {
-    "id": "k221",
-    "text": "Gemini est meilleur en finance que ChatGPT",
-    "time": 30,
-    "points": 1,
-    "type": "truefalse",
-    "truth": true
-   },
    {
     "id": "k222",
     "text": "Dans le framework RTF, à quoi correspondent les lettres ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
-     "Regulation, Tendance, Force",
+     "Régulation, Tendance, Force",
      "Rapide, Technologie, Framework",
      "Robot, Test, Fond",
-     "Role, Tache, Format"
+     "Rôle, Tâche, Format"
     ],
     "correct": [
      3
@@ -3330,15 +3323,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k223",
-    "text": "Trouvez l'intrus parmi ces frameworks",
-    "time": 60,
+    "text": "Trouvez l'intrus parmi ces frameworks :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "RTF",
      "RACEF",
-     "Chaine de variation",
-     "Chaine de densité"
+     "Chaîne de variation",
+     "Chaîne de densité"
     ],
     "correct": [
      2
@@ -3346,32 +3339,16 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k224",
-    "text": "L'IA est toujours fiable, car elle indiquera quand elle se trompe",
+    "text": "L'IA est toujours fiable, car elle indiquera quand elle se trompe.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
     "truth": false
    },
    {
-    "id": "k225",
-    "text": "Quel est le meilleur modèle selon Arena ?",
-    "time": 60,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "Llama",
-     "GPT",
-     "Claude",
-     "Grok"
-    ],
-    "correct": [
-     1
-    ]
-   },
-   {
     "id": "k226",
-    "text": "Trouvez l'intrus parmi ces critères pour le choix d'une IA",
-    "time": 60,
+    "text": "Trouvez l'intrus parmi ces critères pour le choix d'une IA :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -3386,7 +3363,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k227",
-    "text": "ChatGPT pourra utiliser un ton décontracté",
+    "text": "ChatGPT pourra utiliser un ton décontracté.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -3394,15 +3371,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k228",
-    "text": "Quel mode ne fait pas partie des modes de ChatGPT ?",
-    "time": 60,
+    "text": "Quel mode ne fait PAS partie des modes de ChatGPT ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "Coach",
      "Facilitateur",
      "Professeur",
-     "Stagiare"
+     "Stagiaire"
     ],
     "correct": [
      1
@@ -3410,8 +3387,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k229",
-    "text": "Trouvez l'intrus parmis ces IA ?",
-    "time": 60,
+    "text": "Trouvez l'intrus parmi ces IA :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -3426,7 +3403,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k230",
-    "text": "La génération d'images stéréotypées n'est pas possible avec les IA ?",
+    "text": "La génération d'images stéréotypées n'est pas possible avec les IA.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -3442,16 +3419,16 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "premiere-initiation",
   "category": "graphisme",
   "title": "Premiere - Initiation",
-  "description": "",
+  "description": "Types de vidéo, raccourcis, titres, marques, stabilisation, colorimétrie et audio : les bases du montage avec Premiere.",
   "questions": [
    {
     "id": "k231",
-    "text": "Quel type de vidéo n'existe pas ?",
-    "time": 60,
+    "text": "Quel type de vidéo n'existe PAS ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
-     "Educative",
+     "Éducative",
      "Institutionnelle",
      "Animée",
      "Promotionnelle"
@@ -3463,7 +3440,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k232",
     "text": "Quel raccourci permet de lire ou mettre en pause ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -3478,7 +3455,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k233",
-    "text": "La colorimétrie est une étape importante dans le montage vidéo ?",
+    "text": "La colorimétrie est une étape importante dans le montage vidéo.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -3486,7 +3463,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k234",
-    "text": "Qu'est ce que le multipiste ?",
+    "text": "Qu'est-ce que le multipiste ?",
     "time": 60,
     "points": 1,
     "type": "single",
@@ -3502,7 +3479,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k235",
-    "text": "La méthode pancake facilite le dérushage",
+    "text": "La méthode pancake facilite le dérushage.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -3510,8 +3487,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k236",
-    "text": "Trouvez l'intrus parmis les types de sons de l'amélioration essentielle de l'audio ?",
-    "time": 60,
+    "text": "Trouvez l'intrus parmi les types de sons de l'amélioration essentielle de l'audio :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -3526,8 +3503,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k237",
-    "text": "Quel paramètre ne peut pas être changé pour un titre ?",
-    "time": 60,
+    "text": "Quel paramètre ne peut PAS être changé pour un titre ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -3542,7 +3519,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k238",
-    "text": "Qu'est ce que les marques sur un montage ?",
+    "text": "Que sont les marques sur un montage ?",
     "time": 60,
     "points": 1,
     "type": "single",
@@ -3558,7 +3535,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k239",
-    "text": "La stabilisation rogne l'image pour éviter les tremblements",
+    "text": "La stabilisation rogne l'image pour éviter les tremblements.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -3567,7 +3544,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k240",
     "text": "Quel format privilégier pour vos exports ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -3590,11 +3567,11 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "chatgpt-cci-initiation",
   "category": "ia",
   "title": "ChatGPT CCI - Initiation",
-  "description": "",
+  "description": "Méthodes de prompt (RTF, RACEF), capacités de ChatGPT et protection des données personnelles : les bases pour bien démarrer.",
   "questions": [
    {
     "id": "k241",
-    "text": "Une intelligence artificielle utilise un réseau de neurones artificiels",
+    "text": "Une intelligence artificielle utilise un réseau de neurones artificiels.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -3602,8 +3579,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k242",
-    "text": "La méthode de prompt RTF veut dire Rôle, Tâches et ...",
-    "time": 60,
+    "text": "La méthode de prompt RTF veut dire Rôle, Tâche et…",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -3618,8 +3595,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k243",
-    "text": "ChatGPT ne crée pas de",
-    "time": 60,
+    "text": "ChatGPT ne crée PAS de…",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -3634,8 +3611,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k244",
-    "text": "Trouvez l'intrus parmi ces éléments à ajouter au prompt pour du texte",
-    "time": 60,
+    "text": "Trouvez l'intrus parmi ces éléments à ajouter au prompt pour du texte :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -3650,7 +3627,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k245",
-    "text": "L'IA est toujours fiable, car elle indiquera quand elle se trompe",
+    "text": "L'IA est toujours fiable, car elle indiquera quand elle se trompe.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -3659,7 +3636,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k246",
     "text": "Quel est un des points fondamentaux du prompt ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -3674,7 +3651,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k247",
-    "text": "ChatGPT peut vous poser des questions pour améliorer ses réponses",
+    "text": "ChatGPT peut vous poser des questions pour améliorer ses réponses.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -3682,12 +3659,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k248",
-    "text": "Trouvez l'intrus parmi ces frameworks pour le prompt ?",
-    "time": 60,
+    "text": "Trouvez l'intrus parmi ces frameworks pour le prompt :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
-     "Chaine de densité",
+     "Chaîne de densité",
      "RISK",
      "RACEF",
      "RTF"
@@ -3698,15 +3675,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k249",
-    "text": "Je peux sans problème partager mes données personnelles avec ChatGPT ?",
-    "time": 60,
+    "text": "Je peux sans problème partager mes données personnelles avec ChatGPT.",
+    "time": 30,
     "points": 1,
     "type": "truefalse",
     "truth": false
    },
    {
     "id": "k250",
-    "text": "ChatGPT apprend en direct des conversations avec les utilisateurs pour plus de performance dans les interactions futures",
+    "text": "ChatGPT apprend en direct des conversations avec les utilisateurs pour plus de performance dans les interactions futures.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -3722,18 +3699,18 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "reseaux-sociaux-avec-l-ia",
   "category": "webmarketing",
   "title": "Réseaux Sociaux avec l'IA",
-  "description": "",
+  "description": "Plateformes, chatbots, création de contenu, analyse de performance : utiliser l'IA pour animer vos réseaux sociaux.",
   "questions": [
    {
     "id": "k251",
-    "text": "Quelle plateforme n'est pas recommandée si vous souhaitez toucher les jeunes ?",
-    "time": 60,
+    "text": "Quelle plateforme n'est PAS recommandée si vous souhaitez toucher les jeunes ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
-     "Linkedin",
-     "Tiktok",
-     "Youtube",
+     "LinkedIn",
+     "TikTok",
+     "YouTube",
      "Instagram"
     ],
     "correct": [
@@ -3742,8 +3719,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k252",
-    "text": "Trouver l'intrus parmi ces notions",
-    "time": 60,
+    "text": "Trouvez l'intrus parmi ces notions :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -3758,7 +3735,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k253",
-    "text": "Facebook est le réseau social numéro 1 en Nouvelle-Calédonie",
+    "text": "Facebook est le réseau social numéro 1 en Nouvelle-Calédonie.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -3766,8 +3743,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k254",
-    "text": "Trouvez l'intrus parmi les roles de l'IA :",
-    "time": 60,
+    "text": "Trouvez l'intrus parmi les rôles de l'IA :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -3782,8 +3759,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k255",
-    "text": "Quelle IA est la plus abordable ?",
-    "time": 60,
+    "text": "Quelle IA est développée par une entreprise française ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -3798,7 +3775,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k256",
-    "text": "Adobe Express a une meilleure qualité de templates comparé à Canva",
+    "text": "Adobe Express et Canva proposent des modèles prêts à l'emploi pour créer des visuels.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -3806,7 +3783,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k257",
-    "text": "Qu'est ce qu'un chatbot ?",
+    "text": "Qu'est-ce qu'un chatbot ?",
     "time": 60,
     "points": 1,
     "type": "single",
@@ -3838,7 +3815,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k259",
-    "text": "L'IA permet de facilement changer le style d'un texte ?",
+    "text": "L'IA permet de facilement changer le style d'un texte.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -3847,14 +3824,14 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k260",
     "text": "Quelle action l’IA peut-elle automatiser dans la gestion des publications ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
-     "Modération des commentaires sensibles",
-     "Réalisation d’interviews avec des influenceurs",
+     "Négociation des tarifs avec les annonceurs",
+     "Réalisation d'interviews avec des influenceurs",
      "Création du calendrier éditorial",
-     "Gérer les paiements publicitaires"
+     "Gestion des paiements publicitaires"
     ],
     "correct": [
      2
@@ -3870,18 +3847,18 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "canva-ia",
   "category": "ia",
   "title": "Canva IA",
-  "description": "",
+  "description": "Écriture magique, Dream Lab, gomme magique, filtres intelligents : les outils d'IA de Canva pour vos visuels.",
   "questions": [
    {
     "id": "k261",
-    "text": "Quel outil n'existe pas dans Canva ?",
-    "time": 60,
+    "text": "Quel outil n'existe PAS dans Canva ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "Écriture magique",
      "Plan magique",
-     "Edition magique",
+     "Édition magique",
      "Dream Lab"
     ],
     "correct": [
@@ -3890,14 +3867,14 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k262",
-    "text": "Trouvez l'intrus pour l'écriture magique ?",
-    "time": 60,
+    "text": "Trouvez l'intrus parmi les fonctions de l'écriture magique :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "Corriger l'orthographe",
-     "Continuer la redaction",
-     "Générer une liste à puce",
+     "Continuer la rédaction",
+     "Générer une liste à puces",
      "Reformuler le texte"
     ],
     "correct": [
@@ -3906,7 +3883,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k263",
-    "text": "Qu'est ce que la voix de marque ?",
+    "text": "Qu'est-ce que la voix de marque ?",
     "time": 60,
     "points": 1,
     "type": "single",
@@ -3914,7 +3891,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
      "Créer une voix off en chargeant un son de départ",
      "Paramétrer les prochaines publications Facebook",
      "Définir un ton pour l'écriture magique",
-     "Choisir parmi les voix proposés pour les voix off"
+     "Choisir parmi les voix proposées pour les voix off"
     ],
     "correct": [
      2
@@ -3922,7 +3899,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k264",
-    "text": "Dream Lab permet de générer des illustrations",
+    "text": "Dream Lab permet de générer des illustrations.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -3930,8 +3907,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k265",
-    "text": "L'IA permet aux graphistes de",
-    "time": 60,
+    "text": "L'IA permet aux graphistes de…",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -3946,7 +3923,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k266",
-    "text": "La gomme magique permet d'effacer les fichiers inutiles",
+    "text": "La gomme magique permet d'effacer les fichiers inutiles.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -3954,8 +3931,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k267",
-    "text": "Quels styles n'existent pas dans les filtres intelligents ?",
-    "time": 60,
+    "text": "Quel style n'existe PAS dans les filtres intelligents ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -3970,7 +3947,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k268",
-    "text": "Trouver l'intrus, parmi ces stratégies d'intégration des images IA ?",
+    "text": "Trouvez l'intrus parmi ces stratégies d'intégration des images IA :",
     "time": 60,
     "points": 1,
     "type": "single",
@@ -3986,7 +3963,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k269",
-    "text": "Canva ne dispose que du format carré pour la génération d'image par IA",
+    "text": "Canva ne dispose que du format carré pour la génération d'image par IA.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -3994,8 +3971,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k270",
-    "text": "Trouvez l'intrus, parmi ces IA",
-    "time": 60,
+    "text": "Trouvez l'intrus parmi ces IA de génération d'images :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -4018,12 +3995,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "facebook-1-bien-demarrer",
   "category": "webmarketing",
   "title": "Facebook - 1 Bien démarrer",
-  "description": "",
+  "description": "Formats, stratégie de publication, algorithme, Meta Business Suite : les bases pour bien démarrer sur Facebook.",
   "questions": [
    {
     "id": "k271",
-    "text": "Le nombre d'utilisateur Facebook en Nouvelle-Calédonie ?",
-    "time": 60,
+    "text": "Combien d'utilisateurs Facebook compte la Nouvelle-Calédonie ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -4039,7 +4016,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k272",
     "text": "Quel format est mis en avant par Facebook et augmente le taux d'engagement ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -4054,7 +4031,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k273",
-    "text": "Le meilleur moment pour publier sur Facebook est le mardi à 8h",
+    "text": "Le meilleur moment pour publier sur Facebook est le mardi à 8h.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -4062,8 +4039,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k274",
-    "text": "L'élément qui ne doit pas faire partie de sa stratégie de publication :",
-    "time": 60,
+    "text": "Quel élément ne fait PAS partie d'une stratégie de publication ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -4079,7 +4056,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k275",
     "text": "Pour une publication réussie, on privilégie un contenu :",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -4094,7 +4071,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k276",
-    "text": "Meta Business Suite est un outil pour vous aider dans la gestion de vos comptes sociaux",
+    "text": "Meta Business Suite est un outil pour vous aider dans la gestion de vos comptes sociaux.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -4103,7 +4080,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k277",
     "text": "Facebook permet de :",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -4118,7 +4095,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k278",
-    "text": "Qu'est ce que l'engagement dans l'algorithme Facebook ?",
+    "text": "Qu'est-ce que l'engagement dans l'algorithme Facebook ?",
     "time": 60,
     "points": 1,
     "type": "single",
@@ -4129,12 +4106,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
      "Les relations entre deux utilisateurs"
     ],
     "correct": [
-     1
+     0
     ]
    },
    {
     "id": "k279",
-    "text": "Meta Business Suite permet de programmer ses publications Facebook",
+    "text": "Meta Business Suite permet de programmer ses publications Facebook.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -4142,8 +4119,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k280",
-    "text": "Trouvez l'intrus, parmis ces objectifs marketing :",
-    "time": 60,
+    "text": "Trouvez l'intrus parmi ces objectifs marketing :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -4166,17 +4143,17 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "microsoft-365-complet-initiation",
   "category": "bureautique",
   "title": "Microsoft 365 Complet - Initiation",
-  "description": "",
+  "description": "OneDrive, Planner, Stream, Sway, Power Automate, Power Apps, To Do, Lists : découvrez les outils de Microsoft 365.",
   "questions": [
    {
     "id": "k281",
-    "text": "Quel service ne fait pas partie de Microsoft 365 ?",
-    "time": 60,
+    "text": "Quel service ne fait PAS partie de Microsoft 365 ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "Word",
-     "LookerStudio",
+     "Looker Studio",
      "Teams",
      "Excel"
     ],
@@ -4191,7 +4168,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "répéter un e-mail qui reviendra plus tard dans votre boite de réception",
+     "répéter un e-mail qui reviendra plus tard dans votre boîte de réception",
      "mettre en attente un évènement reçu via la messagerie",
      "répéter une mise en forme sur le contenu sélectionné",
      "mettre en attente une pièce jointe pour archivage"
@@ -4202,15 +4179,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k283",
-    "text": "Trouver l'intrus, OneDrive permet de :",
-    "time": 60,
+    "text": "Trouvez l'intrus, OneDrive permet de :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "télécharger une copie d'un fichier",
      "stocker des fichiers",
      "partager un dossier",
-     "personnaliser les metadonnées"
+     "personnaliser les métadonnées"
     ],
     "correct": [
      3
@@ -4218,13 +4195,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k284",
-    "text": "OneNote ne permet pas de créer :",
-    "time": 60,
+    "text": "OneNote ne permet PAS de créer :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "des plans 3D",
-     "des bloc-notes",
+     "des blocs-notes",
      "des sections",
      "des pages"
     ],
@@ -4234,8 +4211,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k285",
-    "text": "Trouver l'intrus, Planner propose d'enrichir les taches avec :",
-    "time": 60,
+    "text": "Trouvez l'intrus, Planner propose d'enrichir les tâches avec :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -4250,7 +4227,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k286",
-    "text": "Teams permet de créer des canaux ?",
+    "text": "Teams permet de créer des canaux.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -4259,7 +4236,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k287",
     "text": "SharePoint permet de créer :",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -4275,7 +4252,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k288",
     "text": "Forms offre la possibilité de concevoir :",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -4290,7 +4267,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k289",
-    "text": "Stream permet de gérer la diffusion vidéo en direct et en différé ?",
+    "text": "Stream permet de gérer la diffusion vidéo en direct et en différé.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -4299,7 +4276,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k290",
     "text": "Avec Sway, je peux créer :",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -4314,14 +4291,14 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k291",
-    "text": "PowerAutomate propose d'automatiser",
-    "time": 60,
+    "text": "Power Automate propose d'automatiser…",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "le nettoyage de son bureau",
      "la génération d'images",
-     "des taches récurrentes",
+     "des tâches récurrentes",
      "la rédaction de documents"
     ],
     "correct": [
@@ -4330,15 +4307,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k292",
-    "text": "PowerApps est un service pour générer :",
-    "time": 60,
+    "text": "Power Apps est un service pour générer :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "des applications en Low-Code",
      "des sites en No-Code",
      "des listes de données",
-     "des formulaires intéractifs"
+     "des formulaires interactifs"
     ],
     "correct": [
      0
@@ -4346,7 +4323,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k293",
-    "text": "To Do est un service de prise de note",
+    "text": "To Do est un service de prise de notes.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -4354,8 +4331,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k294",
-    "text": "Quel élément ne propose pas Lists dans ses modèles ?",
-    "time": 60,
+    "text": "Quel élément Microsoft Lists ne propose-t-il PAS dans ses modèles ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -4378,12 +4355,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "sharepoint-initiation",
   "category": "dev",
   "title": "SharePoint - Initiation",
-  "description": "",
+  "description": "Listes, bibliothèques, métadonnées, WebParts et flux de travail : les bases pour créer et gérer un site SharePoint.",
   "questions": [
    {
     "id": "k295",
-    "text": "SharePoint est un logiciel pour ?",
-    "time": 60,
+    "text": "SharePoint est un logiciel pour…",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -4399,7 +4376,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k296",
     "text": "Trouvez l'intrus, SharePoint permet de créer :",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -4414,7 +4391,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k297",
-    "text": "SharePoint peut se synchroniser avec Google Drive",
+    "text": "SharePoint peut se synchroniser avec Google Drive.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -4422,8 +4399,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k298",
-    "text": "Quel élément n'est pas présent dans les paramètres ?",
-    "time": 60,
+    "text": "Quel élément n'est PAS présent dans les paramètres ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -4439,7 +4416,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k299",
     "text": "Quelle est l'utilité des bibliothèques dans SharePoint ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -4454,8 +4431,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k300",
-    "text": "C'est quoi les métadonnées ?",
-    "time": 60,
+    "text": "Que sont les métadonnées ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -4470,7 +4447,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k301",
-    "text": "SharePoint permet de gérer des alertes ou notifications",
+    "text": "SharePoint permet de gérer des alertes ou notifications.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -4483,9 +4460,9 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Avoir un site avec des pages et du contenus préparés",
+     "Avoir un site avec des pages et du contenu préparés",
      "Personnaliser les couleurs et les polices du site",
-     "Avoir des modèles de documents disponible pour son site",
+     "Avoir des modèles de documents disponibles pour son site",
      "Générer des produits préremplis pour son site"
     ],
     "correct": [
@@ -4494,7 +4471,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k303",
-    "text": "Qu'est qu'un composant WebPart ?",
+    "text": "Qu'est-ce qu'un composant WebPart ?",
     "time": 60,
     "points": 1,
     "type": "single",
@@ -4510,8 +4487,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k304",
-    "text": "SharePoint ne permet pas de créer un flux de travail",
-    "time": 60,
+    "text": "SharePoint ne permet pas de créer un flux de travail.",
+    "time": 30,
     "points": 1,
     "type": "truefalse",
     "truth": false
@@ -4526,11 +4503,11 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "microsoft-copilot-initiation",
   "category": "ia",
   "title": "Microsoft Copilot - Initiation",
-  "description": "",
+  "description": "Types d'IA, applications, éléments d'un prompt et confidentialité : les bases pour bien démarrer avec Microsoft Copilot.",
   "questions": [
    {
     "id": "k305",
-    "text": "Une intelligence artificielle utilise un réseau de neurones artificiels",
+    "text": "Une intelligence artificielle utilise un réseau de neurones artificiels.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -4538,8 +4515,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k306",
-    "text": "Quel type d'intelligence artificielle n'est pas abordée et n'existe pas ?",
-    "time": 60,
+    "text": "Quel type d'intelligence artificielle n'existe PAS ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -4554,8 +4531,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k307",
-    "text": "Trouvez l'intrus parmi ces applications possibles",
-    "time": 60,
+    "text": "Trouvez l'intrus parmi ces applications possibles :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -4570,7 +4547,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k308",
-    "text": "L'IA est toujours fiable, car elle indiquera quand elle se trompe",
+    "text": "L'IA est toujours fiable, car elle indiquera quand elle se trompe.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -4579,7 +4556,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k309",
     "text": "Quel est un des points fondamentaux du prompt ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -4594,8 +4571,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k310",
-    "text": "Trouvez l'intrus parmi ces éléments à ajouter au prompt",
-    "time": 60,
+    "text": "Trouvez l'intrus parmi ces éléments à ajouter au prompt :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -4610,7 +4587,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k311",
-    "text": "Copilot peut vous poser des questions pour améliorer ses réponses",
+    "text": "Copilot peut vous poser des questions pour améliorer ses réponses.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -4618,8 +4595,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k312",
-    "text": "Quelle limite n'est pas présente dans Copilot ?",
-    "time": 60,
+    "text": "Quelle limite n'est PAS présente dans Copilot ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -4634,8 +4611,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k313",
-    "text": "Trouvez l'intrus parmi ces propositions d'utilisation de l'IA ?",
-    "time": 60,
+    "text": "Trouvez l'intrus parmi ces propositions d'utilisation de l'IA :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -4650,7 +4627,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k314",
-    "text": "Copilot apprend des conversations avec vous pour être plus performant dans les interactions avec d'autres utilisateurs",
+    "text": "Copilot apprend des conversations avec vous pour être plus performant dans les interactions avec d'autres utilisateurs.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -4666,11 +4643,11 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "microsoft-teams-initiation",
   "category": "bureautique",
   "title": "Microsoft Teams - Initiation",
-  "description": "",
+  "description": "Équipes, canaux, réunions, partage de fichiers, rôles et sécurité : prendre en main Microsoft Teams au quotidien.",
   "questions": [
    {
     "id": "k315",
-    "text": "Microsoft Teams est adapté pour travailler sur des fichiers privés ?",
+    "text": "Microsoft Teams est adapté pour travailler sur des fichiers privés.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -4678,8 +4655,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k316",
-    "text": "Qu'est ce qui ne crée pas un groupe chez Microsoft ?",
-    "time": 60,
+    "text": "Qu'est-ce qui ne crée PAS un groupe chez Microsoft ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -4694,15 +4671,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k317",
-    "text": "Trouver l'intrus, Teams permet de :",
-    "time": 60,
+    "text": "Trouvez l'intrus : Teams permet de…",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
-     "d'envoyer un fichier",
-     "de faire des sondages",
-     "de partager des GIF animés",
-     "de personnaliser les metadonnées"
+     "envoyer un fichier",
+     "faire des sondages",
+     "partager des GIF animés",
+     "personnaliser les métadonnées"
     ],
     "correct": [
      3
@@ -4710,13 +4687,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k318",
-    "text": "Dans les options d'une réunion, on ne retrouve pas :",
-    "time": 60,
+    "text": "Dans les options d'une réunion, on ne retrouve PAS :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "la localisation",
-     "des bloc-notes",
+     "des blocs-notes",
      "la salle d'attente",
      "un plan"
     ],
@@ -4726,7 +4703,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k319",
-    "text": "Teams permet de créer des canaux ?",
+    "text": "Teams permet de créer des canaux.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -4734,12 +4711,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k320",
-    "text": "Quel type de canal n'existe pas ?",
-    "time": 60,
+    "text": "Quel type de canal n'existe PAS ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
-     "Public",
+     "Standard",
      "Externe",
      "Privé",
      "Partagé"
@@ -4750,7 +4727,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k321",
-    "text": "Quelle pratique ne fait pas partie des bonnes pratiques Teams en terme de sécurité ?",
+    "text": "Quelle pratique ne fait PAS partie des bonnes pratiques Teams en termes de sécurité ?",
     "time": 60,
     "points": 1,
     "type": "single",
@@ -4766,7 +4743,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k322",
-    "text": "À quel niveau faut-il gérer le partage des fichiers et les droits d'accès ?",
+    "text": "Quel est le niveau le plus fin pour gérer les droits d'accès à un document ?",
     "time": 60,
     "points": 1,
     "type": "single",
@@ -4782,7 +4759,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k323",
-    "text": "Avec Teams, vous pouvez inviter dans une réunion des personnes extérieures à l'organisation ?",
+    "text": "Avec Teams, vous pouvez inviter dans une réunion des personnes extérieures à l'organisation.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -4790,8 +4767,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k324",
-    "text": "Quel rôle n'existe pas dans Teams ?",
-    "time": 60,
+    "text": "Quel rôle n'existe PAS dans Teams ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -4814,12 +4791,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "power-automate-initiation",
   "category": "nocode",
   "title": "Power Automate - Initiation",
-  "description": "",
+  "description": "Déclencheurs, actions, connecteurs, variables, boucles, erreurs : automatisez vos tâches avec Power Automate.",
   "questions": [
    {
     "id": "k325",
     "text": "Quelle est la fonction principale de Power Automate ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -4834,8 +4811,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k326",
-    "text": "Quel type de déclencheur utiliseriez vous pour démarrer un flux lors de la réception d'un e-mail spécifique ?",
-    "time": 60,
+    "text": "Quel type de déclencheur utiliseriez-vous pour démarrer un flux lors de la réception d'un e-mail spécifique ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -4851,7 +4828,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k327",
     "text": "Dans Power Automate, comment appelle-t-on les étapes individuelles qui composent un flux ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -4866,8 +4843,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k328",
-    "text": "Quel connecteur utiliseriez vous pour intégrer Power Automate avec SharePoint ?",
-    "time": 60,
+    "text": "Quel connecteur utiliseriez-vous pour intégrer Power Automate avec SharePoint ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -4883,7 +4860,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k329",
     "text": "Quelle action permet d'envoyer une notification par e-mail dans un flux Power Automate ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -4946,7 +4923,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k333",
-    "text": "Dans quel cas utiliseriez vous une boucle \"Do Until\" dans Power Automate ?",
+    "text": "Dans quel cas utiliseriez-vous une boucle « Do Until » dans Power Automate ?",
     "time": 60,
     "points": 1,
     "type": "single",
@@ -4963,7 +4940,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k334",
     "text": "Quelle fonctionnalité de Power Automate vous permet d'automatiser des tâches sur votre poste de travail local ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -4986,11 +4963,11 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "chatgpt-edd-initiation",
   "category": "ia",
   "title": "ChatGPT EDD - Initiation",
-  "description": "",
+  "description": "Vocabulaire de l'IA, éléments d'un prompt, rôles et tons : les bases pour bien dialoguer avec ChatGPT.",
   "questions": [
    {
     "id": "k335",
-    "text": "Une intelligence artificielle utilise un modèle d'apprentissage",
+    "text": "Une intelligence artificielle utilise un modèle d'apprentissage.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -4998,8 +4975,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k336",
-    "text": "Quel mot ne fait pas partie du vocabulaire lié à d'intelligence artificielle ?",
-    "time": 60,
+    "text": "Quel mot ne fait PAS partie du vocabulaire lié à l'intelligence artificielle ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -5014,8 +4991,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k337",
-    "text": "Trouvez l'intrus parmi ces applications possibles",
-    "time": 60,
+    "text": "Trouvez l'intrus parmi ces applications possibles :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -5030,7 +5007,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k338",
-    "text": "L'IA est toujours fiable, car elle indiquera quand elle se trompe",
+    "text": "L'IA est toujours fiable, car elle indiquera quand elle se trompe.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -5039,7 +5016,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k339",
     "text": "Quel est un des points fondamentaux du prompt ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -5054,8 +5031,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k340",
-    "text": "Trouvez l'intrus parmi ces éléments à ajouter au prompt",
-    "time": 60,
+    "text": "Trouvez l'intrus parmi ces éléments à ajouter au prompt :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -5070,7 +5047,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k341",
-    "text": "ChatGPT peut vous poser des questions pour améliorer ses réponses",
+    "text": "ChatGPT peut vous poser des questions pour améliorer ses réponses.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -5078,8 +5055,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k342",
-    "text": "Quel mode n'existe pas avec ChatGPT ?",
-    "time": 60,
+    "text": "Quel mode n'existe PAS avec ChatGPT ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -5094,8 +5071,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k343",
-    "text": "Trouvez l'intrus parmi ces tons ?",
-    "time": 60,
+    "text": "Trouvez l'intrus parmi ces tons :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -5110,7 +5087,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k344",
-    "text": "ChatGPT apprend des conversations avec les utilisateurs pour être plus performant dans les interactions futures",
+    "text": "ChatGPT apprend des conversations avec les utilisateurs pour être plus performant dans les interactions futures.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -5126,11 +5103,11 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "ia-images-textes",
   "category": "ia",
   "title": "IA Images & Textes",
-  "description": "",
+  "description": "Prompts, ChatGPT, Copilot, fiabilité des réponses, images : les bases pour bien utiliser l'IA générative.",
   "questions": [
    {
     "id": "k345",
-    "text": "Une intelligence artificielle utilise un modèle d'apprentissage",
+    "text": "Une intelligence artificielle utilise un modèle d'apprentissage.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -5138,8 +5115,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k346",
-    "text": "Quel mot ne fait pas partie du vocabulaire lié à l'intelligence artificielle ?",
-    "time": 60,
+    "text": "Quel mot ne fait PAS partie du vocabulaire lié à l'intelligence artificielle ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -5154,8 +5131,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k347",
-    "text": "Trouvez l'intrus parmi ces applications possibles",
-    "time": 60,
+    "text": "Trouvez l'intrus parmi ces applications possibles :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -5170,7 +5147,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k348",
-    "text": "L'IA est toujours fiable, car elle indiquera quand elle se trompe",
+    "text": "L'IA est toujours fiable, car elle indiquera quand elle se trompe.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -5179,7 +5156,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k349",
     "text": "Quel est un des points fondamentaux du prompt ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -5194,8 +5171,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k350",
-    "text": "Trouvez l'intrus parmi ces éléments à ajouter au prompt",
-    "time": 60,
+    "text": "Trouvez l'intrus parmi ces éléments à ajouter au prompt :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -5210,7 +5187,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k351",
-    "text": "ChatGPT peut vous poser des questions pour améliorer ses réponses",
+    "text": "ChatGPT peut vous poser des questions pour améliorer ses réponses.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -5218,8 +5195,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k352",
-    "text": "Quel ajout n'est pas utile à un prompt graphique ?",
-    "time": 60,
+    "text": "Quel ajout n'est PAS utile à un prompt graphique ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -5234,8 +5211,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k353",
-    "text": "Photoshop permet grâce à l'IA ?",
-    "time": 60,
+    "text": "Que permet Photoshop grâce à l'IA ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -5250,7 +5227,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k354",
-    "text": "Les IA de génération d'images ont des meilleurs résultats en ajoutant des adjectifs à vos prompts",
+    "text": "Les IA de génération d'images ont de meilleurs résultats en ajoutant des adjectifs à vos prompts.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -5266,12 +5243,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "canva-perfectionnement",
   "category": "graphisme",
   "title": "Canva - Perfectionnement",
-  "description": "",
+  "description": "Modèles, export, historique des versions, raccourcis, retouche d'image, animations et écriture magique : perfectionnez-vous sur Canva.",
   "questions": [
    {
     "id": "k355",
-    "text": "Quel modèle n'est pas disponible dans Canva ?",
-    "time": 60,
+    "text": "Quel modèle n'est PAS disponible dans Canva ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -5286,8 +5263,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k356",
-    "text": "Quel format est suggéré pour l'exportation ?",
-    "time": 60,
+    "text": "Quel format Canva suggère-t-il par défaut pour l'exportation d'un design ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -5302,7 +5279,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k357",
-    "text": "Qu'est ce que la voix de marque ?",
+    "text": "Qu'est-ce que la voix de marque ?",
     "time": 60,
     "points": 1,
     "type": "single",
@@ -5310,7 +5287,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
      "Créer une voix off en chargeant un son de départ",
      "Paramétrer les prochaines publications Facebook",
      "Définir un ton pour l'écriture magique",
-     "Choisir parmi les voix proposés pour les voix off"
+     "Choisir parmi les voix proposées pour les voix off"
     ],
     "correct": [
      2
@@ -5318,7 +5295,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k358",
-    "text": "Canva dispose d'un historique de versions pour les utilisateurs sans abonnement",
+    "text": "Canva dispose d'un historique de versions pour les utilisateurs sans abonnement.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -5327,7 +5304,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k359",
     "text": "Quel est le raccourci pour ajouter une page vide ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -5342,7 +5319,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k360",
-    "text": "Canva permet d'ajuster la saturation d'une image",
+    "text": "Canva permet d'ajuster la saturation d'une image.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -5351,7 +5328,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k361",
     "text": "Quelles sont les valeurs possibles pour la transparence ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -5366,8 +5343,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k362",
-    "text": "Trouver l'intrus, quel élément ne peut pas être animé ?",
-    "time": 60,
+    "text": "Trouvez l'intrus : quel élément ne peut PAS être animé ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -5382,7 +5359,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k363",
-    "text": "Canva ne dispose que du format carré pour la génération d'image par IA",
+    "text": "Canva ne dispose que du format carré pour la génération d'image par IA.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -5390,8 +5367,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k364",
-    "text": "L'écriture magique ne permet pas de :",
-    "time": 60,
+    "text": "L'écriture magique ne permet PAS de :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -5414,12 +5391,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "newsletter",
   "category": "webmarketing",
   "title": "Newsletter",
-  "description": "",
+  "description": "Typologies, personas, fréquence, contenu, indicateurs et outils d'envoi : les bons réflexes pour réussir vos newsletters.",
   "questions": [
    {
     "id": "k365",
-    "text": "Quelle typologie de newsletter n'existe pas ?",
-    "time": 60,
+    "text": "Quelle typologie de newsletter n'existe PAS ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -5434,8 +5411,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k366",
-    "text": "Quelles données n'aident pas à définir des personas ?",
-    "time": 60,
+    "text": "Quelles données n'aident PAS à définir des personas ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -5450,7 +5427,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k367",
-    "text": "Une fréquence irrégulière est recommandé pour envoyer vos newsletters",
+    "text": "Une fréquence irrégulière est recommandée pour envoyer vos newsletters.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -5459,7 +5436,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k368",
     "text": "La newsletter doit être correctement lisible sur :",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -5474,8 +5451,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k369",
-    "text": "Pour le contenu d'une newsletter, que faut-il eviter ?",
-    "time": 60,
+    "text": "Pour le contenu d'une newsletter, que faut-il éviter ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -5490,7 +5467,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k370",
-    "text": "L'A/B testing permet d'essayer deux versions de newsletters différentes",
+    "text": "L'A/B testing permet d'essayer deux versions de newsletters différentes.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -5498,8 +5475,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k371",
-    "text": "Quels indicateurs n'est pas révélateur ?",
-    "time": 60,
+    "text": "Quel indicateur n'est PAS révélateur ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -5514,8 +5491,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k372",
-    "text": "Quel outil ne permet pas d'envoyer une newsletter ?",
-    "time": 60,
+    "text": "Quel outil ne permet PAS d'envoyer une newsletter ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -5530,7 +5507,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k373",
-    "text": "L'organisation des contacts n'est pas utile si vous utilisez un CRM",
+    "text": "L'organisation des contacts n'est pas utile si vous utilisez un CRM.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -5538,8 +5515,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k374",
-    "text": "Trouvez l'intrus, parmis ces paramètres :",
-    "time": 60,
+    "text": "Trouvez l'intrus parmi ces paramètres :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -5562,18 +5539,18 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "generation-d-images-avec-l-ia-initiation",
   "category": "ia",
   "title": "Génération d'images avec l'IA - Initiation",
-  "description": "",
+  "description": "Histoire de l'IA, outils comme Midjourney ou Firefly, paramètres de prompt et inpainting : créer des images avec l'IA.",
   "questions": [
    {
     "id": "k375",
-    "text": "Trouvez l'intrus dans ces dates",
+    "text": "Trouvez l'intrus dans ces dates :",
     "time": 60,
     "points": 1,
     "type": "single",
     "answers": [
      "Depuis 2010 : Essor avec le Big Data et la puissance de calcul",
      "1970 - 1980 : Essor avec l'arrivée d'internet",
-     "1980 - 1990 : Systèmes expert",
+     "1980 - 1990 : Systèmes experts",
      "1940 - 1960 : Naissance de l'IA"
     ],
     "correct": [
@@ -5582,13 +5559,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k376",
-    "text": "Quelle notion n'appartient pas à l'IA ?",
-    "time": 60,
+    "text": "Quelle notion n'appartient PAS à l'IA ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "Le générateur",
-     "Les données d'entrainement",
+     "Les données d'entraînement",
      "Le processeur",
      "Le discriminateur"
     ],
@@ -5598,15 +5575,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k377",
-    "text": "Quelle IA ne génère pas d'images ?",
-    "time": 60,
+    "text": "Quelle IA ne génère PAS d'images ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
-     "Dall-E",
+     "DALL-E",
      "Firefly",
      "Hume AI",
-     "MidJourney"
+     "Midjourney"
     ],
     "correct": [
      2
@@ -5614,7 +5591,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k378",
-    "text": "L'IA peut être utilisée pour donner son avis sur un contenu ?",
+    "text": "L'IA peut être utilisée pour donner son avis sur un contenu.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -5623,11 +5600,11 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k379",
     "text": "Quel outil permet de vérifier si une image est protégée par copyright ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
-     "Google Image",
+     "Google Images",
      "Photoshop Rights",
      "Avocat.nc",
      "Copyright.ai"
@@ -5638,7 +5615,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k380",
-    "text": "ChatGPT peut être utilisé pour enrichir ses prompts",
+    "text": "ChatGPT peut être utilisé pour enrichir ses prompts.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -5646,12 +5623,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k381",
-    "text": "Quel moteur de rendu n'existe pas pour enrichir ses prompts ?",
-    "time": 60,
+    "text": "Quel moteur de rendu n'existe PAS parmi ces mots-clés utilisés pour enrichir un prompt ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
-     "Creation engine",
+     "Prompt engine",
      "Ray tracing",
      "Unreal engine",
      "Octane render"
@@ -5662,14 +5639,14 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k382",
-    "text": "Le paramètre --ar permet de :",
-    "time": 60,
+    "text": "Dans Midjourney, le paramètre --ar permet de :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "créer une texture répétable",
      "modifier le ratio de l'image",
-     "permet de repéter le prompt",
+     "répéter le prompt",
      "gérer la qualité de l'image"
     ],
     "correct": [
@@ -5678,7 +5655,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k383",
-    "text": "L'inpainting permet d'étendre l'image en dehors de son cadre",
+    "text": "L'inpainting permet d'étendre l'image en dehors de son cadre.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -5686,13 +5663,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k384",
-    "text": "Qu'est ce que les variantes sous Photoshop ?",
+    "text": "Que sont les variantes sous Photoshop ?",
     "time": 60,
     "points": 1,
     "type": "single",
     "answers": [
      "des variations de colorimétrie du calque",
-     "des images recadrées de façon automatisées",
+     "des images recadrées de façon automatisée",
      "des variations sur la courbe de niveau de l'histogramme",
      "des propositions de génération d'images"
     ],
@@ -5710,12 +5687,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "microsoft-project-initiation",
   "category": "gestion",
   "title": "Microsoft Project - Initiation",
-  "description": "",
+  "description": "Fichiers .mpp, Gantt, tâches, ressources, effort, dépendances : planifiez vos projets avec Microsoft Project.",
   "questions": [
    {
     "id": "k385",
-    "text": "Quel est l'extension Microsoft Project ?",
-    "time": 60,
+    "text": "Quelle est l'extension d'un fichier Microsoft Project ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -5735,7 +5712,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "Planifier les taches et allouer les ressources",
+     "Planifier les tâches et allouer les ressources",
      "Créer une application mobile",
      "Gérer les congés et notes de frais des salariés",
      "Suivre la comptabilité d'une entreprise"
@@ -5746,7 +5723,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k387",
-    "text": "Microsoft Project utilise le diagramme de Gantt ?",
+    "text": "Microsoft Project utilise le diagramme de Gantt.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -5754,8 +5731,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k388",
-    "text": "Trouver l'intrus, Microsoft Project permet de créer :",
-    "time": 60,
+    "text": "Trouvez l'intrus, Microsoft Project permet de créer :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -5786,8 +5763,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k390",
-    "text": "Trouver l'intrus, les ressources peuvent être de type :",
-    "time": 60,
+    "text": "Trouvez l'intrus, les ressources peuvent être de type :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -5802,7 +5779,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k391",
-    "text": "Microsoft Project ne permet pas la gestion de la surutilisation des ressources ?",
+    "text": "Microsoft Project ne permet pas la gestion de la surutilisation des ressources.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -5810,15 +5787,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k392",
-    "text": "Quelle fonctionnalité permet de créer des dépendances complexes entre les tâches ?",
-    "time": 60,
+    "text": "Quelle fonctionnalité permet de créer des dépendances entre les tâches ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "Liaison de tâches",
-     "Création de dépendances",
-     "Réseau de tâches",
-     "Carte de dépendances"
+     "Fractionnement de tâches",
+     "Verrouillage de tâches",
+     "Regroupement de tâches"
     ],
     "correct": [
      0
@@ -5842,15 +5819,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k394",
-    "text": "Quelle est la différence entre une tâche \"Fixe\" et une tâche \"Durée\" ?",
+    "text": "Quelle est la différence entre une tâche à durée fixe et une tâche à unités fixes ?",
     "time": 60,
     "points": 1,
     "type": "single",
     "answers": [
      "Aucune",
-     "\"Fixe\" a une durée fixe, \"Durée\" varie en fonction des ressources allouées",
-     "\"Fixe\" est planifiée en automatique, \"Durée\" nécessite une intervention",
-     "\"Durée\" peut être déplacée, \"Fixe\" est fixée à une date spécifique"
+     "Durée fixe : durée constante ; unités fixes : durée selon les ressources",
+     "Durée fixe : planifiée en automatique ; unités fixes : en manuel",
+     "Durée fixe peut être déplacée ; unités fixes est fixée à une date"
     ],
     "correct": [
      1
@@ -5866,12 +5843,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "photoshop-intermediaire",
   "category": "graphisme",
   "title": "Photoshop - Intermédiaire",
-  "description": "",
+  "description": "Raccourcis, masques d'écrêtage, plume, styles de calque, filtres, traitement par lots : approfondir Photoshop.",
   "questions": [
    {
     "id": "k395",
     "text": "Quel est le raccourci de la main (pour se déplacer dans un document) ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -5886,8 +5863,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k396",
-    "text": "Quel outil n'existe pas dans Photoshop",
-    "time": 60,
+    "text": "Quel outil n'existe PAS dans Photoshop :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -5902,13 +5879,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k397",
-    "text": "Qu'est ce qu'un masque d'écrêtage ?",
+    "text": "Qu'est-ce qu'un masque d'écrêtage ?",
     "time": 60,
     "points": 1,
     "type": "single",
     "answers": [
      "un calque qui change son mode de fusion",
-     "un calque qui défini la luminosité du calque parent",
+     "un calque qui définit la luminosité du calque parent",
      "un calque qui prend la forme du calque du dessous",
      "un calque qui écrête"
     ],
@@ -5918,7 +5895,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k398",
-    "text": "La baguette magique est le meilleur outil pour sélectionner des objets peu contrastés",
+    "text": "La baguette magique est le meilleur outil pour sélectionner des objets peu contrastés.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -5927,7 +5904,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k399",
     "text": "La plume permet de :",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -5942,7 +5919,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k400",
-    "text": "Le détourage permet d'extraire un élément par rapport au fond",
+    "text": "Le détourage permet d'extraire un élément par rapport au fond.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -5950,8 +5927,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k401",
-    "text": "Quel effet de style n'existe pas",
-    "time": 60,
+    "text": "Quel effet de style n'existe PAS :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -5972,8 +5949,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "type": "single",
     "answers": [
      "récupérer des statistiques d'utilisation de l'outil",
-     "contraindre l'effet de outil à une certaine forme",
-     "personnaliser les icones dans la barre d'outils",
+     "contraindre l'effet de l'outil à une certaine forme",
+     "personnaliser les icônes dans la barre d'outils",
      "permettre l'utilisation d'une tablette graphique"
     ],
     "correct": [
@@ -5982,7 +5959,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k403",
-    "text": "Le traitement par lots permet d'exécuter une action sur plusieurs fichiers",
+    "text": "Le traitement par lots permet d'exécuter une action sur plusieurs fichiers.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -5990,8 +5967,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k404",
-    "text": "Trouvez l'intrus, parmi ces filtres de déformation",
-    "time": 60,
+    "text": "Trouvez l'intrus parmi ces filtres de déformation :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -6014,12 +5991,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "wordpress-initiation",
   "category": "dev",
   "title": "WordPress - Initiation",
-  "description": "",
+  "description": "CMS, administration, articles, médias, thèmes, extensions : les notions clés pour démarrer avec WordPress.",
   "questions": [
    {
     "id": "k405",
-    "text": "WordPress n'a pas besoin de",
-    "time": 60,
+    "text": "WordPress n'a PAS besoin de…",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -6034,8 +6011,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k406",
-    "text": "WordPress est",
-    "time": 60,
+    "text": "WordPress est…",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -6050,16 +6027,16 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k407",
-    "text": "WordPress représente plus de 35% des sites mondiaux",
+    "text": "WordPress représente plus de 40% des sites web mondiaux.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
-    "truth": false
+    "truth": true
    },
    {
     "id": "k408",
-    "text": "Quel élément n'est pas présent dans l'administration ?",
-    "time": 60,
+    "text": "Quel élément n'est PAS présent dans le menu d'administration de WordPress ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -6074,15 +6051,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k409",
-    "text": "Trouver l'intrus, WordPress permet nativement de",
-    "time": 60,
+    "text": "Trouvez l'intrus, WordPress permet nativement de…",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "Créer un article",
      "Valider des commandes",
      "Ajouter des images",
-     "Gérér des commentaires"
+     "Gérer des commentaires"
     ],
     "correct": [
      1
@@ -6090,15 +6067,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k410",
-    "text": "Qu'est l'utilité des widgets dans WordPress ?",
-    "time": 60,
+    "text": "Quelle est l'utilité des widgets dans WordPress ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
-     "gère les révisions des articles",
-     "crée une page de formulaire",
-     "attribue une catégorie à une page",
-     "ajoute une zone réutilisable"
+     "Gérer les révisions des articles",
+     "Créer une page de formulaire",
+     "Attribuer une catégorie à une page",
+     "Ajouter une zone réutilisable"
     ],
     "correct": [
      3
@@ -6106,7 +6083,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k411",
-    "text": "WordPress permet de gérer les médias",
+    "text": "WordPress permet de gérer les médias.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -6115,7 +6092,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k412",
     "text": "Que permet un thème ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -6131,13 +6108,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k413",
     "text": "Quelle extension pour créer des formulaires ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
-     "WPForms",
+     "Formulaire Plus 2",
      "FormBlast",
-     "Contact Form 2",
+     "Contact Form 7",
      "SuperForm.com"
     ],
     "correct": [
@@ -6146,8 +6123,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k414",
-    "text": "WordPress ne permet pas de changer les menus",
-    "time": 60,
+    "text": "WordPress ne permet pas de changer les menus.",
+    "time": 30,
     "points": 1,
     "type": "truefalse",
     "truth": false
@@ -6162,12 +6139,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "contributeur-web-drupal-initiation",
   "category": "dev",
   "title": "Contributeur web (Drupal) - Initiation",
-  "description": "",
+  "description": "Contenus, menus, éditeur WYSIWYG, taxonomies, blocs et champs : les bases pour publier et gérer un site Drupal.",
   "questions": [
    {
     "id": "k415",
-    "text": "Drupal est",
-    "time": 60,
+    "text": "Drupal est…",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -6182,8 +6159,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k416",
-    "text": "Quel élément n'est pas présent dans le menu d'administration Drupal ?",
-    "time": 60,
+    "text": "Quel élément n'est PAS présent dans le menu d'administration Drupal ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -6198,7 +6175,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k417",
-    "text": "Drupal est composé d'un front et d'un back office",
+    "text": "Drupal est composé d'un front et d'un back office.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -6206,8 +6183,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k418",
-    "text": "Quelle action n'est pas disponible sur un contenu dans Drupal ?",
-    "time": 60,
+    "text": "Quelle action n'est PAS disponible sur un contenu dans Drupal ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -6222,8 +6199,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k419",
-    "text": "Trouver l'intrus, l'éditeur WYSIWYG de Drupal permet de",
-    "time": 60,
+    "text": "Trouvez l'intrus : l'éditeur WYSIWYG de Drupal permet de…",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -6238,8 +6215,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k420",
-    "text": "Qu'est ce qu'une taxonomie ?",
-    "time": 60,
+    "text": "Qu'est-ce qu'une taxonomie ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -6254,7 +6231,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k421",
-    "text": "Drupal permet de modifier les menus du site",
+    "text": "Drupal permet de modifier les menus du site.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -6262,8 +6239,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k422",
-    "text": "Qu'est ce qu'un bloc dans Drupal ?",
-    "time": 60,
+    "text": "Qu'est-ce qu'un bloc dans Drupal ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -6278,8 +6255,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k423",
-    "text": "Quel type de champ n'est pas disponible dans Drupal ?",
-    "time": 60,
+    "text": "Quel type de champ n'est PAS disponible dans Drupal ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -6294,8 +6271,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k424",
-    "text": "Drupal permet aussi de gérer les formulaires",
-    "time": 60,
+    "text": "Drupal permet aussi de gérer les formulaires.",
+    "time": 30,
     "points": 1,
     "type": "truefalse",
     "truth": true
@@ -6310,12 +6287,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "contributeur-web-joomla-initiation",
   "category": "dev",
   "title": "Contributeur web (Joomla) - Initiation",
-  "description": "",
+  "description": "Joomla, extensions, rôles, catégories et éditeur WYSIWYG : les notions clés pour contribuer à un site web et gérer ses articles.",
   "questions": [
    {
     "id": "k425",
-    "text": "Les extensions permettent de",
-    "time": 60,
+    "text": "Les extensions permettent de…",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -6330,8 +6307,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k426",
-    "text": "Joomla est",
-    "time": 60,
+    "text": "Joomla est…",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -6346,7 +6323,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k427",
-    "text": "On ne peut pas personnaliser l'aspect visuel de Joomla",
+    "text": "On ne peut pas personnaliser l'aspect visuel de Joomla.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -6354,8 +6331,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k428",
-    "text": "Quel menu de premier niveau n'existe pas dans Joomla ?",
-    "time": 60,
+    "text": "Quel menu de premier niveau n'existe PAS dans Joomla ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -6370,8 +6347,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k429",
-    "text": "Trouver l'intrus, Joomla a besoin de",
-    "time": 60,
+    "text": "Trouvez l'intrus : Joomla a besoin de…",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -6386,8 +6363,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k430",
-    "text": "Quel role n'existe pas dans Joomla par défaut ?",
-    "time": 60,
+    "text": "Quel rôle n'existe PAS dans Joomla par défaut ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -6402,7 +6379,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k431",
-    "text": "Joomla permet de créer des catégories pour vos articles",
+    "text": "Joomla permet de créer des catégories pour vos articles.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -6410,14 +6387,14 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k432",
-    "text": "Trouvez l'intrus, parmi les fonctionnalités de l'éditeur WYSIWYG ?",
-    "time": 60,
+    "text": "Trouvez l'intrus parmi les fonctionnalités de l'éditeur WYSIWYG :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "générer du texte automatiquement",
      "créer un tableau",
-     "Afficher un lien",
+     "afficher un lien",
      "ajouter une image"
     ],
     "correct": [
@@ -6426,8 +6403,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k433",
-    "text": "Comment retouver les articles supprimés dans Joomla ?",
-    "time": 60,
+    "text": "Comment retrouver les articles supprimés dans Joomla ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -6442,8 +6419,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k434",
-    "text": "Joomla permet nativement de gérer du e-commerce",
-    "time": 60,
+    "text": "Joomla permet nativement de gérer du e-commerce.",
+    "time": 30,
     "points": 1,
     "type": "truefalse",
     "truth": false
@@ -6458,12 +6435,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "figma-initiation",
   "category": "graphisme",
   "title": "Figma - Initiation",
-  "description": "",
+  "description": "Outils vectoriels, commentaires, composants, variantes, historique et interactions : prendre en main Figma.",
   "questions": [
    {
     "id": "k435",
-    "text": "Quel raccourci n'est pas utile dans Figma ?",
-    "time": 60,
+    "text": "Quel raccourci n'est PAS utile dans Figma ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -6478,8 +6455,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k436",
-    "text": "Quel outil n'existe pas dans Figma ?",
-    "time": 60,
+    "text": "Quel outil n'existe PAS dans Figma ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -6494,8 +6471,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k437",
-    "text": "Quelle fonction n'existe pas pour les commentaires ?",
-    "time": 60,
+    "text": "Quelle fonction n'existe PAS pour les commentaires ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -6510,7 +6487,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k438",
-    "text": "Figma dispose d'un historique de versions",
+    "text": "Figma dispose d'un historique de versions.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -6519,7 +6496,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k439",
     "text": "L'outil plume permet de :",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -6534,7 +6511,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k440",
-    "text": "Figma ne permet pas de changer le mode de fusion d'un calque",
+    "text": "Figma ne permet pas de changer le mode de fusion d'un calque.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -6542,8 +6519,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k441",
-    "text": "Les variants de composants permettent de :",
-    "time": 60,
+    "text": "Les variantes de composants permettent de :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -6559,7 +6536,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k442",
     "text": "La combinaison d'objets permet de :",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -6574,7 +6551,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k443",
-    "text": "Un texte peut être converti en vecteur pour être déformé",
+    "text": "Un texte peut être converti en vecteur pour être déformé.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -6583,7 +6560,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k444",
     "text": "Trouvez l'intrus, on peut créer une interaction :",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -6606,12 +6583,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "prestashop-initiation",
   "category": "dev",
   "title": "PrestaShop - Initiation",
-  "description": "",
+  "description": "Installation, administration, sécurité, groupes d'utilisateurs, produits : prenez en main une boutique PrestaShop.",
   "questions": [
    {
     "id": "k445",
-    "text": "Quelle technologie n'est pas utile pour PrestaShop ?",
-    "time": 60,
+    "text": "Quelle technologie n'est PAS utile pour PrestaShop ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -6626,8 +6603,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k446",
-    "text": "Trouvez l'intrus, parmis ces avantages PrestaShop",
-    "time": 60,
+    "text": "Trouvez l'intrus parmi ces avantages de PrestaShop :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -6642,7 +6619,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k447",
-    "text": "Vous pouvez installer PrestaShop en local ou en ligne",
+    "text": "Vous pouvez installer PrestaShop en local ou en ligne.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -6650,8 +6627,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k448",
-    "text": "Quelle section ne fait pas partie de l'administration ?",
-    "time": 60,
+    "text": "Quelle section ne fait PAS partie de l'administration ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -6666,8 +6643,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k449",
-    "text": "Quelle technique n'améliore pas la sécurité ?",
-    "time": 60,
+    "text": "Quelle technique n'améliore PAS la sécurité ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -6682,8 +6659,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k450",
-    "text": "Quelle option n'est pas accessible via la configuration ?",
-    "time": 60,
+    "text": "Quelle option n'est PAS accessible via la configuration ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -6698,7 +6675,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k451",
-    "text": "Prestashop permet d'accéder à une fiche détail par produit",
+    "text": "PrestaShop permet d'accéder à une fiche détail par produit.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -6707,7 +6684,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k452",
     "text": "Quel système de paiement choisir, si vous avez un compte calédonien ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -6722,8 +6699,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k453",
-    "text": "Que ne permettent pas les groupes utilisateurs sur PrestaShop ?",
-    "time": 60,
+    "text": "Que ne permettent PAS les groupes utilisateurs sur PrestaShop ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -6738,8 +6715,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k454",
-    "text": "PrestaShop propose de vendre des produits virtuels",
-    "time": 60,
+    "text": "PrestaShop propose de vendre des produits virtuels.",
+    "time": 30,
     "points": 1,
     "type": "truefalse",
     "truth": true
@@ -6754,12 +6731,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "woocommerce-initiation",
   "category": "dev",
   "title": "WooCommerce - Initiation",
-  "description": "",
+  "description": "DNS, produits, commandes, clients, statistiques, stock : les notions clés pour gérer une boutique avec WooCommerce.",
   "questions": [
    {
     "id": "k455",
-    "text": "Le DNS permet de",
-    "time": 60,
+    "text": "Le DNS permet de…",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -6774,12 +6751,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k456",
-    "text": "WooCommerce est",
-    "time": 60,
+    "text": "WooCommerce est…",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
-     "un logiciel e-commerce",
+     "un logiciel e-commerce indépendant de WordPress",
      "un module e-commerce de WordPress",
      "un logiciel de gestion de stock",
      "un module pour PrestaShop"
@@ -6790,7 +6767,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k457",
-    "text": "On ne peut pas personnaliser l'aspect visuel de WooCommerce",
+    "text": "On ne peut pas personnaliser l'aspect visuel de WooCommerce.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -6798,8 +6775,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k458",
-    "text": "Quel indicateur n'existe pas dans WooCommerce pour suivre les statistiques ?",
-    "time": 60,
+    "text": "Quel indicateur n'existe PAS dans WooCommerce pour suivre les statistiques ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -6814,15 +6791,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k459",
-    "text": "Trouver l'intrus, WooCommerce permet de",
-    "time": 60,
+    "text": "Trouvez l'intrus : WooCommerce permet de…",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "Créer une commande manuellement",
      "Normaliser ses commandes",
      "Consulter le détail d'une commande",
-     "Gérér ses commandes"
+     "Gérer ses commandes"
     ],
     "correct": [
      1
@@ -6830,8 +6807,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k460",
-    "text": "Qu'est le role que WooCommerce ajoute à WordPress",
-    "time": 60,
+    "text": "Quel rôle WooCommerce ajoute-t-il à WordPress ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -6846,7 +6823,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k461",
-    "text": "WooCommerce permet de créer des catégories pour vos produits",
+    "text": "WooCommerce permet de créer des catégories pour vos produits.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -6854,8 +6831,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k462",
-    "text": "Quel moyen n'existe pas pour gérer les fournisseurs ?",
-    "time": 60,
+    "text": "Quel moyen n'existe PAS pour gérer les fournisseurs ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -6870,8 +6847,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k463",
-    "text": "Quel outil marketing n'est pas disponible de base dans WooCommerce ?",
-    "time": 60,
+    "text": "Quel outil marketing n'est PAS disponible de base dans WooCommerce ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -6886,8 +6863,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k464",
-    "text": "WooCommerce permet aussi de gérer le stock",
-    "time": 60,
+    "text": "WooCommerce permet aussi de gérer le stock.",
+    "time": 30,
     "points": 1,
     "type": "truefalse",
     "truth": true
@@ -6902,12 +6879,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "canva-initiation",
   "category": "graphisme",
   "title": "Canva - Initiation",
-  "description": "",
+  "description": "Modèles, calques, grilles d'images, blocs de texte, imports : prenez en main Canva pour vos créations.",
   "questions": [
    {
     "id": "k465",
-    "text": "Quel modèle n'est pas disponible dans Canva ?",
-    "time": 60,
+    "text": "Quel modèle n'est PAS disponible dans Canva ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -6922,8 +6899,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k466",
-    "text": "Quel format est suggéré pour l'exportation ?",
-    "time": 60,
+    "text": "Quel format Canva suggère-t-il par défaut pour l'exportation d'un design ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -6938,8 +6915,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k467",
-    "text": "Quel moyen n'existe pas pour naviguer dans les modèles ?",
-    "time": 60,
+    "text": "Quel moyen n'existe PAS pour naviguer dans les modèles ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -6954,7 +6931,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k468",
-    "text": "Canva dispose d'un historique de versions pour les utilisateurs de la version gratuite",
+    "text": "Canva dispose d'un historique de versions pour les utilisateurs de la version gratuite.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -6970,7 +6947,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
      "mettre le calque vers un plan supérieur",
      "mettre le calque au premier plan",
      "mettre le calque vers un plan inférieur",
-     "mettre le calque à l'arrière plan"
+     "mettre le calque à l'arrière-plan"
     ],
     "correct": [
      0
@@ -6978,7 +6955,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k470",
-    "text": "Canva permet de changer le mode de fusion d'un calque",
+    "text": "Canva permet de changer le mode de fusion d'un calque.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -7010,7 +6987,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
      "supprimer une zone de texte de l'image",
      "définir des titres et sous-titres avec des polices rapidement",
      "définir une zone pour charger une image de remplacement pour le texte",
-     "définir une zone ou il faudra importer du texte"
+     "définir une zone où il faudra importer du texte"
     ],
     "correct": [
      1
@@ -7018,7 +6995,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k473",
-    "text": "Canva permet d'ajouter des effets sur un texte",
+    "text": "Canva permet d'ajouter des effets sur un texte.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -7027,14 +7004,14 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k474",
     "text": "Trouvez l'intrus, on peut importer :",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "une image",
      "un son",
      "une vidéo",
-     "un psd"
+     "un PSD"
     ],
     "correct": [
      3
@@ -7050,12 +7027,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "google-workspace-initiation",
   "category": "bureautique",
   "title": "Google Workspace - Initiation",
-  "description": "",
+  "description": "Gmail, Drive, Keep, Agenda, Meet, Slides, Chat : les fonctionnalités clés de Google Workspace pour mieux travailler au quotidien.",
   "questions": [
    {
     "id": "k475",
-    "text": "Quelle fonctionnalité Gmail permet-il ?",
-    "time": 60,
+    "text": "Quelle fonctionnalité Gmail propose-t-il ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -7070,8 +7047,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k476",
-    "text": "Quel outil n'existe pas dans Drive ?",
-    "time": 60,
+    "text": "Quel outil n'existe PAS dans Drive ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -7086,7 +7063,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k477",
-    "text": "Google Keep est capable de définir un rappel",
+    "text": "Google Keep est capable de définir un rappel.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -7095,7 +7072,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k478",
     "text": "Le planning de rendez-vous :",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -7111,7 +7088,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k479",
     "text": "Pour afficher son onglet sur une visioconférence dans Google Meet, on utilise :",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -7127,7 +7104,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k480",
     "text": "Google Slides permet de :",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -7142,7 +7119,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k481",
-    "text": "Google Chat permet de générer avec l'IA des images de chatons ?",
+    "text": "Google Chat permet de générer avec l'IA des images de chatons.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -7150,13 +7127,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k482",
-    "text": "Qu'est ce qu'une mise en attente ?",
+    "text": "Qu'est-ce qu'une mise en attente ?",
     "time": 60,
     "points": 1,
     "type": "single",
     "answers": [
      "différer la réception de l'email à une date ultérieure",
-     "recevoir un email avec un temps d'attente avant le prochain evenement",
+     "recevoir un email avec un temps d'attente avant le prochain événement",
      "devoir attendre la fin de maintenance de Google Drive",
      "faire attendre un client pour l'envoi d'un document"
     ],
@@ -7166,8 +7143,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k483",
-    "text": "Trouvez l'intrus, parmis ces services :",
-    "time": 60,
+    "text": "Trouvez l'intrus parmi ces services :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -7182,7 +7159,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k484",
-    "text": "Google Agenda permet de créer des évenements récurrents",
+    "text": "Google Agenda permet de créer des événements récurrents.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -7198,12 +7175,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "video-web-initiation",
   "category": "graphisme",
   "title": "Vidéo web - Initiation",
-  "description": "",
+  "description": "Formats, outils de montage, structure du récit, composition et motion design : les bases pour réaliser une vidéo web.",
   "questions": [
    {
     "id": "k485",
-    "text": "Quel format n'est pas un format vidéo ?",
-    "time": 60,
+    "text": "Quel format n'est PAS un format vidéo ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -7218,12 +7195,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k486",
-    "text": "Quel type de vidéo n'existe pas ?",
-    "time": 60,
+    "text": "Quel type de vidéo n'existe PAS ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
-     "Educative",
+     "Éducative",
      "Institutionnelle",
      "Animée",
      "Promotionnelle"
@@ -7234,13 +7211,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k487",
-    "text": "Quel outil ne permet pas de gérer la vidéo ?",
-    "time": 60,
+    "text": "Quel outil ne permet PAS de gérer la vidéo ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
-     "Davinci Resolve",
-     "ClipChamp",
+     "DaVinci Resolve",
+     "Clipchamp",
      "Publisher",
      "Canva"
     ],
@@ -7250,7 +7227,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k488",
-    "text": "Le snack content est une vidéo de présentation de restaurant ?",
+    "text": "Le snack content est une vidéo de présentation de restaurant.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -7258,8 +7235,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k489",
-    "text": "Quelle méthode n'est pas utile pour structurer les informations ?",
-    "time": 60,
+    "text": "Quelle méthode n'est PAS utile pour structurer les informations ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -7274,7 +7251,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k490",
-    "text": "Le motion design est une technique d'animations d'illustrations et de textes",
+    "text": "Le motion design est une technique d'animations d'illustrations et de textes.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -7282,15 +7259,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k491",
-    "text": "Quelle regle est importante en composition ?",
-    "time": 60,
+    "text": "Quelle règle est importante en composition ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "La règle des tiers",
      "La règle de trois",
      "La règle graduée",
-     "La règle de pythagore"
+     "La règle de Pythagore"
     ],
     "correct": [
      0
@@ -7298,8 +7275,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k492",
-    "text": "Trouvez l'intrus, parmis ces types de texte :",
-    "time": 60,
+    "text": "Trouvez l'intrus parmi ces types de texte :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -7314,7 +7291,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k493",
-    "text": "La transition à privilégier pour donner du rythme est le cut",
+    "text": "La transition à privilégier pour donner du rythme est le cut.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -7322,15 +7299,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k494",
-    "text": "Quelle étape n'est pas présente dans la création d'une vidéo ?",
-    "time": 60,
+    "text": "Quelle étape n'est PAS présente dans la création d'une vidéo ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
-     "Etalonnage",
+     "Étalonnage",
      "Mixage",
      "Montage",
-     "Elagage"
+     "Élagage"
     ],
     "correct": [
      3
@@ -7346,12 +7323,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "traitement-de-texte-initiation",
   "category": "bureautique",
   "title": "Traitement de texte - Initiation",
-  "description": "",
+  "description": "Images, règle, retraits, en-têtes, titres, révisions et export PDF : maîtriser les bases du traitement de texte.",
   "questions": [
    {
     "id": "k495",
-    "text": "Une image ne peut pas être placée :",
-    "time": 60,
+    "text": "Une image ne peut PAS être placée :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -7367,14 +7344,14 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k496",
     "text": "Que permet de faire la règle d'un traitement de texte ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "vérifier les alignements",
      "poser un point d'exclamation",
-     "eviter les erreurs d'orthographe",
-     "controler l'ecart entre les pages"
+     "éviter les erreurs d'orthographe",
+     "contrôler l'écart entre les pages"
     ],
     "correct": [
      0
@@ -7383,7 +7360,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k497",
     "text": "Les données d'un graphique inséré :",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -7398,7 +7375,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k498",
-    "text": "Le raccourci Ctrl + F permet de présenter son fichier en visio",
+    "text": "Le raccourci Ctrl + F permet de présenter son fichier en visio.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -7412,8 +7389,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "type": "single",
     "answers": [
      "la suppression de la première ligne",
-     "un espace au dessus de la première ligne",
-     "un ecart sur le paragraphe suivant",
+     "un espace au-dessus de la première ligne",
+     "un écart sur le paragraphe suivant",
      "un espace devant la première ligne"
     ],
     "correct": [
@@ -7423,13 +7400,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k500",
     "text": "Quel outil permet d'envoyer un document ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "L'ajout des métadonnées de copyright",
      "L'enregistrement ou le téléchargement en PDF",
-     "L'outil \"supprimer le formatage\"",
+     "L'outil « Supprimer le formatage »",
      "La protection du document"
     ],
     "correct": [
@@ -7438,7 +7415,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k501",
-    "text": "Les dates peuvent être ajoutées facilement via le menu",
+    "text": "Les dates peuvent être ajoutées facilement via le menu.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -7446,8 +7423,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k502",
-    "text": "L'outil suggestions ou révisions permet de",
-    "time": 60,
+    "text": "L'outil suggestions ou révisions permet de…",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -7462,15 +7439,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k503",
-    "text": "Les entetes et pieds de page sont :",
-    "time": 60,
+    "text": "Les en-têtes et pieds de page sont :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "toujours identiques",
      "ajoutés au moment de l'enregistrement",
      "différents en fonction des sections du document",
-     "modifiables après génération du sommaire"
+     "figés après génération du sommaire"
     ],
     "correct": [
      2
@@ -7478,7 +7455,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k504",
-    "text": "Un titre de niveau 4 peut être ajouté juste après un titre de niveau 2",
+    "text": "Un titre de niveau 4 peut être ajouté juste après un titre de niveau 2 :",
     "time": 60,
     "points": 1,
     "type": "single",
@@ -7486,7 +7463,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
      "oui mais ce n'est pas recommandé",
      "non",
      "oui",
-     "oui après avoir desactivé le message d'avertissement"
+     "oui après avoir désactivé le message d'avertissement"
     ],
     "correct": [
      0
@@ -7502,11 +7479,11 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "scrum",
   "category": "gestion",
   "title": "Scrum",
-  "description": "",
+  "description": "Rôles, release planning, sprint, backlog, définition du done, story points, burndown chart : les bases de Scrum.",
   "questions": [
    {
     "id": "k505",
-    "text": "Scrum est la meilleure méthode agile ?",
+    "text": "Scrum est la meilleure méthode agile.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -7514,13 +7491,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k506",
-    "text": "Trouvez l'intrus parmi ces rôles Scrum",
-    "time": 60,
+    "text": "Trouvez l'intrus parmi ces rôles Scrum :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "Scrum Master",
-     "Stakeholders",
+     "Développeurs",
      "Product Owner",
      "Chef de projet"
     ],
@@ -7536,7 +7513,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "type": "single",
     "answers": [
      "Il permet de déceler les problèmes",
-     "il permet de présenter le travail aux stakeholders",
+     "Il permet de présenter le travail aux stakeholders",
      "Il permet d'estimer les dates",
      "Il permet de synchroniser les équipes"
     ],
@@ -7546,7 +7523,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k508",
-    "text": "Le sprint 0 est obligatoire pour le lancement d'un projet",
+    "text": "Le sprint 0 est obligatoire pour le lancement d'un projet.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -7554,8 +7531,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k509",
-    "text": "Trouvez l'intrus parmi ces propositions pour la définition du done",
-    "time": 60,
+    "text": "Trouvez l'intrus parmi ces propositions pour la définition du done :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -7570,15 +7547,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k510",
-    "text": "Quel adjectif ne décris pas le Product Backlog ?",
-    "time": 60,
+    "text": "Quel adjectif ne décrit PAS le Product Backlog ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "Priorisé",
      "Détaillé",
      "Estimé",
-     "Equilibré"
+     "Équilibré"
     ],
     "correct": [
      3
@@ -7586,7 +7563,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k511",
-    "text": "Il est préférable d'estimer les taches en storypoints plutôt qu'en heure ?",
+    "text": "Il est préférable d'estimer les tâches en story points plutôt qu'en heures.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -7594,14 +7571,14 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k512",
-    "text": "Quelle caractéristique n'est pas applicable à un sprint ?",
+    "text": "Quelle caractéristique n'est PAS applicable à un sprint ?",
     "time": 60,
     "points": 1,
     "type": "single",
     "answers": [
      "Pas de modification du sprint goal possible",
-     "Annulable par les développers",
-     "Courte durée limité en fonction de la durée du sprint",
+     "Annulable par les développeurs",
+     "Courte durée, limitée à un mois maximum",
      "Durée identique avec les autres sprints"
     ],
     "correct": [
@@ -7610,13 +7587,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k513",
-    "text": "Quelle cérémonie ne fait pas partie de Scrum ?",
-    "time": 60,
+    "text": "Quelle cérémonie ne fait PAS partie de Scrum ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "Comité de pilotage",
-     "Retrospective",
+     "Rétrospective",
      "Stand-up meeting",
      "Sprint review"
     ],
@@ -7626,7 +7603,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k514",
-    "text": "Le Burn down chart peut être appliqué à un sprint ou une release ?",
+    "text": "Le Burn down chart peut être appliqué à un sprint ou une release.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -7642,7 +7619,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "facebook-3-booster-votre-strategie-publicitaire",
   "category": "webmarketing",
   "title": "Facebook - 3 Booster votre stratégie publicitaire",
-  "description": "",
+  "description": "Boost, enchères, ciblage, objectifs, test A/B, pixel : les notions clés pour réussir vos publicités Facebook.",
   "questions": [
    {
     "id": "k515",
@@ -7663,13 +7640,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k516",
     "text": "Il est important de vérifier le paramétrage de sa page pour :",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "activer l'option d'identification d'une page",
-     "desactiver les messages privées",
-     "desactiver la double authentification",
+     "désactiver les messages privés",
+     "désactiver la double authentification",
      "activer votre mot de passe"
     ],
     "correct": [
@@ -7678,7 +7655,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k517",
-    "text": "Meta Business Suite permet de publier sur Instagram en plus de Facebook",
+    "text": "Meta Business Suite permet de publier sur Instagram en plus de Facebook.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -7687,14 +7664,14 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k518",
     "text": "La publicité Facebook fonctionne sur :",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "un système d'abonnement",
-     "un système d'enchere",
-     "un cout variable en fonction de l'emplacement",
-     "un cout fixe"
+     "un système d'enchères",
+     "un forfait annuel",
+     "un coût fixe"
     ],
     "correct": [
      1
@@ -7702,8 +7679,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k519",
-    "text": "Trouvez l'intrus parmis ces objectifs publicitaires",
-    "time": 60,
+    "text": "Trouvez l'intrus parmi ces objectifs publicitaires :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -7718,7 +7695,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k520",
-    "text": "Les publicités sur Facebook peuvent être gérées sous forme de campagne",
+    "text": "Les publicités sur Facebook peuvent être gérées sous forme de campagne.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -7726,8 +7703,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k521",
-    "text": "Quel critère de ciblage utilisateur n'existe pas ?",
-    "time": 60,
+    "text": "Quel critère de ciblage utilisateur n'existe PAS ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -7742,7 +7719,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k522",
-    "text": "Qu'est ce que l'A/B testing",
+    "text": "Qu'est-ce que l'A/B testing ?",
     "time": 60,
     "points": 1,
     "type": "single",
@@ -7758,7 +7735,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k523",
-    "text": "Une offre exclusive permet d'attirer plus de clients",
+    "text": "Une offre exclusive permet d'attirer plus de clients.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -7766,14 +7743,14 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k524",
-    "text": "Le pixel Facebook permet de :",
-    "time": 60,
+    "text": "Le pixel Meta (ex-pixel Facebook) permet de :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "Ajouter son logo sur ses visuels",
      "Suivre les internautes sur Amazon",
-     "Faire du recyblage publicitaire",
+     "Faire du reciblage publicitaire",
      "Suivre l'ouverture des e-mails Facebook"
     ],
     "correct": [
@@ -7790,11 +7767,11 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "accessibilite-web",
   "category": "dev",
   "title": "Accessibilité web",
-  "description": "",
+  "description": "Handicaps, technologies d'assistance, RGAA, WCAG, ergonomie : les bases de l'accessibilité web.",
   "questions": [
    {
     "id": "k525",
-    "text": "Le handicap est la perte ou l'altération de la fonction d'une partie du corps ?",
+    "text": "Le handicap est la perte ou l'altération de la fonction d'une partie du corps.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -7802,8 +7779,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k526",
-    "text": "Trouvez l'intrus parmi ces handicaps",
-    "time": 60,
+    "text": "Trouvez l'intrus parmi ces handicaps :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -7818,8 +7795,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k527",
-    "text": "Quelle technologie ne fait pas partie des technologies d'assistance ?",
-    "time": 60,
+    "text": "Quelle technologie ne fait PAS partie des technologies d'assistance ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -7834,7 +7811,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k528",
-    "text": "Le respect de l'accessibilité permet d'élargir l'audience d'une entreprise",
+    "text": "Le respect de l'accessibilité permet d'élargir l'audience d'une entreprise.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -7842,8 +7819,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k529",
-    "text": "Trouvez l'intrus parmi ces référentiels",
-    "time": 60,
+    "text": "Trouvez l'intrus parmi ces référentiels :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -7858,13 +7835,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k530",
-    "text": "Quel élément ne permet pas de garantir le respect de l'accessibilité web ?",
-    "time": 60,
+    "text": "Quel élément ne permet PAS de garantir le respect de l'accessibilité web ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "Retour utilisateur",
-     "Evaluation périodique",
+     "Évaluation périodique",
      "Revue de conformité",
      "Amélioration continue"
     ],
@@ -7874,7 +7851,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k531",
-    "text": "Les annotations fonctionnelles d'accessibilité se font directement sur les captures d'écran du site web concerné ?",
+    "text": "Les annotations fonctionnelles d'accessibilité se font directement sur les captures d'écran du site web concerné.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -7882,8 +7859,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k532",
-    "text": "Quelle loi ne fait pas partie de l'ergonomie web ?",
-    "time": 60,
+    "text": "Quelle loi ne fait PAS partie de l'ergonomie web ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -7898,13 +7875,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k533",
-    "text": "Quel élément n'est pas régit par le CSS pour l'accessibilité web ?",
-    "time": 60,
+    "text": "Quel élément n'est PAS régi par le CSS pour l'accessibilité web ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "Alternative des images",
-     "Mise en évidence des éléments intéractifs",
+     "Mise en évidence des éléments interactifs",
      "Couleur",
      "Taille des polices"
     ],
@@ -7914,7 +7891,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k534",
-    "text": "L'audiodescription est un moyen de rendre une vidéo accessible ?",
+    "text": "L'audiodescription est un moyen de rendre une vidéo accessible.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -7930,16 +7907,16 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "after-effects-initiation",
   "category": "graphisme",
   "title": "After Effects - Initiation",
-  "description": "",
+  "description": "Interface, outils, points clés, Keylight, suivi de mouvement, rotoscopie, 3D et expressions : les bases de l'animation avec After Effects.",
   "questions": [
    {
     "id": "k535",
-    "text": "Quel élément ne fait pas partie de l'interface d'After Effects ?",
-    "time": 60,
+    "text": "Quel élément ne fait PAS partie de l'interface d'After Effects ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
-     "le panneau projet",
+     "Le panneau projet",
      "Le panneau vectoriel",
      "Le panneau composition",
      "Le panneau montage"
@@ -7950,8 +7927,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k536",
-    "text": "Quel outil n'existe pas dans After Effects ?",
-    "time": 60,
+    "text": "Quel outil n'existe PAS dans After Effects ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -7967,7 +7944,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k537",
     "text": "Quel effet utiliser pour créer de l'eau ou de la fumée ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -7982,7 +7959,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k538",
-    "text": "Les points clés permettent d'animer l'opacité d'un calque",
+    "text": "Les points clés permettent d'animer l'opacité d'un calque.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -7991,7 +7968,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k539",
     "text": "L'effet Keylight permet de :",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -8006,7 +7983,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k540",
-    "text": "Le calcul pour le suivi de mouvement est rapide",
+    "text": "Le calcul pour le suivi de mouvement est rapide.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -8014,8 +7991,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k541",
-    "text": "La rotoscopie permet de",
-    "time": 60,
+    "text": "La rotoscopie permet de…",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -8031,7 +8008,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k542",
     "text": "Trouvez l'intrus, grâce au mode 3D, After Effects propose d'animer :",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -8046,7 +8023,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k543",
-    "text": "Les expressions dans After Effects permettent de créer des animations complexes",
+    "text": "Les expressions dans After Effects permettent de créer des animations complexes.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -8054,8 +8031,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k544",
-    "text": "Quel est le meilleur codec pour exporter votre vidéo ?",
-    "time": 60,
+    "text": "Parmi ces codecs, lequel est le plus efficace pour exporter votre vidéo ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -8078,17 +8055,17 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "microsoft-365-vs-office-2013",
   "category": "bureautique",
   "title": "Microsoft 365 vs Office 2013",
-  "description": "",
+  "description": "Word, Excel, PowerPoint, Outlook et OneDrive en ligne : les services et fonctions clés de Microsoft 365 pour travailler en ligne.",
   "questions": [
    {
     "id": "k545",
-    "text": "Quel service ne fait par partie de Microsoft 365 ?",
-    "time": 60,
+    "text": "Quel service ne fait PAS partie de Microsoft 365 ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "Word",
-     "LookerStudio",
+     "Looker Studio",
      "Teams",
      "Excel"
     ],
@@ -8103,7 +8080,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "répéter un e-mail qui reviendra plus tard dans votre boite de réception",
+     "répéter un e-mail qui reviendra plus tard dans votre boîte de réception",
      "mettre en attente un évènement reçu via la messagerie",
      "répéter une mise en forme sur le contenu sélectionné",
      "mettre en attente une pièce jointe pour archivage"
@@ -8114,7 +8091,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k547",
-    "text": "Outlook en ligne permet de créer des événements répétitifs dans le calendrier",
+    "text": "Outlook en ligne permet de créer des événements répétitifs dans le calendrier.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -8122,8 +8099,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k548",
-    "text": "Trouvez l'intrus dans ces fonctionnalités Word",
-    "time": 60,
+    "text": "Trouvez l'intrus dans ces fonctionnalités Word :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -8138,8 +8115,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k549",
-    "text": "Quelle fonctionnalité n'est pas disponible sur Excel en ligne ?",
-    "time": 60,
+    "text": "Quelle fonctionnalité n'est PAS disponible sur Excel en ligne ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -8154,7 +8131,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k550",
-    "text": "PowerPoint en ligne ne permet pas de gérer l'historique de versions",
+    "text": "PowerPoint en ligne ne permet pas de gérer l'historique de versions.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -8162,8 +8139,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k551",
-    "text": "Trouver l'intrus, OneDrive permet de :",
-    "time": 60,
+    "text": "Trouvez l'intrus : OneDrive permet de…",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -8178,7 +8155,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k552",
-    "text": "La sauvegarde automatique permet d'enregistrer automatiquement les documents en local",
+    "text": "La sauvegarde automatique permet d'enregistrer automatiquement les documents en local.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -8186,13 +8163,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k553",
-    "text": "OneNote ne permet pas de créer :",
-    "time": 60,
+    "text": "OneNote ne permet PAS de créer :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "des plans 3D",
-     "des bloc-notes",
+     "des blocs-notes",
      "des sections",
      "des pages"
     ],
@@ -8202,7 +8179,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k554",
-    "text": "Teams permet de créer des canaux ?",
+    "text": "Teams permet de créer des canaux.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -8218,16 +8195,16 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "tableur-initiation",
   "category": "bureautique",
   "title": "Tableur - Initiation",
-  "description": "",
+  "description": "Raccourcis, saisie, formules, recopie, dates, CSV et mise en forme : les bases du tableur pour gérer vos données.",
   "questions": [
    {
     "id": "k555",
-    "text": "Le raccourci Ctrl + Y permet de",
-    "time": 60,
+    "text": "Le raccourci Ctrl + Y permet de…",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
-     "repéter la dernière action",
+     "répéter la dernière action",
      "imprimer",
      "annuler",
      "ouvrir un document"
@@ -8239,7 +8216,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k556",
     "text": "Quelle touche du clavier doit-on maintenir pour sélectionner des plages de cellules discontinues ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -8254,7 +8231,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k557",
-    "text": "Le bouton de recopie de formule (poignée bleue) permet de faire des séries",
+    "text": "Le bouton de recopie de formule (poignée bleue) permet de faire des séries.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -8278,8 +8255,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k559",
-    "text": "Quel est le résultat de 10 + 5 x 4 =",
-    "time": 60,
+    "text": "Quel est le résultat de 10 + 5 x 4 ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -8294,8 +8271,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k560",
-    "text": "Lequel ne permet pas de saisir une date convenablement ?",
-    "time": 60,
+    "text": "Lequel ne permet PAS de saisir une date convenablement ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -8310,7 +8287,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k561",
-    "text": "Il est possible d'exporter les données sous forme de CSV",
+    "text": "Il est possible d'exporter les données sous forme de CSV.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -8318,7 +8295,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k562",
-    "text": "Quelle méthode ne permet pas de déplacer des données ?",
+    "text": "Quelle méthode ne permet PAS de déplacer des données ?",
     "time": 60,
     "points": 1,
     "type": "single",
@@ -8334,7 +8311,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k563",
-    "text": "Peut-on ajouter de la couleur sur l'onglet d'une feuille ?",
+    "text": "Il est possible d'ajouter de la couleur sur l'onglet d'une feuille.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -8342,8 +8319,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k564",
-    "text": "La couleur en alternance permet de",
-    "time": 60,
+    "text": "La couleur en alternance permet de…",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -8366,12 +8343,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "tableur-perfectionnement",
   "category": "bureautique",
   "title": "Tableur - Perfectionnement",
-  "description": "",
+  "description": "Validation de données, mise en forme conditionnelle, sparklines, segments, références absolues : perfectionnez votre tableur.",
   "questions": [
    {
     "id": "k565",
-    "text": "La validation de données permet de",
-    "time": 60,
+    "text": "La validation de données permet de…",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -8402,7 +8379,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k567",
-    "text": "Le thème permet de changer les couleurs et polices utilisées",
+    "text": "Le thème permet de changer les couleurs et polices utilisées.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -8410,8 +8387,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k568",
-    "text": "Les sparklines sont",
-    "time": 60,
+    "text": "Les sparklines sont…",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -8426,8 +8403,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k569",
-    "text": "Qu'est ce que ne permet pas les chips intelligents ?",
-    "time": 60,
+    "text": "Que ne permettent PAS les chips intelligents ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -8442,14 +8419,14 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k570",
-    "text": "La formule concat() permet de",
-    "time": 60,
+    "text": "La formule concat() permet de…",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "tronquer un texte",
      "additionner deux nombres entiers",
-     "regrouper deux chaines de textes",
+     "regrouper deux chaînes de texte",
      "permuter le contenu de deux cellules"
     ],
     "correct": [
@@ -8458,7 +8435,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k571",
-    "text": "L'utilisation de $ permet de figer la référence d'une cellule ?",
+    "text": "L'utilisation de $ permet de figer la référence d'une cellule.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -8466,8 +8443,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k572",
-    "text": "Qu'est ce qu'un segment ?",
-    "time": 60,
+    "text": "Qu'est-ce qu'un segment ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -8498,12 +8475,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k574",
-    "text": "Quelle est la formule pour changer la couleur d'une ligne si la valeur de la colonne B est égale à 0",
-    "time": 60,
+    "text": "Quelle formule de mise en forme conditionnelle colore une ligne dont la valeur en colonne B est égale à 0 ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
-     "=$B$2=0",
+     "=$B2=0",
      "ESTNUL($B$2)",
      "SI(B2=0;1;0)",
      "=VIDE(B2)"
@@ -8522,7 +8499,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "facebook-2-faire-vivre-sa-page",
   "category": "webmarketing",
   "title": "Facebook - 2 Faire vivre sa page",
-  "description": "",
+  "description": "Marronniers, rôles, algorithme, modération, Meta Business Suite : les bons réflexes pour animer votre page Facebook.",
   "questions": [
    {
     "id": "k575",
@@ -8542,8 +8519,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k576",
-    "text": "Le role modérateur ne permet pas de :",
-    "time": 60,
+    "text": "Le rôle de modérateur ne permet PAS de :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -8558,7 +8535,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k577",
-    "text": "Facebook est le réseau social numéro 1 en Nouvelle-Calédonie",
+    "text": "Facebook est le réseau social numéro 1 en Nouvelle-Calédonie.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -8567,7 +8544,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k578",
     "text": "Trouvez l'intrus dans la stratégie de publication :",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -8583,7 +8560,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k579",
     "text": "Pour une bonne publication, on met en place un contenu :",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -8598,7 +8575,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k580",
-    "text": "Meta Business Suite permet de repondre aux commentaires Facebook",
+    "text": "Meta Business Suite permet de répondre aux commentaires Facebook.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -8606,7 +8583,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k581",
-    "text": "Qu'est ce que la récence dans l'algorithme Facebook ?",
+    "text": "Qu'est-ce que la récence dans l'algorithme Facebook ?",
     "time": 60,
     "points": 1,
     "type": "single",
@@ -8614,7 +8591,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
      "La performance du post auprès d'autres utilisateurs",
      "L'intérêt de l'utilisateur envers le créateur de contenu",
      "Les commentaires des utilisateurs sur une publication",
-     "L'age d'une publication"
+     "L'âge d'une publication"
     ],
     "correct": [
      3
@@ -8623,14 +8600,14 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k582",
     "text": "Facebook permet de :",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "retoucher la photo d'une publication",
      "modifier les statistiques",
-     "Programmer la publication de ses contenus",
-     "suivre les clics sur les liens externes dans vos publications"
+     "programmer la publication de ses contenus",
+     "identifier chaque personne ayant consulté la page"
     ],
     "correct": [
      2
@@ -8638,7 +8615,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k583",
-    "text": "La modération est le fait de vérifier les messages et commentaires des utilisateurs",
+    "text": "La modération est le fait de vérifier les messages et commentaires des utilisateurs.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -8646,8 +8623,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k584",
-    "text": "Trouvez l'intrus, parmis ces métiers :",
-    "time": 60,
+    "text": "Trouvez l'intrus parmi ces métiers :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -8667,163 +8644,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "source": "import"
  },
  {
-  "id": "publisher-initiation",
-  "category": "graphisme",
-  "title": "Publisher - Initiation",
-  "description": "",
-  "questions": [
-   {
-    "id": "k585",
-    "text": "Quel est le format de fichier Publisher ?",
-    "time": 60,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "SVG",
-     "PUB",
-     "BMP",
-     "PSD"
-    ],
-    "correct": [
-     1
-    ]
-   },
-   {
-    "id": "k586",
-    "text": "Quel outil n'existe pas dans Publisher ?",
-    "time": 60,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "La zone de texte",
-     "Les formes",
-     "L'aérographe",
-     "Les WordArt"
-    ],
-    "correct": [
-     2
-    ]
-   },
-   {
-    "id": "k587",
-    "text": "Quel est le mode colorimétrique pour l'impression ?",
-    "time": 60,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "RVB",
-     "TSL",
-     "CMJN",
-     "LAB"
-    ],
-    "correct": [
-     2
-    ]
-   },
-   {
-    "id": "k588",
-    "text": "Les composants de page permettent d'ajouter facilement des coordonnées",
-    "time": 30,
-    "points": 1,
-    "type": "truefalse",
-    "truth": true
-   },
-   {
-    "id": "k589",
-    "text": "L'outil insérer un fichier permet de :",
-    "time": 60,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "récupérer du texte depuis un autre fichier",
-     "récupérer les métadonnées d'un fichier",
-     "charger une image",
-     "appliquer un logo à une composition"
-    ],
-    "correct": [
-     0
-    ]
-   },
-   {
-    "id": "k590",
-    "text": "Publisher est capable de gérer les entêtes et pieds de pages d'un document",
-    "time": 30,
-    "points": 1,
-    "type": "truefalse",
-    "truth": true
-   },
-   {
-    "id": "k591",
-    "text": "Le calendrier permet de :",
-    "time": 60,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "gérer les dates d'enregistrement",
-     "configurer la date d'envoi d'une composition",
-     "paramétrer les dates de publication",
-     "insérer un calendier dans une composition"
-    ],
-    "correct": [
-     3
-    ]
-   },
-   {
-    "id": "k592",
-    "text": "La liaison de zones de texte permet de :",
-    "time": 60,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "déplacer les zones de texte ensemble",
-     "afficher le texte en trop de la première zone dans la deuxième",
-     "modifier conjointement les zones de texte",
-     "voir les zones de textes liées"
-    ],
-    "correct": [
-     1
-    ]
-   },
-   {
-    "id": "k593",
-    "text": "Le texte ne peut pas être modifié dans une zone de texte après insertion",
-    "time": 30,
-    "points": 1,
-    "type": "truefalse",
-    "truth": false
-   },
-   {
-    "id": "k594",
-    "text": "Trouvez l'intrus, les effets disponibles sont :",
-    "time": 60,
-    "points": 1,
-    "type": "single",
-    "answers": [
-     "ombre",
-     "lumière",
-     "réflexion",
-     "estampe"
-    ],
-    "correct": [
-     3
-    ]
-   }
-  ],
-  "createdAt": 1661986025235,
-  "updatedAt": 1695356474659,
-  "builtin": true,
-  "source": "import"
- },
- {
   "id": "photoshop-initiation-oriente-gif",
   "category": "graphisme",
   "title": "Photoshop - Initiation (Orienté GIF)",
-  "description": "",
+  "description": "Format PSD, outils, tampon, correcteur, calques de remplissage et retouche de GIF : les bases de Photoshop.",
   "questions": [
    {
     "id": "k595",
     "text": "Quel est le format de fichier Photoshop ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -8838,8 +8667,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k596",
-    "text": "Quel outil n'existe pas dans Photoshop",
-    "time": 60,
+    "text": "Quel outil n'existe PAS dans Photoshop ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -8855,7 +8684,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k597",
     "text": "Quel est le mode colorimétrique pour l'impression ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -8870,7 +8699,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k598",
-    "text": "La baguette magique est le meilleur outil pour sélectionner des objets peu contrastés",
+    "text": "La baguette magique est le meilleur outil pour sélectionner des objets peu contrastés.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -8879,7 +8708,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k599",
     "text": "L'outil tampon permet de :",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -8894,7 +8723,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k600",
-    "text": "Pour modifier un GIF, il faut passer en espace de travail peinture ?",
+    "text": "Pour modifier un GIF, il faut passer en espace de travail peinture.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -8903,7 +8732,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k601",
     "text": "Le correcteur localisé permet de :",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -8919,7 +8748,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k602",
     "text": "Le meilleur format de fichier pour une photo est :",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -8934,7 +8763,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k603",
-    "text": "On peut rechercher dans les calques par leurs noms",
+    "text": "On peut rechercher dans les calques par leurs noms.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -8943,7 +8772,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k604",
     "text": "Trouvez l'intrus, on peut créer un calque de remplissage :",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -8966,11 +8795,11 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "google-apps-script",
   "category": "dev",
   "title": "Google Apps Script",
-  "description": "",
+  "description": "Scripts, variables JavaScript, événements, menus et boîtes de dialogue : les notions clés pour automatiser Google Workspace.",
   "questions": [
    {
     "id": "k605",
-    "text": "Google Apps Script propose des scripts autonomes et des scripts liés ?",
+    "text": "Google Apps Script propose des scripts autonomes et des scripts liés.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -8978,15 +8807,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k606",
-    "text": "Quel service ne fait pas partie de Google Apps Script",
-    "time": 60,
+    "text": "Quel service ne fait PAS partie de Google Apps Script ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "Docs",
      "Sheets",
      "Calendar",
-     "PowerAutomate"
+     "Power Automate"
     ],
     "correct": [
      3
@@ -8994,8 +8823,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k607",
-    "text": "Trouvez l'intrus pour définir une nouvelle variable en JavaScript",
-    "time": 60,
+    "text": "Trouvez l'intrus pour définir une nouvelle variable en JavaScript :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -9010,7 +8839,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k608",
-    "text": "Le debugger permet de définir de nouvelles variables en posant des points d'arrêt",
+    "text": "Le debugger permet de définir de nouvelles variables en posant des points d'arrêt.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -9018,8 +8847,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k609",
-    "text": "Trouvez l'intrus pour créer une boucle ou une condition en JavaScript",
-    "time": 60,
+    "text": "Trouvez l'intrus pour créer une boucle ou une condition en JavaScript :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -9034,8 +8863,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k610",
-    "text": "Quel type de données n'existe par en JavaScript ?",
-    "time": 60,
+    "text": "Quel type de données n'existe PAS en JavaScript ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -9050,7 +8879,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k611",
-    "text": "Google Apps Script crée une fonction myFunction à la création d'un nouveau script ?",
+    "text": "Google Apps Script crée une fonction myFunction à la création d'un nouveau script.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -9058,8 +8887,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k612",
-    "text": "Quelle classe utilitaire n'existe pas dans Apps Script ?",
-    "time": 60,
+    "text": "Quelle classe utilitaire n'existe PAS dans Apps Script ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -9074,8 +8903,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k613",
-    "text": "Trouvez l'intrus parmis les événements Apps Script ?",
-    "time": 60,
+    "text": "Trouvez l'intrus parmi les événements Apps Script :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -9090,7 +8919,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k614",
-    "text": "Google Apps Script ne permet pas d'afficher des menus et des boîtes de dialogue personnalisées ?",
+    "text": "Google Apps Script ne permet pas d'afficher des menus et des boîtes de dialogue personnalisées.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -9106,18 +8935,18 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "html-css-initiation",
   "category": "dev",
   "title": "HTML & CSS - Initiation",
-  "description": "",
+  "description": "Balises HTML, propriétés CSS, unités, media queries et liens : les fondamentaux pour structurer et styler une page web.",
   "questions": [
    {
     "id": "k615",
-    "text": "HTML permet de",
-    "time": 60,
+    "text": "HTML permet de…",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "changer les couleurs",
      "structurer le contenu",
-     "animer les élements",
+     "animer les éléments",
      "récupérer les données"
     ],
     "correct": [
@@ -9126,13 +8955,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k616",
-    "text": "CSS permet de",
-    "time": 60,
+    "text": "CSS permet de…",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "structurer un document",
-     "styler les élements",
+     "styliser les éléments",
      "remplir un formulaire",
      "écrire du contenu"
     ],
@@ -9142,7 +8971,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k617",
-    "text": "div est une balise HTML",
+    "text": "La balise div est une balise HTML.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -9150,14 +8979,14 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k618",
-    "text": "En HTML, header est",
-    "time": 60,
+    "text": "En HTML, la balise header est…",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
-     "une entête",
-     "une balise d'entête",
-     "un element en haut de page",
+     "une balise de pied de page",
+     "une balise d'en-tête",
+     "un élément en haut de page",
      "un emplacement pour le style"
     ],
     "correct": [
@@ -9166,8 +8995,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k619",
-    "text": "En CSS, quelle unité est à privilégier",
-    "time": 60,
+    "text": "En CSS, quelles unités faut-il privilégier pour un site adaptatif ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -9182,15 +9011,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k620",
-    "text": "Qu'est ce qu'une media query",
+    "text": "Qu'est-ce qu'une media query ?",
     "time": 60,
     "points": 1,
     "type": "single",
     "answers": [
      "un sélecteur pour ajouter des vidéos",
-     "une requete pour ajouter une image de fond",
-     "une regle pour supprimer du contenu",
-     "une regle pour adapter le contenu visuel en fonction du support"
+     "une requête pour ajouter une image de fond",
+     "une règle pour supprimer du contenu",
+     "une règle pour adapter le contenu visuel en fonction du support"
     ],
     "correct": [
      3
@@ -9198,7 +9027,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k621",
-    "text": "font-size est une propriété CSS",
+    "text": "La propriété font-size sert à définir la taille du texte.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -9206,8 +9035,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k622",
-    "text": "padding est une propriété CSS pour gérer",
-    "time": 60,
+    "text": "La propriété CSS padding permet de gérer :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -9222,8 +9051,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k623",
-    "text": "Pour créer un lien vers la page d'accueil de Wikipédia, on écrira...",
-    "time": 60,
+    "text": "Pour créer un lien vers la page d'accueil de Wikipédia, on écrira :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -9238,8 +9067,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k624",
-    "text": "H1 est utilisé pour définir",
-    "time": 60,
+    "text": "La balise h1 est utilisée pour définir :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -9262,12 +9091,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "illustrator-initiation",
   "category": "graphisme",
   "title": "Illustrator - Initiation",
-  "description": "",
+  "description": "Formats vectoriels, plume, tangentes, pathfinder, pipette, mode isolation : les bases pour dessiner avec Illustrator.",
   "questions": [
    {
     "id": "k625",
-    "text": "Trouver l'intrus qui n'est pas un format vectoriel",
-    "time": 60,
+    "text": "Quel format n'est PAS vectoriel ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -9282,8 +9111,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k626",
-    "text": "Quel outil n'existe pas dans Illustrator",
-    "time": 60,
+    "text": "Quel outil n'existe PAS dans Illustrator ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -9298,8 +9127,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k627",
-    "text": "En combien de points minimum, peut on créer un cercle en vectoriel",
-    "time": 60,
+    "text": "De combien de points d'ancrage un cercle est-il composé en vectoriel ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -9314,7 +9143,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k628",
-    "text": "L'angle d'une tangente ne peut pas être cassé",
+    "text": "L'angle d'une tangente ne peut pas être cassé.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -9338,7 +9167,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k630",
-    "text": "L'outil dégradé de formes fonctionne sur les tracés non fermés",
+    "text": "L'outil dégradé de formes fonctionne sur les tracés non fermés.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -9347,13 +9176,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k631",
     "text": "Trouvez l'intrus, le pathfinder permet de :",
-    "time": 30,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "diviser des objets",
      "fusionner des objets",
-     "d'effectuer un pochoir sur des objets",
+     "effectuer un pochoir sur des objets",
      "multiplier des objets"
     ],
     "correct": [
@@ -9363,7 +9192,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k632",
     "text": "La pipette permet de récupérer :",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -9378,7 +9207,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k633",
-    "text": "Le texte curviligne nécessite un tracé fermé",
+    "text": "Le texte curviligne nécessite un tracé fermé.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -9391,7 +9220,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
     "points": 1,
     "type": "single",
     "answers": [
-     "travailler sur un calque sans impacter les autres",
+     "modifier un groupe ou un objet isolé du reste du dessin",
      "scinder un tracé en plusieurs",
      "récupérer le fond d'une forme",
      "supprimer les points isolés d'un tracé"
@@ -9410,12 +9239,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "principe-de-l-image-numerique",
   "category": "graphisme",
   "title": "Principe de l'image numérique",
-  "description": "",
+  "description": "Vectoriel et bitmap, formats de fichiers, RVB et CMJN, transparence : les fondamentaux de l'image numérique.",
   "questions": [
    {
     "id": "k635",
     "text": "Quels sont les deux types d'images ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -9430,7 +9259,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k636",
-    "text": "Les images vectorielles sont soumises à la pixellisation",
+    "text": "Les images vectorielles sont soumises à la pixellisation.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -9438,8 +9267,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k637",
-    "text": "Quel est le format d'images bitmap ?",
-    "time": 60,
+    "text": "Lequel de ces formats est un format d'image bitmap ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -9454,7 +9283,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k638",
-    "text": "JPG est recommandé pour les photos",
+    "text": "JPG est recommandé pour les photos.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -9462,12 +9291,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k639",
-    "text": "Quel est le format vectoriel ?",
-    "time": 60,
+    "text": "Lequel de ces formats est un format vectoriel ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
-     "PDF",
+     "PNG",
      "SVG",
      "PSD",
      "TIFF"
@@ -9495,7 +9324,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k641",
-    "text": "CMJN est utilisé pour les écrans",
+    "text": "CMJN est utilisé pour les écrans.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -9504,7 +9333,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k642",
     "text": "Quel est le format recommandé pour les photos ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -9519,7 +9348,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k643",
-    "text": "Faut-il conserver un original lors des modifications ?",
+    "text": "Il faut conserver un original lors des modifications.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -9527,7 +9356,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k644",
-    "text": "PNG gére la transparence ?",
+    "text": "PNG gère la transparence.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -9543,19 +9372,19 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "traitement-de-texte-perfectionnement",
   "category": "bureautique",
   "title": "Traitement de texte - Perfectionnement",
-  "description": "",
+  "description": "Styles, sections, marges, colonnes, révisions, mise en forme : perfectionnez-vous en traitement de texte.",
   "questions": [
    {
     "id": "k645",
-    "text": "Quel outil utilise-t-on pour recupérer uniquement le texte lors d'un copié/collé ?",
-    "time": 60,
+    "text": "Quel outil utilise-t-on pour récupérer uniquement le texte lors d'un copier-coller ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
-     "Le presse papiers",
+     "Le presse-papiers",
      "L'outil \"coller sans formatage\"",
      "L'outil \"supprimer le formatage\"",
-     "Le baton de colle"
+     "Le bâton de colle"
     ],
     "correct": [
      1
@@ -9564,13 +9393,13 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k646",
     "text": "Que permet de faire la règle d'un traitement de texte ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "Tracer une ligne droite",
      "Insérer une tabulation",
-     "eviter les erreurs de contenu",
+     "Éviter les erreurs de contenu",
      "Mesurer l'écart entre les caractères"
     ],
     "correct": [
@@ -9579,7 +9408,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k647",
-    "text": "Un saut de page change forcément l'entête de la section suivante",
+    "text": "Un saut de page change forcément l'en-tête de la section suivante.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -9587,14 +9416,14 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k648",
-    "text": "L'interligne permet de",
-    "time": 60,
+    "text": "L'interligne permet de…",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
-     "de gérer l'espacement entre les paragraphes",
-     "d'ajouter un fond entre deux lignes",
-     "de traduire des lignes de contenu",
+     "gérer l'espacement entre les paragraphes",
+     "ajouter un fond entre deux lignes",
+     "traduire des lignes de contenu",
      "définir la hauteur de ligne"
     ],
     "correct": [
@@ -9603,7 +9432,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k649",
-    "text": "En quoi les styles de textes sont importants ?",
+    "text": "En quoi les styles de texte sont-ils importants ?",
     "time": 60,
     "points": 1,
     "type": "single",
@@ -9619,12 +9448,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k650",
-    "text": "La marge est une propriété",
-    "time": 60,
+    "text": "La marge est une propriété :",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
-     "de la page",
+     "du caractère",
      "de la section",
      "des paragraphes",
      "des lignes"
@@ -9635,7 +9464,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k651",
-    "text": "Justifier un texte revient à l'aligner à gauche et à droite",
+    "text": "Justifier un texte revient à l'aligner à gauche et à droite.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -9643,15 +9472,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k652",
-    "text": "A quoi sert l'outil suggestions ou révisions ?",
+    "text": "À quoi sert l'outil Suggestions ou Révisions ?",
     "time": 60,
     "points": 1,
     "type": "single",
     "answers": [
-     "A faciliter le travail collaboratif",
-     "A revenir en arrière en cas d'erreur",
-     "A mettre en page le texte",
-     "A corriger les fautes d'orthographe"
+     "À faciliter le travail collaboratif",
+     "À revenir en arrière en cas d'erreur",
+     "À mettre en page le texte",
+     "À corriger les fautes d'orthographe"
     ],
     "correct": [
      0
@@ -9659,7 +9488,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k653",
-    "text": "Imaginez un texte à 3 colonnes avec les 2 premières remplies. Si l’on ajoute du texte dans la 1ère, que se passe-t-il ?",
+    "text": "Imaginez un texte à 3 colonnes dont les 2 premières sont remplies. Si l'on ajoute du texte dans la 1re, que se passe-t-il ?",
     "time": 60,
     "points": 1,
     "type": "single",
@@ -9675,15 +9504,15 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k654",
-    "text": "Calibri et Georgia sont des",
-    "time": 60,
+    "text": "Calibri et Georgia sont des…",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
      "polices de caractères",
-     "des formules de tableau",
-     "des chansons de Ray Charles",
-     "des virus"
+     "formules de tableau",
+     "chansons de Ray Charles",
+     "virus"
     ],
     "correct": [
      0
@@ -9699,12 +9528,12 @@ const IMPORTED_QUIZZES: Quiz[] = [
   "id": "photoshop-initiation",
   "category": "graphisme",
   "title": "Photoshop - Initiation",
-  "description": "",
+  "description": "Modes de fusion, liaison de calques, déformation du texte : les bases de Photoshop pour composer et retoucher vos images.",
   "questions": [
    {
     "id": "k655",
     "text": "Quel est le format de fichier Photoshop ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -9719,8 +9548,8 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k656",
-    "text": "Quel outil n'existe pas dans Photoshop",
-    "time": 60,
+    "text": "Quel outil n'existe PAS dans Photoshop ?",
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -9736,7 +9565,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k657",
     "text": "Quel est le mode colorimétrique pour l'impression ?",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -9751,7 +9580,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k658",
-    "text": "La baguette magique est le meilleur outil pour sélectionner des objets peu contrastés",
+    "text": "La baguette magique est le meilleur outil pour sélectionner des objets peu contrastés.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -9760,7 +9589,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k659",
     "text": "L'outil tampon permet de :",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -9775,7 +9604,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k660",
-    "text": "Le mode de fusion défini l'incidence d'un calque sur le calque supérieur",
+    "text": "Le mode de fusion définit l'incidence d'un calque sur le calque supérieur.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -9784,7 +9613,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k661",
     "text": "La liaison de calques permet de :",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -9800,7 +9629,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k662",
     "text": "Le correcteur localisé permet de :",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
@@ -9815,7 +9644,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    },
    {
     "id": "k663",
-    "text": "Le texte ne peut être déformé que s'il est pixellisé avant",
+    "text": "Le texte ne peut être déformé que s'il est pixellisé avant.",
     "time": 30,
     "points": 1,
     "type": "truefalse",
@@ -9824,7 +9653,7 @@ const IMPORTED_QUIZZES: Quiz[] = [
    {
     "id": "k664",
     "text": "Trouvez l'intrus, on peut créer un calque de remplissage :",
-    "time": 60,
+    "time": 45,
     "points": 1,
     "type": "single",
     "answers": [
