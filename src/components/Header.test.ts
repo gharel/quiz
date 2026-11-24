@@ -40,7 +40,7 @@ describe('bandeau', () => {
     // Thème du système : même texte pour le nom accessible et l'infobulle.
     expect(toggle).toContain('aria-label="Thème : celui du système. Changer de thème"');
     expect(toggle).toContain('title="Thème : celui du système. Changer de thème"');
-    expect(tools).toContain('href="https://gharel.github.io/home/"');
+    expect(tools).toContain('href="https://gharel.github.io/pro/"');
     expect(tools).not.toContain('target=');
     expect(tools).toContain('title="Tous les outils Skazy Formation"');
     expect(brand).toContain('href="https://formation.skazy.nc"');

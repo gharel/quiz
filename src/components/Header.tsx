@@ -23,7 +23,7 @@ export function BrandLogo({ height = 36 }: { height?: number }) {
 /** Site institutionnel, ouvert dans un nouvel onglet depuis le logo. */
 export const SITE_SKAZY = 'https://formation.skazy.nc';
 /** Page d'accueil commune des outils Skazy Formation (lien « Les outils »). */
-export const PAGE_OUTILS = 'https://gharel.github.io/home/';
+export const PAGE_OUTILS = 'https://gharel.github.io/pro/';
 
 /** Identité de l'outil : pastille (le favicon) et nom, en un seul lien vers l'accueil du Quiz. */
 export function Logo({ current = false }: { current?: boolean }) {
