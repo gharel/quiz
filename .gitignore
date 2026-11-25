@@ -4,3 +4,8 @@ dist
 .DS_Store
 .vite
 coverage
+
+# Secrets locaux
+.env
+.env.*
+!.env.example
